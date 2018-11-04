@@ -85,18 +85,6 @@ def split2d(img, cell_size, flatten=True):
     if flatten:
         cells = cells.reshape(-1, sy, sx)
     return cells
-"""
-def deskew(img):
-    h, w = getsize(img)
-    m = cv2.moments(img)
-    if abs(m['mu02']) < 1e-2:
-        return img.copy()
-    skew = m['mu11']/m['mu02']
-    M = np.float32([[1, skew, -0.5 * h * skew], [0, 1, 0]])
-    img = cv2.warpAffine(img, M, (w, h), flags=cv2.WARP_INVERSE_MAP | cv2.INTER_LINEAR)
-    return img
-"""
-
 
 def deskew(img):
     img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)

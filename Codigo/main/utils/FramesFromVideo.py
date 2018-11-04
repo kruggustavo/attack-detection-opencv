@@ -16,7 +16,7 @@ def getPortionOfBoddy(mode=-1, x=0, y=0, h=0, w=0):
 
 
 myImageUtils = MyImageUtils()
-workpath = "D:/Google Drive/Tesis"
+workpath = "/home/gustavokrug/Documents/Tesis"
 video_file = workpath +"/Videos/3.mp4"
 
 video_width = 800
@@ -25,7 +25,7 @@ video_height = 600
 sample_width = 520
 sample_height = 980
 
-cutted_images_folder = workpath + "/Imagenes/dataset/"
+cutted_images_folder = "/home/gustavokrug/Documents/attack-detection-opencv/Imagenes/dataset/"
 
 video_area = video_width * video_height     # Area en pixeles del tamaño del frame
 
@@ -59,7 +59,7 @@ while True:
                 y = y + 10
                 percentage = (w * h * 100) / (video_area)
                 if percentage > admited_percentage_image_size:
-                    y, h, x, w = getPortionOfBoddy(LEGS, x, y, h, w)
+                    y, h, x, w = getPortionOfBoddy(-1, x, y, h, w)
                     print(y,h,x,w)
                     roi = frame[y:h, x:w]
                     r = 600.0 / roi.shape[1]
@@ -67,13 +67,18 @@ while True:
                     roi = cv2.resize(roi, dim, interpolation=cv2.INTER_AREA)
 
                     outputfilename = cutted_images_folder + ("frame%d.jpg" % humans_count)
+                    print(outputfilename)
                     humans_count += 1
                     print("Humanos detectados :" + str(humans_count))
                     cv2.imwrite(outputfilename, roi)
 
-            #cv2.imshow("frame", frame)
 
-            #k = cv2.waitKey(1)
-            #if k & 0xFF == ord("q"):  # Exit condition
-            #    break
+            cv2.imshow("frame", cv2.resize(frame, (320, 240)))
+
+            if roi is not None:
+                cv2.imshow("roi", cv2.resize(roi, (320, 240)))
+
+            k = cv2.waitKey(1)
+            if k & 0xFF == ord("q"):  # Exit condition
+                break
 

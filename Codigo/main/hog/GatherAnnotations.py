@@ -4,10 +4,10 @@ from imutils.paths import list_images
 
 class Annotations:
 
-    __dataset_path = ""
+    _dataset_path = ""
 
     def __init__(self, dataset_path=""):
-        type(self).__dataset_path = dataset_path
+        type(self)._dataset_path = dataset_path
 
     @classmethod
     def annotate(self):
@@ -15,7 +15,7 @@ class Annotations:
         imPaths = []
 
         #loop through each image and collect annotations
-        for imagePath in list_images(self.__dataset_path):
+        for imagePath in list_images(self._dataset_path):
             imagePath = imagePath.replace("\ ", " ").replace("\\", "/")
             label = imagePath.split("/")[-2]
             image = cv2.imread(imagePath)
@@ -31,5 +31,6 @@ class Annotations:
 
     @classmethod
     def saveAnnotations(self, annotations_path=None):
-        np.save(annotations_path, self.__annotations)
+        np.save(annotations_path, self._annotations)
+
 

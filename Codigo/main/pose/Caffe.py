@@ -1,25 +1,23 @@
 import cv2
-import time
-import numpy as np
+from concurrent.futures import ThreadPoolExecutor
+
 
 # video size
-frameWidth = 320
-frameHeight = 240
+video_width = 480
+video_height = 320
 
-workpath = "/home/gustavokrug/Documents/Tesis/"
-video_file = workpath +"/Videos/2.mp4"
+workpath = "/home/gustavokrug/Documents/attack-detection-opencv"
+video_file = workpath +"/Videos/3.mp4"
 
 # Specify the paths for the 2 files
-protoFile = workpath + "/Desarrollo/coco/pose_deploy_linevec_faster_4_stages.prototxt"
-weightsFile = workpath + "/Desarrollo/coco/pose_iter_160000.caffemodel"
+protoFile = "/home/gustavokrug/Documents/Documentacion/Models/coco/pose_deploy_linevec_faster_4_stages.prototxt"
+weightsFile = "/home/gustavokrug/Documents/Documentacion/Models/coco/pose_iter_160000.caffemodel"
 #frame = cv2.imread(workpath + "/Imagenes/tst.jpg")
-
 
 MODE = "MPI"
 
 nPoints = 15
-POSE_PAIRS = [[0, 1], [1, 2], [2, 3], [3, 4], [1, 5], [5, 6], [6, 7], [1, 14], [14, 8], [8, 9], [9, 10], [14, 11],
-              [11, 12], [12, 13]]
+POSE_PAIRS = [[0, 1], [1, 2], [2, 3], [3, 4], [1, 5], [5, 6], [6, 7], [1, 14], [14, 8], [8, 9], [9, 10], [14, 11], [11, 12], [12, 13]]
 
 inWidth = 200
 inHeight = 200
@@ -34,8 +32,11 @@ net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)
 process_each_frame = 10                         # Se procesará cada X frames
 frame_count = process_each_frame
 
+pool = ThreadPoolExecutor(4)
+
 while cv2.waitKey(1) < 0:
     hasFrame, frame = cap.read()
+    frame = cv2.resize(frame, (video_width, video_height))
 
     if not hasFrame:
         cv2.waitKey()
@@ -50,7 +51,11 @@ while cv2.waitKey(1) < 0:
 
         inpBlob = cv2.dnn.blobFromImage(frame, 1.0 / 255, (inWidth, inHeight), (0, 0, 0), swapRB=False, crop=False)
         net.setInput(inpBlob)
-        output = net.forward()
+
+        future = pool.submit(net.forward)
+        output = future.result()
+
+        #output = net.forward()
 
         H = output.shape[2]
         W = output.shape[3]
@@ -65,8 +70,8 @@ while cv2.waitKey(1) < 0:
             minVal, prob, minLoc, point = cv2.minMaxLoc(probMap)
 
             # Scale the point to fit on the original image
-            x = (frameWidth * point[0]) / W
-            y = (frameHeight * point[1]) / H
+            x = (video_width * point[0]) / W
+            y = (video_height * point[1]) / H
 
             if prob > threshold:
                 cv2.circle(frame, (int(x), int(y)), 2, (0, 255, 255), thickness=-1, lineType=cv2.FILLED)
