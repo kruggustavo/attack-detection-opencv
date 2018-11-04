@@ -8,23 +8,28 @@ class BodyPartsDetection(object):
     _labels = []
     _loadPath = ""
 
-    def __init__(self, loadPath=None, properties=None):
+    _structure = {}                 # Structure: {'arms1', [ {'c', {x, y}}, {'a', {x, y}} ] }
+
+    def __init__(self, loadPath=None, properties=None, keyPoints=None):
         print("Body multiparts detection started")
         print("Parent folder to process: '" + loadPath + "'")
         print("Starting...")
         self._propertiesPath = properties
         self._loadPath = loadPath
+        self._keyPoints = keyPoints
         self._loadFolders()
 
     def _loadFolders(self):
         for folder in os.listdir(self._loadPath):
+            print()
             print("Loading resources from '" + self._loadPath + folder + "'")
             self._loadFilesFromFolder(folder)
             print("Ready.")
         print("Sub folders scanning done.")
+        print()
 
-    def _loadFilesFromFolder(self, folderName):
-        fullPath = self._loadPath + folderName
+    def _loadFilesFromFolder(self, folderLabel):
+        fullPath = self._loadPath + folderLabel
 
         annotationsObj = Annotations(dataset_path=fullPath)
         annotations, imagePaths, label = annotationsObj.annotate()
@@ -32,9 +37,9 @@ class BodyPartsDetection(object):
         detector = ObjectDetector()
         detector.hog_descriptors(imagePaths, annotations, visualizeHog=False)
 
-        propertiesFile = self._propertiesPath + folderName + ".properties"
+        propertiesFile = self._propertiesPath + folderLabel + ".properties"
 
-        # Carga datos personalizados del detector
+        # Datos personalizados del detector
         try:
             with open(propertiesFile, "r") as ins:
                 for line in ins:
@@ -44,13 +49,39 @@ class BodyPartsDetection(object):
                         detector.setDetectWindowSize(int(v[0]) * int(v[1]))
                     if key == "epsilon":
                         detector.setEpsilon(int(value))
-            print("Found properties file for '" + folderName + "'... properties loaded!")
+
+            print("Found properties file for '" + folderLabel + "'... properties loaded!")
         except:
-            print("Not found properties file for '" + folderName + "'")
+            print("Not found properties file for '" + folderLabel + "'")
             pass
 
+        # Carga datos de puntos del cuerpo
+        keyPointsFile = self._keyPoints + folderLabel + ".points"
 
-        self._labels.append(folderName)
+        kpoints = []
+        try:
+            with open(keyPointsFile, "r") as ins:
+                print("Found keypoints file for '" + folderLabel + "'... properties loaded!")
+                for line in ins:
+                    line = line.replace(" ", "")
+                    pairs = line.split(")(")
+                    for pair in pairs:
+                        pr = pair.split(":")
+                        key = pr[0].replace("(", "")        # Point id
+                        val = pr[1].replace(")", "")        # Values
+
+                        # Keypoint position
+                        pos = {"x": val.split(".")[0].split("=")[1], "y": val.split(".")[1].split("=")[1]}
+                        kp = {key: pos}
+
+                        kpoints.append(kp)
+
+            self._structure[folderLabel] = kpoints
+        except:
+            print("Not found keypoints file for '" + folderLabel + "'")
+            pass
+
+        self._labels.append(folderLabel)
         self._objectDetectorArray.append(detector)
 
     def detect(self, frame):
@@ -58,14 +89,16 @@ class BodyPartsDetection(object):
         labels = []
 
         with ThreadPoolExecutor(max_workers=4) as executor:
+            lblkeypoints = []
             for detector, label in zip(self._objectDetectorArray, self._labels):
                 future = executor.submit(detector.detect, (frame))
                 preds = future.result()
                 if len(preds) > 0:
                     predictions.append(preds)
                     labels.append(label)
+                    lblkeypoints.append(self._structure[label])
 
-        return predictions, labels
+        return predictions, labels, lblkeypoints
 
     def determineHumanBody(self, boxes, labels):
         fullBodyBoxes = []
@@ -76,9 +109,9 @@ class BodyPartsDetection(object):
                 for part2, label2 in zip(boxes, labels):
                     if label2.startswith("legs"):
                         legX, legY, lx, ly, lxb, lyb = self.getRelevantPoints(part2)    # legs points
-                        if armX >= lx and armX <= lxb:                                    # arms X mid point between X margins from legs
+                        if armX >= lx and armX <= lxb:                                  # arms X mid point between X margins from legs
                             supposedBodyHeight = ((ayb - ay) * 3) + ay                  # supposed height of body is a space 3 times under arms
-                            if legY <= supposedBodyHeight:                               # legs are in supposed height of the body
+                            if legY <= supposedBodyHeight:                              # legs are in supposed height of the body
                                 fullBodyBoxes.append([part1, part2])                    # arms and legs = full body
 
         return fullBodyBoxes
