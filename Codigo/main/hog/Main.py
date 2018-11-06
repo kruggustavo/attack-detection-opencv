@@ -25,6 +25,9 @@ detected_count = 0
 # h = cadera, r = rodilla(i, d), p = pie (i, d)
 POSE_PAIRS = [["c", "p"], ["hd", "hi"], ["hi", "ci"], ["ci", "mi"], ["hd", "cd"], ["cd", "md"], ["p", "h"], ["h", "ri"], ["ri", "pi"], ["h", "rd"], ["rd", "pd"]]
 
+process_each_frame = 3                         # Se procesará cada X frames
+frame_count = process_each_frame
+
 def drawRectangleOnFrame(frame, humanBodies):
     if len(humanBodies) > 0:
         xa, ya, x2a, y2a = humanBodies[0][0][0]  # arms box
@@ -33,9 +36,10 @@ def drawRectangleOnFrame(frame, humanBodies):
 
 def drawHumanPose(posekeypoints):
     if len(posekeypoints) > 0:
-        poseFrame = np.zeros((320, 260, 3), np.uint8)
+        fullposeFrame = np.zeros((320, 260, 3), np.uint8)
+        partialPoseFrame = np.zeros((320, 260, 3), np.uint8)
 
-        height, width = poseFrame.shape[:2]
+        height, width = fullposeFrame.shape[:2]
         origins = {8: 0, 5: int(height / 2) - 10}           # 8 points for Arms, start at 0
                                                             # 5 points for legs, start after middle frame
         pointsMap = {}
@@ -49,34 +53,38 @@ def drawHumanPose(posekeypoints):
 
                     pointsMap[id] = (x, y)                  # Points map to draw lines
 
-                    cv2.circle(poseFrame, (x, y), 3, (0, 0, 255), -1)
-                    cv2.putText(poseFrame, id, (x + 10 , y), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255, 255, 255), 1, cv2.LINE_AA)
+                    cv2.circle(fullposeFrame, (x, y), 3, (0, 0, 255), -1)
+                    cv2.putText(fullposeFrame, id, (x + 10 , y), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255, 255, 255), 1, cv2.LINE_AA)
 
         for pair in POSE_PAIRS:
             try:
-                cv2.line(poseFrame, pointsMap[pair[0]], pointsMap[pair[1]], (0, 150, 25), 1, lineType=cv2.LINE_AA)
+                cv2.line(fullposeFrame, pointsMap[pair[0]], pointsMap[pair[1]], (0, 150, 25), 1, lineType=cv2.LINE_AA)
             except:
                 pass
 
-        cv2.imshow("Pose", poseFrame)
+        cv2.imshow("Pose", fullposeFrame)
 
 
 while True:
     r, frame = cap.read()
 
     if r:
-        frame = cv2.resize(frame, (video_width, video_height))  # Downscale to improve frame rate
-        predictions, labels, lblKeyPoints = bodyDetector.detect(frame)
+        frame_count = frame_count - 1
+        if frame_count == 0:
+            frame_count = process_each_frame
 
-        detected_count = detected_count + len(predictions)
+            frame = cv2.resize(frame, (video_width, video_height))  # Downscale to improve frame rate
+            predictions, labels, lblKeyPoints = bodyDetector.detect(frame)
 
-        if len(predictions) > 0:
-            humanBodies = bodyDetector.determineHumanBody(predictions, labels)
-            drawRectangleOnFrame(frame, humanBodies)
-            drawHumanPose(lblKeyPoints)
+            detected_count = detected_count + len(predictions)
 
-        cv2.putText(frame, str(detected_count), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.3, (255, 255, 255), 1, cv2.LINE_AA)
-        cv2.imshow("Detected", frame)
+            if len(predictions) > 0:
+                humanBodies = bodyDetector.determineHumanBody(predictions, labels)
+                drawRectangleOnFrame(frame, humanBodies)
+                drawHumanPose(lblKeyPoints)
+
+            cv2.putText(frame, str(detected_count), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.3, (255, 255, 255), 1, cv2.LINE_AA)
+            cv2.imshow("Detected", frame)
 
     k = cv2.waitKey(1)
     if k & 0xFF == ord("q"):  # Exit condition

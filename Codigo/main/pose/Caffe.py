@@ -1,7 +1,6 @@
 import cv2
 from concurrent.futures import ThreadPoolExecutor
 
-
 # video size
 video_width = 480
 video_height = 320
@@ -25,23 +24,18 @@ threshold = 0.1
 
 input_source = video_file
 cap = cv2.VideoCapture(input_source)
-hasFrame, frame = cap.read()
 
 net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)
 
 process_each_frame = 10                         # Se procesará cada X frames
 frame_count = process_each_frame
 
-pool = ThreadPoolExecutor(4)
-
 while cv2.waitKey(1) < 0:
     hasFrame, frame = cap.read()
-    frame = cv2.resize(frame, (video_width, video_height))
-
     if not hasFrame:
         cv2.waitKey()
         break
-
+    frame = cv2.resize(frame, (video_width, video_height))
     frame_count = frame_count - 1
     if frame_count == 0:
         frame_count = process_each_frame
@@ -52,10 +46,7 @@ while cv2.waitKey(1) < 0:
         inpBlob = cv2.dnn.blobFromImage(frame, 1.0 / 255, (inWidth, inHeight), (0, 0, 0), swapRB=False, crop=False)
         net.setInput(inpBlob)
 
-        future = pool.submit(net.forward)
-        output = future.result()
-
-        #output = net.forward()
+        output = net.forward()
 
         H = output.shape[2]
         W = output.shape[3]
@@ -80,16 +71,6 @@ while cv2.waitKey(1) < 0:
                 points.append((int(x), int(y)))
             else:
                 points.append(None)
-
-        color = 0
-        for pair in POSE_PAIRS:
-            color = color + 5
-            partA = pair[0]
-            partB = pair[1]
-
-            if points[partA] and points[partB]:
-                cv2.line(frame, points[partA], points[partB], (0, color, 255), 1, lineType=cv2.LINE_AA)
-
 
         # cv2.putText(frame, "OpenPose using OpenCV", (50, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 50, 0), 2, lineType=cv2.LINE_AA)
         # cv2.imshow('Output-Keypoints', frameCopy)
