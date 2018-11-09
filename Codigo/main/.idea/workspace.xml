@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de1e1734-5595-47d8-b788-d94778d6cfdd" name="Default Changelist" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/utils/Common.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame28.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame34.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame35.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame36.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame37.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame38.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame9.jpg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hog/KeyPointsFromImages.py" afterPath="$PROJECT_DIR$/utils/KeyPointsFromImages.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hog/Main.py" afterPath="$PROJECT_DIR$/hog/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/FramesFromVideo.py" afterPath="$PROJECT_DIR$/utils/FramesFromVideo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Imagenes/KeyPoints/arms_front--gun-to-left-middle.points" afterPath="$PROJECT_DIR$/../../Imagenes/KeyPoints/arms_front--gun-to-left-middle.points" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -169,8 +137,8 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hog/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="92" column="4" lean-forward="false" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="22" />
+            <state relative-caret-position="260">
+              <caret line="85" column="42" lean-forward="false" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="42" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -181,7 +149,7 @@
       <file leaf-file-name="Caffe.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pose/Caffe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
+            <state relative-caret-position="680">
               <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
@@ -303,6 +271,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -359,8 +329,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -738,13 +706,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="52" column="39" lean-forward="false" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pose/Caffe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
+        <state relative-caret-position="680">
           <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
@@ -752,8 +719,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hog/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="92" column="4" lean-forward="false" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="22" />
+        <state relative-caret-position="260">
+          <caret line="85" column="42" lean-forward="false" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="42" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>

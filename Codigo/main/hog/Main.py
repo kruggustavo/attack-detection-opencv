@@ -25,7 +25,7 @@ detected_count = 0
 # h = cadera, r = rodilla(i, d), p = pie (i, d)
 POSE_PAIRS = [["c", "p"], ["hd", "hi"], ["hi", "ci"], ["ci", "mi"], ["hd", "cd"], ["cd", "md"], ["p", "h"], ["h", "ri"], ["ri", "pi"], ["h", "rd"], ["rd", "pd"]]
 
-process_each_frame = 3                         # Se procesará cada X frames
+process_each_frame = 2                         # Se procesará cada X frames
 frame_count = process_each_frame
 
 def drawRectangleOnFrame(frame, humanBodies):
