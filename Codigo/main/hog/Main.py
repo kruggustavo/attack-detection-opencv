@@ -42,9 +42,13 @@ def drawHumanPose(posekeypoints):
         height, width = fullposeFrame.shape[:2]
         origins = {8: 0, 5: int(height / 2) - 10}           # 8 points for Arms, start at 0
                                                             # 5 points for legs, start after middle frame
+
+        windowFrame = {8: partialPoseFrame, 5: partialPoseFrame, 13: fullposeFrame}
+
         pointsMap = {}
         for bodyparts in posekeypoints:
             yOrigin = origins[len(bodyparts)]
+            targetFrame = windowFrame[len(bodyparts)]
             for point in bodyparts:
                 for id in point :                           # Point identificator: mi, md, c, ri, ...
                     x = int(point[id]["x"])
@@ -53,16 +57,16 @@ def drawHumanPose(posekeypoints):
 
                     pointsMap[id] = (x, y)                  # Points map to draw lines
 
-                    cv2.circle(fullposeFrame, (x, y), 3, (0, 0, 255), -1)
-                    cv2.putText(fullposeFrame, id, (x + 10 , y), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255, 255, 255), 1, cv2.LINE_AA)
+                    cv2.circle(targetFrame, (x, y), 3, (0, 0, 255), -1)
+                    cv2.putText(targetFrame, id, (x + 10 , y), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255, 255, 255), 1, cv2.LINE_AA)
 
         for pair in POSE_PAIRS:
             try:
-                cv2.line(fullposeFrame, pointsMap[pair[0]], pointsMap[pair[1]], (0, 150, 25), 1, lineType=cv2.LINE_AA)
+                cv2.line(targetFrame, pointsMap[pair[0]], pointsMap[pair[1]], (0, 150, 25), 1, lineType=cv2.LINE_AA)
             except:
                 pass
 
-        cv2.imshow("Pose", fullposeFrame)
+        cv2.imshow(str(len(bodyparts)), targetFrame)
 
 
 while True:

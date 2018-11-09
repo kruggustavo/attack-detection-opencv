@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de1e1734-5595-47d8-b788-d94778d6cfdd" name="Default Changelist" comment="" />
+    <list default="true" id="de1e1734-5595-47d8-b788-d94778d6cfdd" name="Default Changelist" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/utils/Common.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame13.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame14.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame15.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame17.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame18.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame19.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame20.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame21.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame23.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame28.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame34.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame35.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame36.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame37.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame38.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Imagenes/Output/frame9.jpg" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hog/KeyPointsFromImages.py" afterPath="$PROJECT_DIR$/utils/KeyPointsFromImages.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hog/Main.py" afterPath="$PROJECT_DIR$/hog/Main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/FramesFromVideo.py" afterPath="$PROJECT_DIR$/utils/FramesFromVideo.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Imagenes/KeyPoints/arms_front--gun-to-left-middle.points" afterPath="$PROJECT_DIR$/../../Imagenes/KeyPoints/arms_front--gun-to-left-middle.points" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,14 +154,35 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1859706542">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hog/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="64" column="40" lean-forward="false" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+            <state relative-caret-position="1290">
+              <caret line="92" column="4" lean-forward="false" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Caffe.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pose/Caffe.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="369">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -160,6 +215,8 @@
       <find>__</find>
       <find>'image'</find>
       <find>_structure</find>
+      <find>video_file</find>
+      <find>video_</find>
     </findStrings>
     <replaceStrings>
       <replace>\\</replace>
@@ -174,7 +231,12 @@
       <replace>bodyDetector</replace>
       <replace>_</replace>
       <replace>&quot;Presione ESC para terminar&quot;</replace>
+      <replace>media_file</replace>
+      <replace>frame_</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -204,7 +266,6 @@
         <option value="$PROJECT_DIR$/utils/MyImageUtils.py" />
         <option value="$PROJECT_DIR$/tests/backgroundsubstraction.py" />
         <option value="$PROJECT_DIR$/tests/tracker.py" />
-        <option value="$PROJECT_DIR$/utils/FramesFromVideo.py" />
         <option value="$PROJECT_DIR$/hog/MainMulticlass.py" />
         <option value="$PROJECT_DIR$/hog/MultiClassDetector.py" />
         <option value="$PROJECT_DIR$/utils/Common.py" />
@@ -213,19 +274,20 @@
         <option value="$PROJECT_DIR$/hog/Test.py" />
         <option value="$PROJECT_DIR$/hog/ObjectDetector.py" />
         <option value="$PROJECT_DIR$/points/PointingImages.py" />
-        <option value="$PROJECT_DIR$/hog/KeyPointsFromImages.py" />
         <option value="$PROJECT_DIR$/hog/BodyPartsDetection.py" />
         <option value="$PROJECT_DIR$/pose/Caffe.py" />
         <option value="$PROJECT_DIR$/pose/Threading.py" />
+        <option value="$PROJECT_DIR$/hog/KeyPointsFromImages.py" />
+        <option value="$PROJECT_DIR$/utils/FramesFromVideo.py" />
         <option value="$PROJECT_DIR$/hog/Main.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="-1" />
     <option name="width" value="1366" />
-    <option name="height" value="729" />
+    <option name="height" value="727" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -241,7 +303,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -251,6 +312,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -284,6 +359,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -292,18 +368,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/hog" />
-      <recent name="$PROJECT_DIR$/tests" />
-      <recent name="D:\Google Drive\Tesis\Desarrollo\python\main\tests" />
-      <recent name="D:\Google Drive\Tesis\Desarrollo\python\main\utils" />
-      <recent name="D:\Google Drive\Tesis\Desarrollo\python\main\hog" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/hog" />
       <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo\python\main\multiplehog" />
       <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo\python\main\utils" />
       <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/hog" />
+      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="D:\Google Drive\Tesis\Desarrollo\python\main\tests" />
+      <recent name="D:\Google Drive\Tesis\Desarrollo\python\main\utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -319,42 +395,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.MainMulticlass">
-    <configuration default="false" name="Caffe" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pose" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Desarrollo" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pose/Caffe.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hog" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Desarrollo" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/Test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="MainMulticlass" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -385,7 +425,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Desarrollo" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hog/KeyPointsFromImages.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/KeyPointsFromImages.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -404,6 +444,42 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Desarrollo" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pose/Threading.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="FramesFromVideo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Desarrollo" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/FramesFromVideo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Caffe" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pose" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Desarrollo" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pose/Caffe.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -474,19 +550,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Caffe" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Main" />
-      <item index="2" class="java.lang.String" itemvalue="Python.MainMulticlass" />
-      <item index="3" class="java.lang.String" itemvalue="Python.PointingImages" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Threading" />
+      <item index="0" class="java.lang.String" itemvalue="Python.MainMulticlass" />
+      <item index="1" class="java.lang.String" itemvalue="Python.PointingImages" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Threading" />
+      <item index="3" class="java.lang.String" itemvalue="Python.FramesFromVideo" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Caffe" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.MainMulticlass" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Threading" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Caffe" />
-        <item index="3" class="java.lang.String" itemvalue="Python.PointingImages" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Caffe" />
+        <item index="2" class="java.lang.String" itemvalue="Python.FramesFromVideo" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Threading" />
+        <item index="4" class="java.lang.String" itemvalue="Python.PointingImages" />
       </list>
     </recent_temporary>
   </component>
@@ -507,18 +583,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1366" height="729" extended-state="7" />
+    <frame x="0" y="0" width="1366" height="727" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15762463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20790629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22929937" sideWeight="0.50293255" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11904762" sideWeight="0.49706745" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25974026" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24444444" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -569,32 +645,12 @@
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/cv2/cv2/__init__.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/dlib/simple_object_detector_training_options.py" />
     <entry file="file://$PROJECT_DIR$/utils/MyImageUtils.py" />
-    <entry file="file://$PROJECT_DIR$/utils/BoxSelector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="52" column="39" lean-forward="false" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/Common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1802">
-          <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/Common.py" />
     <entry file="file://$PROJECT_DIR$/tests/cornersdetection.py" />
     <entry file="file://$PROJECT_DIR$/tests/cascade_detection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="25" column="60" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/FramesFromVideo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="61" column="41" lean-forward="false" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -650,13 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hog/KeyPointsFromImages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hog/BodyPartsDetection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="53">
@@ -668,27 +717,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/KeyPointsFromImages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="39" column="120" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/FramesFromVideo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="21" lean-forward="false" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/BoxSelector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="52" column="39" lean-forward="false" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pose/Caffe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="40" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="369">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hog/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="64" column="40" lean-forward="false" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="1290">
+          <caret line="92" column="4" lean-forward="false" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,7 +1,5 @@
 import cv2
-import numpy as np
-from utils.BoxSelector import BoxSelector
-from utils.MyImageUtils import MyImageUtils
+from tkinter import filedialog, Tk, simpledialog
 
 ARMS = 0
 LEGS = 1
@@ -15,24 +13,31 @@ def getPortionOfBoddy(mode=-1, x=0, y=0, h=0, w=0):
         return y,y+h,x,x+w
 
 
-myImageUtils = MyImageUtils()
-workpath = "/home/gustavokrug/Documents/Tesis"
-video_file = workpath +"/Videos/3.mp4"
+#myImageUtils = MyImageUtils()
+initialimagesdir = "/home/gustavokrug/Documents/attack-detection-opencv/"
+IS_VIDEO_FILE = True
 
-video_width = 800
-video_height = 600
+root = Tk()
+root.withdraw()
+media_file = filedialog.askopenfilename(initialdir=initialimagesdir)
+
+if media_file.endswith(".jpg") or media_file.endswith(".jpeg") or media_file.endswith(".png") or media_file.endswith(".bmp"):
+    IS_VIDEO_FILE = False
+
+frame_width = 800
+frame_height = 600
 
 sample_width = 520
 sample_height = 980
 
-cutted_images_folder = "/home/gustavokrug/Documents/attack-detection-opencv/Imagenes/dataset/"
+cutted_images_folder = filedialog.askdirectory(initialdir=initialimagesdir)
 
-video_area = video_width * video_height     # Area en pixeles del tamaño del frame
+frame_area = frame_width * frame_height     # Area en pixeles del tamaño del frame
 
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
-cap = cv2.VideoCapture(video_file)
+
 humans_count = 0
 margins = 10
 admited_percentage_image_size = 8              # Porcentaje de tamaño de imagenes positivas
@@ -40,15 +45,24 @@ process_each_frame = 1                         # Se procesará cada X frames
 frame_count = process_each_frame
 humans_count = 0
 
+if IS_VIDEO_FILE == True:
+    cap = cv2.VideoCapture(media_file)
+else:
+    frame = cv2.imread(media_file)
+
 while True:
-    r, frame = cap.read()
+    r = True;
+    if IS_VIDEO_FILE == True:
+        r, frame = cap.read()
+
     roi = None
+
     if r:
         frame_count = frame_count - 1
         if frame_count == 0:
             frame_count = process_each_frame
 
-            frame = cv2.resize(frame, (video_width, video_height))  # Downscale to improve frame rate
+            frame = cv2.resize(frame, (frame_width, frame_height))  # Downscale to improve frame rate
             frame = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
 
             rects1, weights1 = hog.detectMultiScale(frame)
@@ -57,7 +71,7 @@ while True:
                 x = x - 10
                 w = w + 10
                 y = y + 10
-                percentage = (w * h * 100) / (video_area)
+                percentage = (w * h * 100) / (frame_area)
                 if percentage > admited_percentage_image_size:
                     y, h, x, w = getPortionOfBoddy(-1, x, y, h, w)
                     print(y,h,x,w)
@@ -66,7 +80,7 @@ while True:
                     dim = (600, int(int(roi.shape[0] * r) / 10) * 10)
                     roi = cv2.resize(roi, dim, interpolation=cv2.INTER_AREA)
 
-                    outputfilename = cutted_images_folder + ("frame%d.jpg" % humans_count)
+                    outputfilename = cutted_images_folder + ("/frame%d.jpg" % humans_count)
                     print(outputfilename)
                     humans_count += 1
                     print("Humanos detectados :" + str(humans_count))
@@ -82,3 +96,6 @@ while True:
             if k & 0xFF == ord("q"):  # Exit condition
                 break
 
+    if IS_VIDEO_FILE == False:
+        k = cv2.waitKey(0)
+        break

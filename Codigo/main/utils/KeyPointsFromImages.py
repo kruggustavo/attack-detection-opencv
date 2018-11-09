@@ -3,7 +3,7 @@ import numpy as np
 from tkinter import filedialog, Tk, simpledialog
 
 pointsStr = ""
-initialimagesdir = "/home/gustavokrug/Documents/attack-detection-opencv/Imagenes/Dataset"
+initialimagesdir = "/home/gustavokrug/Documents/attack-detection-opencv/"
 
 # Mouse callback function
 def draw_circle(event, x, y, flags,param):
