@@ -39,7 +39,7 @@ class BodyPartsDetection(object):
 
         propertiesFile = self._propertiesPath + folderLabel + ".properties"
 
-        # Datos personalizados del detector
+        # Parámetros del detector
         try:
             with open(propertiesFile, "r") as ins:
                 for line in ins:

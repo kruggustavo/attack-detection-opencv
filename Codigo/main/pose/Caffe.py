@@ -9,8 +9,8 @@ workpath = "/home/gustavokrug/Documents/attack-detection-opencv"
 video_file = workpath +"/Videos/3.mp4"
 
 # Specify the paths for the 2 files
-protoFile = "/home/gustavokrug/Documents/Documentacion/Models/coco/pose_deploy_linevec_faster_4_stages.prototxt"
-weightsFile = "/home/gustavokrug/Documents/Documentacion/Models/coco/pose_iter_160000.caffemodel"
+protoFile = "/home/gustavokrug/Documents/Tesis/Documentacion/Models/coco/pose_deploy_linevec_faster_4_stages.prototxt"
+weightsFile = "/home/gustavokrug/Documents/Tesis/Documentacion/Models/coco/pose_iter_160000.caffemodel"
 #frame = cv2.imread(workpath + "/Imagenes/tst.jpg")
 
 MODE = "MPI"
@@ -27,7 +27,7 @@ cap = cv2.VideoCapture(input_source)
 
 net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)
 
-process_each_frame = 10                         # Se procesará cada X frames
+process_each_frame = 5                         # Se procesará cada X frames
 frame_count = process_each_frame
 
 while cv2.waitKey(1) < 0:
