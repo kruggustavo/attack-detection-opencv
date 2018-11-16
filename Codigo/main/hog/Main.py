@@ -93,6 +93,8 @@ for i in range(max_num_threads):
     thread.start()
     threads_array.append(thread)
 
+sk = None
+
 while True:
     r, frame = cap.read()
 
@@ -106,7 +108,9 @@ while True:
 
             if skeletonQueue.qsize() > 0:
                 sk = skeletonQueue.get()
-                cv2.imshow("skeleton", sk)
+
+            if sk is not None:
+                frame = np.concatenate((frame, sk), axis=1)
 
             cv2.imshow("Detected", frame)
 
