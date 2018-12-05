@@ -9,7 +9,7 @@ import time
 # Referencia: http://www.hackevolve.com/create-your-own-object-detector/
 #
 
-workpath = "/home/gustavokrug/Documents/attack-detection-opencv"
+workpath = "/home/gustavokrug/Documents/Tesis"
 video_file = workpath +"/Videos/3.mp4"
 dataset_path = workpath +"/Imagenes/Dataset/"
 properties = workpath + "/Imagenes/Properties/"
