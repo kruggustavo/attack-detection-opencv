@@ -30,7 +30,7 @@ frame_count = process_each_frame
 framesQueue = queue.Queue()
 skeletonQueue = queue.Queue()
 
-max_num_threads = 4
+max_num_threads = 2
 threads_array = []
 
 bodyDetector = BodyPartsDetection(dataset_path, properties, keyPoints)
