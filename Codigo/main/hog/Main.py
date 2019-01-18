@@ -27,8 +27,9 @@ POSE_PAIRS = [["c", "p"], ["hd", "hi"], ["hi", "ci"], ["ci", "mi"], ["hd", "cd"]
 process_each_frame = 2                         # Se procesará cada X frames
 frame_count = process_each_frame
 
-framesQueue = queue.Queue()
-skeletonQueue = queue.Queue()
+framesQueue = queue.Queue()                     # Frames para procesar
+skeletonQueue = queue.Queue()                   # Frames con puntos del esqueleto ya dibujados
+pointsQueue = queue.Queue()                     # Array de puntos del esqueleto detectado
 
 max_num_threads = 2
 threads_array = []
@@ -59,6 +60,7 @@ def consumerDetectorThread():
             #    cv2.rectangle(frame, (xa, ya), (x2b, y2b), (0, 0, 255), 2)  # rectangle for full body
             targetFrame = drawHumanPose(lblKeyPoints, blankFrame.copy())
             skeletonQueue.put(targetFrame)
+            pointsQueue.put(lblKeyPoints)
 
 def drawHumanPose(posekeypoints, targetFrame):
     if len(posekeypoints) > 0:
@@ -86,6 +88,12 @@ def drawHumanPose(posekeypoints, targetFrame):
 
         return targetFrame
 
+def getDerivate(point1, point2):
+    x1 = point1.x
+    y1 = point1.y
+    x2 = point2.x
+    y2 = point2.y
+
 
 #Create X threads
 for i in range(max_num_threads):
@@ -111,6 +119,26 @@ while True:
 
             if sk is not None:
                 frame = np.concatenate((frame, sk), axis=1)
+
+
+            if pointsQueue.qsize() > 0:
+                posekeypoints = pointsQueue.get()
+                pointsMap = {}
+                for bodyparts in posekeypoints:
+                    for point in bodyparts:
+                        for id in point:  # Point identificator: mi, md, c, ri, ...
+                            x = int(point[id]["x"])
+                            y = int(point[id]["y"])
+                            pointsMap[id] = (x, y)
+
+                # Línea formada por una Parte del cuerpo = {(x1,y1), (x2,y2)}
+                trunkPoints = {pointsMap['p'], pointsMap['h']}              # Tronco
+                leftForearmPoints = {pointsMap['mi'], pointsMap['ci']}      # Antebrazo izq
+                rightForearmPoints = {pointsMap['md'], pointsMap['cd']}     # Antebrazo der
+                leftThighPoints = {pointsMap['h'], pointsMap['ri']}         # Muslo izq
+                rightThighPoints = {pointsMap['h'], pointsMap['rd']}        # Muslo der
+                leftLegPoints = {pointsMap['ri'], pointsMap['pi']}          # Pierna izq (pantorrilla)
+                rightLegPoints = {pointsMap['rd'], pointsMap['pd']}         # Pierna izq (pantorrilla)
 
             cv2.imshow("Detected", frame)
 

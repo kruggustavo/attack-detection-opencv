@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de1e1734-5595-47d8-b788-d94778d6cfdd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/hog/AngleVector.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hog/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/hog/Main.py" afterDir="false" />
     </list>
@@ -16,11 +17,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hog/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+            <state relative-caret-position="327">
+              <caret line="140" column="71" selection-start-line="140" selection-start-column="71" selection-end-line="140" selection-end-column="71" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hog/AngleVector.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="46" lean-forward="true" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -118,6 +128,7 @@
         <option value="$PROJECT_DIR$/hog/BodyPartsDetection.py" />
         <option value="$PROJECT_DIR$/utils/KeyPointsFromImages.py" />
         <option value="$PROJECT_DIR$/utils/KeyPointsFromFrame.py" />
+        <option value="$PROJECT_DIR$/hog/AngleVector.py" />
         <option value="$PROJECT_DIR$/hog/Main.py" />
       </list>
     </option>
@@ -140,6 +151,16 @@
             <path>
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="hog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -352,19 +373,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="727" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15413254" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16703953" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23471074" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2334437" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.22975206" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.24337748" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -374,7 +396,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/digits.png" />
     <entry file="file://$PROJECT_DIR$/digits-classification.jpg" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/cv2/ml.py" />
     <entry file="file://$PROJECT_DIR$/train_digits.py" />
@@ -437,13 +458,6 @@
     <entry file="file://$USER_HOME$/.PyCharmCE2017.1/system/python_stubs/-1247971763/cv2/dnn.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2017.1/system/python_stubs/-1247971763/dlib/simple_object_detector_training_options.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2017.1/system/python_stubs/-1247971763/dlib/simple_object_detector.py" />
-    <entry file="file://$PROJECT_DIR$/hog/ObjectDetector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3.6/tkinter/filedialog.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2017.1/system/python_stubs/-1247971763/cv2/cv2/__init__.py" />
     <entry file="file://$PROJECT_DIR$/hog/GatherAnnotations.py">
@@ -457,13 +471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pose/Caffe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-49">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
@@ -505,10 +512,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pose/Caffe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="22" column="15" lean-forward="true" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hog/ObjectDetector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" selection-start-line="3" selection-end-line="14" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hog/AngleVector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="46" lean-forward="true" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hog/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+        <state relative-caret-position="327">
+          <caret line="140" column="71" selection-start-line="140" selection-start-column="71" selection-end-line="140" selection-end-column="71" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
