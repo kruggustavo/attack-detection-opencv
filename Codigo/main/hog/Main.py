@@ -1,15 +1,20 @@
 from hog.BodyPartsDetection import BodyPartsDetection
+from hog.Drawer import Drawer
 import cv2
 import numpy as np
 import queue
 import threading
-import time
 
 #
-# Referencia: http://www.hackevolve.com/create-your-own-object-detector/
+# Attack detection
+# Detector de ataques y amenazas humanas en imagenes secuenciales mediante el entrenamiento de redes neuronales
+# Trabajo final de Grado para la obtencion del titulo de Ingeniero Informatico
+# Autor: Gustavo Krug
+# Universidad Catolica Nuestra Señora de la Asuncion, 2019
 #
 
-workpath = "/Users/gustavokrug/Documents/attack-detection"
+# Parametros generales
+workpath = "/home/gustavo/Documentos/attack-detection-opencv"
 video_file = workpath +"/Videos/3.mp4"
 dataset_path = workpath +"/Imagenes/Dataset/"
 properties = workpath + "/Imagenes/Properties/"
@@ -19,25 +24,24 @@ video_width = 480
 video_height = 320
 cap = cv2.VideoCapture(video_file)
 
-# Referencias
-# c = cabeza, h = hombro (i, d), c = codo (i, d), m = mano (i, d), p = pecho
-# h = cadera, r = rodilla(i, d), p = pie (i, d)
-POSE_PAIRS = [["c", "p"], ["hd", "hi"], ["hi", "ci"], ["ci", "mi"], ["hd", "cd"], ["cd", "md"], ["p", "h"], ["h", "ri"], ["ri", "pi"], ["h", "rd"], ["rd", "pd"]]
-
-process_each_frame = 2                         # Se procesará cada X frames
+process_each_frame = 2                          # Se procesará cada X frames
 frame_count = process_each_frame
 
+# Colas de datos
 framesQueue = queue.Queue()                     # Frames para procesar
 skeletonQueue = queue.Queue()                   # Frames con puntos del esqueleto ya dibujados
 pointsQueue = queue.Queue()                     # Array de puntos del esqueleto detectado
 
-max_num_threads = 2
+max_num_threads = 3
 threads_array = []
 
+# Detector de objetos
 bodyDetector = BodyPartsDetection(dataset_path, properties, keyPoints)
-detect_cnt = 0
 
-blankFrame = np.zeros((320, 260, 3), np.uint8)
+# Dibujador y manejador de puntos geometricos de poses
+drawer = Drawer()
+
+detect_cnt = 0
 
 def consumerDetectorThread():
     global detect_cnt, bodyDetector
@@ -52,47 +56,9 @@ def consumerDetectorThread():
         detect_cnt = detect_cnt + len(predictions)
 
         if len(predictions) > 0:
-            print(str(time.time())[-6:] + ' Half/full Parts detected: ' + str(len(lblKeyPoints)))
-            #humanBodies = bodyDetector.determineHumanBody(predictions, labels)
-            #if len(humanBodies) > 0:
-            #    xa, ya, x2a, y2a = humanBodies[0][0][0]  # arms box
-            #    xb, yb, x2b, y2b = humanBodies[0][1][0]  # legs box
-            #    cv2.rectangle(frame, (xa, ya), (x2b, y2b), (0, 0, 255), 2)  # rectangle for full body
-            targetFrame = drawHumanPose(lblKeyPoints, blankFrame.copy())
+            targetFrame = drawer.drawHumanPose(lblKeyPoints)
             skeletonQueue.put(targetFrame)
             pointsQueue.put(lblKeyPoints)
-
-def drawHumanPose(posekeypoints, targetFrame):
-    if len(posekeypoints) > 0:
-        height, width = targetFrame.shape[:2]
-        origins = {8: 0, 5: int(height / 2) - 10}           # 8 points for Arms, start at 0
-                                                            # 5 points for legs, start after middle frame
-        pointsMap = {}
-        for bodyparts in posekeypoints:
-            yOrigin = origins[len(bodyparts)]
-            for point in bodyparts:
-                for id in point :                           # Point identificator: mi, md, c, ri, ...
-                    x = int(point[id]["x"])
-                    y = int(point[id]["y"])
-                    y = int(y / 2) + yOrigin
-                    pointsMap[id] = (x, y)                  # Points map to draw lines
-
-                    cv2.circle(targetFrame, (x, y), 3, (0, 0, 255), -1)
-                    cv2.putText(targetFrame, id, (x + 10 , y), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255, 255, 255), 1, cv2.LINE_AA)
-
-        for pair in POSE_PAIRS:
-            try:
-                cv2.line(targetFrame, pointsMap[pair[0]], pointsMap[pair[1]], (0, 150, 25), 1, lineType=cv2.LINE_AA)
-            except:
-                pass
-
-        return targetFrame
-
-def getDerivate(point1, point2):
-    x1 = point1.x
-    y1 = point1.y
-    x2 = point2.x
-    y2 = point2.y
 
 
 #Create X threads
@@ -120,25 +86,10 @@ while True:
             if sk is not None:
                 frame = np.concatenate((frame, sk), axis=1)
 
-
             if pointsQueue.qsize() > 0:
                 posekeypoints = pointsQueue.get()
-                pointsMap = {}
-                for bodyparts in posekeypoints:
-                    for point in bodyparts:
-                        for id in point:  # Point identificator: mi, md, c, ri, ...
-                            x = int(point[id]["x"])
-                            y = int(point[id]["y"])
-                            pointsMap[id] = (x, y)
 
-                # Línea formada por una Parte del cuerpo = {(x1,y1), (x2,y2)}
-                trunkPoints = {pointsMap['p'], pointsMap['h']}              # Tronco
-                leftForearmPoints = {pointsMap['mi'], pointsMap['ci']}      # Antebrazo izq
-                rightForearmPoints = {pointsMap['md'], pointsMap['cd']}     # Antebrazo der
-                leftThighPoints = {pointsMap['h'], pointsMap['ri']}         # Muslo izq
-                rightThighPoints = {pointsMap['h'], pointsMap['rd']}        # Muslo der
-                leftLegPoints = {pointsMap['ri'], pointsMap['pi']}          # Pierna izq (pantorrilla)
-                rightLegPoints = {pointsMap['rd'], pointsMap['pd']}         # Pierna izq (pantorrilla)
+                drawer.getBodyAngles(posekeypoints)
 
             cv2.imshow("Detected", frame)
 

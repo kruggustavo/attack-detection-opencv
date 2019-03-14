@@ -1,6 +1,12 @@
 import dlib
 import cv2
 
+#
+# Referencia: http://www.hackevolve.com/create-your-own-object-detector/
+#
+# Detector de objetos
+#
+
 class ObjectDetector(object):
     def __init__(self, options=None, loadPath=None):
         self.options = options

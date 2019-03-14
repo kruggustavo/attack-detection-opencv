@@ -8,7 +8,7 @@ class BodyPartsDetection(object):
     _labels = []
     _loadPath = ""
 
-    _structure = {}                 # Structure: {'arms1', [ {'c', {x, y}}, {'a', {x, y}} ] }
+    _structure = {}                 # Estructura: {'arms1', [ {'c', {x, y}}, {'a', {x, y}} ] }
 
     def __init__(self, loadPath=None, properties=None, keyPoints=None):
         print("Body multiparts detection started")
@@ -68,9 +68,9 @@ class BodyPartsDetection(object):
                     for pair in pairs:
                         pr = pair.split(":")
                         key = pr[0].replace("(", "")        # Point id
-                        val = pr[1].replace(")", "")        # Values
+                        val = pr[1].replace(")", "")        # Valores
 
-                        # Keypoint position
+                        # Posicion del keypoint
                         pos = {"x": val.split(".")[0].split("=")[1], "y": val.split(".")[1].split("=")[1]}
                         kp = {key: pos}
 
@@ -105,14 +105,14 @@ class BodyPartsDetection(object):
 
         for part1, label1 in zip(boxes, labels):
             if label1.startswith("arms"):
-                armX, armY, ax, ay, axb, ayb = self.getRelevantPoints(part1)            # arms points
+                armX, armY, ax, ay, axb, ayb = self.getRelevantPoints(part1)            # brazos
                 for part2, label2 in zip(boxes, labels):
                     if label2.startswith("legs"):
-                        legX, legY, lx, ly, lxb, lyb = self.getRelevantPoints(part2)    # legs points
-                        if armX >= lx and armX <= lxb:                                  # arms X mid point between X margins from legs
-                            supposedBodyHeight = ((ayb - ay) * 3) + ay                  # supposed height of body is a space 3 times under arms
-                            if legY <= supposedBodyHeight:                              # legs are in supposed height of the body
-                                fullBodyBoxes.append([part1, part2])                    # arms and legs = full body
+                        legX, legY, lx, ly, lxb, lyb = self.getRelevantPoints(part2)    # piernas
+                        if armX >= lx and armX <= lxb:                                  # punto medio de brazos entre margenes de piernas
+                            supposedBodyHeight = ((ayb - ay) * 3) + ay                  # altura del cuerpo es supuestamente 3 veces el area de brazos
+                            if legY <= supposedBodyHeight:                              # piernas se encuentran dentro del area del cuerpo
+                                fullBodyBoxes.append([part1, part2])                    # brazos + piernas = cuerpo completo
 
         return fullBodyBoxes
 
