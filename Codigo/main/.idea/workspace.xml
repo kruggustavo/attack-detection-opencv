@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de1e1734-5595-47d8-b788-d94778d6cfdd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/MathUtilities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Desarrollo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Desarrollo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hog/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/hog/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hog/Drawer.py" beforeDir="false" afterPath="$PROJECT_DIR$/hog/Drawer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hog/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="513">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -29,10 +29,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hog/AngleVector.py">
+        <entry file="file://$PROJECT_DIR$/hog/Drawer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+            <state relative-caret-position="170">
+              <caret line="78" column="37" lean-forward="true" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/utils/MathUtilities.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -66,6 +78,7 @@
       <find>_structure</find>
       <find>video_file</find>
       <find>video_</find>
+      <find>'</find>
     </findStrings>
     <replaceStrings>
       <replace>\\</replace>
@@ -82,6 +95,7 @@
       <replace>&quot;Presione ESC para terminar&quot;</replace>
       <replace>media_file</replace>
       <replace>frame_</replace>
+      <replace>&quot;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -119,25 +133,28 @@
         <option value="$PROJECT_DIR$/hog/MultiClassDetector.py" />
         <option value="$PROJECT_DIR$/utils/Common.py" />
         <option value="$PROJECT_DIR$/utils/BoxSelector.py" />
-        <option value="$PROJECT_DIR$/hog/GatherAnnotations.py" />
         <option value="$PROJECT_DIR$/hog/Test.py" />
-        <option value="$PROJECT_DIR$/hog/ObjectDetector.py" />
         <option value="$PROJECT_DIR$/points/PointingImages.py" />
         <option value="$PROJECT_DIR$/pose/Threading.py" />
         <option value="$PROJECT_DIR$/hog/KeyPointsFromImages.py" />
         <option value="$PROJECT_DIR$/utils/FramesFromVideo.py" />
         <option value="$PROJECT_DIR$/pose/Caffe.py" />
-        <option value="$PROJECT_DIR$/hog/BodyPartsDetection.py" />
         <option value="$PROJECT_DIR$/utils/KeyPointsFromImages.py" />
         <option value="$PROJECT_DIR$/utils/KeyPointsFromFrame.py" />
         <option value="$PROJECT_DIR$/hog/AngleVector.py" />
+        <option value="$PROJECT_DIR$/hog/GatherAnnotations.py" />
+        <option value="$PROJECT_DIR$/hog/BodyPartsDetection.py" />
+        <option value="$PROJECT_DIR$/hog/ObjectDetector.py" />
         <option value="$PROJECT_DIR$/hog/Main.py" />
+        <option value="$PROJECT_DIR$/utils/MathUtilities.py" />
+        <option value="$PROJECT_DIR$/hog/Drawer.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1366" />
-    <option name="height" value="727" />
+    <option name="y" value="30" />
+    <option name="width" value="1362" />
+    <option name="height" value="695" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -173,7 +190,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -374,20 +391,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="704" extended-state="6" />
+    <frame x="0" y="30" width="1366" height="696" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16654275" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15652819" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23202614" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22813036" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.24337748" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.23280424" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -397,7 +415,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/digits-classification.jpg" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/cv2/ml.py" />
     <entry file="file://$PROJECT_DIR$/train_digits.py" />
     <entry file="file://$PROJECT_DIR$/tests/openpose.py" />
@@ -421,7 +438,6 @@
     <entry file="file://$PROJECT_DIR$/utils/MyMathUtils.py" />
     <entry file="file://$PROJECT_DIR$/hog/TrainDetector.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/dlib/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/tests/Test.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/cv2/cv2/HOGDescriptor.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/cv2/cv2/__init__.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/dlib/simple_object_detector_training_options.py" />
@@ -461,24 +477,10 @@
     <entry file="file://$USER_HOME$/.PyCharmCE2017.1/system/python_stubs/-1247971763/dlib/simple_object_detector.py" />
     <entry file="file:///usr/lib/python3.6/tkinter/filedialog.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2017.1/system/python_stubs/-1247971763/cv2/cv2/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/hog/GatherAnnotations.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/BoxSelector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hog/BodyPartsDetection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-465">
-          <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -520,27 +522,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hog/AngleVector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hog/BodyPartsDetection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hog/GatherAnnotations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-109">
+          <caret line="9" column="29" selection-start-line="8" selection-start-column="2" selection-end-line="9" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hog/ObjectDetector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" selection-start-line="3" selection-end-line="14" selection-end-column="66" />
+        <state relative-caret-position="98">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hog/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="513">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hog/AngleVector.py">
+    <entry file="file://$PROJECT_DIR$/hog/Drawer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+        <state relative-caret-position="170">
+          <caret line="78" column="37" lean-forward="true" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/MathUtilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
         </state>
       </provider>
     </entry>

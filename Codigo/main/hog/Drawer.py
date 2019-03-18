@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import time
-
+import utils.MathUtilities
 
 #
 # Dibuja puntos geometricos y permite operaciones con ellos
@@ -62,30 +62,29 @@ class Drawer:
         pointsNumber = len(pointsMap)
 
         # Línea formada por una Parte del cuerpo = {(x1,y1), (x2,y2)}
-        try:
-            lines = {}
-            # Obtenemos lineas de acuerdo a los puntos
+        lines = {}
+        # Obtenemos lineas de acuerdo a los puntos
+        # lines[indice parte del cuerpo] = {{puntos de la recta
+        if pointsNumber == self.POINTS_NUMBER_FOR_ARMS:
+            lines["leftForearmPoints"] = {pointsMap["mi"], pointsMap["ci"]}     # Antebrazo izq
+            lines["rightForearmPoints"] = {pointsMap["md"], pointsMap["cd"]}    # Antebrazo der
 
-            # lines[indice parte del cuerpo] = {{puntos de la recta
+        elif pointsNumber == self.POINTS_NUMBER_FOR_LEGS:
+            lines["leftThighPoints"] = {pointsMap["h"], pointsMap["ri"]}        # Muslo izq
+            lines["rightThighPoints"] = {pointsMap["h"], pointsMap["rd"]}       # Muslo der
+            lines["leftLegPoints"] = {pointsMap["ri"], pointsMap["pi"]}         # Pierna izq (pantorrilla)
+            lines["rightLegPoints"] = {pointsMap["rd"], pointsMap["pd"]}        # Pierna izq (pantorrilla)
 
-            if pointsNumber == self.POINTS_NUMBER_FOR_ARMS:
-                lines["leftForearmPoints"] = {pointsMap["mi"], pointsMap["ci"]}     # Antebrazo izq
-                lines["rightForearmPoints"] = {pointsMap["md"], pointsMap["cd"]}    # Antebrazo der
-               
-            elif pointsNumber == self.POINTS_NUMBER_FOR_LEGS:
-                leftThighPoints = {pointsMap["h"], pointsMap["ri"]}         # Muslo izq
-                rightThighPoints = {pointsMap["h"], pointsMap["rd"]}        # Muslo der
-                leftLegPoints = {pointsMap["ri"], pointsMap["pi"]}          # Pierna izq (pantorrilla)
-                rightLegPoints = {pointsMap["rd"], pointsMap["pd"]}         # Pierna izq (pantorrilla)
-            else:
-                trunkPoints = {pointsMap["p"], pointsMap["h"]}              # Tronco
-                leftForearmPoints = {pointsMap["mi"], pointsMap["ci"]}      # Antebrazo izq
-                rightForearmPoints = {pointsMap["md"], pointsMap["cd"]}     # Antebrazo der
-                leftThighPoints = {pointsMap["h"], pointsMap["ri"]}         # Muslo izq
-                rightThighPoints = {pointsMap["h"], pointsMap["rd"]}        # Muslo der
-                leftLegPoints = {pointsMap["ri"], pointsMap["pi"]}          # Pierna izq (pantorrilla)
-                rightLegPoints = {pointsMap["rd"], pointsMap["pd"]}         # Pierna izq (pantorrilla)
+        else:
+            lines["leftForearmPoints"] = {pointsMap["mi"], pointsMap["ci"]}     # Antebrazo izq
+            lines["rightForearmPoints"] = {pointsMap["md"], pointsMap["cd"]}    # Antebrazo der
+            lines["leftThighPoints"] = {pointsMap["h"], pointsMap["ri"]}        # Muslo izq
+            lines["rightThighPoints"] = {pointsMap["h"], pointsMap["rd"]}       # Muslo der
+            lines["leftLegPoints"] = {pointsMap["ri"], pointsMap["pi"]}         # Pierna izq (pantorrilla)
+            lines["rightLegPoints"] = {pointsMap["rd"], pointsMap["pd"]}        # Pierna izq (pantorrilla)
 
+            lines["trunkPoints"] = {pointsMap["p"], pointsMap["h"]}             # Tronco
 
-        except:
-            pass
+        # Obtenemos angulos entre lineas
+        # Si tronco no se puede establecer, el tronco forma la linea de hombros a la cabeza
+        x = MathUtilities.getAngle(lines[])
