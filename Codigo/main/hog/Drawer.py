@@ -87,4 +87,4 @@ class Drawer:
 
         # Obtenemos angulos entre lineas
         # Si tronco no se puede establecer, el tronco forma la linea de hombros a la cabeza
-        x = MathUtilities.getAngle(lines[])
+        #x = MathUtilities.getAngle(lines[])
