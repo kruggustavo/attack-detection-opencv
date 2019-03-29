@@ -1,19 +1,13 @@
 import math
 #
-# Clase con funciones matematicas
+# Runciones matematicas
 #
 
 class MathUtilities:
 
-    # Pendiente de una recta
-    @staticmethod
-    def getSlope(self, point1, point2):
-        m = (point2.y - point1.y) / (point2.x - point1.x)
-        return m
-
     # Angulo de una recta
     @staticmethod
-    def getAngle(self, pt1, pt2):
+    def getAngle(pt1, pt2):
         x1, y1 = pt1
         x2, y2 = pt2
         dX = x2 - x1
@@ -23,11 +17,9 @@ class MathUtilities:
 
     # Angulo entre dos rectas (diferencia de angulos de 2 rectas)
     @staticmethod
-    def getAngleBetweenLines(self, line1, line2):
-        # Line 1
-        pt1 = line1[0]
-        pt2 = line1[1]
-        angleLine1 = self.getAngle()
+    def getAngleBetweenLines(line1, line2):
+        # Pendientes de las rectas (o angulo entre recta y eje x)
+        angle1 = MathUtilities.getAngle(line1[0], line1[1])
+        angle2 = MathUtilities.getAngle(line2[0], line2[1])
 
-
-        return math.degrees(rads)
+        return round(abs(angle1 - angle2), 1)

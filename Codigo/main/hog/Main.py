@@ -14,7 +14,7 @@ import threading
 #
 
 # Parametros generales
-workpath = "/Users/gustavokrug/Documents/attack-detection-opencv"
+workpath = "/home/gustavo/Documentos/attack-detection-opencv"
 video_file = workpath +"/Videos/3.mp4"
 dataset_path = workpath +"/Imagenes/Dataset/"
 properties = workpath + "/Imagenes/Properties/"
@@ -89,7 +89,10 @@ while True:
             if pointsQueue.qsize() > 0:
                 posekeypoints = pointsQueue.get()
 
-                drawer.getBodyAngles(posekeypoints)
+                anglesframe = drawer.getBodyAngles(posekeypoints)
+
+                frame = np.concatenate((frame, anglesframe), axis=1)
+                cv2.waitKey(0)
 
             cv2.imshow("Detected", frame)
 
