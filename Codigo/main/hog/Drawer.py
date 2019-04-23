@@ -5,7 +5,7 @@ from utils.MathUtilities import MathUtilities
 
 #
 # Dibuja puntos geometricos y permite operaciones con ellos
-#
+# Extremidades superiores referencia: https://t1.uc.ltmcdn.com/images/2/9/3/img_24392_apa_253395_600.jpg
 
 class Drawer:
     POINTS_NUMBER_FOR_ARMS = 8          # Puntos que conforman los brazos, hombros y cabeza
@@ -78,6 +78,8 @@ class Drawer:
             # Se detectaron puntos correspondientes a brazos, parte alta del cuerpo
             lines["leftForearmPoints"] = [pointsMap["mi"], pointsMap["ci"]]     # Antebrazo izq
             lines["rightForearmPoints"] = [pointsMap["md"], pointsMap["cd"]]    # Antebrazo der
+                                                                                # Brazo izq
+                                                                                # Brazo der
             lines["trunkPoints"] = [pointsMap["c"], pointsMap["p"]]             # Tronco (Cabeza a pecho)
 
         elif pointsNumber == self.POINTS_NUMBER_FOR_LEGS:
@@ -93,6 +95,8 @@ class Drawer:
             # Se detectaron partes altas y bajas (cuerpo completo)
             lines["leftForearmPoints"] = [pointsMap["mi"], pointsMap["ci"]]     # Antebrazo izq
             lines["rightForearmPoints"] = [pointsMap["md"], pointsMap["cd"]]    # Antebrazo der
+                                                                                # Brazo izq
+                                                                                # Brazo der
             lines["leftThighPoints"] = [pointsMap["h"], pointsMap["ri"]]        # Muslo izq
             lines["rightThighPoints"] = [pointsMap["h"], pointsMap["rd"]]       # Muslo der
             lines["leftLegPoints"] = [pointsMap["ri"], pointsMap["pi"]]         # Pierna izq (pantorrilla)
