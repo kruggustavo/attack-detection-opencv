@@ -14,7 +14,7 @@ import threading
 #
 
 # Parametros generales
-workpath = "/home/gustavo/Documentos/attack-detection-opencv"
+workpath = "/Volumes/Data/Documents/attack-detection-opencv"
 video_file = workpath +"/Videos/3.mp4"
 dataset_path = workpath +"/Imagenes/Dataset/"
 properties = workpath + "/Imagenes/Properties/"
