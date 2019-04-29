@@ -19,7 +19,15 @@ class MathUtilities:
     @staticmethod
     def getAngleBetweenLines(line1, line2):
         # Pendientes de las rectas (o angulo entre recta y eje x)
-        angle1 = MathUtilities.getAngle(line1[0], line1[1])
-        angle2 = MathUtilities.getAngle(line2[0], line2[1])
+        try:
+            angle1 = MathUtilities.getAngle(line1[0], line1[1])
+        except:
+            angle1 = 180
+
+        try:
+            angle2 = MathUtilities.getAngle(line2[0], line2[1])
+        except:
+            angle2 = 180
+
 
         return round(abs(angle1 - angle2), 1)
