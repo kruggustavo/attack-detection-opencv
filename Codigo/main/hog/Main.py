@@ -19,7 +19,7 @@ ATTACK_STATE = {}
 ATTACK_STATE[0] = "No attack detected."
 ATTACK_STATE[1] = "Attack detected!"
 
-workpath = "/Volumes/Data/Documents/attack-detection-opencv"
+workpath = "/home/usuario/Documentos/attack-detection-opencv"
 video_file = workpath +"/Videos/3.mp4"
 dataset_path = workpath +"/Imagenes/Dataset/"
 properties = workpath + "/Imagenes/Properties/"
