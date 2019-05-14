@@ -12,7 +12,7 @@ class Drawer:
     # hp = cadera (i, d), r = rodilla(i, d), p = pie (i, d)
     POINTS_LABELS = ["c", "n", "hi", "ci", "mi", "hd", "cd", "md", "hpi", "ri", "pi", "hpd", "rd", "pd", "p"]
 
-    def drawSkeleton(self, frame, points):
+    def drawSkeletonPoints(self, frame, points, margin=0):
         # Draw Skeleton
         for pair in self.POSE_PAIRS:
             partA = pair[0]
@@ -24,13 +24,53 @@ class Drawer:
                 cv2.circle(frame, points[partB], 3, (0, 0, 255), -1)
 
                 x, y = points[partA]
+                x += margin
+                y += margin
                 cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
                 cv2.putText(frame, self.POINTS_LABELS[partA], (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
+
                 x, y = points[partB]
+                x += margin
+                y += margin
                 cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
                 cv2.putText(frame, self.POINTS_LABELS[partB], (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
 
         return frame
+
+    def drawSkeletonLines(self, frame, lines, margin=0):
+        # Draw Skeleton
+        for label in lines:
+            lineWidth = 1
+            lineColor = (200, 55, 25)
+
+            pointA = lines[label][0]
+            pointB = lines[label][1]
+
+            x1, y1 = pointA
+            x1 += margin
+            y1 += margin
+
+            x2, y2 = pointB
+            x2 += margin
+            y2 += margin
+
+            # Dibujamos tronco de otro color y anchura
+            if label == "trunkPoints":
+                lineWidth = 3
+                lineColor = (44, 185, 5)
+
+            cv2.line(frame, (x1, y1), (x2, y2), lineColor, lineWidth, lineType=cv2.LINE_AA)
+            cv2.circle(frame, (x1, y1), 3, (0, 0, 255), -1)
+            cv2.circle(frame, (x2, y2), 3, (0, 0, 255), -1)
+
+            cv2.putText(frame, str(x1) + " " + str(y1), (x1 + 5, y1), cv2.FONT_HERSHEY_SIMPLEX, 0.2, (150, 150, 150), 1,
+                        lineType=cv2.LINE_AA)
+            cv2.putText(frame, str(x2) + " " + str(y2), (x2 + 5, y2), cv2.FONT_HERSHEY_SIMPLEX, 0.2, (150, 150, 150), 1,
+                        lineType=cv2.LINE_AA)
+
+        return frame
+
+
 
     def getLabeledPoints(self, points):
         newPoints = {}

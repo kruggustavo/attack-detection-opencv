@@ -65,7 +65,7 @@ op = OpenPose(protoFile="pose/mpi/pose_deploy_linevec_faster_1_stages.prototxt",
               weightsFile="pose/mpi/pose_iter_150000.caffemodel")
 
 def consumer():
-    global busy, emptyFrame, op
+    global busy, op
 
     while True:
         frame = framesQueue.get()
