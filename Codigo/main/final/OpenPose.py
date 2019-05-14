@@ -7,7 +7,7 @@ import numpy as np
 class OpenPose:
     MODE = "MPI"
     nPoints = 15
-    inWidth = inHeight = 227
+    inWidth = inHeight = 230
     threshold = 0.1
 
     def __init__(self, neuralnet=None, protoFile="", weightsFile=""):

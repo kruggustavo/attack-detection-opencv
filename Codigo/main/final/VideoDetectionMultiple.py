@@ -37,7 +37,7 @@ video_height = 300
 drawer = Drawer()
 
 # Red neuronal de angulos
-EPOCHS = 2
+EPOCHS = 1
 nnet = NeuralNetwork("trainingangles.csv", 8)
 nnet.trainNetwork(EPOCHS)
 
@@ -102,7 +102,7 @@ for i in range(max_num_threads):
     threads_array.append(thread)
 
 print("Stand by for threads to start")
-time.sleep(Xseconds * max_num_threads)
+#time.sleep(Xseconds * max_num_threads)
 
 print("Threads loaded...")
 while True:
@@ -111,42 +111,6 @@ while True:
     if hasFrame:
 
         frame = cv2.resize(frame, (video_width, video_height))
-
-        if busy == False:
-            framesQueue.put(frame)
-
-        if pointsQueue.qsize() > 0:
-            points = pointsQueue.get()
-            skeletonFrame = drawer.drawSkeleton(emptyFrame.copy(), points)
-
-            if len(points) > 0:
-                labeledPoints = drawer.getLabeledPoints(points)
-                angles, lines = drawer.getBodyAngles(labeledPoints)
-
-                angles = np.array([list(angles.values())])
-
-                if len(angles) > 0:
-                    print(angles)
-
-                try:
-                    netOutput = int(nnet.predict(angles))
-                except:
-                    netOutput = NO_ATTACK
-
-                cv2.putText(skeletonFrame, ATTACK_STATE[netOutput],
-                            (int((video_width / 2) - (len(ATTACK_STATE[val]) * 5)), 15),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
-
-                if netOutput == ATTACK:
-                    playWarningMsg()
-
-                # Dibujamos tronco
-                if "trunkPoints" in lines:
-                    pointA = lines["trunkPoints"][0]
-                    pointB = lines["trunkPoints"][1]
-                    cv2.line(skeletonFrame, pointA, pointB, (100, 7, 65), 3, lineType=cv2.LINE_AA)
-
-        frame = np.concatenate((frame, skeletonFrame), axis=1)
 
 
         cv2.imshow("Camara", frame)
