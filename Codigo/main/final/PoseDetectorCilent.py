@@ -7,16 +7,11 @@ import multiprocessing
 import queue
 
 IP = 'localhost'
-PORTNUM = 55449
+PORTNUM = 55441
 AUTHKEY = b'shufflin'
 
-protoFile = "pose/coco/pose_deploy_linevec.prototxt"
-weightsFile = "pose/coco/pose_iter_440000.caffemodel"
-
 # Red neuronal de poses
-op = OpenPoseMultiple(protoFile="pose/mpi/pose_deploy_linevec_faster_2_stages.prototxt", weightsFile="pose/mpi/pose_iter_150000.caffemodel")
-#op = OpenPoseMultiple(protoFile=protoFile, weightsFile=weightsFile)
-
+op = OpenPoseMultiple(protoFile="pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt", weightsFile="pose/mpi/pose_iter_150000.caffemodel")
 
 def make_client_manager(ip, port, authkey):
     class ServerQueueManager(SyncManager):
@@ -42,18 +37,18 @@ def make_client_manager(ip, port, authkey):
 
 def worker(job_q, result_q):
     while True:
-        try:
-            # Obtenemos frame del servidor de hilos
-            frame = job_q.get() #get_nowait()
-            points = op.detectHumanPose(frame)
+        #try:
+        # Obtenemos frame del servidor de hilos
+        frame = job_q.get() #get_nowait()
+        points = op.detectHumanPose(frame)
 
-            # Colocamos resultado en cola de resultados para servidor
-            result_q.put(points)
-            print("Processed! " + str(points))
-        except queue.Empty:
-            return
+        # Colocamos resultado en cola de resultados para servidor
+        result_q.put(points)
+        print("Processed! " + str(points))
+        #except queue.Empty:
+        #    return
 
-
+print("Client program started")
 number_of_threads = 4
 
 manager = make_client_manager(IP, PORTNUM, AUTHKEY)

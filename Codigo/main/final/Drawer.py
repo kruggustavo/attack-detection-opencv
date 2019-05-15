@@ -4,61 +4,48 @@ from utils.MathUtilities import MathUtilities
 
 
 class Drawer:
-    keypointsMapping = ['Nose', 'Neck', 'R-Sho', 'R-Elb', 'R-Wr', 'L-Sho', 'L-Elb', 'L-Wr', 'R-Hip', 'R-Knee', 'R-Ank',
-                        'L-Hip', 'L-Knee', 'L-Ank', 'R-Eye', 'L-Eye', 'R-Ear', 'L-Ear']
-
     POSE_PAIRS_MPI = [[0, 1], [1, 2], [2, 3], [3, 4], [1, 5], [5, 6], [6, 7], [8, 9], [9, 10], [11, 12], [12, 13]]
-
-    POSE_PAIRS_COCO = [[1, 2], [1, 5], [2, 3], [3, 4], [5, 6], [6, 7],
-                       [1, 8], [8, 9], [9, 10], [1, 11], [11, 12], [12, 13],
-                       [1, 0], [0, 14], [14, 16], [0, 15], [15, 17],
-                       [2, 17], [5, 16]]
-
 
     colors = [[0, 100, 255], [0, 100, 255], [0, 255, 255], [0, 100, 255], [0, 255, 255], [0, 100, 255],
               [0, 255, 0], [255, 200, 100], [255, 0, 255], [0, 255, 0], [255, 200, 100], [255, 0, 255],
               [0, 0, 255], [255, 0, 0], [200, 200, 0], [255, 0, 0], [200, 200, 0], [0, 0, 0]]
-
 
     # Referencias
     # c = cabeza, n = cuello, h = hombro (i, d), c = codo (i, d), m = mano (i, d), p = pecho
     # hp = cadera (i, d), r = rodilla(i, d), p = pie (i, d)
     POINTS_LABELS = ["c", "n", "hi", "ci", "mi", "hd", "cd", "md", "hpi", "ri", "pi", "hpd", "rd", "pd", "p"]
 
-    nPoints = 18
+    nPoints = 14
 
     keypoints_list = np.zeros((0, 3))
-
-    def drawMultipleSkeletonPoints(self, frameClone, detected_keypoints, margin=0):
-        for i in range(self.nPoints):
-            for j in range(len(detected_keypoints[i])):
-                cv2.circle(frameClone, detected_keypoints[i][j][0:2], 1, self.colors[i], -1, cv2.LINE_AA)
-
-        return frameClone
-
 
     def drawSkeletonPoints(self, frame, points, margin=0):
         # Draw Skeleton
         for pair in self.POSE_PAIRS_MPI:
-            partA = pair[0]
-            partB = pair[1]
+            partA = self.POINTS_LABELS[pair[0]]
+            partB = self.POINTS_LABELS[pair[1]]
 
-            if points[partA] and points[partB]:
-                cv2.line(frame, points[partA], points[partB], (200, 55, 25), 1, lineType=cv2.LINE_AA)
+            if partA in points:
                 cv2.circle(frame, points[partA], 3, (0, 0, 255), -1)
-                cv2.circle(frame, points[partB], 3, (0, 0, 255), -1)
-
                 x, y = points[partA]
                 x += margin
                 y += margin
-                cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
-                cv2.putText(frame, self.POINTS_LABELS[partA], (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
+                cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, self.colors[pair[0]], 1, lineType=cv2.LINE_AA)
+                #cv2.putText(frame, partA, (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
 
+            if partB in points:
+                cv2.circle(frame, points[partB], 3, (0, 0, 255), -1)
                 x, y = points[partB]
                 x += margin
                 y += margin
-                cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
-                cv2.putText(frame, self.POINTS_LABELS[partB], (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
+                cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, self.colors[pair[0]], 1, lineType=cv2.LINE_AA)
+                #cv2.putText(frame, partB, (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
+
+            try:
+                cv2.line(frame, points[partA], points[partB], (200, 55, 25), 1, lineType=cv2.LINE_AA)
+            except:
+                print("Can not draw line between " + partA + " and " + partB)
+
 
         return frame
 

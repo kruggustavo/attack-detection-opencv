@@ -19,7 +19,7 @@ print("Human attack detection")
 # Parametros generales
 # Servidor de hilos multiprocesamiento
 IP = 'localhost'
-PORTNUM = 55449
+PORTNUM = 55441
 AUTHKEY = b'shufflin'
 
 # Estados
@@ -32,22 +32,21 @@ ATTACK_STATE[NO_ATTACK] = "Pose no compatible con ataque"
 ATTACK_STATE[ATTACK] = "Pose compatible con ataque!"
 
 workpath = "/home/usuario/Documentos/attack-detection-opencv"
-videoFile = workpath +"/Videos/2.mp4"
-cap = cv2.VideoCapture(videoFile)
-video_width = 420
-video_height = 300
+img_file = workpath + "/Imagenes/seniors-walking.jpg"
+videoFile = workpath +"/Videos/3.mp4"
+cap = cv2.VideoCapture(0)
+video_width = 360
+video_height = 240
 
 # Dibujador y extractor de angulos
 drawer = Drawer()
 
 # Red neuronal de angulos
-EPOCHS = 40
+EPOCHS = 1
 nnet = NeuralNetwork("trainingangles.csv", 8)
 nnet.trainNetwork(EPOCHS)
 
-#framesQueue = queue.Queue()                     # Frames para procesar
-
-netOutput = 0                                   # 1 es agresion
+netOutput = NO_ATTACK
 Xseconds = 10                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
 
 emptyFrame = np.zeros((video_height, video_width, 3), np.uint8)
@@ -61,7 +60,7 @@ hasFrame = True
 lastVal = NO_ATTACK
 
 def playWarningMsg():
-    global lastVal, agresionTime, mixer
+    global lastVal, agresionTime, mixer, netOutput
     # Si han pasado segundos desde el ultimo ataque, habilitar alertas
     if lastVal == ATTACK and (time.time() - agresionTime) > Xseconds:
         lastVal = netOutput
@@ -75,7 +74,6 @@ def playWarningMsg():
     # Alerta visual durante la mitad del tiempo de ataque
     if lastVal == ATTACK and (time.time() - agresionTime) < (Xseconds * 0.5):
         cv2.circle(skeletonFrame, (video_width - 30, video_height - 30), 30, (0, 0, 255), -1)
-
 
 
 # Servidor de hijos para multiprocesamiento
@@ -112,10 +110,45 @@ while True:
             shared_job_q.put(frame)
 
             # Datos recibidos del cliente
-            points = shared_result_q.get()
-            print(points)
+            pointsAllHumans = shared_result_q.get()
 
-            skeletonFrame = drawer.drawMultipleSkeletonPoints(emptyFrame.copy(), points)
+            skeletonFrame = emptyFrame.copy()
+            netOutput = NO_ATTACK
+
+            process = True
+            # Recorremos grupos de puntos de cada humano
+            for pointsSingleHuman in pointsAllHumans:
+                if process == True:
+                    skeletonFrame = drawer.drawSkeletonPoints(skeletonFrame, pointsSingleHuman)
+
+                    angles, lines = drawer.getBodyAngles(pointsSingleHuman)
+
+                    angles = np.array([list(angles.values())])
+
+                    if len(angles) > 0:
+                        print(angles)
+
+                    try:
+                        if netOutput == NO_ATTACK:
+                            netOutput = int(nnet.predict(angles))
+                    except:
+                        netOutput = NO_ATTACK
+
+                    # Dibujamos tronco
+                    if "trunkPoints" in lines:
+                        pointA = lines["trunkPoints"][0]
+                        pointB = lines["trunkPoints"][1]
+                        cv2.line(skeletonFrame, pointA, pointB, (100, 7, 65), 3, lineType=cv2.LINE_AA)
+                process = False
+
+            if netOutput == ATTACK:
+                playWarningMsg()
+
+            cv2.putText(skeletonFrame, ATTACK_STATE[netOutput],
+                        (int((video_width / 2) - (len(ATTACK_STATE[netOutput]) * 5)), 15),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
+
+        #skeletonFrame = cv2.addWeighted(frame, 0.3, skeletonFrame, 0.7, 0)
 
         frame = np.concatenate((frame, skeletonFrame), axis=1)
 

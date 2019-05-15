@@ -4,16 +4,12 @@ import numpy as np
 from random import randint
 
 class OpenPoseMultiple:
-    # index of pafs correspoding to the POSE_PAIRS_COCO
-    # e.g for POSE_PAIR(1,2), the PAFs are located at indices (31,32) of output, Similarly, (1,5) -> (39,40) and so on.
-    mapIdx = [[31, 32], [39, 40], [33, 34], [35, 36], [41, 42], [43, 44],
-              [19, 20], [21, 22], [23, 24], [25, 26], [27, 28], [29, 30],
-              [47, 48], [49, 50], [53, 54], [51, 52], [55, 56],
-              [37, 38], [45, 46]]
-    nPoints = 18
+    nPoints = 14
 
     frameWidth = 0
     frameHeight = 0
+
+    POINTS_LABELS = ["c", "n", "hi", "ci", "mi", "hd", "cd", "md", "hpi", "ri", "pi", "hpd", "rd", "pd", "p"]
 
     def __init__(self, neuralnet=None, protoFile="", weightsFile=""):
         if neuralnet == None:
@@ -51,7 +47,25 @@ class OpenPoseMultiple:
 
             detected_keypoints.append(keypoints_with_id)
 
+        detected_keypoints = self.getPointsByHuman(detected_keypoints)
+
         return detected_keypoints
+
+    # Obtiene puntos por persona, no por partes humanas
+    def getPointsByHuman(self, detected_keypoints):
+        humansNumber = len(detected_keypoints[0])
+
+        humansPointsLists = list({} for i in range(humansNumber))
+
+        if humansNumber > 0:
+            for i in range(self.nPoints):
+                for j in range(len(detected_keypoints[i])):
+                    try:
+                        humansPointsLists[j][self.POINTS_LABELS[i]] = detected_keypoints[i][j][0:2]
+                    except:
+                        print("No point for human " + str(j) + " for body part: " + self.POINTS_LABELS[i])
+
+        return humansPointsLists
 
     def getKeypoints(self, probMap, threshold=0.1):
 

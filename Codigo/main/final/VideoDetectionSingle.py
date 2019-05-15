@@ -47,7 +47,7 @@ framesQueue = queue.Queue()                     # Frames para procesar
 pointsQueue = queue.Queue()                     # Puntos detectados a mostrar
 busy = False                                    # Flag for empty queue
 
-val = 0                                         # 1 es agresion
+netOutput = 0                                   # 1 es agresion
 Xseconds = 10                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
 
 emptyFrame = np.zeros((video_height, video_width, 3), np.uint8)
@@ -78,16 +78,16 @@ def consumer():
 
 
 def playWarningMsg():
-    global lastVal, agresionTime, mixer
+    global lastVal, agresionTime, mixer, netOutput
     # Si han pasado segundos desde el ultimo ataque, habilitar alertas
     if lastVal == ATTACK and (time.time() - agresionTime) > Xseconds:
-        lastVal = val
+        lastVal = netOutput
 
     # Si agresion existe luego de X segundos emitir audio
     if (time.time() - agresionTime) > Xseconds:
         mixer.music.play()
         agresionTime = time.time()
-        lastVal = val
+        lastVal = netOutput
 
     # Alerta visual durante la mitad del tiempo de ataque
     if lastVal == ATTACK and (time.time() - agresionTime) < (Xseconds * 0.5):
@@ -134,7 +134,7 @@ while True:
                     netOutput = NO_ATTACK
 
                 cv2.putText(skeletonFrame, ATTACK_STATE[netOutput],
-                            (int((video_width / 2) - (len(ATTACK_STATE[val]) * 5)), 15),
+                            (int((video_width / 2) - (len(ATTACK_STATE[netOutput]) * 5)), 15),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
 
                 if netOutput == ATTACK:
