@@ -4,17 +4,42 @@ from utils.MathUtilities import MathUtilities
 
 
 class Drawer:
+    keypointsMapping = ['Nose', 'Neck', 'R-Sho', 'R-Elb', 'R-Wr', 'L-Sho', 'L-Elb', 'L-Wr', 'R-Hip', 'R-Knee', 'R-Ank',
+                        'L-Hip', 'L-Knee', 'L-Ank', 'R-Eye', 'L-Eye', 'R-Ear', 'L-Ear']
 
-    POSE_PAIRS = [[0, 1], [1, 2], [2, 3], [3, 4], [1, 5], [5, 6], [6, 7], [8, 9], [9, 10], [11, 12], [12, 13]]
+    POSE_PAIRS_MPI = [[0, 1], [1, 2], [2, 3], [3, 4], [1, 5], [5, 6], [6, 7], [8, 9], [9, 10], [11, 12], [12, 13]]
+
+    POSE_PAIRS_COCO = [[1, 2], [1, 5], [2, 3], [3, 4], [5, 6], [6, 7],
+                       [1, 8], [8, 9], [9, 10], [1, 11], [11, 12], [12, 13],
+                       [1, 0], [0, 14], [14, 16], [0, 15], [15, 17],
+                       [2, 17], [5, 16]]
+
+
+    colors = [[0, 100, 255], [0, 100, 255], [0, 255, 255], [0, 100, 255], [0, 255, 255], [0, 100, 255],
+              [0, 255, 0], [255, 200, 100], [255, 0, 255], [0, 255, 0], [255, 200, 100], [255, 0, 255],
+              [0, 0, 255], [255, 0, 0], [200, 200, 0], [255, 0, 0], [200, 200, 0], [0, 0, 0]]
+
 
     # Referencias
     # c = cabeza, n = cuello, h = hombro (i, d), c = codo (i, d), m = mano (i, d), p = pecho
     # hp = cadera (i, d), r = rodilla(i, d), p = pie (i, d)
     POINTS_LABELS = ["c", "n", "hi", "ci", "mi", "hd", "cd", "md", "hpi", "ri", "pi", "hpd", "rd", "pd", "p"]
 
+    nPoints = 18
+
+    keypoints_list = np.zeros((0, 3))
+
+    def drawMultipleSkeletonPoints(self, frameClone, detected_keypoints, margin=0):
+        for i in range(self.nPoints):
+            for j in range(len(detected_keypoints[i])):
+                cv2.circle(frameClone, detected_keypoints[i][j][0:2], 1, self.colors[i], -1, cv2.LINE_AA)
+
+        return frameClone
+
+
     def drawSkeletonPoints(self, frame, points, margin=0):
         # Draw Skeleton
-        for pair in self.POSE_PAIRS:
+        for pair in self.POSE_PAIRS_MPI:
             partA = pair[0]
             partB = pair[1]
 
@@ -176,3 +201,4 @@ class Drawer:
                 pass
 
         return angle
+
