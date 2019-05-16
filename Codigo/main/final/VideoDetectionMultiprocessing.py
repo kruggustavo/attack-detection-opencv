@@ -19,7 +19,7 @@ print("Human attack detection")
 # Parametros generales
 # Servidor de hilos multiprocesamiento
 IP = 'localhost'
-PORTNUM = 55441
+PORTNUM = 55141
 AUTHKEY = b'shufflin'
 
 # Estados
@@ -42,7 +42,7 @@ video_height = 240
 drawer = Drawer()
 
 # Red neuronal de angulos
-EPOCHS = 1
+EPOCHS = 50
 nnet = NeuralNetwork("trainingangles.csv", 8)
 nnet.trainNetwork(EPOCHS)
 
@@ -104,42 +104,40 @@ while True:
 
         frame = cv2.resize(frame, (video_width, video_height))
 
-        # Se procesa una vez que haya respuesta de hilos
-        if shared_result_q.qsize() > 0:
-            # Enviar frame a cola de trabajo para clientes
+        # Enviar frame a cola de trabajo para clientes solo si cola esta vacia
+        if shared_job_q.qsize() == 0:
             shared_job_q.put(frame)
 
+        # Se procesa una vez que haya respuesta de hilos
+        if shared_result_q.qsize() > 0:
+
             # Datos recibidos del cliente
-            pointsAllHumans = shared_result_q.get()
+            pointsFromAllHumans = shared_result_q.get()
 
             skeletonFrame = emptyFrame.copy()
             netOutput = NO_ATTACK
 
-            process = True
             # Recorremos grupos de puntos de cada humano
-            for pointsSingleHuman in pointsAllHumans:
-                if process == True:
-                    skeletonFrame = drawer.drawSkeletonPoints(skeletonFrame, pointsSingleHuman)
+            for pointsSingleHuman in pointsFromAllHumans:
+                skeletonFrame = drawer.drawSkeletonPoints(skeletonFrame, pointsSingleHuman)
 
-                    angles, lines = drawer.getBodyAngles(pointsSingleHuman)
+                angles, lines = drawer.getBodyAngles(pointsSingleHuman)
+                angles = np.array([list(angles.values())])
 
-                    angles = np.array([list(angles.values())])
+                if len(angles) > 0:
+                    print(angles)
 
-                    if len(angles) > 0:
-                        print(angles)
+                try:
+                    if netOutput == NO_ATTACK:
+                        netOutput = int(nnet.predict(angles))
+                except:
+                    netOutput = NO_ATTACK
 
-                    try:
-                        if netOutput == NO_ATTACK:
-                            netOutput = int(nnet.predict(angles))
-                    except:
-                        netOutput = NO_ATTACK
-
-                    # Dibujamos tronco
-                    if "trunkPoints" in lines:
-                        pointA = lines["trunkPoints"][0]
-                        pointB = lines["trunkPoints"][1]
-                        cv2.line(skeletonFrame, pointA, pointB, (100, 7, 65), 3, lineType=cv2.LINE_AA)
-                process = False
+                # Dibujamos tronco
+                if "trunkPoints" in lines:
+                    pointA = lines["trunkPoints"][0]
+                    pointB = lines["trunkPoints"][1]
+                    cv2.line(skeletonFrame, pointA, pointB, (100, 7, 65), 3, lineType=cv2.LINE_AA)
 
             if netOutput == ATTACK:
                 playWarningMsg()
@@ -147,6 +145,7 @@ while True:
             cv2.putText(skeletonFrame, ATTACK_STATE[netOutput],
                         (int((video_width / 2) - (len(ATTACK_STATE[netOutput]) * 5)), 15),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
+
 
         #skeletonFrame = cv2.addWeighted(frame, 0.3, skeletonFrame, 0.7, 0)
 

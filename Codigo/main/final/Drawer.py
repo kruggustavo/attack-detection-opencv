@@ -21,6 +21,7 @@ class Drawer:
 
     def drawSkeletonPoints(self, frame, points, margin=0):
         # Draw Skeleton
+        coloridx = 0
         for pair in self.POSE_PAIRS_MPI:
             partA = self.POINTS_LABELS[pair[0]]
             partB = self.POINTS_LABELS[pair[1]]
@@ -30,7 +31,7 @@ class Drawer:
                 x, y = points[partA]
                 x += margin
                 y += margin
-                cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, self.colors[pair[0]], 1, lineType=cv2.LINE_AA)
+                cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, self.colors[coloridx], 1, lineType=cv2.LINE_AA)
                 #cv2.putText(frame, partA, (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
 
             if partB in points:
@@ -38,9 +39,10 @@ class Drawer:
                 x, y = points[partB]
                 x += margin
                 y += margin
-                cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, self.colors[pair[0]], 1, lineType=cv2.LINE_AA)
+                cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, self.colors[coloridx], 1, lineType=cv2.LINE_AA)
                 #cv2.putText(frame, partB, (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
 
+            coloridx += 1
             try:
                 cv2.line(frame, points[partA], points[partB], (200, 55, 25), 1, lineType=cv2.LINE_AA)
             except:
@@ -81,8 +83,6 @@ class Drawer:
                         lineType=cv2.LINE_AA)
 
         return frame
-
-
 
     def getLabeledPoints(self, points):
         newPoints = {}
