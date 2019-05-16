@@ -7,7 +7,7 @@ import numpy as np
 class OpenPose:
     MODE = "MPI"
     nPoints = 15
-    inWidth = inHeight = 245
+    inWidth = inHeight = 0
     threshold = 0.1
 
     def __init__(self, neuralnet=None, protoFile="", weightsFile=""):
@@ -20,6 +20,9 @@ class OpenPose:
     def detectHumanPose(self, frame):
         frameWidth = frame.shape[1]
         frameHeight = frame.shape[0]
+
+        self.inHeight = 224
+        self.inWidth = int((self.inHeight / frameHeight) * frameWidth)
 
         inpBlob = cv2.dnn.blobFromImage(frame, 1.0 / 255, (self.inWidth, self.inHeight), (0, 0, 0), swapRB=False, crop=False)
         self.net.setInput(inpBlob)

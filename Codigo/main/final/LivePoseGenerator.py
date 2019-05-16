@@ -19,7 +19,7 @@ print("Human pose generation from video")
 ATTACK_POSE = 1
 NO_ATTACK_POSE = 0
 
-POSE = ATTACK_POSE
+POSE = NO_ATTACK_POSE
 
 workpath = "/home/usuario/Documentos/attack-detection-opencv"
 cap = cv2.VideoCapture(0)
@@ -74,12 +74,12 @@ while True:
 
         if pointsQueue.qsize() > 0:
             points = pointsQueue.get()
-            skeletonFrame = drawer.drawSkeleton(emptyFrame.copy(), points)
 
             if len(points) > 0:
                 labeledPoints = drawer.getLabeledPoints(points)
-                angles, lines = drawer.getBodyAngles(labeledPoints)
+                skeletonFrame = drawer.drawSkeletonPoints(emptyFrame.copy(), labeledPoints)
 
+                angles, lines = drawer.getBodyAngles(labeledPoints)
                 angles["pose"] = POSE
 
                 angles = np.array([list(angles.values())])
@@ -92,7 +92,7 @@ while True:
                     anglesStr = anglesStr.replace("  ", " ").replace("  ", " ")
                     anglesStr = anglesStr.replace(" ", ",")
                     anglesStr = anglesStr.replace("[", "").replace("]", "")
-                    print(anglesStr)
+                    print("Angles: " + anglesStr)
 
                 # Dibujamos tronco
                 if "trunkPoints" in lines:

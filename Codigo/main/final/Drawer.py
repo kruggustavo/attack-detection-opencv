@@ -18,6 +18,9 @@ class Drawer:
     nPoints = 14
 
     keypoints_list = np.zeros((0, 3))
+    
+    defaultAngleArms = 0
+    defaultAngleLegs = 0
 
     def drawSkeletonPoints(self, frame, points, margin=0):
         # Draw Skeleton
@@ -27,18 +30,18 @@ class Drawer:
             partB = self.POINTS_LABELS[pair[1]]
 
             if partA in points:
-                cv2.circle(frame, points[partA], 3, (0, 0, 255), -1)
                 x, y = points[partA]
                 x += margin
                 y += margin
+                cv2.circle(frame, (x, y), 3, (0, 0, 255), -1)
                 cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, self.colors[coloridx], 1, lineType=cv2.LINE_AA)
                 #cv2.putText(frame, partA, (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
 
             if partB in points:
-                cv2.circle(frame, points[partB], 3, (0, 0, 255), -1)
                 x, y = points[partB]
                 x += margin
                 y += margin
+                cv2.circle(frame, (x, y), 3, (0, 0, 255), -1)
                 cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, self.colors[coloridx], 1, lineType=cv2.LINE_AA)
                 #cv2.putText(frame, partB, (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
 
@@ -46,7 +49,8 @@ class Drawer:
             try:
                 cv2.line(frame, points[partA], points[partB], (200, 55, 25), 1, lineType=cv2.LINE_AA)
             except:
-                print("Can not draw line between " + partA + " and " + partB)
+                #print("Can not draw line between " + partA + " and " + partB)
+                pass
 
 
         return frame
@@ -157,14 +161,14 @@ class Drawer:
         # Obtenemos angulos entre lineas SOLAMENTE SI EXISTE TRONCO
         if "trunkPoints" in lines:
             # Si no se especifica angulo, predeterminado es 180
-            angles["leftArm"] = self.getAngle(lines["leftArmPoints"], lines["trunkPoints"], targetFrame, 0) if "leftArmPoints" in lines else 180.0
-            angles["rightArm"] = self.getAngle(lines["rightArmPoints"], lines["trunkPoints"], targetFrame, 0) if "rightArmPoints" in lines else 180.0
-            angles["leftForearm"] = self.getAngle(lines["leftForearmPoints"], lines["trunkPoints"], targetFrame, 0) if "leftForearmPoints" in lines else 180.0
-            angles["rightForearm"] = self.getAngle(lines["rightForearmPoints"], lines["trunkPoints"], targetFrame, 0) if "rightForearmPoints" in lines else 180.0
-            angles["leftThigh"] = self.getAngle(lines["leftThighPoints"], lines["trunkPoints"], targetFrame, 0) if "leftThighPoints" in lines else 180.0
-            angles["rightThigh"] = self.getAngle(lines["rightThighPoints"], lines["trunkPoints"], targetFrame, 0) if "rightThighPoints" in lines else 180.0
-            angles["leftLeg"] = self.getAngle(lines["leftLegPoints"], lines["trunkPoints"], targetFrame, 0) if "leftLegPoints" in lines else 180.0
-            angles["rightLeg"] = self.getAngle(lines["rightLegPoints"], lines["trunkPoints"], targetFrame, 0) if "rightLegPoints" in lines else 180.0
+            angles["leftArm"] = self.getAngle(lines["leftArmPoints"], lines["trunkPoints"], targetFrame, 0) if "leftArmPoints" in lines else self.defaultAngleArms
+            angles["rightArm"] = self.getAngle(lines["rightArmPoints"], lines["trunkPoints"], targetFrame, 0) if "rightArmPoints" in lines else self.defaultAngleArms
+            angles["leftForearm"] = self.getAngle(lines["leftForearmPoints"], lines["trunkPoints"], targetFrame, 0) if "leftForearmPoints" in lines else self.defaultAngleArms
+            angles["rightForearm"] = self.getAngle(lines["rightForearmPoints"], lines["trunkPoints"], targetFrame, 0) if "rightForearmPoints" in lines else self.defaultAngleArms
+            angles["leftThigh"] = self.getAngle(lines["leftThighPoints"], lines["trunkPoints"], targetFrame, 0) if "leftThighPoints" in lines else self.defaultAngleLegs
+            angles["rightThigh"] = self.getAngle(lines["rightThighPoints"], lines["trunkPoints"], targetFrame, 0) if "rightThighPoints" in lines else self.defaultAngleLegs
+            angles["leftLeg"] = self.getAngle(lines["leftLegPoints"], lines["trunkPoints"], targetFrame, 0) if "leftLegPoints" in lines else self.defaultAngleLegs
+            angles["rightLeg"] = self.getAngle(lines["rightLegPoints"], lines["trunkPoints"], targetFrame, 0) if "rightLegPoints" in lines else self.defaultAngleLegs
 
         return angles, lines
 
