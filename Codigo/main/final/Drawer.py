@@ -25,6 +25,7 @@ class Drawer:
     def drawSkeletonPoints(self, frame, points, margin=0):
         # Draw Skeleton
         coloridx = 0
+
         for pair in self.POSE_PAIRS_MPI:
             partA = self.POINTS_LABELS[pair[0]]
             partB = self.POINTS_LABELS[pair[1]]
@@ -33,7 +34,7 @@ class Drawer:
                 x, y = points[partA]
                 x += margin
                 y += margin
-                cv2.circle(frame, (x, y), 3, (0, 0, 255), -1)
+                cv2.circle(frame, (x, y), 3, self.colors[coloridx], -1)
                 cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, self.colors[coloridx], 1, lineType=cv2.LINE_AA)
                 #cv2.putText(frame, partA, (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
 
@@ -41,17 +42,18 @@ class Drawer:
                 x, y = points[partB]
                 x += margin
                 y += margin
-                cv2.circle(frame, (x, y), 3, (0, 0, 255), -1)
+                cv2.circle(frame, (x, y), 3, self.colors[coloridx], -1)
                 cv2.putText(frame, str(x) + " " + str(y), (x + 5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.2, self.colors[coloridx], 1, lineType=cv2.LINE_AA)
                 #cv2.putText(frame, partB, (x + 5,y + 8), cv2.FONT_HERSHEY_SIMPLEX,  0.2, (150, 150, 150), 1, lineType=cv2.LINE_AA)
 
-            coloridx += 1
+
             try:
                 cv2.line(frame, points[partA], points[partB], (200, 55, 25), 1, lineType=cv2.LINE_AA)
             except:
                 #print("Can not draw line between " + partA + " and " + partB)
                 pass
 
+            coloridx += 1
 
         return frame
 
@@ -130,25 +132,50 @@ class Drawer:
         self.putPointsInLines("rightLegPoints", points, "rd", "pd", lines)        # Pierna izq (pantorrilla)
 
         # Definimos el tronco de acuerdo a puntos existentes
+        # El tronco es la linea perpendicular a caderas, u hombros
         upperTrunkPoint = None              # Punto superior del tronco, se define por ciertos puntos en caso de que existan
         lowerTrunkPoint = None              # Punto inferior
 
         # Tronco a partir de puntos superiores
-        if "c" in points or "n" in points or "p" in points:
-            # Si existe cabeza o cuello:
-            upperTrunkPoint = points["c"] if "c" in points else (points["n"] if "n" in points else (points["p"] if "p" in points else None))
-            lowerTrunkPoint = points["n"] if "n" in points else (points["p"] if "p" in points else None)
+        if "hd" in points and "hi" in points:
+            x1, y1 = points["hi"]
+            x2, y2 = points["hd"]
+            # Punto medio entre hombros
+            newX = int((x1 + x2) / 2)
+            newY = int((y1 + y2) / 2)
+            upperTrunkPoint = (newX, newY)
+
+            try:
+                # Obtenemos parte inferior de tronco a partir de linea perpendicular a hombros y un punto por debajo de ellos
+                distance = MathUtilities.distance(points["hi"], points["hd"])
+                x, y = MathUtilities.getPerpendicularLinePoints(points["hi"], points["hd"], upperTrunkPoint, newY + distance)
+                lowerTrunkPoint = (x, y)
+            except:
+                pass
+        # Existe un solo hombro
+        else:
+            upperTrunkPoint = (points["hi"] if "hi" in points else (points["hd"] if "hd" in points else None))
 
         # Tronco a partir de puntos inferiores
-        # Existen caderas, obenemos punto intermedio
         if "hpi" in points and "hpd" in points:
             x1, y1 = points["hpi"]
             x2, y2 = points["hpd"]
             # Punto medio entre caderas
-            lowerTrunkPoint = (int((x1 + x2) / 2), int((y1 + y2) / 2))
+            newX = int((x1 + x2) / 2)
+            newY = int((y1 + y2) / 2)
+            lowerTrunkPoint = (newX, newY)
+
+            if upperTrunkPoint == None:
+                try:
+                    # Obtenemos parte superior de tronco a partir de linea perpendicular a caderas y un punto por encima de ellos
+                    distance = MathUtilities.distance(points["hpi"], points["hpd"])
+                    x, y = MathUtilities.getPerpendicularLinePoints(points["hpi"], points["hpd"], lowerTrunkPoint, newY - (distance * 2))
+                    upperTrunkPoint = (x, y)
+                except:
+                    pass
         # Existe una sola cadera
         else:
-            lowerTrunkPoint = lowerTrunkPoint if lowerTrunkPoint is not None else (points["hpi"] if "hpi" in points else (points["hpd"] if "hpd" in points else None))
+            lowerTrunkPoint = lowerTrunkPoint if lowerTrunkPoint != None else (points["hpi"] if "hpi" in points else (points["hpd"] if "hpd" in points else None))
 
         # Si tenemos puntos para tronco, lo definimos
         if lowerTrunkPoint != None and upperTrunkPoint != None:

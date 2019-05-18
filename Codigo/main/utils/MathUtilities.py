@@ -29,5 +29,42 @@ class MathUtilities:
         except:
             angle2 = 180
 
-
         return round(abs(angle1 - angle2), 1)
+
+    # Pendiente de una recta
+    @staticmethod
+    def getSlope(pt1, pt2):
+        x1, y1 = pt1
+        x2, y2 = pt2
+
+        return (y2 - y1) / (x2 - x1)
+
+    # Perpendicular de una recta
+    @staticmethod
+    def getPerpendicularLinePoints(pt1, pt2, sharedPoint, targetY):
+        newPoint = None
+        x, y = sharedPoint
+
+        # Ecuacion de la recta es: y = mx + b    (m : pendiente)
+        m = MathUtilities.getSlope(pt1, pt2) + 0.1
+
+        # Pendiente negativa
+        neg_m = (1 / m) * -1
+
+        # Obtenemos b a partir de las coordenadas de sharedPoint y la pendiente
+        b = y - (neg_m * x)
+
+        #Obtenemos X en funcion de targetY utilizando la ecuacion de la recta, la ecuacion despejada para X es: x = (y - b) / m
+        try:
+            newX = int((targetY - b) / neg_m)
+
+            newPoint = (newX, targetY)
+        except:
+            pass
+
+        return newPoint
+
+    # Disancia entre dos puntos
+    @staticmethod
+    def distance(p0, p1):
+        return int(math.sqrt((p0[0] - p1[0]) ** 2 + (p0[1] - p1[1]) ** 2))

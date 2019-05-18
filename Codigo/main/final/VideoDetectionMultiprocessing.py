@@ -42,9 +42,12 @@ video_height = 240
 drawer = Drawer()
 
 # Red neuronal de angulos
-EPOCHS = 50
-nnet = NeuralNetwork("trainingangles.csv", 8)
-nnet.trainNetwork(EPOCHS)
+EPOCHS = 1
+nnet = NeuralNetwork(8)
+#nnet.loadTrainingSamples("trainingangles.csv")
+#nnet.trainNetwork(EPOCHS)
+nnet.loadModel("model.json")
+#nnet.saveModel("model.json")
 
 netOutput = NO_ATTACK
 Xseconds = 10                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
@@ -122,16 +125,14 @@ while True:
                 skeletonFrame = drawer.drawSkeletonPoints(skeletonFrame, pointsSingleHuman)
 
                 angles, lines = drawer.getBodyAngles(pointsSingleHuman)
-                angles = np.array([list(angles.values())])
 
                 if len(angles) > 0:
                     print(angles)
-
-                try:
-                    if netOutput == NO_ATTACK:
-                        netOutput = int(nnet.predict(angles))
-                except:
-                    netOutput = NO_ATTACK
+                    angles = np.array([list(angles.values())])
+                    try:
+                        netOutput = nnet.predict(angles)
+                    except:
+                        pass
 
                 # Dibujamos tronco
                 if "trunkPoints" in lines:

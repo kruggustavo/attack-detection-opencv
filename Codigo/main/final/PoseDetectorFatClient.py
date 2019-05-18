@@ -2,7 +2,7 @@
 # This code is in the public domain.
 from __future__ import print_function
 from multiprocessing.managers import SyncManager
-from final.OpenPoseMutiple import OpenPoseMultiple
+
 import multiprocessing
 import cv2
 import time
@@ -15,10 +15,9 @@ AUTHKEY = b'shufflin'
 
 frameWidth = frameHeight = 0
 
-#protoFile = "pose/mpi/pose_deploy_linevec_faster_1_stages.prototxt"
 weightsFile = "pose/mpi/pose_iter_150000.caffemodel"
 protoFile = "pose/coco/pose_deploy_linevec.prototxt"
-#weightsFile = "pose/coco/pose_iter_440000.caffemodel"
+
 nPoints = 18
 
 # Referencias
@@ -158,7 +157,7 @@ def getValidPairs(output):
             # Append the detected connections to the global list
             valid_pairs.append(valid_pair)
         else: # If no keypoints are detected
-            print("No Connection : k = {}".format(k))
+            #print("No Connection : k = {}".format(k))
             invalid_pairs.append(k)
             valid_pairs.append([])
     return valid_pairs, invalid_pairs
@@ -224,74 +223,72 @@ def worker(job_q, result_q):
     global frameHeight, frameWidth, detected_keypoints, keypoints_list, net
 
     while True:
-        #try:
-        # Obtenemos frame del servidor de hilos
-        frame = job_q.get() #get_nowait()
-        #frame = cv2.resize(frame, (640, 480))
-        frameWidth = frame.shape[1]
-        frameHeight = frame.shape[0]
-        detected_keypoints = []
-        keypoints_list = np.zeros((0, 3))
-        # Fix the input Height and get the width according to the Aspect Ratio
-        inHeight = 224
-        inWidth = int((inHeight / frameHeight) * frameWidth)
+        try:
+            # Obtenemos frame del servidor de hilos
+            frame = job_q.get() #get_nowait()
+        except:
+            frame = None
 
-        inpBlob = cv2.dnn.blobFromImage(frame, 1.0 / 255, (inWidth, inHeight), (0, 0, 0), swapRB=False, crop=False)
+        if frame != None:
+            frameWidth = frame.shape[1]
+            frameHeight = frame.shape[0]
+            detected_keypoints = []
+            keypoints_list = np.zeros((0, 3))
+            # Fix the input Height and get the width according to the Aspect Ratio
+            inHeight = 224
+            inWidth = int((inHeight / frameHeight) * frameWidth)
 
-        net.setInput(inpBlob)
-        output = net.forward()
+            inpBlob = cv2.dnn.blobFromImage(frame, 1.0 / 255, (inWidth, inHeight), (0, 0, 0), swapRB=False, crop=False)
 
-        detected_keypoints = []
-        keypoints_list = np.zeros((0, 3))
-        keypoint_id = 0
-        threshold = 0.1
+            net.setInput(inpBlob)
+            output = net.forward()
 
-        for part in range(nPoints):
-            probMap = output[0, part, :, :]
-            probMap = cv2.resize(probMap, (frame.shape[1], frame.shape[0]))
-            keypoints = getKeypoints(probMap, threshold)
-            keypoints_with_id = []
-            for i in range(len(keypoints)):
-                keypoints_with_id.append(keypoints[i] + (keypoint_id,))
-                keypoints_list = np.vstack([keypoints_list, keypoints[i]])
-                keypoint_id += 1
+            detected_keypoints = []
+            keypoints_list = np.zeros((0, 3))
+            keypoint_id = 0
+            threshold = 0.1
 
-            detected_keypoints.append(keypoints_with_id)
+            for part in range(nPoints):
+                probMap = output[0, part, :, :]
+                probMap = cv2.resize(probMap, (frame.shape[1], frame.shape[0]))
+                keypoints = getKeypoints(probMap, threshold)
+                keypoints_with_id = []
+                for i in range(len(keypoints)):
+                    keypoints_with_id.append(keypoints[i] + (keypoint_id,))
+                    keypoints_list = np.vstack([keypoints_list, keypoints[i]])
+                    keypoint_id += 1
 
-        valid_pairs, invalid_pairs = getValidPairs(output)
-        personwiseKeypoints = getPersonwiseKeypoints(valid_pairs, invalid_pairs)
+                detected_keypoints.append(keypoints_with_id)
 
-        # Cantidad de personas: colocamos un array de puntos por cada persona
-        humansPointsLists = list({} for i in range(len(personwiseKeypoints)))
+            valid_pairs, invalid_pairs = getValidPairs(output)
+            personwiseKeypoints = getPersonwiseKeypoints(valid_pairs, invalid_pairs)
 
-        peopleCount = len(personwiseKeypoints)
+            # Cantidad de personas: colocamos un array de puntos por cada persona
+            humansPointsLists = list({} for i in range(len(personwiseKeypoints)))
 
-        for i in range(17):
-            for n in range(peopleCount):
-                index = personwiseKeypoints[n][np.array(POSE_PAIRS[i])]
-                if -1 in index:
-                    continue
-                X = np.int32(keypoints_list[index.astype(int), 0])
-                Y = np.int32(keypoints_list[index.astype(int), 1])
-                point1 = (X[0], Y[0])
-                point2 = (X[1], Y[1])
-                cv2.line(frame, point1, point2, colors[i], 3, cv2.LINE_AA)
-                # Determinamos puntos de la recta
-                if i in humanPartsDict:
-                    bodyPartLabel = humanPartsDict[i]
-                    labels = humanPointsFromPartsDict[bodyPartLabel]
+            peopleCount = len(personwiseKeypoints)
 
-                    humansPointsLists[n][labels[0]] = point1
-                    humansPointsLists[n][labels[1]] = point2
+            for i in range(17):
+                for n in range(peopleCount):
+                    index = personwiseKeypoints[n][np.array(POSE_PAIRS[i])]
+                    if -1 in index:
+                        continue
+                    X = np.int32(keypoints_list[index.astype(int), 0])
+                    Y = np.int32(keypoints_list[index.astype(int), 1])
+                    point1 = (X[0], Y[0])
+                    point2 = (X[1], Y[1])
+                    cv2.line(frame, point1, point2, colors[i], 3, cv2.LINE_AA)
+                    # Determinamos puntos de la recta
+                    if i in humanPartsDict:
+                        bodyPartLabel = humanPartsDict[i]
+                        labels = humanPointsFromPartsDict[bodyPartLabel]
 
-        # Colocamos resultado en cola de resultados para servidor
-        result_q.put(humansPointsLists)
-        print("Processed! " + str(humansPointsLists))
-        #except queue.Empty:
-        #    return
+                        humansPointsLists[n][labels[0]] = point1
+                        humansPointsLists[n][labels[1]] = point2
 
-        #cv2.imshow("points", frame)
-        #cv2.waitKey(0)
+            # Colocamos resultado en cola de resultados para servidor
+            result_q.put(humansPointsLists)
+            print("Processed! " + str(humansPointsLists))
 
 print("Client program started")
 number_of_threads = 3
@@ -309,53 +306,3 @@ for i in range(number_of_threads):
 
 for p in procs:
     p.join()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
-frameClone = frame.copy()
-for i in range(nPoints):
-    for j in range(len(detected_keypoints[i])):
-        cv2.circle(frameClone, detected_keypoints[i][j][0:2], 5, colors[i], -1, cv2.LINE_AA)
-cv2.imshow("Keypoints",frameClone)
-
-valid_pairs, invalid_pairs = getValidPairs(output)
-personwiseKeypoints = getPersonwiseKeypoints(valid_pairs, invalid_pairs)
-
-for i in range(17):
-    for n in range(len(personwiseKeypoints)):
-        index = personwiseKeypoints[n][np.array(POSE_PAIRS[i])]
-        if -1 in index:
-            continue
-        B = np.int32(keypoints_list[index.astype(int), 0])
-        A = np.int32(keypoints_list[index.astype(int), 1])
-        cv2.line(frameClone, (B[0], A[0]), (B[1], A[1]), colors[i], 3, cv2.LINE_AA)
-
-endTime = time.time()
-
-print("Time Taken for processing image = {}".format(endTime - startTime))
-cv2.imshow("Detected Pose" , frameClone)
-cv2.waitKey(0)"""
