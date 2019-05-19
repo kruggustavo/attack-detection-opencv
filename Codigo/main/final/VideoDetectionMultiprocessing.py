@@ -67,7 +67,9 @@ lastVal = NO_ATTACK
 existWeapon = False
 internalFramesQueue = queue.Queue()
 
-def weaponsFramesConsumer():
+canDisplayWarning = True
+
+def weaponsDetectionConsumer():
     # Armas
     wClassifier = WeaponsClassifier(cascadeFile="guns.xml", minSize=(100, 100))
     while True:
@@ -83,19 +85,20 @@ def weaponsFramesConsumer():
 
 
 def playWarningMsg():
-    global lastVal, agresionTime, mixer, netOutput
+    global lastVal, agresionTime, mixer, netOutput, canDisplayWarning
     # Si han pasado segundos desde el ultimo ataque, habilitar alertas
-    if lastVal == ATTACK and (time.time() - agresionTime) > Xseconds:
+    if lastVal == ATTACK and canDisplayWarning == True:
         lastVal = netOutput
 
     # Si agresion existe luego de X segundos emitir audio
-    if (time.time() - agresionTime) > Xseconds:
+    if canDisplayWarning == True:
+        canDisplayWarning = False
         mixer.music.play()
         agresionTime = time.time()
         lastVal = netOutput
 
     # Alerta visual durante la mitad del tiempo de ataque
-    if (lastVal == ATTACK and (time.time() - agresionTime) < (Xseconds * 0.5)) or existWeapon == True:
+    if existWeapon == True:
         cv2.circle(skeletonFrame, (video_width - 30, video_height - 30), 30, (0, 0, 255), -1)
 
 
@@ -115,13 +118,14 @@ manager.start()
 shared_job_q = manager.get_job_q()
 shared_result_q = manager.get_result_q()
 
-# Enviamos un primer frame para activar el mecanismo de envio: solo se envian datos cuando el cliente haya respondido
+# Enviamos un primer frame para activar el mecanismo de envio: solo se envian datos cuando la cola esta vacia
 hasFrame, frame = cap.read()
 frame = cv2.resize(frame, (video_width, video_height))
 shared_job_q.put(frame)
 print("Sending data to threads. Starting.")
 
-thread = threading.Thread(target=consumer)
+# Hilo para deteccion de armas en escena
+thread = threading.Thread(target=weaponsDetectionConsumer)
 thread.start()
 
 while True:
@@ -130,6 +134,14 @@ while True:
     if hasFrame:
 
         frame = cv2.resize(frame, (video_width, video_height))
+
+        if (time.time() - agresionTime) > Xseconds:
+            canDisplayWarning = True
+            if existWeapon == True:
+                existWeapon = False
+        else:
+            canDisplayWarning = False
+
 
         # Enviar frame a cola de trabajo para clientes solo si cola esta vacia
         if shared_job_q.qsize() == 0:
