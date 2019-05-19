@@ -1,11 +1,13 @@
 from final.NeuralNetwork import NeuralNetwork
 from final.Drawer import Drawer
 from pygame import mixer
+from final.WeaponsClassifier import WeaponsClassifier
 from multiprocessing.managers import SyncManager
 import queue
 import cv2
 import numpy as np
 import time
+import threading
 
 # Attack detection
 # Detector de ataques y amenazas humanas en imagenes secuenciales mediante el entrenamiento de redes neuronales
@@ -35,8 +37,8 @@ workpath = "/home/usuario/Documentos/attack-detection-opencv"
 img_file = workpath + "/Imagenes/seniors-walking.jpg"
 videoFile = workpath +"/Videos/3.mp4"
 cap = cv2.VideoCapture(0)
-video_width = 360
-video_height = 240
+video_width = 640
+video_height = 480
 
 # Dibujador y extractor de angulos
 drawer = Drawer()
@@ -62,6 +64,24 @@ agresionTime = time.time() - Xseconds
 hasFrame = True
 lastVal = NO_ATTACK
 
+existWeapon = False
+internalFramesQueue = queue.Queue()
+
+def weaponsFramesConsumer():
+    # Armas
+    wClassifier = WeaponsClassifier(cascadeFile="guns.xml", minSize=(100, 100))
+    while True:
+        frame = internalFramesQueue.get()
+        if frame == None:
+            return
+
+        if netOutput == ATTACK:
+            results = wClassifier.classifyOneToOthers(frame)
+            if len(results) > 0:
+                existWeapon = True
+
+
+
 def playWarningMsg():
     global lastVal, agresionTime, mixer, netOutput
     # Si han pasado segundos desde el ultimo ataque, habilitar alertas
@@ -75,7 +95,7 @@ def playWarningMsg():
         lastVal = netOutput
 
     # Alerta visual durante la mitad del tiempo de ataque
-    if lastVal == ATTACK and (time.time() - agresionTime) < (Xseconds * 0.5):
+    if (lastVal == ATTACK and (time.time() - agresionTime) < (Xseconds * 0.5)) or existWeapon == True:
         cv2.circle(skeletonFrame, (video_width - 30, video_height - 30), 30, (0, 0, 255), -1)
 
 
@@ -100,6 +120,10 @@ hasFrame, frame = cap.read()
 frame = cv2.resize(frame, (video_width, video_height))
 shared_job_q.put(frame)
 print("Sending data to threads. Starting.")
+
+thread = threading.Thread(target=consumer)
+thread.start()
+
 while True:
     hasFrame, frame = cap.read()
     #frame = cv2.imread(img_file)
@@ -110,6 +134,7 @@ while True:
         # Enviar frame a cola de trabajo para clientes solo si cola esta vacia
         if shared_job_q.qsize() == 0:
             shared_job_q.put(frame)
+            internalFramesQueue.put(frame)
 
         # Se procesa una vez que haya respuesta de hilos
         if shared_result_q.qsize() > 0:
@@ -143,12 +168,14 @@ while True:
             if netOutput == ATTACK:
                 playWarningMsg()
 
-            cv2.putText(skeletonFrame, ATTACK_STATE[netOutput],
-                        (int((video_width / 2) - (len(ATTACK_STATE[netOutput]) * 5)), 15),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
+            try:
+                cv2.putText(skeletonFrame, ATTACK_STATE[netOutput],
+                            (int((video_width / 2) - (len(ATTACK_STATE[netOutput]) * 5)), 15),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
+            except:
+                pass
 
-
-        #skeletonFrame = cv2.addWeighted(frame, 0.3, skeletonFrame, 0.7, 0)
+        skeletonFrame = cv2.addWeighted(frame, 0.3, skeletonFrame, 0.7, 0)
 
         frame = np.concatenate((frame, skeletonFrame), axis=1)
 

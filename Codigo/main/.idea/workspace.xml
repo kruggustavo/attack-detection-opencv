@@ -2,14 +2,97 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de1e1734-5595-47d8-b788-d94778d6cfdd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/final/WeaponsClassifier.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ImageResizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/Drawer.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/Drawer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/LivePoseGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/LivePoseGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/NeuralNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/NeuralNetwork.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/OpenPoseMutiple.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/PoseDetectorClient.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/trainingangles.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/MathUtilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/MathUtilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/VideoDetectionSingle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hog/BodyPartsDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/hog/WeaponsDetection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hog/Drawer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hog/Live.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hog/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/hog/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hog/NeuralNetwork.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hog/ObjectDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hog/ObjectDetector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hog/trainingangles.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--gun-to-left-middle/frame48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--gun-to-left-middle/frame49.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--gun-to-left-middle/frame50.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--gun-to-left-middle/frame51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--gun-to-left-middle/frame52.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--gun-to-left-middle/frame53.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--gun-to-left-middle/frame54.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--gun-to-left-middle/frame55.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--gun-to-left-middle/frame56.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--gun-to-left-middle/frame57.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame29.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame30.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame31.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame33.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame34.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame35.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame36.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame37.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame38.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame40.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/arms_front--walking/frame9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame49.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame50.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame52.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/legs_front--walking/frame53.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/KeyPoints/arms_front--gun-to-left-middle.points" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/KeyPoints/arms_front--walking.points" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/KeyPoints/legs_front--walking.points" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Properties/arms_front--gun-to-left-middle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Properties/arms_front--walking.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/Properties/legs_front--walking.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Imagenes/seniors-walking.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,22 +106,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="225">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="225" selection-start-line="225" selection-end-line="225" />
-              <folding>
-                <element signature="e#84#121#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+            <state relative-caret-position="1261">
+              <caret line="97" column="101" selection-start-line="97" selection-start-column="101" selection-end-line="97" selection-end-column="101" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -47,12 +118,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/final/NeuralNetwork.py">
+        <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-123">
-              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="27" selection-end-column="94" />
+            <state relative-caret-position="-3382">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#84#121#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,9 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hog</find>
-      <find>\</find>
-      <find>multiDetector</find>
       <find>__</find>
       <find>'image'</find>
       <find>_structure</find>
@@ -99,6 +167,9 @@
       <find>queue</find>
       <find>No Connet</find>
       <find>thread</find>
+      <find>determineHumanBody</find>
+      <find>deter</find>
+      <find>man-isolated</find>
     </findStrings>
     <replaceStrings>
       <replace>\\</replace>
@@ -129,10 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hog/train.py" />
-        <option value="$PROJECT_DIR$/train_digits.py" />
-        <option value="$PROJECT_DIR$/tests/hog_detection.py" />
-        <option value="$PROJECT_DIR$/tests/openpose.py" />
         <option value="$PROJECT_DIR$/hog/test.py" />
         <option value="$PROJECT_DIR$/utils/SVM.py" />
         <option value="$PROJECT_DIR$/utils/SVMClassifier.py" />
@@ -153,15 +220,12 @@
         <option value="$PROJECT_DIR$/points/PointingImages.py" />
         <option value="$PROJECT_DIR$/pose/Threading.py" />
         <option value="$PROJECT_DIR$/hog/KeyPointsFromImages.py" />
-        <option value="$PROJECT_DIR$/utils/FramesFromVideo.py" />
         <option value="$PROJECT_DIR$/pose/Caffe.py" />
         <option value="$PROJECT_DIR$/utils/KeyPointsFromImages.py" />
         <option value="$PROJECT_DIR$/utils/KeyPointsFromFrame.py" />
         <option value="$PROJECT_DIR$/hog/AngleVector.py" />
         <option value="$PROJECT_DIR$/hog/GatherAnnotations.py" />
         <option value="$PROJECT_DIR$/hog/BodyPartsDetection.py" />
-        <option value="$PROJECT_DIR$/hog/ObjectDetector.py" />
-        <option value="$PROJECT_DIR$/hog/Main.py" />
         <option value="$PROJECT_DIR$/utils/NeuralNetwork.py" />
         <option value="$PROJECT_DIR$/hog/Drawer.py" />
         <option value="$PROJECT_DIR$/utils/PoseGenerator.py" />
@@ -177,9 +241,16 @@
         <option value="$PROJECT_DIR$/utils/MathUtilities.py" />
         <option value="$PROJECT_DIR$/final/Drawer.py" />
         <option value="$PROJECT_DIR$/final/LivePoseGenerator.py" />
-        <option value="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" />
         <option value="$PROJECT_DIR$/final/NeuralNetwork.py" />
+        <option value="$PROJECT_DIR$/hog/WeaponsDetection.py" />
+        <option value="$PROJECT_DIR$/utils/FramesFromVideo.py" />
+        <option value="$PROJECT_DIR$/utils/ImageResizer.py" />
+        <option value="$PROJECT_DIR$/hog/ObjectDetector.py" />
+        <option value="$PROJECT_DIR$/hog/Main.py" />
+        <option value="$PROJECT_DIR$/final/WeaponClassifier.py" />
+        <option value="$PROJECT_DIR$/final/WeaponsClassifier.py" />
         <option value="$PROJECT_DIR$/final/PoseDetectorFatClient.py" />
+        <option value="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" />
       </list>
     </option>
   </component>
@@ -197,6 +268,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,8 +284,7 @@
             <path>
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="final" type="462c0819:PsiDirectoryNode" />
-              <item name="pose" type="462c0819:PsiDirectoryNode" />
+              <item name="hog" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
@@ -224,7 +295,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -260,7 +330,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.PoseDetectorFatClient">
+  <component name="RunManager" selected="Python.Main">
+    <configuration name="ImageResizer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Desarrollo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/ImageResizer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="LivePoseGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Desarrollo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -282,7 +373,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="PoseDetectorCilent" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Desarrollo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -290,11 +381,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hog" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/PoseDetectorClient.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hog/Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -316,27 +407,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/PoseDetectorFatClient.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="VideoDetectionMultiple" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Desarrollo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/VideoDetectionMultiple.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -402,19 +472,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.VideoDetectionMultiple" />
       <item itemvalue="Python.VideoDetectionMultiprocessing" />
-      <item itemvalue="Python.PoseDetectorCilent" />
       <item itemvalue="Python.PoseDetectorFatClient" />
       <item itemvalue="Python.LivePoseGenerator" />
+      <item itemvalue="Python.Main" />
+      <item itemvalue="Python.ImageResizer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Main" />
+        <item itemvalue="Python.ImageResizer" />
         <item itemvalue="Python.PoseDetectorFatClient" />
         <item itemvalue="Python.VideoDetectionMultiprocessing" />
         <item itemvalue="Python.LivePoseGenerator" />
-        <item itemvalue="Python.PoseDetectorCilent" />
-        <item itemvalue="Python.VideoDetectionMultiple" />
       </list>
     </recent_temporary>
   </component>
@@ -435,12 +505,12 @@
     <frame x="2" y="59" width="1366" height="699" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.17433235" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.17433235" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50284094" side_tool="true" weight="0.17433235" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31740615" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31740615" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33105803" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -472,8 +542,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/multiplehog/main.py" />
-    <entry file="file://$PROJECT_DIR$/utils/MyMathUtils.py" />
     <entry file="file://$PROJECT_DIR$/hog/TrainDetector.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/dlib/__init__.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/cv2/cv2/HOGDescriptor.py" />
@@ -499,16 +567,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/KeyPointsFromImages.py" />
-    <entry file="file://$PROJECT_DIR$/utils/FramesFromVideo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="80" column="21" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pose/Threading.py" />
     <entry file="file://$PROJECT_DIR$/utils/KeyPointsFromFrame.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -522,27 +580,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pose/Caffe.py" />
     <entry file="file://$PROJECT_DIR$/hog/AngleVector.py" />
-    <entry file="file://$PROJECT_DIR$/hog/BodyPartsDetection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hog/GatherAnnotations.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-109">
-          <caret line="9" column="29" selection-start-line="8" selection-start-column="2" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hog/ObjectDetector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/NeuralNetwork.py" />
     <entry file="file://$PROJECT_DIR$/utils/PoseGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -561,78 +598,11 @@
     <entry file="file://$PROJECT_DIR$/final/multi-person-openpose.py" />
     <entry file="file://$PROJECT_DIR$/final/VideoDetection.py" />
     <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiple.py" />
-    <entry file="file://$PROJECT_DIR$/final/VideoDetectionSingle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="80" column="50" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/final/VideoDetectionSingle.py" />
     <entry file="file://$PROJECT_DIR$/final/val.py" />
     <entry file="file://$PROJECT_DIR$/final/OpenPoseLight.py" />
-    <entry file="file://$PROJECT_DIR$/final/PoseDetectorClient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="64" column="12" lean-forward="true" selection-start-line="15" selection-end-line="64" selection-end-column="12" />
-          <folding>
-            <element signature="e#84#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hog/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="95" column="12" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final/OpenPoseMutiple.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="63" column="63" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final/OpenPose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hog/Live.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-end-line="30" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hog/Drawer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="102" column="27" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/final/PoseDetectorClient.py" />
+    <entry file="file://$PROJECT_DIR$/hog/Live.py" />
     <entry file="file:///usr/lib/python3.6/threading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -657,9 +627,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hog/Drawer.py" />
+    <entry file="file://$PROJECT_DIR$/final/OpenPoseMutiple.py" />
+    <entry file="file://$PROJECT_DIR$/utils/FramesFromVideo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="80" column="21" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/ImageResizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="60" lean-forward="true" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/WeaponsClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+          <folding>
+            <element signature="e#98#116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hog/WeaponsDetection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hog/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="81" selection-start-line="18" selection-start-column="81" selection-end-line="18" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hog/GatherAnnotations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hog/ObjectDetector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-160">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/final/LivePoseGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
+        <state relative-caret-position="105">
           <caret line="278" selection-start-line="278" selection-end-line="279" selection-end-column="18" />
           <folding>
             <element signature="e#84#121#0" expanded="true" />
@@ -669,7 +708,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/final/NeuralNetwork.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
+        <state relative-caret-position="63">
           <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="27" selection-end-column="94" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
@@ -677,25 +716,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
+    <entry file="file://$PROJECT_DIR$/final/OpenPose.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+        <state relative-caret-position="115">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="225" selection-start-line="225" selection-end-line="225" />
+        <state relative-caret-position="-3382">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#84#121#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1261">
+          <caret line="97" column="101" selection-start-line="97" selection-start-column="101" selection-end-line="97" selection-end-column="101" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

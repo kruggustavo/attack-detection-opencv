@@ -12,10 +12,10 @@ class ObjectDetector(object):
         self.options = options
         if self.options is None:
             self.options = dlib.simple_object_detector_training_options()
-            self.options.C = 5
+            self.options.C = 7
             self.options.num_threads = 4
-            self.options.detection_window_size = 50 * 45
-            self.options.epsilon = 20.00
+            self.options.detection_window_size = 42 * 42
+            self.options.epsilon = 17.00
 
         if loadPath is not None:
             self._detector = dlib.simple_object_detector(loadPath)

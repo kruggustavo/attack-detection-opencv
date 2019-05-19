@@ -2,12 +2,9 @@
 # This code is in the public domain.
 from __future__ import print_function
 from multiprocessing.managers import SyncManager
-
 import multiprocessing
 import cv2
-import time
 import numpy as np
-from random import randint
 
 IP = 'localhost'
 PORTNUM = 55141
@@ -226,10 +223,6 @@ def worker(job_q, result_q):
         try:
             # Obtenemos frame del servidor de hilos
             frame = job_q.get() #get_nowait()
-        except:
-            frame = None
-
-        if frame != None:
             frameWidth = frame.shape[1]
             frameHeight = frame.shape[0]
             detected_keypoints = []
@@ -289,6 +282,9 @@ def worker(job_q, result_q):
             # Colocamos resultado en cola de resultados para servidor
             result_q.put(humansPointsLists)
             print("Processed! " + str(humansPointsLists))
+        except:
+            frame = None
+
 
 print("Client program started")
 number_of_threads = 3
