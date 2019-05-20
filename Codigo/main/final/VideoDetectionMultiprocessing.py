@@ -1,13 +1,14 @@
 from final.NeuralNetwork import NeuralNetwork
 from final.Drawer import Drawer
 from pygame import mixer
-from final.WeaponsClassifier import WeaponsClassifier
 from multiprocessing.managers import SyncManager
 import queue
 import cv2
 import numpy as np
 import time
+import random
 import threading
+import imutils
 
 # Attack detection
 # Detector de ataques y amenazas humanas en imagenes secuenciales mediante el entrenamiento de redes neuronales
@@ -35,10 +36,10 @@ ATTACK_STATE[ATTACK] = "Pose compatible con ataque!"
 
 workpath = "/home/usuario/Documentos/attack-detection-opencv"
 img_file = workpath + "/Imagenes/seniors-walking.jpg"
-videoFile = workpath +"/Videos/3.mp4"
-cap = cv2.VideoCapture(0)
-video_width = 640
-video_height = 480
+videoFile = workpath +"/Videos/5.mp4"
+cap = cv2.VideoCapture(videoFile)
+video_width = 500
+video_height = 340
 
 # Dibujador y extractor de angulos
 drawer = Drawer()
@@ -56,51 +57,48 @@ Xseconds = 10                                   # Cantidad de segundos que deben
 
 emptyFrame = np.zeros((video_height, video_width, 3), np.uint8)
 skeletonFrame = emptyFrame
+frameToProcess = emptyFrame
 
 mixer.init()
 mixer.music.load("47528846.mp3")
 agresionTime = time.time() - Xseconds
 
 hasFrame = True
-lastVal = NO_ATTACK
+agressionExpired = True
 
-existWeapon = False
-internalFramesQueue = queue.Queue()
+# Margen de area de arma detectada para verificacion
+weaponBoxMargin = 50
 
-canDisplayWarning = True
+# Armas
+cascadeGunsClassifier = cv2.CascadeClassifier("guns.xml")
+weaponInHands = False
 
-def weaponsDetectionConsumer():
-    # Armas
-    wClassifier = WeaponsClassifier(cascadeFile="guns.xml", minSize=(100, 100))
-    while True:
-        frame = internalFramesQueue.get()
-        if frame == None:
-            return
-
-        if netOutput == ATTACK:
-            results = wClassifier.classifyOneToOthers(frame)
-            if len(results) > 0:
-                existWeapon = True
-
-
-
-def playWarningMsg():
-    global lastVal, agresionTime, mixer, netOutput, canDisplayWarning
-    # Si han pasado segundos desde el ultimo ataque, habilitar alertas
-    if lastVal == ATTACK and canDisplayWarning == True:
-        lastVal = netOutput
-
-    # Si agresion existe luego de X segundos emitir audio
-    if canDisplayWarning == True:
-        canDisplayWarning = False
-        mixer.music.play()
+def attackHandler(frame, lines):
+    global agresionTime, weaponInHands
+    arms = ["leftForearmPoints", "rightForearmPoints"]
+    if agressionExpired == True:
         agresionTime = time.time()
-        lastVal = netOutput
+        mixer.music.play()
 
-    # Alerta visual durante la mitad del tiempo de ataque
-    if existWeapon == True:
-        cv2.circle(skeletonFrame, (video_width - 30, video_height - 30), 30, (0, 0, 255), -1)
+    # Verifica armas en frame cercanos a manos
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray = cv2.GaussianBlur(gray, (21, 21), 0)
 
+    results = cascadeGunsClassifier.detectMultiScale(frame, 1.5, 5, minSize=(100, 100))
+    if len(results) > 0:
+        weaponInHands = False
+        # Agregamos margenes a imagenes de armas
+        for (x, y, w, h) in results:
+            x -= weaponBoxMargin
+            y -= weaponBoxMargin
+            w += weaponBoxMargin
+            h += weaponBoxMargin
+            for arm in arms:
+                if arm in lines:
+                    hx, hy = lines[arm][1] # Puntos de la mano
+                    # Si coordenadas de manos estan dentro del area de arma detectada
+                    if hx >= x and hx <= (x + w) and hy >= y and hy <= (y + h):
+                        weaponInHands = True
 
 # Servidor de hijos para multiprocesamiento
 job_q = queue.Queue()
@@ -125,10 +123,17 @@ shared_job_q.put(frame)
 print("Sending data to threads. Starting.")
 
 # Hilo para deteccion de armas en escena
-thread = threading.Thread(target=weaponsDetectionConsumer)
-thread.start()
+#thread = threading.Thread(target=weaponsDetectionConsumer)
+#thread.start()
+
+frameId = 0
+
+# Diccionario que contiene frames que estan siendo procesados identificados con un numero de id
+localFramesDict = {}
 
 while True:
+    time.sleep(100 / 1000)
+    frameId = random.randint(0, 999999)
     hasFrame, frame = cap.read()
     #frame = cv2.imread(img_file)
     if hasFrame:
@@ -136,23 +141,27 @@ while True:
         frame = cv2.resize(frame, (video_width, video_height))
 
         if (time.time() - agresionTime) > Xseconds:
-            canDisplayWarning = True
-            if existWeapon == True:
-                existWeapon = False
+            agressionExpired = True
         else:
-            canDisplayWarning = False
+            agressionExpired = False
 
 
-        # Enviar frame a cola de trabajo para clientes solo si cola esta vacia
+        # Enviar frame e ID a cola de trabajo para clientes solo si cola esta vacia
         if shared_job_q.qsize() == 0:
-            shared_job_q.put(frame)
-            internalFramesQueue.put(frame)
+            packetData = {}
+            packetData[frameId] = frame
+            shared_job_q.put(packetData)
 
-        # Se procesa una vez que haya respuesta de hilos
+            localFramesDict[frameId] = frame
+
+
+        # Se procesa una vez que haya respuesta de hilos (se espera un dict con el id del frame procesado y lista de puntos)
         if shared_result_q.qsize() > 0:
+            packetData = shared_result_q.get()
+            returnedFrameId = list(packetData)[0]
 
             # Datos recibidos del cliente
-            pointsFromAllHumans = shared_result_q.get()
+            pointsFromAllHumans = packetData[returnedFrameId]
 
             skeletonFrame = emptyFrame.copy()
             netOutput = NO_ATTACK
@@ -171,23 +180,27 @@ while True:
                     except:
                         pass
 
+                    if netOutput == ATTACK:
+                        frameToProcess = localFramesDict[returnedFrameId]
+                        attackHandler(frameToProcess, lines)
+
                 # Dibujamos tronco
                 if "trunkPoints" in lines:
                     pointA = lines["trunkPoints"][0]
                     pointB = lines["trunkPoints"][1]
                     cv2.line(skeletonFrame, pointA, pointB, (100, 7, 65), 3, lineType=cv2.LINE_AA)
 
-            if netOutput == ATTACK:
-                playWarningMsg()
-
             try:
                 cv2.putText(skeletonFrame, ATTACK_STATE[netOutput],
                             (int((video_width / 2) - (len(ATTACK_STATE[netOutput]) * 5)), 15),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
+
+                if weaponInHands == True:
+                    cv2.circle(skeletonFrame, (video_width - 30, video_height - 30), 30, (0, 0, 255), -1)
             except:
                 pass
 
-        skeletonFrame = cv2.addWeighted(frame, 0.3, skeletonFrame, 0.7, 0)
+            skeletonFrame = cv2.addWeighted(frameToProcess, 0.3, skeletonFrame, 0.7, 0)
 
         frame = np.concatenate((frame, skeletonFrame), axis=1)
 

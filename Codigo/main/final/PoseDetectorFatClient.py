@@ -222,13 +222,17 @@ def worker(job_q, result_q):
     while True:
         try:
             # Obtenemos frame del servidor de hilos
-            frame = job_q.get() #get_nowait()
+            packetData = job_q.get() #get_nowait()
+
+            frameId = list(packetData)[0]
+            frame = packetData[frameId]
+
             frameWidth = frame.shape[1]
             frameHeight = frame.shape[0]
             detected_keypoints = []
             keypoints_list = np.zeros((0, 3))
             # Fix the input Height and get the width according to the Aspect Ratio
-            inHeight = 224
+            inHeight = 200
             inWidth = int((inHeight / frameHeight) * frameWidth)
 
             inpBlob = cv2.dnn.blobFromImage(frame, 1.0 / 255, (inWidth, inHeight), (0, 0, 0), swapRB=False, crop=False)
@@ -280,8 +284,11 @@ def worker(job_q, result_q):
                         humansPointsLists[n][labels[1]] = point2
 
             # Colocamos resultado en cola de resultados para servidor
-            result_q.put(humansPointsLists)
-            print("Processed! " + str(humansPointsLists))
+            result = {}
+            result[frameId] = humansPointsLists
+
+            result_q.put(result)
+            print("Processed! " + str(frameId) + " " + str(humansPointsLists))
         except:
             frame = None
 

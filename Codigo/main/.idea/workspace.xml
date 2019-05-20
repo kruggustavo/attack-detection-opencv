@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de1e1734-5595-47d8-b788-d94778d6cfdd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/seniors-walking.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/WeaponsClassifier.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="120" column="109" selection-start-line="120" selection-start-column="109" selection-end-line="120" selection-end-column="109" />
+            <state relative-caret-position="158">
+              <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -31,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="234">
+              <caret line="234" column="26" selection-start-line="234" selection-start-column="26" selection-end-line="234" selection-end-column="26" />
               <folding>
                 <element signature="e#84#121#0" expanded="true" />
               </folding>
@@ -51,7 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>__</find>
       <find>'image'</find>
       <find>_structure</find>
       <find>video_file</find>
@@ -81,6 +82,7 @@
       <find>determineHumanBody</find>
       <find>deter</find>
       <find>man-isolated</find>
+      <find>existWeapon</find>
     </findStrings>
     <replaceStrings>
       <replace>\\</replace>
@@ -103,6 +105,7 @@
       <replace>frame</replace>
       <replace>self.default</replace>
       <replace>resultQueue</replace>
+      <replace>agressionExpired</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -179,6 +182,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -186,11 +190,15 @@
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="final" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -226,7 +234,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.VideoDetectionMultiprocessing">
     <configuration name="ImageResizer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Desarrollo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -376,10 +384,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.VideoDetectionMultiprocessing" />
+        <item itemvalue="Python.PoseDetectorFatClient" />
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.ImageResizer" />
-        <item itemvalue="Python.PoseDetectorFatClient" />
-        <item itemvalue="Python.VideoDetectionMultiprocessing" />
         <item itemvalue="Python.LivePoseGenerator" />
       </list>
     </recent_temporary>
@@ -399,8 +407,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="59" width="1366" height="699" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.17433235" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.17433235" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50284094" side_tool="true" weight="0.17433235" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -419,22 +428,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
     </layout>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/final/Drawer.py</url>
-          <line>139</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/final/Drawer.py</url>
-          <line>204</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/hog/TrainDetector.py" />
@@ -512,16 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/Drawer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2262">
-          <caret line="174" column="24" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hog/Drawer.py" />
     <entry file="file://$PROJECT_DIR$/final/OpenPoseMutiple.py" />
     <entry file="file://$PROJECT_DIR$/utils/FramesFromVideo.py">
@@ -540,16 +523,6 @@
           <caret line="18" column="60" lean-forward="true" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final/WeaponsClassifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
-          <folding>
-            <element signature="e#98#116#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -621,22 +594,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
+    <entry file="file://$PROJECT_DIR$/final/WeaponsClassifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="120" column="109" selection-start-line="120" selection-start-column="109" selection-end-line="120" selection-end-column="109" />
+        <state relative-caret-position="208">
+          <caret line="19" column="71" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="19" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/Drawer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="196" column="45" selection-start-line="196" selection-start-column="45" selection-end-line="196" selection-end-column="45" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="234">
+          <caret line="234" column="26" selection-start-line="234" selection-start-column="26" selection-end-line="234" selection-end-column="26" />
           <folding>
             <element signature="e#84#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
