@@ -233,7 +233,7 @@ def worker(job_q, result_q):
             keypoints_list = np.zeros((0, 3))
             # Fix the input Height and get the width according to the Aspect Ratio
             inHeight = 200
-            inWidth = int((inHeight / frameHeight) * frameWidth)
+            inWidth = 320
 
             inpBlob = cv2.dnn.blobFromImage(frame, 1.0 / 255, (inWidth, inHeight), (0, 0, 0), swapRB=False, crop=False)
 

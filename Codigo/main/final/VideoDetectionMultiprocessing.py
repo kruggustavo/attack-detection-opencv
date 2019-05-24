@@ -37,9 +37,9 @@ ATTACK_STATE[ATTACK] = "Pose compatible con ataque!"
 workpath = "/home/usuario/Documentos/attack-detection-opencv"
 img_file = workpath + "/Imagenes/seniors-walking.jpg"
 videoFile = workpath +"/Videos/5.mp4"
-cap = cv2.VideoCapture(videoFile)
-video_width = 500
-video_height = 340
+cap = cv2.VideoCapture(0)
+video_width = 320
+video_height = 200
 
 # Dibujador y extractor de angulos
 drawer = Drawer()
@@ -132,7 +132,7 @@ frameId = 0
 localFramesDict = {}
 
 while True:
-    time.sleep(100 / 1000)
+    #time.sleep(100 / 1000)
     frameId = random.randint(0, 999999)
     hasFrame, frame = cap.read()
     #frame = cv2.imread(img_file)
@@ -176,11 +176,12 @@ while True:
                     print(angles)
                     angles = np.array([list(angles.values())])
                     try:
-                        netOutput = nnet.predict(angles)
+                        netOutput = int(nnet.predict(angles))
                     except:
                         pass
-
+                    print("net output:" + str(netOutput))
                     if netOutput == ATTACK:
+                        print("Attack!")
                         frameToProcess = localFramesDict[returnedFrameId]
                         attackHandler(frameToProcess, lines)
 
@@ -190,17 +191,15 @@ while True:
                     pointB = lines["trunkPoints"][1]
                     cv2.line(skeletonFrame, pointA, pointB, (100, 7, 65), 3, lineType=cv2.LINE_AA)
 
-            try:
-                cv2.putText(skeletonFrame, ATTACK_STATE[netOutput],
-                            (int((video_width / 2) - (len(ATTACK_STATE[netOutput]) * 5)), 15),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
+            cv2.putText(skeletonFrame, ATTACK_STATE[netOutput],
+                        (int((video_width / 2) - (len(ATTACK_STATE[netOutput]) * 5)), 15),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
 
-                if weaponInHands == True:
-                    cv2.circle(skeletonFrame, (video_width - 30, video_height - 30), 30, (0, 0, 255), -1)
-            except:
-                pass
+            if weaponInHands == True:
+                cv2.circle(skeletonFrame, (video_width - 30, video_height - 30), 30, (0, 0, 255), -1)
 
-            skeletonFrame = cv2.addWeighted(frameToProcess, 0.3, skeletonFrame, 0.7, 0)
+
+            #skeletonFrame = cv2.addWeighted(frameToProcess, 0.3, skeletonFrame, 0.7, 0)
 
         frame = np.concatenate((frame, skeletonFrame), axis=1)
 
