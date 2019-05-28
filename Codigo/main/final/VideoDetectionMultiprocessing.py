@@ -34,9 +34,9 @@ ATTACK_STATE = {}
 ATTACK_STATE[NO_ATTACK] = "Pose no compatible con ataque"
 ATTACK_STATE[ATTACK] = "Pose compatible con ataque!"
 
-workpath = "/home/usuario/Documentos/attack-detection-opencv"
-img_file = workpath + "/Imagenes/seniors-walking.jpg"
-videoFile = workpath +"/Videos/5.mp4"
+#workpath = "/home/usuario/Documentos/attack-detection-opencv"
+#img_file = workpath + "/Imagenes/seniors-walking.jpg"
+#videoFile = workpath +"/Videos/5.mp4"
 cap = cv2.VideoCapture(0)
 video_width = 320
 video_height = 200
