@@ -1,15 +1,43 @@
-\documentclass[a4paper,12pt,twoside]{article}
+\documentclass[a4paper,12pt,oneside,spanish]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{enumitem}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{float}
 
 \setlength{\paperwidth}{20,4cm}          
 \setlength{\paperheight}{29,7cm}       
 \setlength{\textwidth}{16cm}         
-\setlength{\textheight}{24cm}        
+\setlength{\textheight}{25cm}        
 \setlength{\topmargin}{-1.2cm}         
-\setlength{\oddsidemargin}{0.40cm}   
-\setlength{\evensidemargin}{0.40cm} 
-\renewcommand{\baselinestretch}{1.4}
+\setlength{\oddsidemargin}{0.30cm}   
+\setlength{\evensidemargin}{0.30cm} 
+\renewcommand{\baselinestretch}{1.2}
+
+\makeatletter
+\def\@makechapterhead#1{%
+	%%%%\vspace*{50\p@}% %%% removed!
+	{\parindent \z@ \raggedright \normalfont
+		\ifnum \c@secnumdepth >\m@ne
+		\huge\bfseries \@chapapp\space \thechapter
+		\par\nobreak
+		\vskip 20\p@
+		\fi
+		\interlinepenalty\@M
+		\Huge \bfseries #1\par\nobreak
+		\vskip 40\p@
+}}
+\def\@makeschapterhead#1{%
+	%%%%%\vspace*{50\p@}% %%% removed!
+	{\parindent \z@ \raggedright
+		\normalfont
+		\interlinepenalty\@M
+		\Huge \bfseries  #1\par\nobreak
+		\vskip 40\p@
+}}
+\makeatother
 
 \begin{document}
 	\begin{center}
@@ -48,7 +76,7 @@
 	
 \newpage
 \setlength{\parskip}{1.3em}
-\part{Estado del Arte}
+\chapter{Estado del Arte}
 \section{Introducción}
 En la actualidad, la seguridad personal se está volviendo cada vez mas importante: los atracos, asaltos y robos se producen a plena luz del día, muchas veces a la vista de todos y de una manera cada vez mas violenta. La violencia utilizada durante estos actos es cada vez mayor, esto debido a múltiples factores tales como para evitar la resistencia de la víctíma, el tiempo en cometer el delito, etc. Las condiciones de seguridad existentes no parecen frenar esta violencia y hasta resulta inevitable en muchos casos. \par
 Con el transcurrir de éstos últimos años, muchas personas y empresas dedicadas a la tecnología han centrado sus esfuerzos en ofrecer soluciones que puedan brindar ayuda incluso a los órganismos de seguridad. Las cámaras de circuito cerrado de televisión (CCTV) han tomado un protagonismo mas evidente en los sistemas de vigilancia dada la ventaja que ofrecen. \par
@@ -88,8 +116,7 @@ Dentro de la clasificación de sistemas de visión para vigilancia, R. Dautov et
 \end{itemize}
 
 \newpage
-\part{Representación de poses}
-
+\chapter{Representación de poses}
 \section{Postura y Pose humanas}
 
 La postura es la forma natural que se establece con la disposición de las extremidades y el tronco del cuerpo humano. La pose, es la postura que sugiere la misma forma pero se dice que no es natural, es la postura de disposición artificial, buscada para cierto fin. \par
@@ -97,15 +124,17 @@ La postura es la forma natural que se establece con la disposición de las extre
 A través de la pose, el ser humano expresa una idea, una acción y hasta un mensaje reflejados en la forma dispuesta de todas las partes del cuerpo, y los ángulos formados entre sí. Se puede establecer entonces, a través de la pose, qué tipo actividad está realizando una persona humana con solo observarla en una imágen, por ejemplo. \par
 
 \subsection{Elementos que conforman la pose}
-Se utiliza el término pose, para referirse a la postura buscada de manera artificial para denotar una acción. Analizando el cuerpo humano y todos los movimientos realizables por el mismo, podemos citar los elementos mas importantes del cuerpo que son tomados en cuenta para establecer una pose: \begin{enumerate}
-	\baselineskip 0pt
-	\item Tronco del cuerpo (torso): pecho y caderas \\	
-	\item Brazos y antebrazos: manos, codos y hombros \\
-	\item Muslos y pantorrillas: pies, rodillas y caderas \\
+Se utiliza el término pose, para referirse a la postura buscada de manera artificial para denotar una acción. Analizando el cuerpo humano y todos los movimientos realizables por el mismo, podemos citar los elementos mas importantes del cuerpo que son tomados en cuenta para establecer una pose: 
+\begin{enumerate}[noitemsep]
+	\baselineskip 14pt
+	\item Tronco del cuerpo (torso): pecho y caderas  
+	\item Brazos y antebrazos: manos, codos y hombros  
+	\item Muslos y pantorrillas: pies, rodillas y caderas
 \end{enumerate}	\baselineskip 14pt
 
 \begin{figure}[h!]
-	\includegraphics[width=\linewidth]{Imagenes/pose1.png}
+	\includegraphics[width=290pt]{Imagenes/pose1.jpg}
+	\centering
 	\caption{Pose humana. A la izq. la imagen original, a la der. se dibujan las líneas sobre los elementos mas importantes que conforman la pose. Fuente: pixabay.com}
 	\label{fig:pose1}
 \end{figure}
@@ -121,28 +150,24 @@ Por amenazas y agresiones humanas, se entiende como la utilización de extremida
 
 Es posible que la agresión no sea efectuada hacia otra persona, o no se pueda visualizar qué o quién recibe la agresión, sin embargo se puede agredir a un objeto que pueda contener a un ser vivo dentro del mismo, ejemplo: una persona puede estar golpeando un auto, que en su interior contiene un niño (no visible para el observador).\par
 
-Entonces, se pueden enumerar algunos ejemplos de poses que puedan ser considerada como una pose compatible con agresión humana:
+Ejemplos de poses que puedan ser consideradas como poses compatibles con agresión:
 
-\begin{enumerate}
-	\baselineskip 0pt
-	\item Brazos levantados formando ángulos de entre 50 y 120 grados con el tronco (ej. una persona apuntando un arma de fuego). \\	
-	\item Brazos levantados formando ángulos superiores a los 170 grados con el tronco (ej. una persona propinando golpes con los brazos ) \\
-	\item Muslos levantados formando ángulos cercanos a los 90 grados con el tronco (ej. una persona propinando golpes con sus piernas) \\
-	\item Puede existir una combinación de lo anterior. \\
+\begin{enumerate}[noitemsep]
+	\baselineskip 14pt
+	\item Brazos levantados formando ángulos de entre 50 y 120 grados con el tronco (ej. una persona apuntando un arma de fuego). 
+	\item Brazos levantados formando ángulos superiores a los 170 grados con el tronco (ej. una persona propinando golpes con los brazos ) 
+	\item Otras combinaciones.
 \end{enumerate}	\baselineskip 14pt
 
 \begin{figure}[h!]
-	\includegraphics[width=220pt]{Imagenes/pose3.jpg}
-	\caption{Pose humana compatible con agresión de brazos. Fuente: pixabay.com}
+	\includegraphics[width=140pt]{Imagenes/pose2.jpg}
+	\centering
+	\caption{Pose humana compatible con amenaza (uso de armas). Fuente: pixabay.com}
 	\label{fig:pose3}
 \end{figure}
 
-En la \ref{fig:pose3} podemos observar a la persona del lado izquierdo con una amenaza mas compatible a una agresión que la persona del lado derechoo. Igualmente, ambas poses podrían ser compatibles con agresiones.\par
-
-	
 \newpage	
-\part{Inteligencia Artificial}
-
+\chapter{Inteligencia Artificial}
 \section{Conceptos de Machine Learning}
 
 Se conoce como Machine Learning (en inglés), a la ciencia relacionada con Inteligencia Artificial en la cual se pueden configurar modelos matemáticos y probabilísticos para responder a situaciones de la vida real. Básicamente, se trata de entrenar algoritmos para ofrecer respuestas, esperadas o no, bajo ciertas condiciones de campo.\par
@@ -152,60 +177,94 @@ El aprendizaje se da solamente en ciertos seres vivos del planeta, por lo que el
 
 En el ámbito de la computación, se adoptó el concepto de aprendizaje y entrenamiento al proceso de preparar y parametrizar, con datos de entrada, un modelo matemático o algoritmo para que pueda responder, con datos de salida, de la misma manera que lo haría un ser vivo capaz de aprender.\par
 
-A partir de este punto, nos referiremos a los datos de entrada para el proceso de aprendizaje, como Input Dataset -o Dataset-, y la obtención de resultados de salida -o simplemente Output-.
+Para entender el concepto, pensemos en los datos de entrada como estímulos para el aprendizaje, donde ciertos pesos (parámetros) influyen en la importancia de cada uno, y donde se genera un valor de salida aprendido.\par
+
+En el entrenamiento de un modelo matemático, se parametriza el mismo con estos estímulos y los pesos para cada estímulo, ajustando los mismos a modo de que el resultado se aproxime a un valor esperado. Existen numerosos métodos que utilizan funciones para aproximar estos resultados (función costo, descenso de gradiente, etc), pero no se profundizará sobre los mismos. \par
+
+A partir de este punto, nos referiremos a los datos de entrada para el proceso de aprendizaje, como Input Dataset -o Features-, y la obtención de resultados de salida -o simplemente Output-.\par
 
 \subsubsection{Aprendizaje supervisado}
 
-Se conoce como aprendizaje supervisado al proceso de entrenar un algoritmo con datos de entrada estructurados, y en donde se conoce o se espera algún tipo de datos de salida previamente conocidos. En el aprendizaje supervisado, conocemos acerca de la naturaleza de los datos de entrada, y esperamos datos de salida del mismo modo. Por ejemplo, podemos estimar el costo de una casa a partir de ciertos datos conocidos, como el área, cantidad de pisos, ubicación, etc.\par
+Aprendizaje supervisado es el proceso de entrenar un algoritmo con datos de entrada estructurados, y en donde se conoce o se espera algún tipo de dato de salida previamente conocido. \par
+
+En el aprendizaje supervisado, conocemos acerca de la naturaleza de los datos de entrada, y esperamos datos de salida del mismo modo. Por ejemplo, podemos estimar el costo de una casa a partir de ciertos datos conocidos, como el área, cantidad de pisos, ubicación, etc. Entonces tenemos datos precisos, catalogados sobre características de la casa, y además esperamos un valor costo, o sea, conocemos la naturaleza del resultado.\par
 
 \subsubsection{Aprendizaje no supervisado}
 
-Por el otro lado en el aprendizaje no supervisado, no conocemos la clasificación de los datos de entrada ni de salida. Los datos de entrada no poseen una estructura definida y no sabemos acerca de los datos de salida esperados. Datos de entrada para el aprendizaje no supervisado podrían ser: datos de audio, imágenes o texto. \par
+Por el otro lado en el aprendizaje no supervisado, no conocemos la clasificación de los datos de entrada ni de salida. Los datos de entrada no poseen una estructura definida, no están catalogados y no sabemos acerca de los datos de salida esperados. Datos de entrada para el aprendizaje no supervisado podrían ser: datos de audio, imágenes o texto. \par
+
+\section{Clasificadores}
+A continuación, un breve resumen general acerca de algunos clasificadores utilizados en Machine Learning, para ahondar en detalles consulte algún documento externo para tener un conocimiento mas profundo.\par
+\subsection{Regresión Lineal}
+
+La regresión lineal es un modelo matemático utilizado para aproximar la dependencia de dos variables, se utiliza como clasificador binario: solo devuelve dos posibles datos de salida. Este tipo de clasificador se utiliza para determinar si un objeto es o no es de cierto tipo. \par
+Representación de hipótesis: \textit{h(x) = b + $b_1$$x_1$ + $b_1$$x_1$....+ $b_n$$x_n$}
+	
+Donde \textit{b} son los pesos de cada entrada, también llamados parámetros (se utilizan para modificar la importancia de cada variable), \textit{x} son los features, e \textit{y} es el resultado devuelto/esperado. Fíjese que la función hipótesis tiene la forma de una ecuación de recta, de ahí su nombre. \par
 
 
-\subsection{Clasificadores}
+Si se dibujaran los datos de salida del clasificador en un plano cartesiano, podríamos separar los valores por medio de una línea recta -denominada límite de decisión-. \par
 
-\subsubsection{Regresión Lineal}
-
-La regresión lineal es un tipo de clasificador binario, solo devuelve dos posibles datos de salida: 1 o 0. Este tipo de clasificador se utiliza para determinar si un objeto es o no es de cierto tipo.
-
-Si se dibujaran los datos en un gráfico de absisas, podríamos separar los valores para 1 y 0 por medio de una línea -denominada límite de decisión-.
-
-Una unidad de datos de entrenamiento puede identificarse como (x, y) donde x representa los datos de entrada, e y representa el de salida esperado. 
+Una unidad de datos de entrenamiento puede identificarse como \textit{(x, y)} donde \textit{x} representa los datos de entrada, e \textit{y} representa el de salida esperado. Además, para la regresión lineal, se puede utilizar una variable de entrada, o múltiples variables de entrada, siendo \textit{m} la cantidad de variables de entradas -cantidad de features- y \textit{n} la cantidad de conjuntos de entrenamiento.  \par
 
 \begin{figure}[h!]
-	\includegraphics[width=220pt]{Imagenes/regresion1.jpg}
-	\caption{Regresión lineal, datos de salida en un gráfico de absisas con el límite de desición}
+	\includegraphics[width=160pt]{Imagenes/regresion1.jpg}
+	\centering
+	\caption{Regresión lineal, datos de salida en un plano cartesiano con el límite de decisión}
 	\label{fig:regresion1}
 \end{figure}
 
 
-\subsubsection{Regresión Logística}
+\subsection{Regresión Logística}
 
-La regresión logística también es un clasificador binario, pero se diferencia de la Regresión Lineal en que los datos, en el gráfico de absisas, están separados por una línea cuadrática. \par
+La regresión logística también se utiliza como clasificador binario, pero se diferencia de la Regresión Lineal en que los datos de salida, en el plano cartesiano, están separados por una línea curva, o circular: esto es porque el límite de decisión esta representado por una ecuación cuadrática. La representación de su hipótesis utiliza la función denominada función logística o 'sigmoidea'. \par
+
+También, como la regresión lineal, la logística puede utilizar una o varias variables de entrada denotadas por la letra \textit{x}, y la salida por la letra \textit{y}, además de \textit{m} y \textit{n} que continúan teniendo el mismo significado. \par
+
+Representación de hipótesis: \textit{h(x) = g($O^t$x)}
+donde \textit{z = $O^t$x}
+entonces 
+\begin{equation}
+	g(z) = \frac{1}{1 + e\raisebox{1ex}{-z}} 
+\end{equation}
+
+Donde \textit{z} es la función cuadrática con los valores de los datos de entradas. \par
+
+Ejemplo: \textit{z = O + $O_1$$x^2_1$ + $O_2$$x^2_2$}  es la ecuación de la circunferencia, que puede ser utilizado como límite de decisión.
 
 \begin{figure}[h!]
-	\includegraphics[width=220pt]{Imagenes/regresion2.jpg}
-	\caption{Regresión logística, datos de salida en un gráfico de absisas con el límite de desición}
+	\includegraphics[width=160pt]{Imagenes/regresion2.jpg}
+	\centering
+	\caption{Regresión logística, datos de salida en un plano cartesiano con el límite de decisión}
 	\label{fig:regresion2}
 \end{figure}
 
 
-\subsubsection{Redes Neuronales}
+\subsection{Redes Neuronales}
 
-En biología, una neurona es una célula del sistema nervioso que es capaz de comunicar pulsos eléctricos a otras células. \par
+En biología, una neurona es una célula del sistema nervioso que es capaz de comunicar pulsos eléctricos a otras células. Como este trabajo utiliza redes neuronales artificiales para clasificar, se dará un panorama mas completo acerca de estas. \par
 
+La estructura básica de una neurona consiste en:
+\begin{compactitem}
+	\item Dentritas: conexiones que permiten la comunicación de otras neuronas con la actual.
+	\item Núcleo: donde se realiza el proceso celular.
+	\item Axóm: comunica la señal generada por el núcleo a otra neurona
+\end{compactitem}
 
-A DESARROLLAR
-
+\begin{figure}[h!]
+	\includegraphics[width=190pt]{Imagenes/neurona.jpg}
+	\centering
+	\caption{Estructura superficial de una neurona natural.}
+	\label{fig:haarlike1}
+\end{figure}
 
 \newpage
-\part{Procesamiento gráfico}
-
+\chapter{Procesamiento gráfico}
 \section{Visión por computadora}
+
 En los últimos años, los problemas de visión por computadora han acaparado la mayoría de los trabajos e investigaciones dada la cantidad de situaciones en las cuales es necesario utilizar ayuda no humana para resolverlas. Los sistemas computacionales han evolucionado y la inteligencia artificial ha surgido como una ciencia de estudio capaz de proveer la ayuda necesaria. \par
 
-Sin embargo, un conjunto de componentes electrónicos no es capaz de entender una imágen. La representación de una imagen, en términos informáticos, es la agrupación de números distribuidos en una matriz.\par
+Sin embargo, un conjunto de componentes electrónicos no es capaz de entender una imagen. La representación de una imagen, en términos informáticos, es la agrupación de números distribuidos en una matriz.\par
 
 En esta sección, se expondrán los principios básicos, componentes y operaciones fundamentales que surgen alrededor del procesamiento de imágenes por computadora.\par
 
@@ -215,7 +274,7 @@ En esta sección, se expondrán los principios básicos, componentes y operacion
 Los sistemas de vigilancia en auge actualmente son los de segunda generación: dispositivos que capturan imágenes que son enviadas a procesadores que utilizan algoritmos computacionales para obtener la información relevante de las mismas. \par
 
 Si bien existen investigaciones enfocadas a la utilización de Inteligencia Artificial para la Vigilancia Inteligente, ésto resulta por ahora una tarea difícil de implementar debido a la cantidad de combinaciones posibles de escenarios que puedan darse, la cantidad de datos de entrada y los patrones que se deben analizar en las diferentes fases. Normalmente, el proceso de identificación de objetos en imágenes se da en diferentes etapas descritas en \cite{lozano} y \cite{kamarudin}, ellas son:	
-\begin{enumerate}
+\begin{enumerate}[noitemsep]
 	\baselineskip 0pt
 	\item Detección de objetos.\\	
 	\item Clasificación (identificación) de objetos.\\
@@ -274,32 +333,36 @@ OpenCV se escribió con la finalidad de ser eficiente y aprovechar las instrucci
 Además, la librería ofrece bibliotecas de funciones y procedimientos parametrizables para resolver problemas de Inteligencia Artificial. Los componentes prefabricados con un alto nivel de abstracción hacen posible al programador implementar, por ejemplo, un clasificador de objetos en unas pocas líneas de instrucciones Python.\par
 
 Módulos de Inteligencia Artificial disponibles en OpenCV:
-\begin{itemize}
-	\item Clasificadores en cascada\\	
-	\item Clasificadores Bayes\\	
-	\item Support Vector Machines\\	
-	\item Decision Trees \\	
-	\item Redes neuronales \\	
-\end{itemize}
+\begin{compactitem}
+	\item Clasificadores en cascada	
+	\item Clasificadores Bayes
+	\item Support Vector Machines
+	\item Decision Trees 
+	\item Redes neuronales 
+\end{compactitem}
 
 En este trabajo, no se explicarán ni detallarán sobre los módulos de tratamiento de imágenes de OpenCV, ya que no se utilizaron durante el desarrollo. En su lugar, se abordarán conceptos y detalles sobre algunos de las librerías OpenCV de Inteligencia Artificial que fueron utilizados.\par
 
 \subsubsection{Clasificadores en Cascada}
 
-Llamados en inglés 'cascade of boosted classifiers working with haar-like features', es un módulo OpenCV que implementa una serie de clasificadores que generalmente son utilizados para detección de objetos en imágenes. Una serie de clasificadores simples están dispuestos en una estructura de cascada de manera que puedan funcionar más rapidamente que un clasificador único y pesado.  \par
+Llamados en inglés '\textit{cascade of boosted classifiers working with haar-like features}', es un módulo OpenCV que implementa una serie de clasificadores que generalmente son utilizados para detección de objetos en imágenes. \par
 
-La palabra boosted además, hace referencia a que estos clasificadores implementan técnicas que aceleran la ejecución de manera eficiente, actualmente se implementan cuatro técnicas conocidas como: Discrete Adaboost, Real Adaboost, Gentle Adaboost y Logitboost. No se detallarán sobre estas técnicas en el presente documento.\par
+Una serie de clasificadores simples están dispuestos en una estructura de cascada de manera que puedan funcionar más rápidamente que un clasificador único y pesado. La salida de unos clasificadores pasan a ser las entradas de otros, formando así como una especie de puertas lógicas donde se cumplen condiciones, para tener un resultado final. \par
 
-Las entradas de datos para los clasificadores, se conocen en inglés como 'Haar-like features'. Cada clasificador simple que compone la cascada recibe solo un tipo de entrada (feature), que en combinación con los demas clasificadores, pueden determinar la clase de objeto en proceso. La entrada es un conjunto de pixeles con una distribución en particular, como se detalla en la siguiente imagen.\par
+La palabra \textit{boosted} además, hace referencia a que estos clasificadores implementan técnicas que aceleran la ejecución de manera eficiente, actualmente se implementan cuatro técnicas de Machine Learning conocidas como: \textit{Discrete Adaboost, Real Adaboost, Gentle Adaboost y Logitboost}. No se detallarán sobre estas técnicas en el presente documento.\par
+
+Las entradas de datos para los clasificadores, se conocen en inglés como '\textit{Haar-like features}'. Cada clasificador simple que compone la cascada recibe solo un tipo de entrada (feature), que en combinación con los demás clasificadores, pueden determinar la clase de objeto en proceso. La entrada es un conjunto de pixeles con una distribución en particular, como se detalla en la siguiente imagen.\par
 
 \begin{figure}[h!]
-	\includegraphics[width=300pt]{Imagenes/haarlike.jpg}
-	\caption{Entradas (Features) para los distintos clasificadores en cascada Fuente: OpenCV Reference Manual}
+	\includegraphics[width=250pt]{Imagenes/haarlike.jpg}
+	\centering
+	\caption{Entradas (Features) para los distintos clasificadores en cascada Fuente: OpenCV Reference Manual.}
 	\label{fig:haarlike1}
 \end{figure}
 
-\subsubsection{Redes Neuronales Artificiales Convolucionales}
+\subsubsection{Redes Neuronales Profundas (Deep Neural Networks)}
 
+Hablar sobre como opencv implementa redes neuronales profundas
 A desarrollar
 
 

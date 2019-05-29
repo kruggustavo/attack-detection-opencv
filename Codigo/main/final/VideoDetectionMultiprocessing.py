@@ -10,6 +10,16 @@ import random
 import threading
 import imutils
 
+#tensorflow
+#torch
+#torchvision
+#imutils
+#pygame
+#numpy
+#keras
+#opencv-python
+#google-api-python-client
+
 # Attack detection
 # Detector de ataques y amenazas humanas en imagenes secuenciales mediante el entrenamiento de redes neuronales
 # Trabajo final de Grado para la obtencion del titulo de Ingeniero Informatico
