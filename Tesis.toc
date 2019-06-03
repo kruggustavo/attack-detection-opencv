@@ -1,86 +1,86 @@
 \babel@toc {spanish}{}
 \contentsline {subsubsection}{Dedicatoria}{2}{section*.1}
 \contentsline {subsubsection}{Agradecimientos}{3}{section*.2}
-\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{9}{chapter.1}
-\contentsline {section}{\numberline {1.1}Planteamiento General}{9}{section.1.1}
-\contentsline {section}{\numberline {1.2}Planteamiento del problema}{10}{section.1.2}
-\contentsline {section}{\numberline {1.3}Justificaci\IeC {\'o}n}{10}{section.1.3}
-\contentsline {section}{\numberline {1.4}Objetivos}{11}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}General}{11}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Espec\IeC {\'\i }ficos}{11}{subsection.1.4.2}
-\contentsline {section}{\numberline {1.5}Alcance}{11}{section.1.5}
-\contentsline {section}{\numberline {1.6}Metodolog\IeC {\'\i }a}{12}{section.1.6}
-\contentsline {subsection}{\numberline {1.6.1}Dise\IeC {\~n}o y tipo de investigaci\IeC {\'o}n }{12}{subsection.1.6.1}
-\contentsline {subsection}{\numberline {1.6.2}Procedimiento}{12}{subsection.1.6.2}
-\contentsline {chapter}{\numberline {2}Estado del Arte}{13}{chapter.2}
-\contentsline {section}{\numberline {2.1}Introducci\IeC {\'o}n}{13}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Evoluci\IeC {\'o}n de los sistemas de vigilancia}{13}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Clasificaci\IeC {\'o}n de los sistemas de vigilancia}{15}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Reconociemiento de actividad humana}{16}{subsection.2.1.3}
-\contentsline {chapter}{\numberline {3}Representaci\IeC {\'o}n de poses}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}Postura y Pose humanas}{17}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Elementos que conforman la pose}{17}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Poses compatibles con amenazas y agresiones}{18}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}M\IeC {\'e}todos de extracci\IeC {\'o}n de poses}{19}{subsection.3.1.3}
-\contentsline {chapter}{\numberline {4}Inteligencia Artificial}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Conceptos de Machine Learning}{21}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Aprendizaje y entrenamiento}{21}{subsection.4.1.1}
-\contentsline {subsubsection}{Aprendizaje supervisado}{22}{section*.6}
-\contentsline {subsubsection}{Aprendizaje no supervisado}{22}{section*.7}
-\contentsline {section}{\numberline {4.2}M\IeC {\'e}todos de clasificaci\IeC {\'o}n}{23}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Regresi\IeC {\'o}n Lineal}{23}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Regresi\IeC {\'o}n Log\IeC {\'\i }stica}{24}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}M\IeC {\'a}quinas de Vectores Soporte}{25}{subsection.4.2.3}
-\contentsline {subsubsection}{SVM Multiclase}{25}{section*.11}
-\contentsline {subsection}{\numberline {4.2.4}Redes Neuronales Artificiales}{27}{subsection.4.2.4}
-\contentsline {subsubsection}{Arquitectura b\IeC {\'a}sica de una red neuronal artificial}{28}{section*.13}
-\contentsline {subsubsection}{Arquitectura multicapa}{29}{section*.15}
-\contentsline {subsubsection}{Perceptr\IeC {\'o}n}{29}{section*.17}
-\contentsline {subsubsection}{Backpropagation}{30}{section*.18}
-\contentsline {subsubsection}{Funciones de entrada}{30}{section*.19}
-\contentsline {subsubsection}{Funciones de activaci\IeC {\'o}n}{31}{section*.20}
-\contentsline {subsubsection}{Funciones de salida}{33}{section*.21}
-\contentsline {subsubsection}{Tasa de aprendizaje}{33}{section*.22}
-\contentsline {subsubsection}{Optimizadores de redes neuronales artificiales}{33}{section*.23}
-\contentsline {chapter}{\numberline {5}Procesamiento gr\IeC {\'a}fico}{35}{chapter.5}
-\contentsline {section}{\numberline {5.1}Visi\IeC {\'o}n por computadora}{35}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Detecci\IeC {\'o}n y reconocimiento de objetos en im\IeC {\'a}genes}{35}{subsection.5.1.1}
-\contentsline {subsubsection}{Detecci\IeC {\'o}n de objetos en im\IeC {\'a}genes}{36}{section*.24}
-\contentsline {subsubsection}{T\IeC {\'e}cnicas de detecci\IeC {\'o}n de objetos en im\IeC {\'a}genes}{36}{section*.25}
-\contentsline {subsubsection}{Clasificaci\IeC {\'o}n de objetos}{37}{section*.26}
-\contentsline {subsubsection}{T\IeC {\'e}cnicas de clasificaci\IeC {\'o}n}{37}{section*.27}
-\contentsline {subsubsection}{M\IeC {\'e}todos de clasificaci\IeC {\'o}n}{38}{section*.28}
-\contentsline {subsection}{\numberline {5.1.2}Histograma de Gradientes Orientados}{38}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Herramientas de visi\IeC {\'o}n por computadora}{40}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}OpenCV}{40}{subsection.5.2.1}
-\contentsline {subsubsection}{Clasificadores en Cascada}{41}{section*.30}
-\contentsline {subsubsection}{Redes Neuronales Profundas}{41}{section*.32}
-\contentsline {subsubsection}{Redes Neuronales Convolucionales}{42}{section*.33}
-\contentsline {chapter}{\numberline {6}Desarrollo de software}{44}{chapter.6}
-\contentsline {section}{\numberline {6.1}Pruebas de estimaci\IeC {\'o}n de poses humanas}{44}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Prueba 1: Clasificador SVM-HOG}{44}{subsection.6.1.1}
-\contentsline {subsubsection}{Justificaci\IeC {\'o}n}{44}{section*.34}
-\contentsline {subsubsection}{Teor\IeC {\'\i }a}{45}{section*.35}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n}{46}{section*.36}
-\contentsline {subsubsection}{Resultados}{49}{section*.40}
-\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{50}{section*.42}
-\contentsline {subsection}{\numberline {6.1.2}Prueba 2: AlphaPose}{51}{subsection.6.1.2}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n}{51}{section*.43}
-\contentsline {subsubsection}{Resultados}{52}{section*.45}
-\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{53}{section*.46}
-\contentsline {subsection}{\numberline {6.1.3}Prueba 3: Modelo DNN Caffe en OpenCV}{53}{subsection.6.1.3}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n}{53}{section*.47}
-\contentsline {subsubsection}{Resultados}{54}{section*.48}
-\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{55}{section*.49}
-\contentsline {section}{\numberline {6.2}Extracci\IeC {\'o}n de poses humanas}{55}{section.6.2}
-\contentsline {section}{\numberline {6.3}C\IeC {\'a}lculo angular de extremidades}{56}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Estimaci\IeC {\'o}n de tronco}{57}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Representaci\IeC {\'o}n de partes del cuerpo en el proceso}{58}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Generaci\IeC {\'o}n de datos de entrenamiento}{59}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Entrenamiento de una red neuronal artificial}{60}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}B\IeC {\'u}squeda de un modelo \IeC {\'o}ptimo}{60}{subsection.6.4.1}
-\contentsline {subsubsection}{Pruebas con modelos de red}{60}{section*.53}
-\contentsline {section}{\numberline {6.5}Predicci\IeC {\'o}n de poses compatibles con amenazas o agresiones}{61}{section.6.5}
-\contentsline {section}{\numberline {6.6}Detecci\IeC {\'o}n de armas utilizando detectores en cascada}{62}{section.6.6}
-\contentsline {section}{\numberline {6.7}Conclusi\IeC {\'o}n}{63}{section.6.7}
-\contentsline {section}{\numberline {6.8}Trabajo a futuro}{64}{section.6.8}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{11}{chapter.1}
+\contentsline {section}{\numberline {1.1}Planteamiento General}{11}{section.1.1}
+\contentsline {section}{\numberline {1.2}Planteamiento del problema}{12}{section.1.2}
+\contentsline {section}{\numberline {1.3}Justificaci\IeC {\'o}n}{12}{section.1.3}
+\contentsline {section}{\numberline {1.4}Objetivos}{13}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}General}{13}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Espec\IeC {\'\i }ficos}{13}{subsection.1.4.2}
+\contentsline {section}{\numberline {1.5}Alcance}{13}{section.1.5}
+\contentsline {section}{\numberline {1.6}Metodolog\IeC {\'\i }a}{14}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}Dise\IeC {\~n}o y tipo de investigaci\IeC {\'o}n }{14}{subsection.1.6.1}
+\contentsline {subsection}{\numberline {1.6.2}Procedimiento}{14}{subsection.1.6.2}
+\contentsline {chapter}{\numberline {2}Estado del Arte}{15}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introducci\IeC {\'o}n}{15}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Evoluci\IeC {\'o}n de los sistemas de vigilancia}{15}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Clasificaci\IeC {\'o}n de los sistemas de vigilancia}{17}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Reconociemiento de actividad humana}{18}{subsection.2.1.3}
+\contentsline {chapter}{\numberline {3}Representaci\IeC {\'o}n de poses}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Postura y Pose humanas}{19}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Elementos que conforman la pose}{19}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Poses compatibles con amenazas y agresiones}{20}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}M\IeC {\'e}todos de extracci\IeC {\'o}n de poses}{21}{subsection.3.1.3}
+\contentsline {chapter}{\numberline {4}Inteligencia Artificial}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}Conceptos de Machine Learning}{23}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Aprendizaje y entrenamiento}{23}{subsection.4.1.1}
+\contentsline {subsubsection}{Aprendizaje supervisado}{24}{section*.7}
+\contentsline {subsubsection}{Aprendizaje no supervisado}{24}{section*.8}
+\contentsline {section}{\numberline {4.2}M\IeC {\'e}todos de clasificaci\IeC {\'o}n}{25}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Regresi\IeC {\'o}n Lineal}{25}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Regresi\IeC {\'o}n Log\IeC {\'\i }stica}{26}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}M\IeC {\'a}quinas de Vectores Soporte}{27}{subsection.4.2.3}
+\contentsline {subsubsection}{SVM Multiclase}{27}{section*.12}
+\contentsline {subsection}{\numberline {4.2.4}Redes Neuronales Artificiales}{29}{subsection.4.2.4}
+\contentsline {subsubsection}{Arquitectura b\IeC {\'a}sica de una red neuronal artificial}{30}{section*.14}
+\contentsline {subsubsection}{Arquitectura multicapa}{31}{section*.16}
+\contentsline {subsubsection}{Perceptr\IeC {\'o}n}{31}{section*.18}
+\contentsline {subsubsection}{Backpropagation}{32}{section*.19}
+\contentsline {subsubsection}{Funciones de entrada}{32}{section*.20}
+\contentsline {subsubsection}{Funciones de activaci\IeC {\'o}n}{33}{section*.21}
+\contentsline {subsubsection}{Funciones de salida}{35}{section*.22}
+\contentsline {subsubsection}{Tasa de aprendizaje}{35}{section*.23}
+\contentsline {subsubsection}{Optimizadores de redes neuronales artificiales}{35}{section*.24}
+\contentsline {chapter}{\numberline {5}Procesamiento gr\IeC {\'a}fico}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}Visi\IeC {\'o}n por computadora}{37}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Detecci\IeC {\'o}n y reconocimiento de objetos en im\IeC {\'a}genes}{37}{subsection.5.1.1}
+\contentsline {subsubsection}{Detecci\IeC {\'o}n de objetos en im\IeC {\'a}genes}{38}{section*.25}
+\contentsline {subsubsection}{T\IeC {\'e}cnicas de detecci\IeC {\'o}n de objetos en im\IeC {\'a}genes}{38}{section*.26}
+\contentsline {subsubsection}{Clasificaci\IeC {\'o}n de objetos}{39}{section*.27}
+\contentsline {subsubsection}{T\IeC {\'e}cnicas de clasificaci\IeC {\'o}n}{39}{section*.28}
+\contentsline {subsubsection}{M\IeC {\'e}todos de clasificaci\IeC {\'o}n}{40}{section*.29}
+\contentsline {subsection}{\numberline {5.1.2}Histograma de Gradientes Orientados}{40}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Herramientas de visi\IeC {\'o}n por computadora}{42}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}OpenCV}{42}{subsection.5.2.1}
+\contentsline {subsubsection}{Clasificadores en Cascada}{43}{section*.31}
+\contentsline {subsubsection}{Redes Neuronales Profundas}{43}{section*.33}
+\contentsline {subsubsection}{Redes Neuronales Convolucionales}{44}{section*.34}
+\contentsline {chapter}{\numberline {6}Desarrollo de software}{46}{chapter.6}
+\contentsline {section}{\numberline {6.1}Pruebas de estimaci\IeC {\'o}n de poses humanas}{46}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Prueba 1: Clasificador SVM-HOG}{46}{subsection.6.1.1}
+\contentsline {subsubsection}{Justificaci\IeC {\'o}n}{46}{section*.35}
+\contentsline {subsubsection}{Teor\IeC {\'\i }a}{47}{section*.36}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n}{48}{section*.37}
+\contentsline {subsubsection}{Resultados}{51}{section*.41}
+\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{52}{section*.43}
+\contentsline {subsection}{\numberline {6.1.2}Prueba 2: AlphaPose}{53}{subsection.6.1.2}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n}{53}{section*.44}
+\contentsline {subsubsection}{Resultados}{54}{section*.46}
+\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{55}{section*.47}
+\contentsline {subsection}{\numberline {6.1.3}Prueba 3: Modelo DNN Caffe en OpenCV}{55}{subsection.6.1.3}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n}{55}{section*.48}
+\contentsline {subsubsection}{Resultados}{56}{section*.49}
+\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{57}{section*.50}
+\contentsline {section}{\numberline {6.2}Extracci\IeC {\'o}n de poses humanas}{57}{section.6.2}
+\contentsline {section}{\numberline {6.3}C\IeC {\'a}lculo angular de extremidades}{58}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Estimaci\IeC {\'o}n de tronco}{59}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Representaci\IeC {\'o}n interna de partes del cuerpo}{60}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Generaci\IeC {\'o}n de datos de entrenamiento}{61}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Entrenamiento de una red neuronal artificial}{62}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}B\IeC {\'u}squeda de un modelo \IeC {\'o}ptimo}{62}{subsection.6.4.1}
+\contentsline {subsubsection}{Pruebas con modelos de red}{62}{section*.54}
+\contentsline {section}{\numberline {6.5}Predicci\IeC {\'o}n de poses compatibles con amenazas o agresiones}{63}{section.6.5}
+\contentsline {section}{\numberline {6.6}Detecci\IeC {\'o}n de armas utilizando detectores en cascada}{64}{section.6.6}
+\contentsline {chapter}{\numberline {7}Conclusiones}{66}{chapter.7}
+\contentsline {section}{\numberline {7.1}Trabajo a futuro}{67}{section.7.1}

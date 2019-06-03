@@ -24,62 +24,62 @@
 \BOOKMARK [0][-]{chapter.4}{Inteligencia Artificial}{}% 24
 \BOOKMARK [1][-]{section.4.1}{Conceptos de Machine Learning}{chapter.4}% 25
 \BOOKMARK [2][-]{subsection.4.1.1}{Aprendizaje y entrenamiento}{section.4.1}% 26
-\BOOKMARK [3][-]{section*.6}{Aprendizaje supervisado}{subsection.4.1.1}% 27
-\BOOKMARK [3][-]{section*.7}{Aprendizaje no supervisado}{subsection.4.1.1}% 28
+\BOOKMARK [3][-]{section*.7}{Aprendizaje supervisado}{subsection.4.1.1}% 27
+\BOOKMARK [3][-]{section*.8}{Aprendizaje no supervisado}{subsection.4.1.1}% 28
 \BOOKMARK [1][-]{section.4.2}{M\351todos de clasificaci\363n}{chapter.4}% 29
 \BOOKMARK [2][-]{subsection.4.2.1}{Regresi\363n Lineal}{section.4.2}% 30
 \BOOKMARK [2][-]{subsection.4.2.2}{Regresi\363n Log\355stica}{section.4.2}% 31
 \BOOKMARK [2][-]{subsection.4.2.3}{M\341quinas de Vectores Soporte}{section.4.2}% 32
-\BOOKMARK [3][-]{section*.11}{SVM Multiclase}{subsection.4.2.3}% 33
+\BOOKMARK [3][-]{section*.12}{SVM Multiclase}{subsection.4.2.3}% 33
 \BOOKMARK [2][-]{subsection.4.2.4}{Redes Neuronales Artificiales}{section.4.2}% 34
-\BOOKMARK [3][-]{section*.13}{Arquitectura b\341sica de una red neuronal artificial}{subsection.4.2.4}% 35
-\BOOKMARK [3][-]{section*.15}{Arquitectura multicapa}{subsection.4.2.4}% 36
-\BOOKMARK [3][-]{section*.17}{Perceptr\363n}{subsection.4.2.4}% 37
-\BOOKMARK [3][-]{section*.18}{Backpropagation}{subsection.4.2.4}% 38
-\BOOKMARK [3][-]{section*.19}{Funciones de entrada}{subsection.4.2.4}% 39
-\BOOKMARK [3][-]{section*.20}{Funciones de activaci\363n}{subsection.4.2.4}% 40
-\BOOKMARK [3][-]{section*.21}{Funciones de salida}{subsection.4.2.4}% 41
-\BOOKMARK [3][-]{section*.22}{Tasa de aprendizaje}{subsection.4.2.4}% 42
-\BOOKMARK [3][-]{section*.23}{Optimizadores de redes neuronales artificiales}{subsection.4.2.4}% 43
+\BOOKMARK [3][-]{section*.14}{Arquitectura b\341sica de una red neuronal artificial}{subsection.4.2.4}% 35
+\BOOKMARK [3][-]{section*.16}{Arquitectura multicapa}{subsection.4.2.4}% 36
+\BOOKMARK [3][-]{section*.18}{Perceptr\363n}{subsection.4.2.4}% 37
+\BOOKMARK [3][-]{section*.19}{Backpropagation}{subsection.4.2.4}% 38
+\BOOKMARK [3][-]{section*.20}{Funciones de entrada}{subsection.4.2.4}% 39
+\BOOKMARK [3][-]{section*.21}{Funciones de activaci\363n}{subsection.4.2.4}% 40
+\BOOKMARK [3][-]{section*.22}{Funciones de salida}{subsection.4.2.4}% 41
+\BOOKMARK [3][-]{section*.23}{Tasa de aprendizaje}{subsection.4.2.4}% 42
+\BOOKMARK [3][-]{section*.24}{Optimizadores de redes neuronales artificiales}{subsection.4.2.4}% 43
 \BOOKMARK [0][-]{chapter.5}{Procesamiento gr\341fico}{}% 44
 \BOOKMARK [1][-]{section.5.1}{Visi\363n por computadora}{chapter.5}% 45
 \BOOKMARK [2][-]{subsection.5.1.1}{Detecci\363n y reconocimiento de objetos en im\341genes}{section.5.1}% 46
-\BOOKMARK [3][-]{section*.24}{Detecci\363n de objetos en im\341genes}{subsection.5.1.1}% 47
-\BOOKMARK [3][-]{section*.25}{T\351cnicas de detecci\363n de objetos en im\341genes}{subsection.5.1.1}% 48
-\BOOKMARK [3][-]{section*.26}{Clasificaci\363n de objetos}{subsection.5.1.1}% 49
-\BOOKMARK [3][-]{section*.27}{T\351cnicas de clasificaci\363n}{subsection.5.1.1}% 50
-\BOOKMARK [3][-]{section*.28}{M\351todos de clasificaci\363n}{subsection.5.1.1}% 51
+\BOOKMARK [3][-]{section*.25}{Detecci\363n de objetos en im\341genes}{subsection.5.1.1}% 47
+\BOOKMARK [3][-]{section*.26}{T\351cnicas de detecci\363n de objetos en im\341genes}{subsection.5.1.1}% 48
+\BOOKMARK [3][-]{section*.27}{Clasificaci\363n de objetos}{subsection.5.1.1}% 49
+\BOOKMARK [3][-]{section*.28}{T\351cnicas de clasificaci\363n}{subsection.5.1.1}% 50
+\BOOKMARK [3][-]{section*.29}{M\351todos de clasificaci\363n}{subsection.5.1.1}% 51
 \BOOKMARK [2][-]{subsection.5.1.2}{Histograma de Gradientes Orientados}{section.5.1}% 52
 \BOOKMARK [1][-]{section.5.2}{Herramientas de visi\363n por computadora}{chapter.5}% 53
 \BOOKMARK [2][-]{subsection.5.2.1}{OpenCV}{section.5.2}% 54
-\BOOKMARK [3][-]{section*.30}{Clasificadores en Cascada}{subsection.5.2.1}% 55
-\BOOKMARK [3][-]{section*.32}{Redes Neuronales Profundas}{subsection.5.2.1}% 56
-\BOOKMARK [3][-]{section*.33}{Redes Neuronales Convolucionales}{subsection.5.2.1}% 57
+\BOOKMARK [3][-]{section*.31}{Clasificadores en Cascada}{subsection.5.2.1}% 55
+\BOOKMARK [3][-]{section*.33}{Redes Neuronales Profundas}{subsection.5.2.1}% 56
+\BOOKMARK [3][-]{section*.34}{Redes Neuronales Convolucionales}{subsection.5.2.1}% 57
 \BOOKMARK [0][-]{chapter.6}{Desarrollo de software}{}% 58
 \BOOKMARK [1][-]{section.6.1}{Pruebas de estimaci\363n de poses humanas}{chapter.6}% 59
 \BOOKMARK [2][-]{subsection.6.1.1}{Prueba 1: Clasificador SVM-HOG}{section.6.1}% 60
-\BOOKMARK [3][-]{section*.34}{Justificaci\363n}{subsection.6.1.1}% 61
-\BOOKMARK [3][-]{section*.35}{Teor\355a}{subsection.6.1.1}% 62
-\BOOKMARK [3][-]{section*.36}{Descripci\363n}{subsection.6.1.1}% 63
-\BOOKMARK [3][-]{section*.40}{Resultados}{subsection.6.1.1}% 64
-\BOOKMARK [3][-]{section*.42}{Conclusi\363n}{subsection.6.1.1}% 65
+\BOOKMARK [3][-]{section*.35}{Justificaci\363n}{subsection.6.1.1}% 61
+\BOOKMARK [3][-]{section*.36}{Teor\355a}{subsection.6.1.1}% 62
+\BOOKMARK [3][-]{section*.37}{Descripci\363n}{subsection.6.1.1}% 63
+\BOOKMARK [3][-]{section*.41}{Resultados}{subsection.6.1.1}% 64
+\BOOKMARK [3][-]{section*.43}{Conclusi\363n}{subsection.6.1.1}% 65
 \BOOKMARK [2][-]{subsection.6.1.2}{Prueba 2: AlphaPose}{section.6.1}% 66
-\BOOKMARK [3][-]{section*.43}{Descripci\363n}{subsection.6.1.2}% 67
-\BOOKMARK [3][-]{section*.45}{Resultados}{subsection.6.1.2}% 68
-\BOOKMARK [3][-]{section*.46}{Conclusi\363n}{subsection.6.1.2}% 69
+\BOOKMARK [3][-]{section*.44}{Descripci\363n}{subsection.6.1.2}% 67
+\BOOKMARK [3][-]{section*.46}{Resultados}{subsection.6.1.2}% 68
+\BOOKMARK [3][-]{section*.47}{Conclusi\363n}{subsection.6.1.2}% 69
 \BOOKMARK [2][-]{subsection.6.1.3}{Prueba 3: Modelo DNN Caffe en OpenCV}{section.6.1}% 70
-\BOOKMARK [3][-]{section*.47}{Descripci\363n}{subsection.6.1.3}% 71
-\BOOKMARK [3][-]{section*.48}{Resultados}{subsection.6.1.3}% 72
-\BOOKMARK [3][-]{section*.49}{Conclusi\363n}{subsection.6.1.3}% 73
+\BOOKMARK [3][-]{section*.48}{Descripci\363n}{subsection.6.1.3}% 71
+\BOOKMARK [3][-]{section*.49}{Resultados}{subsection.6.1.3}% 72
+\BOOKMARK [3][-]{section*.50}{Conclusi\363n}{subsection.6.1.3}% 73
 \BOOKMARK [1][-]{section.6.2}{Extracci\363n de poses humanas}{chapter.6}% 74
 \BOOKMARK [1][-]{section.6.3}{C\341lculo angular de extremidades}{chapter.6}% 75
 \BOOKMARK [2][-]{subsection.6.3.1}{Estimaci\363n de tronco}{section.6.3}% 76
-\BOOKMARK [2][-]{subsection.6.3.2}{Representaci\363n de partes del cuerpo en el proceso}{section.6.3}% 77
+\BOOKMARK [2][-]{subsection.6.3.2}{Representaci\363n interna de partes del cuerpo}{section.6.3}% 77
 \BOOKMARK [2][-]{subsection.6.3.3}{Generaci\363n de datos de entrenamiento}{section.6.3}% 78
 \BOOKMARK [1][-]{section.6.4}{Entrenamiento de una red neuronal artificial}{chapter.6}% 79
 \BOOKMARK [2][-]{subsection.6.4.1}{B\372squeda de un modelo \363ptimo}{section.6.4}% 80
-\BOOKMARK [3][-]{section*.53}{Pruebas con modelos de red}{subsection.6.4.1}% 81
+\BOOKMARK [3][-]{section*.54}{Pruebas con modelos de red}{subsection.6.4.1}% 81
 \BOOKMARK [1][-]{section.6.5}{Predicci\363n de poses compatibles con amenazas o agresiones}{chapter.6}% 82
 \BOOKMARK [1][-]{section.6.6}{Detecci\363n de armas utilizando detectores en cascada}{chapter.6}% 83
-\BOOKMARK [1][-]{section.6.7}{Conclusi\363n}{chapter.6}% 84
-\BOOKMARK [1][-]{section.6.8}{Trabajo a futuro}{chapter.6}% 85
+\BOOKMARK [0][-]{chapter.7}{Conclusiones}{}% 84
+\BOOKMARK [1][-]{section.7.1}{Trabajo a futuro}{chapter.7}% 85

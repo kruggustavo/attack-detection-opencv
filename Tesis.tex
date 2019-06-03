@@ -113,6 +113,10 @@
 \tableofcontents
 
 \newpage
+\listoffigures
+
+
+\newpage
 \setlength{\parskip}{1.2em}
 \chapter{Introducción}
 \section{Planteamiento General}
@@ -251,7 +255,7 @@ Se utiliza el término pose, para referirse a la postura buscada de manera artif
 \begin{figure}[h!]
 	\includegraphics[width=350pt]{Imagenes/pose1.jpg}
 	\centering
-	\caption{Pose humana. A la izq. la imagen original, a la der. se dibujan las líneas sobre los elementos mas importantes que conforman la pose. Fuente: \url{pixabay.com}}
+	\caption{Ejemplo de representación de una pose en un niño donde  se dibujan las líneas sobre los elementos mas importantes que la conforman. Fuente: \url{pixabay.com}}
 	\label{fig:pose1}
 \end{figure}
 
@@ -632,7 +636,7 @@ Además, una ventana puede contener diferentes cantidades de gradientes, de acue
 \begin{figure}[h!]
 	\includegraphics[width=340pt]{Imagenes/hog1.jpg}
 	\centering
-	\caption{La imágen original a la izquierda, y los gradientes obtenidos a su derecha. Fuente Dalal y Trigg \cite{hog1} }
+	\caption{Imágen de un hombre, y los gradientes obtenidos de la misma. Fuente Dalal y Trigg \cite{hog1} }
 	\label{fig:hog1}
 \end{figure}
  
@@ -742,7 +746,7 @@ Para la recolección de los cuadros, se utilizaron imágenes de un video descarg
 \begin{figure}[h!]
 	\includegraphics[width=175pt,height=130pt]{Imagenes/video1.jpg}
 	\centering
-	\caption{Uno de los videos utilizados para la extracción de imágenes. Se puede observar una persona efectuando una acción probablemente de amenaza.}
+	\caption{Una de las imágenes del video de pruebas donde se observa una persona posiblemente en pose de amenaza con arma de fuego corta.}
 	\label{fig:video1}
 \end{figure}
 
@@ -816,7 +820,7 @@ Para la implementación del detector de objetos personalizado, se escribió cód
 \begin{figure}[h!]
 	\includegraphics[width=330pt]{Imagenes/results1.jpg}
 	\centering	
-	\caption{A la izquierda, la pose descripta con los puntos de las anotaciones asociadas a la clase de pose (objeto) detectada, y a la derecha la imágen original del video en que se detecta la pose.}
+	\caption{Se visualiza la pose descripta con los puntos de las anotaciones asociadas a la clase de pose (objeto persona) detectada, junto con la imágen original del video en proceso.}
 	\label{fig:results1}
 \end{figure}	
 
@@ -892,11 +896,11 @@ Sin embargo, implementar las herramientas de CNNs de OpenCV tiene ciertamente un
 \subsubsection{Conclusión}
 Tomando en cuenta que el la velocidad de procesamiento utilizando Caffe es ligeramente superiores a las pruebas anteriores, se optó por utilizar el modelo para la extracción de poses: una imágen procesada en un computador con dos núcleos tomó en promedio 8 segundos, sin GPUs para efectuar multiprocesamiento.\par
 
-Aunque el tiempo utilizado para procesar una imágen no sería suficiente para obtener una fluidez adecuada para catalogarlo como 'en tiempo real', el resultado es bastante acertado, tomando en cuenta las limitaciones del hardware utilizado. Se podría obtener mejores desempeños utilizando máquinas mas potentes, o simplemente haciendo uso de librerías de paralelismo de Python, que permiten distribuir trabajos no solamente a través de hilos de ejecución, sino también a través de múltiples computadores conectados entre sí por medio de una red de área local.\par
+Aunque el tiempo utilizado para procesar una imágen no sería suficiente para obtener una fluidez adecuada para catalogarlo como 'en tiempo real', el resultado es bastante acertado, tomando en cuenta las limitaciones del hardware utilizado. Se podría obtener un mejor desempeño utilizando máquinas mas potentes, o simplemente haciendo uso de librerías de paralelismo de Python, que permiten distribuir trabajos no solamente a través de hilos de ejecución, sino también a través de múltiples computadores conectados entre sí por medio de una red de área local.\par
 
 
 \section{Extracción de poses humanas}
-Luego de las pruebas, se decidió utilizar el modelo Caffe mediante la implementación de las funciones DNN de OpenCV. En este apartado se dará una breve explicación de los detalles del modelo.\par
+Luego de las pruebas, se decidió utilizar el modelo Caffe mediante la implementación de las funciones DNN de OpenCV. En este apartado se dará una breve explicación de los detalles del mismo.\par
 
 La configuración del modelo de red previamente entrenada se grafica en la siguiente figura:
 \begin{figure}[h!]
@@ -919,14 +923,14 @@ El modelo devuelve un conjunto ordenado de puntos que conforman el cuerpo humano
 
 Una vez establecidos los puntos relevantes del cuerpo humano a través de la utilización de una herramienta para la estimación de poses, es necesario establecer los ángulos que las extremidades del cuerpo forman con el tronco del mismo. De ésta manera podemos caracterizar una pose y guardar la configuración de la disposición de los mismos.\par 
 
-Para el cálculo angular, se utilizaron ecuaciones trigonométricas simples como ser: pendiente de una recta, diferencia de pendientes entre dos rectas, distancia existente entre dos puntos en un plano, entre otras. En las extremidades inferiores del cuerpo, los ángulos se miden en sentido antihorario tomando como eje línea de origen, el tronco humano, y en sentido horario para las extremidades superiores.\par
+Para el cálculo angular, se utilizaron ecuaciones trigonométricas simples como ser: pendiente de una recta, diferencia de pendientes entre dos rectas, distancia existente entre dos puntos en un plano, entre otras. Del lado derecho del cuerpo, las extremidades inferiores, los ángulos se miden en sentido antihorario tomando como eje línea de origen, el tronco humano, y en sentido horario para las extremidades superiores. Del lado derecho se invierte el sentido, las extremidades superiores tienen sentido antihorario y los inferiores sentido horario.\par
 
 Cada extremidad cuenta con dos partes, teniendo cuatro extremidades, se proceden a calcular ocho ángulos: antebrazos izquierdo y derecho, brazos izquierdo y derecho (sección del músculo biceps), muslos izquierdo y derecho, y pantorrillas izquierda y derecha. Todos estos suman ocho partes a considerar.\par
 
 \begin{figure}[h!]
 	\includegraphics[width=150pt]{Imagenes/pose6.jpg}
 	\centering	
-	\caption{Los miembros superiores, con la flecha que indica el sentido de medición angular, y los inferiores, en sentido contrario.}
+	\caption{Ejemplo de medición del lado izquierdo del cuerpo: los miembros superiores, con la flecha que indica el sentido de medición angular, y los inferiores, en sentido contrario. Del lado derecho se invierten los sentidos.}
 	\label{fig:pose5}
 \end{figure}
 
@@ -947,7 +951,7 @@ En caso de que no pueda visualizarse el tronco, se siguieron las siguientes prem
 	
 De esta manera, si no contamos con los datos explícitos de los puntos que conforman el tronco, es posible deducir su ubicación matemáticamente.\par
 
-\subsection{Representación de partes del cuerpo en el proceso}
+\subsection{Representación interna de partes del cuerpo}
 Una vez deducido el tronco, se agrupan las ubicaciones de los puntos con sus etiquetas de acuerdo al índice devuelto por el modelo Caffe, y de acuerdo a la categoría de extremidades a la que pertenecen, ejemplo:
 \begin{center}
 {\footnotesize 'brazoDerecho  ' : [('codoDerecho': (323, 42)),  ('hombroDerecho': (421, 25))]}  \\
@@ -993,17 +997,17 @@ Ya que el optimizador solamente interfiere en la etapa de entrenamiento, no se d
 Se citan únicamente las configuraciones de capas y neuronas, y el resultado del valor de precisión obtenido en las pruebas:
 \begin{enumerate}\baselineskip 16pt	
 	\item[Prueba 1]: 
-	Red neuronal con capa de entrada de 14 neuronas, 1 capa ocultas de 12 neuronas. Resultado precisión: 97.7%.
+	Red neuronal con capa de entrada de 14 neuronas, 1 capa oculta de 12 neuronas. Resultado precisión: 97.7%.
 	\item[Prueba 2]: 
 	Red neuronal con capa de entrada de 12 neuronas, 2 capas ocultas de 14 y 10 neuronas respectivamente. Resultado precisión: 96.8%.	
 	\item[Prueba 3]: 
-	Red neuronal con capa de entrada de 14 neuronas, 1 capa ocultas de 14 neuronas. Resultado precisión: 97.3%.	
+	Red neuronal con capa de entrada de 14 neuronas, 1 capa oculta de 14 neuronas. Resultado precisión: 97.3%.	
 	\item[Prueba 4]: 
-	Red neuronal con capa de entrada de 14 neuronas, 1 capa ocultas de 8 neuronas. Resultado precisión: 98.4%.	
+	Red neuronal con capa de entrada de 14 neuronas, 1 capa oculta de 8 neuronas. Resultado precisión: 98.4%.	
 	\item[Prueba 5]: 
-	Red neuronal con capa de entrada de 12 neuronas, 1 capa ocultas de 10 neuronas. Resultado precisión: 98.2%.	
+	Red neuronal con capa de entrada de 12 neuronas, 1 capa oculta de 10 neuronas. Resultado precisión: 98.2%.	
 	\item[Prueba 6]: 
-	Red neuronal con capa de entrada de 16 neuronas, 1 capa ocultas de 8 neuronas. Resultado precisión: 99.1%.	
+	Red neuronal con capa de entrada de 16 neuronas, 1 capa oculta de 8 neuronas. Resultado precisión: 99.1%.	
 \end{enumerate}	\baselineskip 16pt
 
 La conclusión: se decidió por un modelo sencillo de 3 capas, detallado en la Prueba 6. No se realizaron mas pruebas.
@@ -1027,13 +1031,14 @@ La detección se efectúa mediante clasificadores en cascada que por defecto se 
 
 No se incluyeron datos de todas las armas disponibles para efectuar agresiones humanas (cuchillos, hachas, arcos y flechas, etc), solamente fueron utilizados descriptores de armas de fuego cortas.\par
 
-\section{Conclusión}
+\newpage
+\chapter{Conclusiones}
 Si bien, la extracción de poses humanas en el presente trabajo no es el indicado para ejecutarse en computadores de gama baja, se puede lograr una velocidad de respuesta mas adecuada para ser considerada como una herramienta de tiempo real utilizando multiprocesamiento, o en todo caso, algún computador disponible en el mercado que contenga características mas avanzadas de cómputo.\par
 
 \begin{figure}[h!]
 	\includegraphics[width=450pt]{Imagenes/output1.jpg}
 	\centering	
-	\caption{Aplicación corriendo, en la que se puede observar un caso positivo para pose compatible con agresión}
+	\caption{Aplicación ejecutándose, en la que se puede observar un caso positivo para pose compatible con agresión}
 	\label{fig:output1}
 \end{figure}
 
@@ -1047,6 +1052,8 @@ Una alternativa al presente trabajo consistiría en la utilización de múltiple
 Además, no todas las poses existentes consideradas como agresiones o amenazas fueron establecidas para el entrenamiento, ya que la gama de posibilidades es muy amplia. Se podría también, incluir una mayor cantidad de tipos de armas que puedan ser utilizadas por el humano para proferir agresiones.\par
 
 Otra posibilidad sería la de implementar un detector de poses mediante redes neuronales mas sencillas que no requieran el uso de GPUs. Las opciones son amplias.\par
+
+\newpage
 
 \newpage	
 \begin{thebibliography}{9}
