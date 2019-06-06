@@ -2,84 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de1e1734-5595-47d8-b788-d94778d6cfdd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/0bba5c76334c4fef9161112800b90c5e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/10776561-man-aiming-pistol-gun-at-night-closeup-.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/19525622-homme-d-affaires-avec-arme-à-feu-isolé-sur-le-blanc.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/24e6zuw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/34185358-male-secret-agent-aiming-with-gun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/500_F_197281106_hSTnh1kAUp12M4wjSCsqT2wWBireDQsl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/500_F_29254288_zDmodmQM4PGLVWksmAb61fuwJ9UpCXz2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/5318568-put-a-pistol-to-head-isolated-on-white.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/57edcfa7883cac563ca139cc4907906c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/66769383-aggressive-young-man-with-gun-isolated-on-white.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/6679432-man-holding-gun-wearing-sunglasses.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/7828197-young-asian-man-with-automatic-pistol-Stock-Photo-gun-man-holding.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/7828197-young-asian-man-with-automatic-pistol.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/8480779.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/885.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/99.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/armas (313).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/black-guy-with-gun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/concepto-del-suicidio-sirva-señalar-un-arma-en-su-cabeza-26316002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/depositphotos_68042079-stock-photo-soldier-man-with-gun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/hombre-aislado-en-el-blanco-que-apunta-un-arma-de-la-mano-25972096.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/hombre-del-gángster-en-el-traje-negro-que-apunta-el-arma-75170558.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/iStock-182165022.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/istockphoto-160330881-1024x1024.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/istockphoto-536972035-612x612.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/man-gun-16454075.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/man-gun-450w-8469661.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/man-in-black-with-gun_orig.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/man-isolated-white-aiming-hand-gun-25972096.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/man-suit-pointing-with-gun_1187-2528.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/man-with-gun-stock-picture-2268003.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/masked-man-with-gun-stock-picture-3285823.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/left/shutterstock_276556586-752x501.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/0bba5c76334c4fef9161112800b90c5e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/10776561-man-aiming-pistol-gun-at-night-closeup-.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/19525622-homme-d-affaires-avec-arme-à-feu-isolé-sur-le-blanc.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/24e6zuw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/34185358-male-secret-agent-aiming-with-gun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/500_F_197281106_hSTnh1kAUp12M4wjSCsqT2wWBireDQsl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/500_F_29254288_zDmodmQM4PGLVWksmAb61fuwJ9UpCXz2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/5318568-put-a-pistol-to-head-isolated-on-white.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/57edcfa7883cac563ca139cc4907906c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/66769383-aggressive-young-man-with-gun-isolated-on-white.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/6679432-man-holding-gun-wearing-sunglasses.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/7828197-young-asian-man-with-automatic-pistol-Stock-Photo-gun-man-holding.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/7828197-young-asian-man-with-automatic-pistol.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/8480779.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/885.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/99.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/armas (262).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/black-guy-with-gun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/concepto-del-suicidio-sirva-señalar-un-arma-en-su-cabeza-26316002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/depositphotos_68042079-stock-photo-soldier-man-with-gun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/hombre-aislado-en-el-blanco-que-apunta-un-arma-de-la-mano-25972096.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/hombre-del-gángster-en-el-traje-negro-que-apunta-el-arma-75170558.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/iStock-182165022.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/istockphoto-160330881-1024x1024.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/istockphoto-536972035-612x612.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/man-gun-16454075.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/man-gun-450w-8469661.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/man-in-black-with-gun_orig.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/man-isolated-white-aiming-hand-gun-25972096.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/man-suit-pointing-with-gun_1187-2528.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/man-with-gun-stock-picture-2268003.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/masked-man-with-gun-stock-picture-3285823.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/Dataset/right/shutterstock_276556586-752x501.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/network1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../../Imagenes/network1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Imagenes/neurona.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../../Imagenes/neurona.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/NeuralNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/NeuralNetwork.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/FICHA REUNION TUTOR ALUMNO TESIS.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/FICHA REUNION TUTOR ALUMNO TESIS.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/Informe1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/Informe1.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/Informe2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/Informe2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/Informe3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/Informe3.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/Informe4.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/Informe4.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/Informe5.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/Informe5.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Tesis.lof" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.lof" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Tesis.out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.synctex.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Tesis.toc" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.toc" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            <state relative-caret-position="-290">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -107,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final/NeuralNetwork.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+            <state relative-caret-position="111">
+              <caret line="30" column="82" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -241,7 +179,6 @@
         <option value="$PROJECT_DIR$/utils/MathUtilities.py" />
         <option value="$PROJECT_DIR$/final/Drawer.py" />
         <option value="$PROJECT_DIR$/final/LivePoseGenerator.py" />
-        <option value="$PROJECT_DIR$/final/NeuralNetwork.py" />
         <option value="$PROJECT_DIR$/hog/WeaponsDetection.py" />
         <option value="$PROJECT_DIR$/utils/FramesFromVideo.py" />
         <option value="$PROJECT_DIR$/utils/ImageResizer.py" />
@@ -251,6 +188,7 @@
         <option value="$PROJECT_DIR$/final/WeaponsClassifier.py" />
         <option value="$PROJECT_DIR$/final/PoseDetectorFatClient.py" />
         <option value="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" />
+        <option value="$PROJECT_DIR$/final/NeuralNetwork.py" />
       </list>
     </option>
   </component>
@@ -279,6 +217,11 @@
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="final" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -492,13 +435,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1364" height="696" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.17459138" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50284094" side_tool="true" weight="0.17433235" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3173242" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.290378" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33105803" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -553,13 +497,6 @@
     <entry file="file://$PROJECT_DIR$/pose/Caffe.py" />
     <entry file="file://$PROJECT_DIR$/hog/AngleVector.py" />
     <entry file="file://$PROJECT_DIR$/utils/NeuralNetwork.py" />
-    <entry file="file://$PROJECT_DIR$/utils/PoseGenerator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/final/trainingangles.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -648,16 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/LivePoseGenerator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="278" selection-start-line="278" selection-end-line="279" selection-end-column="18" />
-          <folding>
-            <element signature="e#84#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/final/WeaponsClassifier.py" />
     <entry file="file://$PROJECT_DIR$/final/Drawer.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -679,16 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/NeuralNetwork.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -699,10 +616,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils/PoseGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/LivePoseGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="278" selection-start-line="278" selection-end-line="279" selection-end-column="18" />
+          <folding>
+            <element signature="e#84#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/NeuralNetwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="30" column="82" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state relative-caret-position="-290">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>

@@ -57,9 +57,9 @@ drawer = Drawer()
 # Red neuronal de angulos
 EPOCHS = 1
 nnet = NeuralNetwork(8)
-#nnet.loadTrainingSamples("trainingangles.csv")
-#nnet.trainNetwork(EPOCHS)
-nnet.loadModel("model.json")
+nnet.loadTrainingSamples("trainingangles.csv")
+nnet.trainNetwork(EPOCHS)
+#nnet.loadModel("model.json")
 #nnet.saveModel("model.json")
 
 netOutput = NO_ATTACK

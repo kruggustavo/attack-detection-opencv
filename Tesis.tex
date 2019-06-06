@@ -11,6 +11,10 @@
 \usepackage[center]{caption}
 \usepackage{unicode}
 \usepackage{csquotes}
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
 \captionsetup[figure]{font={stretch=0.2}} 
 \captionsetup[figure]{font={footnotesize}}
  
@@ -21,14 +25,20 @@
 	urlcolor=cyan,
 }
 
-\setlength{\paperwidth}{20,4cm}          
-\setlength{\paperheight}{29,7cm}       
-\setlength{\textwidth}{15cm}         
-\setlength{\textheight}{21cm}        
-\setlength{\topmargin}{-1.2cm}     
+\setlength{\paperwidth}{20,7cm}          
+\setlength{\paperheight}{30,7cm}       
+\setlength{\textwidth}{16cm}         
+\setlength{\textheight}{24cm}        
+\setlength{\topmargin}{-0.8cm}     
+
 \usepackage{fancyhdr}
 \fancypagestyle{plain}{\fancyfoot[C]{\thepage}}
-\pagestyle{plain}    
+\pagestyle{plain}  
+
+\pagestyle{fancy}     
+\fancyhead[L]{\fontsize{10}{12}}
+
+
 \setlength{\oddsidemargin}{0.30cm}   
 \setlength{\evensidemargin}{0.30cm} 
 \renewcommand{\baselinestretch}{1.2}
@@ -67,7 +77,7 @@
 	\includegraphics[width=100pt]{Imagenes/logo.png}
 	\centering
 \end{figure}
-	
+\vspace*{0.1cm}
 \begin{center}
 	{\LARGE {Universidad Católica ``Nuestra Señora de la Asunción'' Campus Itapúa}}
 \end{center}
@@ -84,7 +94,6 @@
 	{\large \rm \textbf {Tesis de grado}}
 \end{center}
 	
-
 \baselineskip 30pt
 \vspace*{1cm}
 \begin{center}
@@ -98,7 +107,7 @@
 	\vspace*{0.1cm}
 	
 	\center{Docente tutor:}  
-	\center{\sc Exp. Nidia Gagliardi}
+	\center{Exp. Nidia Gagliardi}
 \end{center}
 \vspace*{2cm}
 \begin{center}
@@ -106,12 +115,13 @@
 \end{center}
 
 
-\baselineskip 16pt
+\spacing{1.5}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \clearpage
+\thispagestyle{fancy}
 \setcounter{page}{1}
 \pagenumbering{arabic}
 \setlength{\parskip}{1.3em}
@@ -137,7 +147,10 @@
 \listoffigures
 
 \newpage
-\section*{Resumen}
+\clearpage
+\thispagestyle{fancy}
+\setlength{\parskip}{1.3em}
+\chapter*{Resumen}
 El propósito del siguiente trabajo de tesis es el de desarrollar una solución aplicativa capaz de detectar una actividad delictiva expresada a través de poses humanas captadas por cámaras de video en tiempo real, emitiendo alertas, visual y sonora. \par 
 
 La idea surge a partir de la observación de numerosos hechos delictivos en donde el ataque o agresión, con o sin armas, logran reducir y neutralizar a las víctimas sin que puedan solicitar ayuda.\par 
@@ -147,20 +160,21 @@ Para el desarrollo de la solución se pusieron en práctica conceptos de intelig
 Palabras clave: \textit{Pose, Delictiva, Inteligencia Artificial, Redes neuronales, Entrenamiento, Detección}.
 
 \newpage
-\section*{Abstract}
-The purpose of the following thesis work is to develop a computer application capable of detecting certain criminal activity expressed through human poses captured by video cameras in real time. \par
+\clearpage
+\thispagestyle{fancy}
+\setlength{\parskip}{1.3em}
+\chapter*{Abstract}
+The purpose of the following thesis work is to develop an application solution capable of detecting a criminal activity expressed through human poses captured by video cameras in real time, emitting alerts, visual and sound.\par
 
-The idea arises from the observation of numerous criminal acts in which the attack or aggression with weapons were decisive in reducing and neutralizing the victims thus delaying the police response. \par
+The idea arises from the observation of numerous criminal acts in which the attack or aggression, with or without weapons, manage to reduce and neutralize the victims without being able to request help.\par
 
-It is intended to provide an application solution that serves as a tool for detecting possible cases of human threat and aggression in order to issue an early warning in case the victim is unable to ask for help quickly and by their own means.\par 
+For the development of the solution, artificial intelligence concepts were put into practice and tools that comply with the state of the art were used to detect criminal human activity.\par
 
-Thus, for the development of the solution, artificial intelligence concepts were put into practice and tools that comply with the state of the art were used to detect criminal human activity.\par 
-
-Keywords: \ textit {Artificial Intelligence, Neural Networks, Poses and Human Activities, Video, Training, Detection}.
+Keywords: \textit {Pose, Criminal, Artificial Intelligence, Neural Networks, Training, Detection}.
 
 \newpage
-\setlength{\parskip}{1.2em}
-\chapter{Introducción}
+\setlength{\parskip}{0.8em}
+\chapter{Introducción} 
 \section{Planteamiento General}
 La delincuencia es un mal en crecimiento que afecta a toda sociedad sin importar el estrato social de la víctima, a quien, en muchas ocasiones, el perjuicio puede suponer la pérdida parcial o completa de sus bienes de alto valor, o incluso hasta la vida.\par 
  
@@ -170,7 +184,7 @@ Los servicios de vigilancia remota se ven sobrepasados en ciertas ocasiones, por
 
 En ocasiones, las empresas medianas o pequeñas no pueden, por motivos económicos, contratar servicios de vigilancia las 24hs al día los 365 días del año, porque esto supone, como mínimo, el pago de un sueldo extra, o mas, debido al trabajo nocturno y días no laborales, para la contratación de personal que pueda vigilar la actividad captada por las cámaras instaladas a tal efecto.\par
 
-\section[Planteamientos]{Planteamiento del problema}
+\section{Planteamiento del problema}
 El uso de la tecnología, ha permitido a las personas, detectar o prevenir en el mejor de los casos la actividad delictiva.\par
 
 Mediante el entrenamiento de redes neuronales de computadoras, se intenta detectar, de forma básica, elementos que supongan actividades delictivas, como agresiones o amenazas a la integridad de objetos, captadas por cámaras de seguridad, brindando una herramienta asistencial, y estableciendo una metodología básica para estudios posteriores más avanzados o para casos de investigación sobre otro tipo de actividades.
@@ -190,13 +204,11 @@ Desarrollar una solución computacional que permita la detección básica de del
 \subsection{Específicos}
 \begin{enumerate}
 	\baselineskip 16pt
-	\item Entrenar redes neuronales mediante secuencias de poses humanas establecidas
-para el fin.\par 
-	\item Analizar imágenes secuenciales captadas por cámaras para video.
-\par 
+	\item Analizar imágenes secuenciales captadas por cámaras para video.\par 
 	\item Obtener patrones de poses humanas ocurrentes en las imágenes.\par 
+	\item Entrenar redes neuronales mediante secuencias de poses humanas establecidas para el fin.\par 
 	\item Verificar coincidencias con los patrones de poses humanas preestablecidos a través del entrenamiento previo.\par 
-\end{enumerate}	\baselineskip 16pt
+\end{enumerate}
 
 \section{Alcance}
 Se intenta establecer una metodología básica a través del desarrollo de software para la detección de posibles delitos de agresión o amenazas humanas.\par
@@ -214,8 +226,8 @@ Según la finalidad de este trabajo, se pretende llevar a cabo un proceso de inv
 Para que las redes neuronales sean capaces de detectar patrones, es necesario primeramente entrenarlas mediante la extracción de características de poses en seres humanos analizando imágenes secuenciales, una a una. \par
 
 Para llevar a cabo esto:
-\par
 \begin{itemize}
+	\setlength\itemsep{0.2em}
 	\item Se obtendrán patrones existentes de poses en imágenes secuenciales que sugieran algún tipo de actividad humana sobre hechos delictivos relacionados a amenazas o agresiones humanas, mediante el tratamiento digital de imágenes. Esta información será utilizada para entrenar la red neuronal.\par
 	\item Se entrenará una red neuronal de computadoras, utilizando técnicas actuales de inteligencia artificial, para que la red pueda almacenar los patrones previamente obtenidos de las imágenes secuenciales. Estos patrones establecerán, los parámetros para la identificación de actividad humana en las imágenes secuenciales a través de las poses detectadas.\par	
 	\item Se analizarán nuevos patrones, y se compararán los mismos con los patrones establecidos anteriormente, a fin de que pueda ser, o no, confirmado como un patrón ocurrente de una actividad humana similar a la entrenada.\par	
@@ -229,9 +241,7 @@ En la actualidad, la seguridad personal se está volviendo cada vez más importa
 Con el transcurrir de los últimos años, muchas personas y empresas dedicadas a la tecnología han centrado sus esfuerzos en ofrecer soluciones que puedan brindar ayuda incluso a los organismos de seguridad. Las cámaras de circuito cerrado de televisión (CCTV) han tomado un protagonismo más evidente en los sistemas de vigilancia dada la ventaja que ofrecen. \par
 
 \subsection{Evolución de los sistemas de vigilancia}
-A lo largo del tiempo, los sistemas de vigilancia han mejorado la tecnología utilizada en los dispositivos de monitoreo, sensores, etc. \par
- 
-Según M. Valera y S.A. Velastin. \cite{valera}, pueden diferenciarse hasta el momento tres generaciones de sistemas de vigilancia:
+A lo largo del tiempo, los sistemas de vigilancia han mejorado la tecnología utilizada en los dispositivos de monitoreo, sensores, etc. Según M. Valera y S.A. Velastin. \cite{valera}, pueden diferenciarse hasta el momento tres generaciones de sistemas de vigilancia:
 \begin{enumerate}
 	\baselineskip 16pt
 	\item Primera generación: \par 
@@ -247,7 +257,7 @@ Según M. Valera y S.A. Velastin. \cite{valera}, pueden diferenciarse hasta el m
 	
 	\item Tercera generación: \par
 	Solo difieren de los de segunda en el modo en que se procesan los datos. Es una red de proceso distribuido con múltiples cámaras/sensores. Esto ofrece robustez, ya que si una cámara/sensor deja de funcionar, el sistema sigue funcionando con los demás.
-\end{enumerate}	\baselineskip 16pt
+\end{enumerate}
 
 
 
@@ -257,6 +267,7 @@ No todos los sistemas de vigilancia utilizan los mismos recursos y enfoques. La 
 
 Dentro de la clasificación de sistemas de visión para vigilancia, R. Dautov et al \cite{dautov} cita cuatro tipos distintos:
 \begin{itemize}
+	\setlength\itemsep{-1.2em}
 	\item Integrados: incluyen cámaras independientes que realizan el procesamiento de información específica de aplicación (ASIP por sus siglas en inglés) o en una unidad externa (ej., Raspberry Pi).\\	
 	\item Basados en computadoras personales (PC): cámaras inteligentes que consisten en una cámara de video y una computadora  realizando ASIP.\\	
 	\item Basados en red: compuestas de múltiples cámaras interconectadas. Ejemplo: sistemas de vigilancia CCTV remotos accesibles mediante IP).\\	
@@ -273,6 +284,7 @@ Existen numerosos trabajos realizados a lo largo del mundo que intentan, mediant
 
 En el artículo de O.C.Ann y L.B.Theng \cite{activity1} se citan algunas estructuras de detección de actividad humana en donde se utilizan:
 \begin{itemize}
+	\setlength\itemsep{-1.2em}
 	\item Cámaras RGB: Cámaras de video que capturan secuencias de imágenes que luego son analizadas para detectar actividad humana.\\	
 	\item Sensores infrarrojos: Se utilizan generalmente en conjunto con las cámaras RGB para obtener datos en profundidad del movimiento que realiza una persona y así establecer qué tipo de actividad realiza.\\	
 	\item Sensores de cuerpo: Se adhieren al cuerpo humano, generalmente como partes de una vestimenta. Pueden ser acelerómetros, magnetómetros y giroscopios. Mediante los datos provistos por éstos se puede establecer la actividad que realiza la persona en cuyo cuerpo se fijan los sensores.\\
@@ -297,7 +309,7 @@ Se utiliza el término pose para referirse a la postura buscada de manera artifi
 	\item Tronco del cuerpo (torso): pecho y caderas  
 	\item Brazos y antebrazos: manos, codos y hombros  
 	\item Muslos y pantorrillas: pies, rodillas y caderas
-\end{enumerate}	\baselineskip 16pt
+\end{enumerate}
 
 \begin{figure}[h!]
 	\includegraphics[width=350pt]{Imagenes/pose1.jpg}
@@ -326,7 +338,7 @@ Ejemplos de poses que puedan ser consideradas como compatibles con agresión:
 	\item Brazos levantados formando ángulos superiores a los 170 grados con el tronco (ej. una persona propinando golpes con los brazos ) 
 	\item Piernas levantadas formando ángulos de entre 250 y 80 grados con el tronco  (ej. una persona propinando golpes con las piernas ) 
 	\item Pueden ocurrir combinaciones de las anteriores.
-\end{enumerate}	\baselineskip 16pt
+\end{enumerate}
 
 \begin{figure}[h!]
 	\includegraphics[width=150pt]{Imagenes/pose2.jpg}
@@ -344,7 +356,7 @@ Según Doménech \cite{human1} existen por lo menos tres categorías de métodos
 	\item Métodos con enfoque generativo: utilizan un modelo del cuerpo conocido con anticipación, y lo representan a través del conjunto de sus partes unidas por restricciones impuestas a las articulaciones en la estructura del esqueleto.\par
 	\item Métodos con enfoque discriminativo: en ellos no se conoce con anticipación el modelo del cuerpo sino que se utilizan algoritmos que 'aprenden' a mapear la relación entre las imágenes y las poses. Se utiliza aprendizaje supervisado o también se puede buscar poses por similitud a partir de cierto número de candidatos.\par
 	\item Métodos híbridos: combinan los métodos generativos y discriminativos. \par
-\end{enumerate}	\baselineskip 16pt
+\end{enumerate}
 
 Y existen también modelos para la representación de poses, siendo uno de los más utilizados el denominado \textit{Pictorial Structures Model}, PSM por sus siglas en inglés, que grafica el cuerpo a través de partes cilíndricas unidas por puntos articulares que conforman el esqueleto del cuerpo. \par
  
@@ -359,12 +371,12 @@ Estos cilindros representan partes de las extremidades, y los puntos son las art
 
 \newpage	
 \chapter{Inteligencia Artificial}
-\section[Machine Learning]{Conceptos de Machine Learning}\label{machinelearning}
+\section{Conceptos de Machine Learning}\label{machinelearning}
 
-Se conoce como \textit{Machine Learning} en inglés, a la ciencia relacionada con Inteligencia Artificial en la cual se pueden configurar modelos matemáticos y probabilísticos para responder a situaciones de la vida real. Básicamente, se trata de entrenar algoritmos para ofrecer respuestas, esperadas o no, bajo ciertas condiciones de campo. Su traducción literal se refiere al proceso de 'enseñar' a una máquina a responder a situaciones de manera inteligente, sin el uso de condicionales.\par
+Se conoce como \textit{Machine Learning} en inglés, a la ciencia relacionada con Inteligencia Artificial en la cual se pueden configurar modelos matemáticos y probabilísticos para responder a situaciones de la vida real. Básicamente, se trata de entrenar algoritmos para ofrecer respuestas, bajo ciertas condiciones de campo. Su traducción literal se refiere al proceso de 'enseñar' a una máquina a responder a situaciones de manera inteligente, sin el uso de condicionales.\par
 	
 \subsection{Aprendizaje y entrenamiento}
-El aprendizaje se da solamente en ciertos seres vivos del planeta, por lo que el concepto era ajeno a las máquinas, hasta ahora: consiste en incorporar conocimientos de situaciones repetitivas para poder responder con una acción o simplemente establecer un recuerdo del mismo.\par
+El aprendizaje se da solamente en ciertos seres vivos del planeta, por lo que el concepto era ajeno a las máquinas, hasta ahora: consiste en incorporar conocimientos de situaciones repetitivas para poder responder con una acción o simplemente establecer un registro del mismo.\par
 
 En el ámbito de la computación, se adoptó el concepto de aprendizaje y entrenamiento al proceso de preparar y parametrizar, con datos de entrada, un modelo matemático o algoritmo para que pueda responder, con datos de salida, de la misma manera que lo haría un ser vivo capaz de aprender.\par
 
@@ -388,9 +400,9 @@ Entonces se tienen datos precisos, catalogados sobre características de la casa
 
 Por el otro lado en el aprendizaje no supervisado, no se conoce la clasificación de los datos de entrada ni de salida. Los datos de entrada no poseen una estructura definida, no están catalogados y no se sabe acerca de los datos de salida esperados. Datos de entrada para el aprendizaje no supervisado podrían ser: datos de audio, imágenes o texto. \par
 
-En el aprendizaje no supervisado priman los problemas de clasificación de patrones como la clasificación de textos extensos de acuerdo a un tema en particular.\par
+En el aprendizaje no supervisado priman los problemas de clasificación de patrones como el de textos extensos de acuerdo a un tema en particular.\par
 
-\section[Clasificación]{Métodos de clasificación}\label{clasificacion}
+\section{Métodos de clasificación}\label{clasificacion}
 A continuación, un breve resumen acerca de algunos modelos probabilísticos utilizados en Machine Learning, para clasificar datos. No se profundizarán conceptos sobre todos los modelos, solamente aquellos que sirvieron para la realización de este trabajo, para ahondar en detalles consulte material especializado.\par
 
 S. Bailey et al \cite{bailey} describe algunos métodos principales de clasificadores, también se puede agregar los citados por N. S. Kamarudin et al\cite{kamarudin}, y los métodos de regresión de Andrew Ng y su curso de Machine Learning  \cite{machinelearningcoursera}. \par
@@ -441,7 +453,7 @@ Ejemplo: \textit{z = O + $O_1$$x^2_1$ + $O_2$$x^2_2$}  es la ecuación de la cir
 
 \subsection{Máquinas de Vectores Soporte}
 
-En inglés '\textit{Support Vector Machines}' (SVM) es un método de clasificación que utiliza funciones matemáticas: dado un conjunto de puntos donde cada uno pertenece a una de dos posibles categorías, se construye un modelo capaz de predecir si un punto nuevo pertenece a una de las dos categorías.  \par
+En inglés \textit{Support Vector Machines} (SVM) es un método de clasificación que utiliza funciones matemáticas: dado un conjunto de puntos donde cada uno pertenece a una de dos posibles categorías, se construye un modelo capaz de predecir si un punto nuevo pertenece a una de las dos categorías.  \par
 
 Pertenece a la categoría de los clasificadores lineales, puesto que inducen separadores lineales o hiperplanos. \par
 
@@ -465,13 +477,12 @@ Esto se soluciona con funciones kernel, que proyectan la información del univer
 
 Algunos tipos de funciones kernel son: \par
 
-\begin{enumerate}
-	\baselineskip 16pt
+\begin{enumerate}[noitemsep]
 	\item Polinomial.
 	\item Perceptrón.
 	\item Gaussiana.
 	\item Sigmoidea.
-\end{enumerate}\baselineskip 16pt
+\end{enumerate}
 
 Con las funciones kernel, se podría por ejemplo, mapear los valores de ciertos puntos, que bajo un plano de dos dimensiones no son perfectamente separables mediante una linea recta, haciendo de ese modo que los nuevos puntos sean separables.
 
@@ -536,6 +547,26 @@ El algoritmo de backpropagation empieza cuando ha terminado la propagación haci
 
 No se profundizará sobre el algoritmo matemático del backpropagation ya que no es la finalidad de este trabajo explicar detalladamente sobre estos conceptos, solo dar una breve descripción de su funcionamiento. Consulte otros artículos más especializados para detalles.\par
 
+
+\subsubsection{Tasa de aprendizaje}
+En inglés \textit{learning rate}, es un parámetro de redes neuronales que determina la cantidad de ciclos de entrenamiento en la que la red actualizará sus pesos, así, a menor tasa los parámetros se actualizarán una mayor cantidad de veces y a tasa learning rate superior, la red actualizará sus pesos con menor frecuencia.
+
+\subsubsection{Función de pérdida}
+\textit{Loss function} en inglés, es una parte importante de las redes neuronales artificiales que mide la inconsistencia entre valores predichos y el valor de salida esperado. \par
+
+De esta manera, la función de pérdida retorna un valor numérico que determina la robustez de la red neuronal. A un valor menor de la pérdida, mayor es la precisión obtenida.\par
+
+\subsubsection{Optimizadores de redes neuronales artificiales}
+Los optimizadores son algoritmos utilizados para minimizar la función objetivo, que es básicamente una función matemática dependiente de los parámetros de aprendizaje del modelo de la red neuronal. No se explicarán detalles profundos sobre el funcionamiento de los optimizadores, consulte documentación especializada para ahondar en detalles. Algunos de los optimizadores más conocidos:
+
+\begin{itemize}
+	\item Descenso de gradiente: utilizado para ajustar los pesos en los ciclos de entrenamiento.
+	\item Adam: calcula la tasa de aprendizaje de una red manteniendo un promedio de gradientes de ciclos anteriores.
+	\item Adagrad: simplemente la tasa de aprendizaje de una red de acuerdo a los parámetros de la misma.
+\end{itemize}
+
+\subsection{Funciones de capas de redes neuronales artificiales}
+
 \subsubsection{Funciones de entrada}
 Hasta ahora se ha enfocado en la estructura de una red neuronal y el modo en que se ajustan los pesos de acuerdo a una salida pero no se ha mencionado el modo en que se obtiene la misma.\par
 
@@ -545,7 +576,6 @@ La capa de entrada implementa lo que se denominan funciones de entrada, y solame
 
 De Matich \cite{matich} se pueden entresacar los tipos de funciones de entrada más comunes:
 \begin{enumerate}
-	\baselineskip 16pt
 	\item Sumatoria de entradas pesadas: suma de todos los valores de
 	entrada de la neurona, multiplicados por sus correspondientes pesos.\par 
 	\[\sum \textit{($n_i$$W_i$)} \]
@@ -556,7 +586,7 @@ De Matich \cite{matich} se pueden entresacar los tipos de funciones de entrada m
 	\item Máximo de las entradas pesadas: toma el producto más alto de la multiplicación de valores y sus pesos correspondientes.\par 
 	
 	\[ \textit{Max($n_i$$W_i$)} \]
-\end{enumerate}	\baselineskip 16pt
+\end{enumerate}
 
 
 \subsubsection{Funciones de activación}
@@ -571,7 +601,6 @@ Una función de activación recibe datos de entrada y genera un resultado de act
 De Enyinna et al\cite{enyinna} se pueden citar tres de los tipos de funciones de activación más conocidos:
 
 \begin{enumerate}
-	\baselineskip 16pt
 	\item Función sigmoidea: es una función de activación no lineal, conocido también como función logística. Su uso mayor se da en redes neuronales aunque se ha comprobado que tiene ciertos problemas con backpropagation, y otras funciones más modernas se utilizan en su lugar. Esta función tiene algunas variantes que no se detallarán en este trabajo. Su ecuación es:\par 
 	
 	\begin{equation}
@@ -597,34 +626,19 @@ De Enyinna et al\cite{enyinna} se pueden citar tres de los tipos de funciones de
 	\[ \textit{0, si x $ < $ 0} \]
 
 	ReLU además cuenta con otras variantes que aplican distintos tipos de umbrales pero no se detallarán en el presente trabajo.\par 
-\end{enumerate}	\baselineskip 16pt
+\end{enumerate}	
 
 \subsubsection{Funciones de salida}
 La capa de salida también implementa ciertas funciones, citando:\par
 
-\begin{enumerate}
-	\baselineskip 10pt
+\begin{enumerate}[noitemsep]
 	\item Función lineal: También llamada función identidad. 
 	\item Función sigmoidea: ya detallada anteriormente. 
-\end{enumerate}	\baselineskip 16pt
-
-\subsubsection{Tasa de aprendizaje}
-En inglés \textit{learning rate}, es un parámetro de redes neuronales que determina la cantidad de ciclos de entrenamiento en la que la red actualizará sus pesos, así, a menor tasa los parámetros se actualizarán una mayor cantidad de veces y a tasa learning rate superior, la red actualizará sus pesos con menor frecuencia.
-
-\subsubsection{Optimizadores de redes neuronales artificiales}
-Los optimizadores son algoritmos utilizados para minimizar la función objetivo, que es básicamente una función matemática dependiente de los parámetros de aprendizaje del modelo de la red neuronal. No se explicarán detalles profundos sobre el funcionamiento de los optimizadores, consulte documentación especializada para ahondar en detalles.\par
-
-Algunos de los optimizadores más conocidos:
-\begin{itemize}
-	\baselineskip 10pt
-	\item Descenso de gradiente: utilizado para ajustar los pesos en los ciclos de entrenamiento.
-	\item Adam: calcula la tasa de aprendizaje de una red manteniendo un promedio de gradientes de ciclos anteriores.
-	\item Adagrad: simplemente la tasa de aprendizaje de una red de acuerdo a los parámetros de la misma.
-\end{itemize}	\baselineskip 16pt
+\end{enumerate}
 
 \newpage
-\chapter[Procesamiento gŕafico]{Procesamiento gráfico}
-\section[Visión por Comp.]{Visión por computadora}\label{visionporcomputadora}
+\chapter{Procesamiento gráfico}
+\section{Visión por computadora}\label{visionporcomputadora}
 
 En los últimos años, los problemas de visión por computadora, junto con con los de reconocimiento de actividad humana, han acaparado los trabajos e investigaciones en inteligencia artificial, dada la cantidad de situaciones en las cuales es necesario utilizar ayuda no humana para resolver problemas. Los sistemas computacionales han evolucionado y la inteligencia artificial ha surgido como una ciencia de estudio capaz de proveer la ayuda necesaria. \par
 
@@ -636,61 +650,50 @@ Los sistemas de vigilancia en auge actualmente son los de segunda generación qu
 
 Si bien existen investigaciones enfocadas a la utilización de Inteligencia Artificial para la Vigilancia Inteligente, resulta por ahora una tarea difícil de implementar debido a la cantidad de combinaciones posibles de escenarios que puedan darse, la cantidad de datos de entrada y los patrones que se deben analizar en las diferentes fases. \par
 
-Normalmente, el proceso de identificación de objetos en imágenes se da en diferentes etapas descritas en \cite{lozano} y \cite{kamarudin}, ellas son:	
+Normalmente, el proceso de identificación de objetos en imágenes se da en diferentes etapas descritas por Lozano \cite{lozano} y Kamarudin \cite{kamarudin}, ellas son:	
 \begin{enumerate}[label=\alph*)]
-	\baselineskip 10pt
-	\item Detección de objetos.\\	
-	\item Clasificación (identificación) de objetos.\\
-	\item Extracción de características (features) de objetos.\\
-	\item Análisis del comportamiento de los objetos.\\
-\end{enumerate}	\baselineskip 16pt
-
-\subsubsection{a) Detección de objetos en imágenes}
-La detección de objetos en imágenes es una de las áreas de mayor investigación en visión por computadora. La tarea no resulta fácil, ya que existen numerosos elementos a tener en cuenta para la detección de objetos que sean de relevancia. \par
-
-El principal obstáculo, es determinar si un conjunto de pixeles forman o no un objeto tomando en cuenta que existen innumerables combinaciones de posición, luminosidad, color y formas, como así también el ruido de interferencia y el tamaño del objeto (o su lejanía de la cámara).\par
-
-Enfocado a la seguridad, la detección de objetos trata de identificar solamente unas pocas categorías de objetos en imágenes, lo que lo hace un proceso más viable: la detección de formas humanas, también denominado detección de peatones (Pedestrian detection \cite{zhang1}).
-
-\subsubsection{Técnicas de detección de objetos en imágenes}
-A través de los años, como consecuencia de las investigaciones en visión por computadora, han surgido	diferentes enfoques en la utilización de técnicas de detección de objetos, M. Valera y S.A. Velastin \cite{valera} citan dos enfoques a lo que se pueden agregar además el presentado en \cite{nidhi} y el citado en \cite{barron}:
-\begin{enumerate}
-	\baselineskip 16pt
-	\item Diferencia temporal: 
-	este enfoque se basa en la comparación de un frame (imagen de video) con el frame anterior. Esta acción permite identificar objetos en movimiento cambiante dentro del conjunto de frames, aunque sugieren que es un proceso más lento que otros.\\	
-	\item Substracción de fondo: utiliza una imagen de fondo que se compara con frames pixel a pixel para determinar los cambios ocurridos en la imagen, lo que permite obtener contornos de objetos.\\
-	\item Filtrado: este método es quizás el menos utilizado ya que las características de los objetos suelen ser variantes. Este método sugiere la detección de objetos basados en el filtrado de color del mismo: se extraen los pixeles que concuerdan con el color de un objeto previamente establecido. Como los objetos pueden variar su color, o luminosidad, este método resulta poco efectivo. Puede utilizarse en condiciones muy controladas.\\
-	\item Flujo óptico: este método es el más costoso computacionalmente hablando, ya que determina vectores de movimiento de cada uno de los pixeles para determinar el contorno de un objeto en movimiento dentro de un frame. Cada pixel en movimiento (posición inicial y posición final) determina un vector, un sentido de movimiento. Se puede tomar el conjunto de vectores de todos los pixeles para determinar la existencia de un objeto en la imagen.\\
-\end{enumerate}	\baselineskip 16pt
-
-\subsubsection{b) Clasificación de objetos}
-La última etapa, luego de la detección de objetos, es la clasificación de los mismos: se debe determinar la clase de objeto detectado. Es de vital importancia poder identificar el tipo de objeto detectado, especialmente cuando se trata de personas: se necesita registrar y catalogar el comportamiento de objetos de tipo persona para determinar si se produce una forma compatible de agresión.\par
-
-\subsubsection{Técnicas de clasificación}
-Para determinar la clase de objeto extraído de una imágen, se utilizan dos tipos principales de técnicas citadas por \cite{lozano}:
-\begin{enumerate}
-	\baselineskip 16pt
-	\item Clasificación basada en formas: es la técnica más sencilla y consiste en, una vez identificado un objeto en una imágen, compararlo con formas de objetos existentes. Se asocia un valor numérico para identificar el grado de similitud entre las imágenes comparadas. El valor más alto asociado definirá la clase de objeto.\\
-	\item Clasificación basada en movimiento: estudia el movimiento hecho por un objeto en particular, con respecto a su forma o silueta. Se sabe por ejemplo, que el cuerpo humano va cambiando su forma -esto es, existe movimiento- a través de las imágenes. Todo lo contrario a lo que ocurre con los automóviles, que no suelen cambiar su forma.
-\end{enumerate}	\baselineskip 16pt
-
-\subsubsection{Métodos de clasificación}
-Ya se han citado las técnicas que mayormente se utilizan en la clasificación de objetos, además de que existen otras técnicas menos conocidas o que producen resultados menos certeros, ahora hay que hablar sobre los métodos de clasificación utilizados actualmente por programas computacionales para separar objetos según su clase utilizando las técnicas citadas previamente.\par
-
-Aunque algunos de ellos ya fueron citados y explicados en otros capítulos de este trabajo, ahora solo se citarán aquellos que fueron implementados en la clasificación de objetos en imágenes como ser: Árboles de decisiones, Support Vector Machines, Redes bayesianas y Redes Neuronales Artificiales.\par
-
-\subsubsection{c) Extracción de características de objetos}
-Características de objetos pueden ser su contorno, medidas, color o disposición. Las técnicas de extracción se basan en el procesamiento digital de imágenes mediante herramientas que permiten aplicar algoritmos matemáticos para determinar ciertas cualidades.\par
-Un objeto se diferencia de otro justamente por las propiedades gráficas que lo representan, y cuyos cambios determinarán su comportamiento.\par
-
-\subsubsection{d) Análisis del comportamiento de los objetos}
-En esta etapa se lleva a cabo el análisis de los cambios de propiedades de un objeto, como por ejemplo su ubicación y forma establecida por el contorno. Analizar el comportamiento conlleva al seguimiento minucioso de sus propiedades.\par
-Una de las técnicas de análisis de comportamiento de objetos mas utilizada es la denominada en inglés \textit{Dynamic Time Warping} (DTW), técnica ampliamente utilizada en procesamiento de audio, que consiste básicamente en segmentar una secuencia de datos en unidades de tiempo iguales para así poder compararlas y establecer el cambio producido entre segmentos.\par 
-
-
+	\item \textbf{Detección de objetos.}\\
+		La detección de objetos en imágenes es una de las áreas de mayor investigación en visión por computadora. La tarea no resulta fácil, ya que existen numerosos elementos a tener en cuenta para la detección de objetos que sean de relevancia. \par
+		
+		El principal obstáculo, es determinar si un conjunto de pixeles forman o no un objeto tomando en cuenta que existen innumerables combinaciones de posición, luminosidad, color y formas, como así también el ruido de interferencia y el tamaño del objeto (o su lejanía de la cámara).\par
+		
+		Enfocado a la seguridad, la detección de objetos trata de identificar solamente unas pocas categorías de objetos en imágenes, lo que lo hace un proceso más viable: la detección de formas humanas, también denominado detección de peatones (Pedestrian detection \cite{zhang1}).
+		
+		\textbf{Técnicas de detección de objetos en imágenes}\\
+		A través de los años, como consecuencia de las investigaciones en visión por computadora, han surgido	diferentes enfoques en la utilización de técnicas de detección de objetos, M. Valera y S.A. Velastin \cite{valera} citan dos enfoques a lo que se pueden agregar además el presentado por Nidhi \cite{nidhi} y Barron \cite{barron}:
+		\begin{itemize}
+			\setlength\itemsep{-1.2em}
+			\item Diferencia temporal: 
+			este enfoque se basa en la comparación de un frame (imagen de video) con el frame anterior. Esta acción permite identificar objetos en movimiento cambiante dentro del conjunto de frames, aunque sugieren que es un proceso más lento que otros.\\	
+			\item Substracción de fondo: utiliza una imagen de fondo que se compara con frames pixel a pixel para determinar los cambios ocurridos en la imagen, lo que permite obtener contornos de objetos.\\
+			\item Filtrado: este método es quizás el menos utilizado ya que las características de los objetos suelen ser variantes. Este método sugiere la detección de objetos basados en el filtrado de color del mismo: se extraen los pixeles que concuerdan con el color de un objeto previamente establecido. Como los objetos pueden variar su color, o luminosidad, este método resulta poco efectivo. Puede utilizarse en condiciones muy controladas.\\
+			\item Flujo óptico: este método es el más costoso computacionalmente hablando, ya que determina vectores de movimiento de cada uno de los pixeles para determinar el contorno de un objeto en movimiento dentro de un frame. Cada pixel en movimiento (posición inicial y posición final) determina un vector, un sentido de movimiento. Se puede tomar el conjunto de vectores de todos los pixeles para determinar la existencia de un objeto en la imagen.\\
+		\end{itemize}
+	\item \textbf{Clasificación (identificación) de objetos.}\\
+		La última etapa, luego de la detección de objetos, es la clasificación de los mismos: se debe determinar la clase de objeto detectado. Es de vital importancia poder identificar el tipo de objeto detectado, especialmente cuando se trata de personas: se necesita registrar y catalogar el comportamiento de objetos de tipo persona para determinar si se produce una forma compatible de agresión.\par
+		
+		\textbf{Técnicas de clasificación}\\
+		Para determinar la clase de objeto extraído de una imágen, se utilizan dos tipos principales de técnicas citadas por Lozano \cite{lozano}:
+		\begin{itemize}
+			\setlength\itemsep{-1.2em}
+			\item Clasificación basada en formas: es la técnica más sencilla y consiste en, una vez identificado un objeto en una imágen, compararlo con formas de objetos existentes. Se asocia un valor numérico para identificar el grado de similitud entre las imágenes comparadas. El valor más alto asociado definirá la clase de objeto.\\
+			\item Clasificación basada en movimiento: estudia el movimiento hecho por un objeto en particular, con respecto a su forma o silueta. Se sabe por ejemplo, que el cuerpo humano va cambiando su forma -esto es, existe movimiento- a través de las imágenes. Todo lo contrario a lo que ocurre con los automóviles, que no suelen cambiar su forma.
+		\end{itemize}
+		
+		\textbf{Métodos de clasificación}\\
+		Ya se han citado las técnicas que mayormente se utilizan en la clasificación de objetos, además de que existen otras técnicas menos conocidas o que producen resultados menos certeros, ahora hay que hablar sobre los métodos de clasificación utilizados actualmente por programas computacionales para separar objetos según su clase utilizando las técnicas citadas previamente.\par
+		
+		Aunque algunos de ellos ya fueron citados y explicados en otros capítulos de este trabajo, ahora solo se citarán aquellos que fueron implementados en la clasificación de objetos en imágenes como ser: Árboles de decisiones, Support Vector Machines, Redes bayesianas y Redes Neuronales Artificiales.\par
+	\item \textbf{Extracción de características (features) de objetos.}\\
+		Características de objetos pueden ser su contorno, medidas, color o disposición. Las técnicas de extracción se basan en el procesamiento digital de imágenes mediante herramientas que permiten aplicar algoritmos matemáticos para determinar ciertas cualidades.\par
+		Un objeto se diferencia de otro justamente por las propiedades gráficas que lo representan, y cuyos cambios determinarán su comportamiento.\par
+	\item \textbf{Análisis del comportamiento de los objetos.}\\
+		En esta etapa se lleva a cabo el análisis de los cambios de propiedades de un objeto, como por ejemplo su ubicación y forma establecida por el contorno. Analizar el comportamiento conlleva al seguimiento minucioso de sus propiedades.\par
+		Una de las técnicas de análisis de comportamiento de objetos mas utilizada es la denominada en inglés \textit{Dynamic Time Warping} (DTW), técnica ampliamente utilizada en procesamiento de audio, que consiste básicamente en segmentar una secuencia de datos en unidades de tiempo iguales para así poder compararlas y establecer el cambio producido entre segmentos.\par 
+\end{enumerate}
 
 \subsection{Histograma de Gradientes Orientados}
-En inglés '\textit{Histograms of Oriented Gradients}' (HOG), es una técnica de detección de objetos en imágenes, más precisamente para la detección de humanos, según Dalal y Trigg \cite{hog1}. Básicamente, se trata de un descriptor de objetos, que permite caracterizarlos en un mapa de gradientes. Se suele utilizar HOG como descriptor de objetos y SVM como clasificador para una gran cantidad de herramientas de detección y clasificación.\par
+En inglés \textit{Histograms of Oriented Gradients} (HOG), es una técnica de detección de objetos en imágenes, más precisamente para la detección de humanos, según Dalal y Trigg \cite{hog1}. Básicamente, se trata de un descriptor de objetos, que permite caracterizarlos en un mapa de gradientes. Se suele utilizar HOG como descriptor de objetos y SVM como clasificador para una gran cantidad de herramientas de detección y clasificación.\par
 
 La idea básica del HOG, es dividir una imagen en ventanas (denominadas blocks, o \textit{detection windows} en inglés), obteniendo los gradientes que se forman dentro de cada ventana, así, una imagen puede contener decenas de pequeñas ventanas con sus gradientes. El gradiente contiene el vector dirección, lo que permite caracterizar la zona dentro de la ventana.\par
 
@@ -706,7 +709,7 @@ Además, una ventana puede contener diferentes cantidades de gradientes, de acue
 \end{figure}
  
 
-\section[Herramientas]{Herramientas de visión por computadora}\label{herramientasdevisionporcomputadora}
+\section{Herramientas de visión por computadora}\label{herramientasdevisionporcomputadora}
 
 \subsection{OpenCV}
 
@@ -715,10 +718,9 @@ Provee una serie de procedimientos y funciones estándar para la manipulación d
 
 OpenCV se escribió con la finalidad de ser eficiente y aprovechar las instrucciones de bajo nivel de los procesadores Intel, que tienen una cuota muy alta de ventas en el mercado mundial. Esto, sumado a que fue escrito en C y C++, hace que el código se ejecute mucho más rápido que otras librerias de procesamiento de imágenes.\par
 
-Además, la librería ofrece bibliotecas de funciones y procedimientos parametrizables para resolver problemas de Inteligencia Artificial. Los componentes prefabricados con un alto nivel de abstracción hacen posible al programador implementar, por ejemplo, un clasificador de objetos en unas pocas líneas de instrucciones Python.\par
-
-Módulos de Inteligencia Artificial disponibles en OpenCV:
+Además, la librería ofrece bibliotecas de funciones y procedimientos parametrizables para resolver problemas de Inteligencia Artificial. Los componentes prefabricados con un alto nivel de abstracción hacen posible al programador implementar, por ejemplo, un clasificador de objetos en unas pocas líneas de instrucciones Python. Los módulos de inteligencia artificial mas conocidos de OpenCV son:\par
 \begin{itemize}
+	\setlength\itemsep{-0.2em}
 	\item Clasificadores en cascada	
 	\item Clasificadores Bayes
 	\item Support Vector Machines
@@ -726,20 +728,18 @@ Módulos de Inteligencia Artificial disponibles en OpenCV:
 	\item Redes neuronales 
 \end{itemize}
 
-En este trabajo, no se explicarán ni detallarán sobre los módulos de tratamiento de imágenes de OpenCV, ya que no se utilizaron durante el desarrollo. En su lugar, se abordarán conceptos y detalles sobre algunas de las librerías OpenCV de Inteligencia Artificial que fueron utilizadas. Para ahondar en herramientas para el tratamiento de imágenes, consulte la documentación oficial.\par
+En este trabajo, no se detallarán sobre los módulos de tratamiento de imágenes de OpenCV, ya que no se utilizaron durante el desarrollo. En su lugar, se abordarán conceptos y detalles sobre algunas de las librerías OpenCV de Inteligencia Artificial que fueron utilizadas. Para ahondar en herramientas para el tratamiento de imágenes, consulte la documentación oficial.\par
 
 \subsubsection{Clasificadores en Cascada}
 
-Llamados en inglés '\textit{cascade of boosted classifiers working with haar-like features}', es un módulo OpenCV que implementa una serie de clasificadores que generalmente son utilizados para detección de objetos en imágenes. \par
+Llamados en inglés \textit{cascade of boosted classifiers working with haar-like features}, es un módulo OpenCV que implementa una serie de clasificadores que son utilizados para detección de objetos en imágenes. Éstos están dispuestos en una estructura de cascada de manera que puedan funcionar más rápidamente que un clasificador único y pesado. La salida de unos clasificadores pasan a ser las entradas de otros, formando así como una especie de puertas lógicas donde se cumplen condiciones, para tener un resultado final. \par
 
-Una serie de clasificadores simples están dispuestos en una estructura de cascada de manera que puedan funcionar más rápidamente que un clasificador único y pesado. La salida de unos clasificadores pasan a ser las entradas de otros, formando así como una especie de puertas lógicas donde se cumplen condiciones, para tener un resultado final. \par
+La palabra \textit{boosted} además, hace referencia a que estos clasificadores implementan técnicas de Machine Learning que aceleran el entrenamiento de manera eficiente, actualmente se implementan cuatro técnicas conocidas como: \textit{Discrete Adaboost, Real Adaboost, Gentle Adaboost y Logitboost}. No se detallarán sobre estas técnicas en el presente documento.\par
 
-La palabra \textit{boosted} además, hace referencia a que estos clasificadores implementan técnicas de Machine Learning que aceleran la ejecución de manera eficiente, actualmente se implementan cuatro técnicas conocidas como: \textit{Discrete Adaboost, Real Adaboost, Gentle Adaboost y Logitboost}. No se detallarán sobre estas técnicas en el presente documento.\par
-
-Las entradas de datos para estos clasificadores, se conocen en inglés como '\textit{Haar-like features}'. Cada clasificador simple que compone la cascada recibe solo un tipo de entrada (feature), que en combinación con los demás clasificadores, pueden determinar la clase de objeto en proceso. La entrada es un conjunto de pixeles con una distribución en particular, como se detalla en la siguiente imagen.\par
+Las entradas de datos para estos clasificadores, se conocen en inglés como \textit{Haar-like features}. Cada clasificador simple que compone la cascada recibe solo un tipo de entrada (feature), que en combinación con los demás clasificadores, pueden determinar la clase de objeto en proceso. La entrada es un conjunto de pixeles con una distribución en particular, como se detalla en la figura \ref{fig:haarlike1}.\par
 
 \begin{figure}[h!]
-	\includegraphics[width=280pt]{Imagenes/haarlike.jpg}
+	\includegraphics[width=240pt]{Imagenes/haarlike.jpg}
 	\centering
 	\caption{Entradas (Features) para los distintos clasificadores en cascada Fuente: OpenCV Reference Manual.}
 	\label{fig:haarlike1}
@@ -757,13 +757,13 @@ En visión por computadora, se utilizan DNNs para identificar múltiples objetos
 \subsubsection{Redes Neuronales Convolucionales}
 En inglés \textit{Convolutional Neural Networks}, DNN por sus siglas, es otro tipo de redes neuronales cuyo modelo es parecido al del perceptrón multicapa. Este tipo de redes es utilizado para la segmentación y clasificación de imágenes debido a que, por la naturaleza de su modelo, es aplicable en mayor grado a los problemas de visión por computadoras.\par
 
-En las redes convolucionales, se aplican ciertos filtros a las imágenes mediante neuronas convolucionales resumiendo así ciertas porciones de la imagen y obteniendo una representación más detallada de la misma, este proceso de resumir porciones se denomina reducción de muestreo, y en inglés se lo conoce como \textit{pooling} (pooling layer, es la capa encargada de resumir porciones de la imágen). \par
+En las redes convolucionales, se aplican ciertos filtros a las imágenes mediante neuronas convolucionales resumiendo así ciertas porciones de la imagen y obteniendo una representación más general de la misma, este proceso de resumir porciones se denomina reducción de muestreo, y en inglés se lo conoce como \textit{pooling} (pooling layer, es la capa encargada de resumir porciones de la imágen). \par
 
-La idea detrás de las redes convolucionales, según Y.LeCun et all en \cite{convolutional1} es simular el comportamiento de los receptores de la corteza visual en los cerebros biológicos mediante modelos de neuronas artificiales. \par
+La idea detrás de las redes convolucionales, según Y.LeCun et al \cite{convolutional1} es simular el comportamiento de los receptores de la corteza visual en los cerebros biológicos mediante modelos de neuronas artificiales. \par
 
 \newpage
 \chapter{Desarrollo de software}
-\section[Pruebas]{Pruebas de estimación de poses humanas}\label{pruebaspose}
+\section{Pruebas de estimación de poses humanas}\label{pruebaspose}
 
 Dentro de los objetivos específicos de este trabajo se cita el de obtener patrones de poses humanas captadas en imágenes secuenciales.\par
 
@@ -789,94 +789,97 @@ Se establece que cada clase de objeto es nada mas que una persona en una configu
 Los siguientes pasos fueron llevados a cabo para obtener un extractor de poses personalizado:
 
 \begin{enumerate}
+	\setlength\itemsep{-0.2em}
 	\item Recolección de imágenes del cuerpo humano.
 	\item Categorización de acuerdo a, si es parte superior del cuerpo (tronco, hombros y brazos), o parte inferior del cuerpo (caderas, piernas y pies).
 	\item Generación de anotaciones con información de los puntos relevantes.
 	\item Implementación de múltiples detectores HOG-SVM.
 	\item Entrenamiento del detector para su utilización posterior.
-\end{enumerate}	\baselineskip 16pt
+\end{enumerate}
 
 \subsubsection{Descripción}
 
-\textbf{Recolección de imágenes del cuerpo humano}\par
+\begin{itemize}
+	\item Recolección de imágenes del cuerpo humano.
 
-Consiste en recolectar cuadros de imágenes de diferentes secuencias que describan el cuerpo humano en alguna pose determinada.\par 
-
-Para la recolección de los cuadros, se utilizaron imágenes de un video descargado de Internet en el que, justamente, se puede observar a ciertos individuos con poses compatibles con amenazas o agresiones.\par 
-
-\begin{figure}[h!]
-	\includegraphics[width=175pt,height=130pt]{Imagenes/video1.jpg}
-	\centering
-	\caption{Una de las imágenes del video de pruebas donde se observa una persona posiblemente en pose de amenaza con arma de fuego corta.}
-	\label{fig:video1}
-\end{figure}
-
-Para que la tarea fuera más sencilla, se escribió un pequeño programa en lenguaje Python capaz de extraer las imágenes separadas de una secuencia en vídeo.\par 
-
-Primero, se procedió a individualizar cada imagen del conjunto de imágenes del video para almacenarlas en archivos de imagen en el disco.\par 
-
-\textbf{Categorización}\par
-
-Estas imágenes, catalogadas en el punto anterior, luego son cargadas con otra herramienta escrita en Python creada para establecer la ubicación de ciertos puntos que puedan ayudar a definir la pose. Cada punto ubicado en la imagen se guarda asociándolo con, además de sus coordenadas, una etiqueta descriptiva:
-\begin{enumerate}\baselineskip 16pt	
-	\item \textit{mi md}: manos izquierda y derecha.
-	\item \textit{ci cd}: codos izquierdo y derecho.
-	\item \textit{p}: pecho.
-	\item \textit{c}: cadera.
-	\item \textit{ri rd}: rodillas izquierda y derecha.
-	\item \textit{pi pd}: manos izquierda y derecha.
-\end{enumerate}	\baselineskip 16pt	
+	Consiste en recolectar cuadros de imágenes de diferentes secuencias que describan el cuerpo humano en alguna pose determinada.\par 
 	
-\begin{figure}[h!]
-	\includegraphics[width=310pt, height=150pt]{Imagenes/pose5.jpg}
-	\centering
-	\caption{Herramienta que permite ubicar los puntos relevantes y asociarlos a una etiqueta descriptiva.}
-	\label{fig:pose5}
-\end{figure}
+	Para la recolección de los cuadros, se utilizaron imágenes de un video descargado de Internet en el que, justamente, se puede observar a ciertos individuos con poses compatibles con amenazas o agresiones.\par 
+	
+	\begin{figure}[h!]
+		\includegraphics[width=175pt,height=130pt]{Imagenes/video1.jpg}
+		\centering
+		\caption{Una de las imágenes del video de pruebas donde se observa una persona posiblemente en pose de amenaza con arma de fuego corta.}
+		\label{fig:video1}
+	\end{figure}
+	
+	Para que la tarea fuera más sencilla, se escribió un pequeño programa en lenguaje Python capaz de extraer las imágenes separadas de una secuencia en vídeo.\par 
+	
+	Primero, se procedió a individualizar cada imagen del conjunto de imágenes del video para almacenarlas en archivos de imagen en el disco.\par 
 
+\item{Categorización}\par
 
+	Estas imágenes, catalogadas en el punto anterior, luego son cargadas con otra herramienta escrita en Python creada para establecer la ubicación de ciertos puntos que puedan ayudar a definir la pose. Cada punto ubicado en la imagen se guarda asociándolo con, además de sus coordenadas, una etiqueta descriptiva:
+	\begin{enumerate}
+		\item \textit{mi md}: manos izquierda y derecha.
+		\item \textit{ci cd}: codos izquierdo y derecho.
+		\item \textit{p}: pecho.
+		\item \textit{c}: cadera.
+		\item \textit{ri rd}: rodillas izquierda y derecha.
+		\item \textit{pi pd}: manos izquierda y derecha.
+	\end{enumerate}	
 		
-\textbf{Generación de anotaciones con información de los puntos relevantes}\par
+	\begin{figure}[h!]
+		\includegraphics[width=310pt, height=150pt]{Imagenes/pose5.jpg}
+		\centering
+		\caption{Herramienta que permite ubicar los puntos relevantes y asociarlos a una etiqueta descriptiva.}
+		\label{fig:pose5}
+	\end{figure}
 	
-Una vez obtenidas las coordenadas de los puntos y la etiqueta que identifica la configuración de la disposición de estos, se procede a almacenarlos en un archivo de texto en disco.\par 
-
-Cada configuración de pose distinta, con sus imágenes y anotaciones es almacenada en un directorio diferente a fin de poder simular la representación de un objeto con sus anotaciones.\par 
 	
+			
+\item{Generación de anotaciones con información de los puntos relevantes}\par
 	
+	Una vez obtenidas las coordenadas de los puntos y la etiqueta que identifica la configuración de la disposición de estos, se procede a almacenarlos en un archivo de texto en disco.\par 
 	
-\textbf{Implementación de múltiples detectores HOG-SVM }\par
-
-Existen numerosas librerías para IA escritas para el lenguaje Python, una de las más utilizadas es \textit{dlib}. Esta herramienta fue originalmente escrita para proveer librerías Machine Learning en C++, aunque se puede compilar para su utilización en Python. Se usa en la industria y en el ámbito de la educación para facilitar el desarrollo de software enfocado a la inteligencia artificial.\par
-
-En la documentación de la página oficial de dlib \url{http://www.dlib.net} pueden encontrarse numerosos ejemplos de casos de uso, como el que compete a este trabajo que es entrenar un detector de objetos personalizado.\par
+	Cada configuración de pose distinta, con sus imágenes y anotaciones es almacenada en un directorio diferente a fin de poder agrupar la representación de un objeto con sus anotaciones.\par 
+		
+		
+		
+\item{Implementación de múltiples detectores HOG-SVM }\par
 	
-dlib provee por defecto, un detector de objetos que implementa HOG-SVM prefabricado, configurable de acuerdo a las necesidades del desarrollador. Y aunque esto facilita mucho la tarea ya que no se necesita escribir desde cero, tiene como principal limitación el hecho de que el desarrollador no puede hacer uso de un clasificador multiclase. El clasificador embebido solamente puede clasificar uno-a-muchos, es decir, puede determinar, de un conjunto de objetos, aquel objeto que coincide con los datos de entrenamiento, pero no puede determinar la clase de objetos a la cual pertenecen los demás elementos.\par
-
-Para solucionar esta limitación, se escribió código Python utilizando el detector embebido de dlib, de manera a simular un clasificador multiclase, creando diferentes instancias del objeto POO que respondan a una clase en particular. Es decir, ya que cada instancia del objeto dlib puede detectar y clasificar una sola clase de objetos, se crearon varias instancias, de acuerdo al número de tipos de poses obtenidas de las imágenes de entrenamiento.\par
-
-Así, cada elemento de pose utilizado para el entrenamiento, es considerado una clase individual para un clasificador, de manera a que si se tuvieran cinco poses distintas, se instancian cinco clasificadores de dlib.\par
-
+	Existen numerosas librerías para IA escritas para el lenguaje Python, una de las más utilizadas es \textit{dlib}. Esta herramienta fue originalmente escrita para proveer librerías Machine Learning en C++, aunque se puede compilar para su utilización en Python. Se usa en la industria y en el ámbito de la educación para facilitar el desarrollo de software enfocado a la inteligencia artificial.\par
 	
-\textbf{Entrenamiento del detector para su utilización posterior}\par
-El entrenamiento de clasificadores SVM, como ya se explicó en un capítulo anterior, consiste en introducir valores al clasificador para establecer un límite de decisión en los datos de salida, de manera que pueda responder a un nuevo valor clasificándolo según si corresponde o no, a las características de los valores de entrenamiento. En las SVM, el límite de decisión es llamado un hiperplano.\par
-
-De esta manera, las entradas para los datos de entrenamiento serán simplemente la disposición de gradientes obtenidos mediante HOG.\par
-
-Para el entrenamiento, entonces, se utilizan las imágenes individuales de cada 'clase' de pose humana almacenadas en carpetas, con sus anotaciones. Cada instancia del clasificador dlib responde a solo una de las clases de poses almacenadas. \par
-
-\begin{figure}[h!]
-	\includegraphics[width=190pt]{Imagenes/dataset1.jpg}
-	\centering
-	\caption{Ejemplo de secuencias de imágenes utilizadas para el entrenamiento del detector de objetos dlib}
-	\label{fig:dataset1}
-\end{figure}
+	En la documentación de la página oficial de dlib \url{http://www.dlib.net} pueden encontrarse numerosos ejemplos de casos de uso, como el que compete a este trabajo que es entrenar un detector de objetos personalizado.\par
+		
+	dlib provee por defecto, un detector de objetos que implementa HOG-SVM prefabricado, configurable de acuerdo a las necesidades del desarrollador. Y aunque esto facilita mucho la tarea ya que no se necesita escribir desde cero, tiene como principal limitación el hecho de que el desarrollador no puede hacer uso de un clasificador multiclase. El clasificador embebido solamente puede clasificar uno-a-muchos, es decir, puede determinar, de un conjunto de objetos, aquel objeto que coincide con los datos de entrenamiento, pero no puede determinar la clase de objetos a la cual pertenecen los demás elementos.\par
+	
+	Para solucionar esta limitación, se escribió código Python utilizando el detector embebido de dlib, de manera a simular un clasificador multiclase, creando diferentes instancias del objeto POO que respondan a una clase en particular. Es decir, ya que cada instancia del objeto dlib puede detectar y clasificar una sola clase de objetos, se crearon varias instancias, de acuerdo al número de tipos de poses obtenidas de las imágenes de entrenamiento.\par
+	
+	Así, cada elemento de pose utilizado para el entrenamiento, es considerado una clase individual para un clasificador, de manera a que si se tuvieran cinco poses distintas, se instancian cinco clasificadores de dlib.\par
+	
+		
+\item{Entrenamiento del detector para su utilización posterior}\par
+	El entrenamiento de clasificadores SVM, como ya se explicó en un capítulo anterior, consiste en introducir valores al algoritmo para establecer un límite de decisión en los datos de salida, de manera que pueda responder a un nuevo valor clasificándolo según si corresponde o no, a las características de los valores de entrenamiento. En las SVM, el límite de decisión es llamado un hiperplano.\par
+	
+	De esta manera, las entradas para los datos de entrenamiento serán simplemente la disposición de gradientes obtenidos mediante HOG.\par
+	
+	Para el entrenamiento, entonces, se utilizan las imágenes individuales de cada 'clase' de pose humana almacenadas en carpetas, con sus anotaciones. Cada instancia del clasificador dlib responde a solo una de las clases de poses almacenadas. \par
+	
+	\begin{figure}[h!]
+		\includegraphics[width=190pt]{Imagenes/dataset1.jpg}
+		\centering
+		\caption{Ejemplo de secuencias de imágenes utilizadas para el entrenamiento del detector de objetos dlib}
+		\label{fig:dataset1}
+	\end{figure}
+\end{itemize}
 
 \subsubsection{Resultados}
 Durante la recolección de datos de entrenamiento, se clasificaron tres tipos de poses humanas: dos de la parte superior del cuerpo y una de la parte inferior. Cada clase de pose además cuenta con su archivo de anotaciones donde se especifican las posiciones de los puntos relevantes.\par
 
 Una vez desarrollado todo el proceso de entrenamiento, el detector puede ejecutarse analizando un video, y detectando las clases de objetos persona .\par
 
-Para la implementación del detector de objetos personalizado, se escribió una aplicación en Python que carga los modelos, entrena el clasificador dlib, y además carga los archivos de anotaciones asociando un clasificador a cada anotación de modo que al ejecutar la aplicación, se detecte una clase de objeto, y los datos de las anotaciones asociadas a la clase en cuestión.\par
+Para la implementación del detector de objetos personalizado, se escribió una aplicación en Python que carga los modelos, entrena el clasificador dlib, y además carga los archivos de anotaciones asociando un clasificador a cada anotación de modo que al ejecutar la aplicación, se detecte una clase de objeto, y se retornen los datos de las anotaciones asociadas a la clase en cuestión.\par
 
 \begin{figure}[h!]
 	\includegraphics[width=330pt]{Imagenes/results1.jpg}
@@ -891,11 +894,11 @@ Los puntos, una vez diagramados en pantalla son unidos por líneas de acuerdo a 
 El clasificador de objetos dlib entrenado con algunas decenas de imágenes resulta bastante eficiente en términos de velocidad al ejecutarse prácticamente sin retrasos, tomando en cuenta que solamente existen tres clases de poses de aprendizaje. No se agregaron más clases de poses porque ello significaría tiempo de entrenamiento superior al desarrollo del trabajo de tesis.\par
 
 Para verificar el grado de precisión del detector de poses, se hicieron pruebas para:
- \begin{enumerate}\baselineskip 16pt	
+ \begin{enumerate}
  	\item \textbf{Detectar poses en tiempo real a través de la cámara incorporada al computador:} los resultados fueron para nada precisos ya que no detectaba poses humanas teniendo en observación a al menos una persona completa.
  	\item \textbf{Detectar poses en videos descargados de la Internet:} se detectaban un número considerable de falsos positivos, es decir, detectaba poses en donde no existían  humanos en escena.
 	\item \textbf{Detectar poses en videos descargados o mediante la cámara incorporada con baja iluminación:} no se detectaban poses humanas bajo condiciones de poca luminosidad escénica en donde, precisamente, existía al menos un cuerpo humano.
-\end{enumerate}	\baselineskip 16pt
+\end{enumerate}
 
 Se resolvió descartar un detector de poses usando los módulos de HOG-SVM de la librería dlib debido a que se necesitarían meses de trabajo recopilando imágenes de entrenamiento más nítidas y además calibrar los parámetros necesarios para obtener una precisión aceptable.\par
 
@@ -913,7 +916,7 @@ Este sistema utiliza el COCO dataset, que es un conjunto de aproximadamente 80 c
 	\label{fig:alphapose}
 \end{figure}
 
-Además, puede utilizar el MPII dataset, otro conjunto extenso de imágenes que incluye aproximadamente 25.000 imágenes que contienen cerca de 40.000 anotaciones de cuerpos humanos cubriendo 410 tipos de actividades humanas catalogadas (ver sitio oficial \url{human-pose.mpi-inf.mpg.de}).\par
+Además, es compatible con MPII dataset, otro conjunto extenso de imágenes que incluye aproximadamente 25.000 imágenes que contienen cerca de 40.000 anotaciones de cuerpos humanos cubriendo 410 tipos de actividades humanas catalogadas (ver sitio oficial \url{human-pose.mpi-inf.mpg.de}).\par
 
 AlphaPose implementa modelos de CNNs entrenados mediante los dos conjuntos de datos mencionados, haciendo necesario el uso de la tecnología CUDA de nVidia, ya mencionado anteriormente. Afortunadamente, AlphaPose puede correr en computadores que no cuenten con GPUs nVidia omitiendo así el uso de CUDA, aunque esto resulta ser más lento ya que no se cuenta con la característica de multiprocesamiento.\par
 
@@ -933,7 +936,7 @@ Sin embargo, AlphaPose podría ser utilizado en proyectos que implementen hardwa
 
 \subsection{Prueba 3: Modelo DNN Caffe en OpenCV}
 \subsubsection{Descripción}
-\textit{Convolutional Architecture for Fast Feature Embedding} (Caffe) en inglés, o Arquitectura convolucional para incrustación rápida de características, es un framework para desarrollo de software enfocado a Machine Learning, desarrollado en la Universidad de Berkeley en California, Jia et all explican su desarrollo en \cite{caffe}.\par 
+\textit{Convolutional Architecture for Fast Feature Embedding} (Caffe) en inglés, o Arquitectura convolucional para incrustación rápida de características, es un framework para desarrollo de software enfocado a Machine Learning, desarrollado en la Universidad de Berkeley en California, Jia et al \cite{caffe} explican su desarrollo.\par 
 
 Se trata de un conjunto de librerías C++ para generar modelos, entrenar algoritmos e inferir, utilizando diferentes elementos propios de Machine Learning; también cuenta con una API para Python, según se puede leer en su página web oficial \url{caffe.berkeleyvision.org}.\par 
 
@@ -945,9 +948,7 @@ En el sitio web oficial de entrenamiento de OpenCV \url{www.learnopencv.com}, se
 
 De esta manera, es posible cargar el modelo preestablecido Caffe utilizando herramientas de redes neuronales profundas embebidas en OpenCV, evitando así, que otro desarrollador pase meses o posiblemente años recopilando información y generando una estructura de red que pueda ser usada por otra persona.\par
 
-En la documentación oficial de OpenCV se puede encontrar ejemplos de cómo utilizar estos modelos pre entrenados, que, siendo implementados en unas lineas de código Python, permitieron poder utilizar el modelo para estimar poses humanas en imágenes (un video es un conjunto de imágenes).
-
-Así es, que se desarrollo una pequeña aplicación Python para utilizar el modelo Caffe y así, procesar las imágenes del video de pruebas. 
+En la documentación oficial de OpenCV se pueden encontrar ejemplos de cómo utilizar estos modelos pre entrenados, que, siendo implementados en unas lineas de código Python, permiten estimar poses humanas en imágenes, es así que se desarrolló una pequeña aplicación Python para las pruebas. 
 
 \subsubsection{Resultados}
 Ejecutar una CNN no es una tarea que requiera pocos recursos, pero a diferencia de las demás pruebas citadas anteriormente, utilizar un modelo preestablecido en OpenCV no requiere de un computador con múltiples GPUs ejecutando CUDA, aunque esto sería óptimo.\par
@@ -955,12 +956,12 @@ Ejecutar una CNN no es una tarea que requiera pocos recursos, pero a diferencia 
 Sin embargo, implementar las herramientas de CNNs de OpenCV tiene ciertamente una ventaja significativa con respecto a las opciones anteriores: la capacidad de ajustar ciertos parámetros propios de la red, lo que puede incrementar significativamente la velocidad de procesamiento en un computador sin GPU.\par
 
 \subsubsection{Conclusión}
-Tomando en cuenta que la velocidad de procesamiento utilizando Caffe es ligeramente superior a las pruebas anteriores, se optó por utilizar el modelo para la extracción de poses. Una imagen procesada en un computador con dos núcleos tomó en promedio 8 segundos, sin GPUs para efectuar multiprocesamiento.\par
+Tomando en cuenta que la velocidad de procesamiento utilizando el modelo Caffe es ligeramente superior a las pruebas anteriores, se optó por utilizarlo para la extracción de poses. Una imagen procesada en un computador con dos núcleos tomó en promedio 8 segundos, sin GPUs para efectuar multiprocesamiento.\par
 
 Aunque es mucho el tiempo necesario para procesar una imagen no lográndose suficiente fluidez para catalogarla como 'en tiempo real', el resultado es bastante acertado, tomando en cuenta las limitaciones del hardware utilizado. Se podría obtener un mejor desempeño usando máquinas más potentes, o simplemente haciendo uso de librerías de paralelismo de Python, que permiten distribuir trabajos no solamente a través de hilos de ejecución, sino también a través de múltiples computadores conectados entre sí por medio de una red de área local.\par
 
 
-\section[Poses]{Extracción de poses humanas}\label{extraccionpose}
+\section{Extracción de poses humanas}\label{extraccionpose}
 Luego de las pruebas, se decidió utilizar el modelo Caffe mediante la implementación de las funciones DNN de OpenCV. En este apartado se dará una breve explicación de los detalles del mismo.\par
 
 La configuración del modelo de red previamente entrenada se grafica en la siguiente figura:
@@ -972,19 +973,19 @@ La configuración del modelo de red previamente entrenada se grafica en la sigui
 \end{figure}	
 
 Detalles de la estructura:
-\begin{enumerate}\baselineskip 16pt	
+\begin{enumerate}
 	\item Las primeras 10 capas de la red se utilizan para crear un mapa de características de la imagen. Contiene capas pooling y convolucionales.
 	\item En la segunda fase (Stage 1), el Branch1 se utiliza para crear un confidence map, en inglés, que es básicamente un mapa de la información ya obtenida. El mapa se realiza en base a las ubicaciones de partes del cuerpo. En el Branch2 se predicen puntos de afinidades, esto es, se trata de predecir a que punto cercano corresponde un punto determinado (ej.: hombro con codo, pie con rodilla, etc.)
-	\item En la última fase, en realidad se repite una estructura cierta cantidad de veces: se toman los puntos del mapa de afinidades y del mapa de características y se aplica lo que se denomina algoritmo voraz, cuya finalidad es elegir la opción óptima dentro de un grupo de opciones.
-\end{enumerate}	\baselineskip 16pt
+	\item En la última fase, se repite una estructura cierta cantidad de veces: se toman los puntos del mapa de afinidades y del mapa de características y se aplica lo que se denomina algoritmo voraz cuya finalidad es elegir la opción óptima dentro de un grupo de alternativas.
+\end{enumerate}
 
-El modelo devuelve un conjunto ordenado de puntos que conforman el cuerpo humano comenzando por la cabeza, hasta llegar a los pies. Así, la cabeza tendría el índice 0 en el arreglo, el cuello sería índice 1, hombros 2 y 3, y así sucesivamente hasta llegar a los pies.\par
+El modelo devuelve un conjunto ordenado de puntos que conforman el cuerpo humano comenzando por la cabeza, hasta llegar a los pies. Así, la cabeza tendrá el índice 0 en el arreglo, el cuello será índice 1, hombros 2 y 3, y así sucesivamente hasta llegar a los pies.\par
 
-\section[Ángulos]{Cálculo angular de extremidades}\label{calculoangular}
+\section{Cálculo angular de extremidades}\label{calculoangular}
 
 Una vez establecidos los puntos relevantes del cuerpo humano a través de la utilización de una herramienta para la estimación de poses, es necesario establecer los ángulos que las extremidades del cuerpo forman con el tronco del mismo. De ésta manera se puede caracterizar una pose y guardar la configuración de la disposición de los mismos.\par 
 
-Para el cálculo angular, se utilizaron ecuaciones trigonométricas simples como ser: pendiente de una recta, diferencia de pendientes entre dos rectas, distancia existente entre dos puntos en un plano, entre otras. Del lado derecho del cuerpo, las extremidades inferiores, los ángulos se miden en sentido antihorario tomando como eje línea de origen, el tronco humano, y en sentido horario para las extremidades superiores. Del lado derecho se invierte el sentido, las extremidades superiores tienen sentido antihorario y los inferiores sentido horario.\par
+Para el cálculo angular, se utilizaron ecuaciones trigonométricas simples como ser: pendiente de una recta, diferencia de pendientes entre dos rectas, distancia existente entre dos puntos en un plano, entre otras. Del lado derecho del cuerpo, las extremidades inferiores, los ángulos se miden en sentido antihorario tomando como línea de origen el tronco humano, y en sentido horario para las extremidades superiores. Del lado derecho se invierte el sentido, las extremidades superiores tienen sentido antihorario y los inferiores sentido horario.\par
 
 Cada extremidad cuenta con dos partes, teniendo cuatro extremidades, se proceden a calcular ocho ángulos: antebrazos izquierdo y derecho, brazos izquierdo y derecho (sección del músculo biceps), muslos izquierdo y derecho, y pantorrillas izquierda y derecha. Todos estos suman ocho partes a considerar.\par
 
@@ -1002,12 +1003,12 @@ El concepto de medición de ángulo entre dos rectas sugiere que ambas deben exi
 
 Estimar o suponer la presencia de una extremidad, es más complicado porque no se sabe si la extremidad existe en realidad, o si está dispuesto de una forma que no se puede imaginar o deducir, así que la única opción es intentar estableces la ubicación del tronco, si este no existiese en la imagen.\par
 
-En caso de que no pueda visualizarse el tronco, se siguieron las siguientes premisas:
+En caso de que no pueda visualizarse el tronco, se siguieron las siguen premisas:
 \begin{itemize}
 	\item Si los puntos de ambos hombros del cuerpo existen, elegir como ubicación superior del tronco, al punto medio comprendido entre los puntos de los hombros, esto es, utilizando una ecuación trigonométrica, obtener el punto medio entre dos puntos.
 	\item Si los puntos de ambas caderas existen, elegir como ubicación inferior del tronco al punto medio comprendido entre ambos puntos.
-	\item Si unicamente existe un punto hombro, utilizarlo como ubicación superior, ya que el tronco no se encuentra tan lejos del mismo. Además, esto cubre los casos en que una persona puede no estar mirando a la cámara, y uno de sus hombros es invisible.
-	\item Si unicamente existe un punto cadera, utilizarlo como ubicación inferior del tronco, del mismo modo que se utiliza en el ítem anterior para hombro. 
+	\item Si únicamente existe un punto hombro, utilizarlo como ubicación superior, ya que el tronco no se encuentra tan lejos del mismo. Además, esto cubre los casos en que una persona puede no estar mirando a la cámara, y uno de sus hombros es invisible.
+	\item Si únicamente existe un punto cadera, utilizarlo como ubicación inferior del tronco, del mismo modo que se utiliza en el ítem anterior para hombro. 
 \end{itemize}
 	
 De esta manera, si no se contaran con los datos explícitos de los puntos que conforman el tronco, es posible deducir su ubicación matemáticamente.\par
@@ -1031,7 +1032,7 @@ Esto se interpreta como: brazoDerecho forma un ángulo de 27.3° con el tronco, 
 \subsection{Generación de datos de entrenamiento}
 Se busca ahora generar el conjunto de todos los ángulos posibles para dos clases distintas de poses: poses compatibles con ataque, y poses no compatibles con ataque. La red neuronal debe entrenarse con un mínimo de dos clases para poder devolver una predicción válida, de esta manera, se debe ingresar valores que la red pueda predecir como casos positivos, o de lo contrario, casos negativos.\par
 
-El método de entrenamiento es sencillo: se deben generar primero, grupos de poses compatibles con agresiones, para el caso de valores positivos, y grupos de poses no compatibles con agresiones para los negativos.\par
+El método de entrenamiento es: se deben generar primero grupos de poses compatibles con agresiones, para el caso de valores positivos, y grupos de poses no compatibles con agresiones, para los negativos.\par
 
 Para el efecto, se procedió a la captura mediante la cámara incorporada del cuerpo humano de una persona en una acción cuya pose sugiera 1. algún tipo de amenaza con arma o 2. agresión con brazos (se podría entrenar con poses de más tipos de agresiones en un trabajo futuro). No se contabilizó el número de casos positivos, ya que simplemente eran almacenados en un archivo. Luego se procedió a la captura de un cuerpo humano cuya pose esté fuera del margen considerado como amenaza o agresión. Ambas exposiciones a la cámara para la recolección de ángulos fueron realizadas a lo largo de varias horas, varios días.\par
 
@@ -1044,180 +1045,183 @@ Para el efecto, se procedió a la captura mediante la cámara incorporada del cu
 
 Se generaron en total 716.310 combinaciones de poses positivas y negativas para poses que se utilizarán para entrenar la red neuronal.
 
-\section[RNA]{Entrenamiento de una red neuronal artificial}\label{entrenamiento}
+\section{Entrenamiento de una red neuronal artificial}\label{entrenamiento}
 Para la implementación de redes neuronales artificiales en el presente trabajo, se utilizó la librería Keras de Python, que ofrecen una capa de abstracción sobre otra librería llamada TensorFlow.\par
 
 \subsection{Búsqueda de un modelo óptimo}
-Los modelos de redes neuronales son variables, y no existe un modelo preestablecido para la predicción de valores en un problema particular. La búsqueda de un modelo implica la prueba de configuraciones de modelos, cambiando el número de capas, el número de neuronas y en algunos casos las funciones de entrada, activación y salida de la red.\par
+Los modelos de redes neuronales son variables, y no existe uno preestablecido para la predicción de valores en un problema particular. La búsqueda de un modelo implica la prueba de configuraciones, cambiando el número de capas, el número de neuronas y en algunos casos las funciones de entrada, activación y salida de la red.\par
 
-La finalidad de la búsqueda de un modelo óptimo, es encontrar una configuración de disposición de capas y funciones que reduzcan el margen de error y aumenten la precisión de las predicciones del modelo.\par
+La finalidad de la búsqueda de un modelo óptimo, es encontrar una configuración de disposición de capas y funciones que reduzcan el margen de error y aumenten la precisión de las predicciones.\par
 
 \subsubsection{Pruebas con modelos de red}
 Para determinar el modelo óptimo, se hicieron básicamente 6 pruebas distintas utilizando para la mayoría de los casos 8 entradas (ángulos de la pose), 3 capas en total, 1 neurona en la capa de salida y el optimizador Adam por defecto. Solo en una prueba se utilizaron 4 capas en total.\par
 
-Ya que el optimizador solamente interfiere en la etapa de entrenamiento, no se decidió probar con otros optimizadores: el modelo de red resulta sencillo y rápido de inferir.\par
+Ya que el optimizador solamente interviene en la etapa de entrenamiento, se decidió no probar con otros optimizadores, el modelo de red resulta sencillo y rápido de inferir.\par
 
-Se citan únicamente las configuraciones de capas y neuronas, y el resultado del valor de precisión obtenido en las pruebas:
-\begin{enumerate}\baselineskip 16pt	
-	\item[Prueba 1]: 
-	Red neuronal con capa de entrada de 14 neuronas, 1 capa oculta de 12 neuronas. Resultado precisión: 97.7%.
-	\item[Prueba 2]: 
-	Red neuronal con capa de entrada de 12 neuronas, 2 capas ocultas de 14 y 10 neuronas respectivamente. Resultado precisión: 96.8%.	
-	\item[Prueba 3]: 
-	Red neuronal con capa de entrada de 14 neuronas, 1 capa oculta de 14 neuronas. Resultado precisión: 97.3%.	
-	\item[Prueba 4]: 
-	Red neuronal con capa de entrada de 14 neuronas, 1 capa oculta de 8 neuronas. Resultado precisión: 98.4%.	
-	\item[Prueba 5]: 
-	Red neuronal con capa de entrada de 12 neuronas, 1 capa oculta de 10 neuronas. Resultado precisión: 98.2%.	
-	\item[Prueba 6]: 
-	Red neuronal con capa de entrada de 16 neuronas, 1 capa oculta de 8 neuronas. Resultado precisión: 99.1%.	
-\end{enumerate}	\baselineskip 16pt
+A continuación, se citan las configuraciones de capas y neuronas, y el resultado del valor de precisión obtenido en las pruebas, teniendo en todas ellas una capa de salida.
+\begin{itemize}
+	\item \textbf{Prueba 1}: 
+	Red neuronal con capa de entrada de 14 neuronas, 1 capa oculta de 12 neuronas. Resultado de precisión: 97.7\%.
+	\item \textbf{Prueba 2}: 
+	Red neuronal con capa de entrada de 12 neuronas, 2 capas ocultas de 14 y 10 neuronas respectivamente. Resultado de precisión: 96.8\%.	
+	\item \textbf{Prueba 3}: 
+	Red neuronal con capa de entrada de 14 neuronas, 1 capa oculta de 14 neuronas. Resultado de precisión: 97.3\%.	
+	\item \textbf{Prueba 4}: 
+	Red neuronal con capa de entrada de 14 neuronas, 1 capa oculta de 8 neuronas. Resultado de precisión: 98.4\%.	
+	\item \textbf{Prueba 5}: 
+	Red neuronal con capa de entrada de 12 neuronas, 1 capa oculta de 10 neuronas. Resultado de precisión: 98.2\%.	
+	\item \textbf{Prueba 6}: 
+	Red neuronal con capa de entrada de 16 neuronas, 1 capa oculta de 8 neuronas. Resultado de precisión: 99.7\%.	
+\end{itemize}
 
-La conclusión: se decidió por un modelo sencillo de 3 capas, detallado en la Prueba 6. No se realizaron más pruebas.
+En la figura \ref{fig:results2} se puede observar parte de la información de salida generada durante el entrenamiento de poses en la prueba 6, detallando  el valor de la función pérdida (\textit{loss} en inglés) y la precisión (\textit{accuracy}).
 
-\section[Predicción]{Predicción de poses compatibles con amenazas o agresiones}\label{prediccion}
-En este punto, la red entrenada ya está lista para inferir. Para el efecto, se escribió una aplicación en Python que pueda cargar el modelo pre entrenado de poses y, a medida que vaya captando imágenes de la cámara incorporada, pueda determinar si existe o no una pose compatible con agresión en la imagen.\par
+\begin{figure}[h!]
+	\includegraphics[width=310pt]{Imagenes/results2.jpg}
+	\centering	
+	\caption{Valores generados en el entrenamiento con poses.}
+	\label{fig:results2}
+\end{figure}
+
+\textbf{Conclusión:} se decidió por un modelo de 3 capas, detallado en la Prueba 6.
+
+\section{Predicción de poses compatibles con amenazas o agresiones}\label{prediccion}
+En este punto, la red entrenada ya está lista para inferir. Al efecto, se escribió una aplicación en Python que puede cargar el modelo pre entrenado de poses, y a medida que va captando imágenes de la cámara incorporada, puede determinar si existe o no una pose compatible con agresión en la imagen.\par
+
 
 \begin{figure}[h!]
 	\includegraphics[width=450pt]{Imagenes/output1.jpg}
 	\centering	
-	\caption{Aplicación ejecutándose, en la que se puede observar un caso positivo para pose compatible con agresión}
+	\caption{Aplicación ejecutándose, en la que se puede observar un caso positivo para pose compatible con agresión.}
 	\label{fig:output1}
 \end{figure}
 
+En la ejecución esto va acompañado de una alerta sonora avisando de la detección de una pose compatible, una alerta visual con un mensaje, y se agregó otra alerta visual donde se muestra un círculo rojo en caso de presencia de armas de fuego cortas.\par
 
-\section[Armas]{Detección de armas utilizando detectores en cascada}\label{deteccionarmas}
-Para que una amenaza o agresión humana sea considerada como tal, no es suficiente contar con una pose compatible, sino además, la presencia en escena de un arma. Si bien la aplicación puede determinar mediante redes neuronales la ocurrencia de una pose compatible con una agresión, también se agregó una característica que permite detectar armas de fuego en la mano de la persona cuya pose resultó positiva para la clasificación.\par
-
-Para el efecto, se descargó un conjunto de datos pre entrenados de \url{https://github.com/JYang25/opencv_demo} que contiene características de features Haar-like que describen armas de fuego.
+\section{Detección de armas utilizando detectores en cascada}\label{deteccionarmas}
+Si bien la aplicación puede determinar mediante redes neuronales la ocurrencia de una pose compatible con una agresión, también se agregó una característica que permite detectar armas de fuego en la mano de la persona cuya pose resultó positiva para la clasificación.\par
 
 \begin{figure}[h!]
-	\includegraphics[width=200pt]{Imagenes/output2.jpg}
+	\includegraphics[width=170pt]{Imagenes/output2.jpg}
 	\centering	
 	\caption{Detección de armas de fuego cortas en la mano de una persona cuya pose es compatible con una agresión.}
 	\label{fig:output2}
 \end{figure}
 
+Para el efecto, se descargó un conjunto de datos pre entrenados de \url{https://github.com/JYang25/opencv_demo} que contiene características de features Haar-like que describen armas de fuego.\par
+
 La detección se efectúa mediante clasificadores en cascada que por defecto se implementan en OpenCV. Este se activa luego de que una pose compatible con agresión es detectada, y solamente se genera una alerta extra en caso de que el arma esté ubicada cerca de los puntos de la mano de aquella pose positiva para agresión.\par
 
 No se incluyeron datos de todas las armas disponibles para efectuar agresiones humanas (cuchillos, hachas, arcos y flechas, etc), solamente fueron utilizados descriptores de armas de fuego cortas.\par
 
+\begin{figure}[h!]
+	\includegraphics[width=350pt]{Imagenes/code1.jpg}
+	\centering	
+	\caption{Parte del código en lenguaje Python que detecta armas cerca de las manos de una persona cuya pose es positiva para agresión.}
+	\label{fig:code1}
+\end{figure}
+
 \newpage
 \chapter{Conclusiones}
-A través del trabajo desarrollado, se evidencia el cumplimiento del objetivo general que consistía en desarrollar una solución computacional que permita la detección básica de delitos de agresión o amenazas humanas, mediante el entrenamiento de redes neuronales de computadoras.\par
+A través del trabajo desarrollado, se evidencia el cumplimiento del objetivo general que consiste en desarrollar una solución computacional que permite la detección básica de agresiones o amenazas humanas, mediante el entrenamiento de redes neuronales de computadoras.\par
 
-Además, se cumplieron los objetivos específicos que componen el objetivo general y se detallan a continuación:
+Estudiada la pose a través de expresar la disposición de las extremidades de una persona, con aplicación de conceptos y técnicas de Machine Learning a través de redes neuronales, y los principios de Visión por Computadora, se desarrolló el software que logra la detección de poses consideradas como amenazas o agresiones a través del análisis de imágenes en las que se efectúa el cálculo angular de las líneas formadas por las extremidades y el tronco.\par
 
-En la sección \ref{posturaypose} primero se estudia la pose humana, estableciendo que la actividad que realiza una persona puede ser expresada por la disposición de sus extremidades.\par
-
-En las secciones \ref{machinelearning} y \ref{clasificacion} se detallan conceptos y técnicas de Machine Learning, como redes neuronales, que se utilizaron para diferenciar distintas poses en una persona observada.\par
-
-En las secciones \ref{visionporcomputadora} y \ref{herramientasdevisionporcomputadora} se explican los principios de visión por computadora y se citan las diferentes herramientas con que se cuentan actualmente.\par
-
-En la sección \ref{pruebaspose} se enumeran las distintas pruebas realizadas con herramientas de detección de poses disponibles en la red, a fin de seleccionar aquella herramienta óptima para ser ejecutada en el entorno.\par
-
-En la sección \ref{extraccionpose} se explican las etapas del proceso de extracción de poses humanas durante el desarrollo de la aplicación, como también la forma en que éstas se representan.\par
-
-En la sección \ref{calculoangular} se explica la idea detrás del cálculo angular que se efectúa entre las líneas formadas por las extremidades de una pose detectada. El orden y representación también se detallan.\par
-
-En la sección \ref{entrenamiento} se describe el proceso de entrenar una red neuronal con los ángulos de poses que sugieran amenazas o agresiones, y también aquellas poses que no sean compatibles.\par
-
-En la sección \ref{prediccion} se demostró que es posible clasificar con redes neuronales aquellas poses que sugieran agresiones humanas en imágenes de video.\par
-
-En la sección \ref{deteccionarmas} además, se logró la detección de armas de fuego cortas cuando se detectan poses de agresión, complementando así el objetivo de desarrollar una solución aplicativa para la detección de agresiones humanas en imágenes secuenciales.\par
-
+Se logró una aplicación que soluciona para la detección de agresiones humanas en imágenes secuenciales registradas en videos sin armas o con armas de fuego cortas.\par
 
 \chapter{Trabajos a futuro}
-Una alternativa al presente trabajo consistiría en la utilización de múltiples fuentes (cámaras) para la recolección de imágenes haciendo de la aplicación una herramienta para la detección completa en entornos visuales más amplios.\par
+\begin{itemize}
+	\item Utilización de múltiples fuentes (cámaras) para la recolección de imágenes haciendo de la aplicación una herramienta de detección completa en entornos visuales más amplios (ejemplo: plazas, vía pública).\par
 
-Además, no todas las poses existentes consideradas como agresiones o amenazas fueron establecidas para el entrenamiento, ya que la cantidad de posibilidades es muy amplia. Se podría también, incluir una mayor cantidad de tipos de armas que puedan ser utilizadas por el humano para proferir agresiones.\par
+	\item Considerar agresiones incluyendo una mayor cantidad de tipos de armas que puedan ser utilizadas por el humano para proferir agresiones.\par
 
-Otra posibilidad sería la de implementar un detector de poses mediante redes neuronales convolucionales más sencillas que no requieran el uso de GPUs. Las opciones son amplias.\par
-
-
+\item Implementar un detector de poses mediante redes neuronales convolucionales que no requieran el uso de GPUs.\par
+\end{itemize}
 
 \newpage
 \chapter{Glosario de Términos}
-\noindent
+\setlength{\parskip}{-1.0em}
+\setlength{\parindent}{0em}
+ 
 \textbf{AI} Artificial Intelligence, en inglés. Inteligencia Artificial en castellano. Es la ciencia que estudia la simulación de procesos y comportamiento del cerebro humano aplicados a la informática.\\
-\noindent
+ 
 \textbf{Algoritmo} Conjunto de instrucciones o reglas , ordenadas que permiten llevar a cabo una actividad mediante pasos sucesivos, con inicio y fin.\\
-\noindent
+ 
 \textbf{ASIP} Siglas en inglés de Application-Specific Information Processing, que significa Procesamiento de Información Específica de Aplicación.\\
-\noindent
+ 
 \textbf{Backpropagation} En ingles.  Significa Propagación hacia atrás, es un algoritmo de ajuste de pesos de redes neuronales.\\
-\noindent
+
 \textbf{Caffe} Siglas en inglés de Convolutional Architecture for Fast Feature Embedding, es un framwork enfocado a Machine Learning.\\
-\noindent
+ 
 \textbf{CCTV} Siglas de Circuito Cerrado de TeleVisión, sistema de cámaras interconectadas para el monitoreo remoto.\\
-\noindent
+ 
 \textbf{Clasificador} Un clasificador es un proceso algorítmico capaz de identificar objetos de cierta clase de un conjunto universo de objetos.\\
-\noindent
+ 
 \textbf{Clasificador Lineal} Clasificador cuyas clases de objetos son perfectamente separables a través de una línea recta.\\
-\noindent
+ 
 \textbf{Clasificador Multiclase} Refiere a un tipo de clasificador que puede identificar más de un tipo de objeto de un conjunto.\\
-\noindent
+ 
 \textbf{CNN} En iglés, siglas de Convolutional Neural Network. Redes neuronales convolucionales, son redes especiales para predicción en imágenes.\\
-\noindent
+ 
 \textbf{CUDA} Siglas en inglés de Compute Unified Device Architecture, traducido sería Arquitectura Unificada de Dispositivos de Cómputo. Es una interfaz de programación paralela para dispositivos gráficos marca nVidia.\\
-\noindent
+ 
 \textbf{Dataset} Es el término en inglés que se refiere a un conjunto de datos agrupados para cierto propósito. Ej.: dataset de entrenamiento.\\
-\noindent
+ 
 \textbf{DNN} Siglas en inglés de Deep Neural Network. Redes neuronales profundas, de múltiples capas.\\
-\noindent
+ 
 \textbf{DVR} Siglas en inglés de Digital Video Recorder. Dispositivo digital capaz de capturar, almacenar y procesar imágenes a través de cámaras de vigilancia. Es el sucesor de los VCRs.\\
-\noindent
+ t
 \textbf{Feature} Palabra en inglés que hace referencia a una clase de característica de entrada en un clasificador. El conjunto de features es el conjunto de características. Cada feature representa una característica del conjunto.\\
-\noindent
+ 
 \textbf{Framework} Palabra en inglés que significa Marco de trabajo, es un conjunto de librerías de código empaquetadas que contienen funciones y procedimientos con un nivel de abstracción mayor.\\
-\noindent
+ 
 \textbf{Función Kernel} O función núcleo, en Inteligencia Artificial es una función matemáticas utilizada para proyectar datos en un plano a través de una nueva dimensión.\\
-\noindent
+ 
 \textbf{Función objetivo} Función lineal de varias variables, cuyo valor es maximizable o minimizable.  Utilizada generalmente en problemas de optimización.\\
-\noindent
+ 
 \textbf{Gaussian} Refiere a la función Gaussiana, utilizada en estadísticas como una función de densidad de la distribución normal.\\
-\noindent
+ 
 \textbf{GPU} Graphic Process Unit en inglés, se denominan así a las tarjetas aceleradoras de gráficas de las computadoras.\\
-\noindent
+ 
 \textbf{Gradiente} Vector en análisis matemático que indica la medida en la cual una variable cambia de manera rápida su valor, y la dirección de cambio.\\
-\noindent
+ 
 \textbf{Haar-like Features} Datos de entrada de un clasificador en cascada que representan ciertas disposiciones específicas de pixeles de una imagen.\\
-\noindent
+ 
 \textbf{Hiperplano} En el  plano cartesiano, un hiperplano es una recta que divide el plano en dos mitades. Es una recta de separación.\\
-\noindent
+ 
 \textbf{Histograma} Representación gráfica de una variable en forma de barras, cada barra representa la proporción de la frecuencia de los valores.\\
-\noindent
+ 
 \textbf{IA} Inteligencia Artificial.\\
-\noindent
+ 
 \textbf{Keras} Librería de código abierto para inteligencia artificial escrita en Python, provee una capa de abstracción sobre otras librerías como Tensorflow.\\
-\noindent
+ 
 \textbf{Machine Learning} En inglés, traducción literal sería Aprendizaje de la máquina. Ciencia relacionada a la Inteligencia Artificial que intenta simular el razonamiento del cerebro humano en computadoras mediante algoritmos, funciones matemáticas y probabilidades.\\
-\noindent
+ 
 \textbf{nVidia} Corporación internacional que fabrica y distribuye componentes de computadoras dedicados al procesamiento gráfico.\\
-\noindent
+ 
 \textbf{OpenCV} Open Computer Vision en inglés, es una librería de funciones y procedimientos escrita para el procesamiento de imágenes por computadora\\
-\noindent
+ 
 \textbf{PC} Personal Computar, en inglés. Computadora personal. Término abreviado para referirse normalmente a un computador.\\
-\noindent
+ 
 \textbf{Pedestrian Detection} Traducción del inglés que significa Detección de peatones.\\
 \textbf{Pixel} Unidad mínima de datos en una imagen. Un pixel representa color e intensidad en un punto de la imagen.\\
-\noindent
+ 
 \textbf{Polinomial} Función con estructura de polinomio.\\
-\noindent
+ 
 \textbf{POO} Siglas de Programación Orientada a Objetos cuya filosofía se basa en la representación de entidades como si fueran objetos de la vida real.\\
-\noindent
+ 
 \textbf{Raspberry Pi} Dispositivo programable de licencia abierta para proyectos electrónicos.\\
-\noindent
+ 
 \textbf{RNA} Siglas de Redes Neuronales Artificiales.\\
-\noindent
+
 \textbf{Sigmoidea} Función que describe una curva con progresión temporal, desde niveles bajos a altos, cuya transición se acelera cuando el valor X se acerca a 0.\\
-\noindent
+
 \textbf{Software} Acrónimo en inglés acuñado al término informático que describe a un programa o conjunto de ellos.\\
-\noindent
+
 \textbf{Support Vector Machines (SVM)} Traducción al inglés de Máquinas de Vectores Soporte. Técnica de clasificación que utiliza hiperplanos para separar la información.\\
-\noindent
+
 \textbf{Tensorflow} Librería de código abierto para Python creada por Google, para Inteligencia Artificial.\\
-\noindent
+
 \textbf{VCR} En inglés, siglas de Video Camera Recorder. Es un dispositivo analógico que permite capturar las imágenes a través de cámaras de vigilancia. \\
 
 

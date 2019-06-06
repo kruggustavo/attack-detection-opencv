@@ -21,8 +21,14 @@ class NeuralNetwork:
         self.configureNetwork()
 
     def configureNetwork(self):
-        self.model.add(Dense(16, input_dim=self.cols, kernel_initializer='uniform', activation='relu'))
-        self.model.add(Dense(8, kernel_initializer='uniform', activation='relu'))
+        #self.model.add(Dense(16, input_dim=self.cols, kernel_initializer='uniform', activation='relu'))
+        #self.model.add(Dense(8, kernel_initializer='uniform', activation='relu'))
+        #self.model.add(Dense(1, kernel_initializer='uniform', activation='sigmoid'))
+
+        self.model.add(Dense(12, input_dim=self.cols, kernel_initializer='uniform', activation='relu'))
+        self.model.add(Dense(14, kernel_initializer='uniform', activation='relu'))
+        self.model.add(Dense(10, kernel_initializer='uniform', activation='relu'))
+        self.model.add(Dense(10, kernel_initializer='uniform', activation='relu'))
         self.model.add(Dense(1, kernel_initializer='uniform', activation='sigmoid'))
 
         self.model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
