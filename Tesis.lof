@@ -1,0 +1,30 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ejemplo de representaci\IeC {\'o}n de una pose en un ni\IeC {\~n}o donde se dibujan las l\IeC {\'\i }neas sobre los elementos m\IeC {\'a}s importantes que la conforman. Fuente: \url {pixabay.com}\relax }}{20}{figure.caption.8}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Pose humana compatible con amenaza (uso de armas). Fuente: \url {pixabay.com}\relax }}{21}{figure.caption.9}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Pictorial Structures Model. Fuente: Dom\IeC {\'e}nech.\relax }}{22}{figure.caption.10}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Regresi\IeC {\'o}n lineal, datos de salida en un plano cartesiano con el l\IeC {\'\i }mite de decisi\IeC {\'o}n\relax }}{26}{figure.caption.13}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Regresi\IeC {\'o}n log\IeC {\'\i }stica, datos de salida en un plano cartesiano con el l\IeC {\'\i }mite de decisi\IeC {\'o}n\relax }}{27}{figure.caption.14}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces SVM con hiperplano \IeC {\'o}ptimo. Fuente: Tutorial sobre M\IeC {\'a}quinas de Vectores Soporte (SVM) \cite {svm1}\relax }}{28}{figure.caption.15}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Estructura superficial de una neurona natural.\relax }}{29}{figure.caption.17}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Estructura de una red neuronal simple.\relax }}{30}{figure.caption.18}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Estructura de una red neuronal con m\IeC {\'u}ltiples capas.\relax }}{31}{figure.caption.19}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces imagen de un hombre, y los gradientes obtenidos de la misma. Fuente Dalal y Trigg \cite {hog1} \relax }}{41}{figure.caption.34}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Entradas (Features) para los distintos clasificadores en cascada Fuente: OpenCV Reference Manual.\relax }}{43}{figure.caption.36}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Una de las im\IeC {\'a}genes del video de pruebas donde se observa una persona posiblemente en pose de amenaza con arma de fuego corta.\relax }}{47}{figure.caption.41}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Herramienta que permite ubicar los puntos relevantes y asociarlos a una etiqueta descriptiva.\relax }}{48}{figure.caption.42}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Ejemplo de secuencias de im\IeC {\'a}genes utilizadas para el entrenamiento del detector de objetos dlib\relax }}{50}{figure.caption.43}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Se visualiza la pose descripta con los puntos de las anotaciones asociadas a la clase de pose (objeto persona) detectada, junto con la imagen original del video en proceso.\relax }}{51}{figure.caption.45}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Estructura visual del modelo de red neuronal artificial Caffe para estimaci\IeC {\'o}n de poses humanas, Fuente \url {learnopencv.com}.\relax }}{56}{figure.caption.54}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Ejemplo de medici\IeC {\'o}n del lado izquierdo del cuerpo: los miembros superiores, con la flecha que indica el sentido de medici\IeC {\'o}n angular, y los inferiores, en sentido contrario. Del lado derecho se invierten los sentidos.\relax }}{58}{figure.caption.55}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Ejemplo de un conjunto de valores de entrenamiento generados.\relax }}{61}{figure.caption.56}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Aplicaci\IeC {\'o}n ejecut\IeC {\'a}ndose, en la que se puede observar un caso positivo para pose compatible con agresi\IeC {\'o}n\relax }}{63}{figure.caption.58}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Detecci\IeC {\'o}n de armas de fuego cortas en la mano de una persona cuya pose es compatible con una agresi\IeC {\'o}n.\relax }}{64}{figure.caption.59}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
