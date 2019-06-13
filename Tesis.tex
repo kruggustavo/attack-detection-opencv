@@ -35,8 +35,8 @@
 \fancypagestyle{plain}{\fancyfoot[C]{\thepage}}
 \pagestyle{plain}  
 
-\pagestyle{fancy}     
 \fancyhead[L]{\fontsize{10}{12}}
+\pagestyle{fancy}     
 
 
 \setlength{\oddsidemargin}{0.30cm}   
@@ -50,23 +50,10 @@
 
 \makeatletter
 \def\@makechapterhead#1{%
-	%%%%\vspace*{50\p@}% %%% removed!
+	\vspace*{0\p@}% <----------------- Space from top of page to Chapter #
 	{\parindent \z@ \raggedright \normalfont
-		\ifnum \c@secnumdepth >\m@ne
-		\huge\bfseries \@chapapp\space \thechapter
-		\par\nobreak
-		\vskip 20\p@
-		\fi
 		\interlinepenalty\@M
 		\Huge \bfseries #1\par\nobreak
-		\vskip 40\p@
-}}
-\def\@makeschapterhead#1{%
-	%%%%%\vspace*{50\p@}% %%% removed!
-	{\parindent \z@ \raggedright
-		\normalfont
-		\interlinepenalty\@M
-		\Huge \bfseries  #1\par\nobreak
 		\vskip 40\p@
 }}
 \makeatother
@@ -150,7 +137,7 @@
 \clearpage
 \thispagestyle{fancy}
 \setlength{\parskip}{1.3em}
-\chapter*{Resumen}
+\chapter{Resumen}
 El propósito del siguiente trabajo de tesis es el de desarrollar una solución aplicativa capaz de detectar una actividad delictiva expresada a través de poses humanas captadas por cámaras de video en tiempo real, emitiendo alertas, visual y sonora. \par 
 
 La idea surge a partir de la observación de numerosos hechos delictivos en donde el ataque o agresión, con o sin armas, logran reducir y neutralizar a las víctimas sin que puedan solicitar ayuda.\par 
@@ -163,7 +150,7 @@ Palabras clave: \textit{Pose, Delictiva, Inteligencia Artificial, Redes neuronal
 \clearpage
 \thispagestyle{fancy}
 \setlength{\parskip}{1.3em}
-\chapter*{Abstract}
+\chapter{Abstract}
 The purpose of the following thesis work is to develop an application solution capable of detecting a criminal activity expressed through human poses captured by video cameras in real time, emitting alerts, visual and sound.\par
 
 The idea arises from the observation of numerous criminal acts in which the attack or aggression, with or without weapons, manage to reduce and neutralize the victims without being able to request help.\par
@@ -241,7 +228,7 @@ En la actualidad, la seguridad personal se está volviendo cada vez más importa
 Con el transcurrir de los últimos años, muchas personas y empresas dedicadas a la tecnología han centrado sus esfuerzos en ofrecer soluciones que puedan brindar ayuda incluso a los organismos de seguridad. Las cámaras de circuito cerrado de televisión (CCTV) han tomado un protagonismo más evidente en los sistemas de vigilancia dada la ventaja que ofrecen. \par
 
 \subsection{Evolución de los sistemas de vigilancia}
-A lo largo del tiempo, los sistemas de vigilancia han mejorado la tecnología utilizada en los dispositivos de monitoreo, sensores, etc. Según M. Valera y S.A. Velastin. \cite{valera}, pueden diferenciarse hasta el momento tres generaciones de sistemas de vigilancia:
+A lo largo del tiempo, los sistemas de vigilancia han mejorado la tecnología utilizada en los dispositivos de monitoreo, sensores, etc. Según Valera y  Velastin (2005). \cite{valera}, pueden diferenciarse hasta el momento tres generaciones de sistemas de vigilancia:
 \begin{enumerate}
 	\baselineskip 16pt
 	\item Primera generación: \par 
@@ -265,7 +252,7 @@ A lo largo del tiempo, los sistemas de vigilancia han mejorado la tecnología ut
 
 No todos los sistemas de vigilancia utilizan los mismos recursos y enfoques. La tecnología va mejorando los dispositivos con el transcurrir del tiempo, la integración de componentes digitales inteligentes acaparan los procesos de vigilancia. \par
 
-Dentro de la clasificación de sistemas de visión para vigilancia, R. Dautov et al \cite{dautov} cita cuatro tipos distintos:
+Dentro de la clasificación de sistemas de visión para vigilancia, Dautov et al. (2018) \cite{dautov} cita cuatro tipos distintos:
 \begin{itemize}
 	\setlength\itemsep{-1.2em}
 	\item Integrados: incluyen cámaras independientes que realizan el procesamiento de información específica de aplicación (ASIP por sus siglas en inglés) o en una unidad externa (ej., Raspberry Pi).\\	
@@ -282,7 +269,7 @@ Está entre los temas de investigación en inteligencia artificial (IA) con más
 
 Existen numerosos trabajos realizados a lo largo del mundo que intentan, mediante la pose humana, interpretar el tipo de actividad que realiza una persona en observación. \par
 
-En el artículo de O.C.Ann y L.B.Theng \cite{activity1} se citan algunas estructuras de detección de actividad humana en donde se utilizan:
+En el artículo de Ann y Theng (2014) \cite{activity1} se citan algunas estructuras de detección de actividad humana en donde se utilizan:
 \begin{itemize}
 	\setlength\itemsep{-1.2em}
 	\item Cámaras RGB: Cámaras de video que capturan secuencias de imágenes que luego son analizadas para detectar actividad humana.\\	
@@ -349,7 +336,7 @@ Ejemplos de poses que puedan ser consideradas como compatibles con agresión:
 
 
 \subsection{Métodos de representación de poses}
-Según Doménech \cite{human1} existen por lo menos tres categorías de métodos de representación de poses humanas de acuerdo a como se interpreta la estructura del cuerpo:
+Según Doménech (2018) \cite{human1} existen por lo menos tres categorías de métodos de representación de poses humanas de acuerdo a como se interpreta la estructura del cuerpo:
 
 \begin{enumerate}
 	\baselineskip 16pt
@@ -405,7 +392,7 @@ En el aprendizaje no supervisado priman los problemas de clasificación de patro
 \section{Métodos de clasificación}\label{clasificacion}
 A continuación, un breve resumen acerca de algunos modelos probabilísticos utilizados en Machine Learning, para clasificar datos. No se profundizarán conceptos sobre todos los modelos, solamente aquellos que sirvieron para la realización de este trabajo, para ahondar en detalles consulte material especializado.\par
 
-S. Bailey et al \cite{bailey} describe algunos métodos principales de clasificadores, también se puede agregar los citados por N. S. Kamarudin et al\cite{kamarudin}, y los métodos de regresión de Andrew Ng y su curso de Machine Learning  \cite{machinelearningcoursera}. \par
+Bailey et al. (2007) \cite{bailey} describe algunos métodos principales de clasificadores, también se puede agregar los citados por Kamarudin et al. (2015) \cite{kamarudin}, y los métodos de regresión de Andrew Ng en su curso de Machine Learning \cite{machinelearningcoursera}. \par
 
 \subsection{Regresión Lineal}
 
@@ -574,7 +561,7 @@ Cada capa de la red neuronal está compuesta por neuronas interconectadas con la
 
 La capa de entrada implementa lo que se denominan funciones de entrada, y solamente existen ciertas funciones que pueden aplicarse a las neuronas de la capa de entrada.\par 
 
-De Matich \cite{matich} se pueden entresacar los tipos de funciones de entrada más comunes:
+De Matich (2001) \cite{matich} se pueden entresacar los tipos de funciones de entrada más comunes:
 \begin{enumerate}
 	\item Sumatoria de entradas pesadas: suma de todos los valores de
 	entrada de la neurona, multiplicados por sus correspondientes pesos.\par 
@@ -598,7 +585,7 @@ En biología, una neurona puede estar activa o inactiva, en las redes artificial
 
 Una función de activación recibe datos de entrada y genera un resultado de activación. Generalmente pueden tomar valores de 0 y 1, o -1 y 1 (desactivado y activado). Existen funciones que pueden devolver más estados.\par
 
-De Enyinna et al\cite{enyinna} se pueden citar tres de los tipos de funciones de activación más conocidos:
+De Enyinna et al. (2018) \cite{enyinna} se pueden citar tres de los tipos de funciones de activación más conocidos:
 
 \begin{enumerate}
 	\item Función sigmoidea: es una función de activación no lineal, conocido también como función logística. Su uso mayor se da en redes neuronales aunque se ha comprobado que tiene ciertos problemas con backpropagation, y otras funciones más modernas se utilizan en su lugar. Esta función tiene algunas variantes que no se detallarán en este trabajo. Su ecuación es:\par 
@@ -650,17 +637,17 @@ Los sistemas de vigilancia en auge actualmente son los de segunda generación qu
 
 Si bien existen investigaciones enfocadas a la utilización de Inteligencia Artificial para la Vigilancia Inteligente, resulta por ahora una tarea difícil de implementar debido a la cantidad de combinaciones posibles de escenarios que puedan darse, la cantidad de datos de entrada y los patrones que se deben analizar en las diferentes fases. \par
 
-Normalmente, el proceso de identificación de objetos en imágenes se da en diferentes etapas descritas por Lozano \cite{lozano} y Kamarudin \cite{kamarudin}, ellas son:	
+Normalmente, el proceso de identificación de objetos en imágenes se da en diferentes etapas descritas por Lozano (2010)\cite{lozano} y Kamarudin et al. (2015) \cite{kamarudin}, ellas son:	
 \begin{enumerate}[label=\alph*)]
 	\item \textbf{Detección de objetos.}\\
 		La detección de objetos en imágenes es una de las áreas de mayor investigación en visión por computadora. La tarea no resulta fácil, ya que existen numerosos elementos a tener en cuenta para la detección de objetos que sean de relevancia. \par
 		
 		El principal obstáculo, es determinar si un conjunto de pixeles forman o no un objeto tomando en cuenta que existen innumerables combinaciones de posición, luminosidad, color y formas, como así también el ruido de interferencia y el tamaño del objeto (o su lejanía de la cámara).\par
 		
-		Enfocado a la seguridad, la detección de objetos trata de identificar solamente unas pocas categorías de objetos en imágenes, lo que lo hace un proceso más viable: la detección de formas humanas, también denominado detección de peatones (Pedestrian detection \cite{zhang1}).
+		Enfocado a la seguridad, la detección de objetos trata de identificar solamente unas pocas categorías de objetos en imágenes, lo que lo hace un proceso más viable: la detección de formas humanas, también denominado detección de peatones (Pedestrian detection en inglés).
 		
 		\textbf{Técnicas de detección de objetos en imágenes}\\
-		A través de los años, como consecuencia de las investigaciones en visión por computadora, han surgido	diferentes enfoques en la utilización de técnicas de detección de objetos, M. Valera y S.A. Velastin \cite{valera} citan dos enfoques a lo que se pueden agregar además el presentado por Nidhi \cite{nidhi} y Barron \cite{barron}:
+		A través de los años, como consecuencia de las investigaciones en visión por computadora, han surgido diferentes enfoques en la utilización de técnicas de detección de objetos, Valera y Velastin (2005) \cite{valera} citan dos enfoques a lo que se pueden agregar además el presentado por Nidhi (2005) \cite{nidhi} y Barron et al. (2015) \cite{barron}:
 		\begin{itemize}
 			\setlength\itemsep{-1.2em}
 			\item Diferencia temporal: 
@@ -673,7 +660,7 @@ Normalmente, el proceso de identificación de objetos en imágenes se da en dife
 		La última etapa, luego de la detección de objetos, es la clasificación de los mismos: se debe determinar la clase de objeto detectado. Es de vital importancia poder identificar el tipo de objeto detectado, especialmente cuando se trata de personas: se necesita registrar y catalogar el comportamiento de objetos de tipo persona para determinar si se produce una forma compatible de agresión.\par
 		
 		\textbf{Técnicas de clasificación}\\
-		Para determinar la clase de objeto extraído de una imágen, se utilizan dos tipos principales de técnicas citadas por Lozano \cite{lozano}:
+		Para determinar la clase de objeto extraído de una imágen, se utilizan dos tipos principales de técnicas citadas por Lozano (2010) \cite{lozano}:
 		\begin{itemize}
 			\setlength\itemsep{-1.2em}
 			\item Clasificación basada en formas: es la técnica más sencilla y consiste en, una vez identificado un objeto en una imágen, compararlo con formas de objetos existentes. Se asocia un valor numérico para identificar el grado de similitud entre las imágenes comparadas. El valor más alto asociado definirá la clase de objeto.\\
@@ -693,7 +680,7 @@ Normalmente, el proceso de identificación de objetos en imágenes se da en dife
 \end{enumerate}
 
 \subsection{Histograma de Gradientes Orientados}
-En inglés \textit{Histograms of Oriented Gradients} (HOG), es una técnica de detección de objetos en imágenes, más precisamente para la detección de humanos, según Dalal y Trigg \cite{hog1}. Básicamente, se trata de un descriptor de objetos, que permite caracterizarlos en un mapa de gradientes. Se suele utilizar HOG como descriptor de objetos y SVM como clasificador para una gran cantidad de herramientas de detección y clasificación.\par
+En inglés \textit{Histograms of Oriented Gradients} (HOG), es una técnica de detección de objetos en imágenes, más precisamente para la detección de humanos, según Dalal y Trigg (2005) \cite{hog1}. Básicamente, se trata de un descriptor de objetos, que permite caracterizarlos en un mapa de gradientes. Se suele utilizar HOG como descriptor de objetos y SVM como clasificador para una gran cantidad de herramientas de detección y clasificación.\par
 
 La idea básica del HOG, es dividir una imagen en ventanas (denominadas blocks, o \textit{detection windows} en inglés), obteniendo los gradientes que se forman dentro de cada ventana, así, una imagen puede contener decenas de pequeñas ventanas con sus gradientes. El gradiente contiene el vector dirección, lo que permite caracterizar la zona dentro de la ventana.\par
 
@@ -704,7 +691,7 @@ Además, una ventana puede contener diferentes cantidades de gradientes, de acue
 \begin{figure}[h!]
 	\includegraphics[width=340pt]{Imagenes/hog1.jpg}
 	\centering
-	\caption{imagen de un hombre, y los gradientes obtenidos de la misma. Fuente Dalal y Trigg \cite{hog1} }
+	\caption{imagen de un hombre, y los gradientes obtenidos de la misma. Fuente Dalal y Trigg (2005) \cite{hog1} }
 	\label{fig:hog1}
 \end{figure}
  
@@ -759,7 +746,7 @@ En inglés \textit{Convolutional Neural Networks}, DNN por sus siglas, es otro t
 
 En las redes convolucionales, se aplican ciertos filtros a las imágenes mediante neuronas convolucionales resumiendo así ciertas porciones de la imagen y obteniendo una representación más general de la misma, este proceso de resumir porciones se denomina reducción de muestreo, y en inglés se lo conoce como \textit{pooling} (pooling layer, es la capa encargada de resumir porciones de la imágen). \par
 
-La idea detrás de las redes convolucionales, según Y.LeCun et al \cite{convolutional1} es simular el comportamiento de los receptores de la corteza visual en los cerebros biológicos mediante modelos de neuronas artificiales. \par
+La idea detrás de las redes convolucionales, según LeCun et al. (1998) \cite{convolutional1} es simular el comportamiento de los receptores de la corteza visual en los cerebros biológicos mediante modelos de neuronas artificiales. \par
 
 \newpage
 \chapter{Desarrollo de software}
@@ -904,7 +891,7 @@ Se resolvió descartar un detector de poses usando los módulos de HOG-SVM de la
 
 \subsection{Prueba 2: AlphaPose}
 \subsubsection{Descripción}
-AlphaPose es un proyecto de estimación precisa de poses humanas en Python que implementa algoritmos basados en el paper de H.Fang \cite{alphapose1} descrito como Estimación Regional Multipersona.\par
+AlphaPose es un proyecto de estimación precisa de poses humanas en Python que implementa algoritmos basados en el paper de Fang et al. (2018) \cite{alphapose1} descrito como Estimación Regional Multipersona.\par
 
 Según la descripción encontrada en github.com, que aloja proyectos de desarrollo a nivel mundial, AlphaPose fue el primer sistema de detección de poses humanas de código abierto.\par
 
@@ -936,13 +923,13 @@ Sin embargo, AlphaPose podría ser utilizado en proyectos que implementen hardwa
 
 \subsection{Prueba 3: Modelo DNN Caffe en OpenCV}
 \subsubsection{Descripción}
-\textit{Convolutional Architecture for Fast Feature Embedding} (Caffe) en inglés, o Arquitectura convolucional para incrustación rápida de características, es un framework para desarrollo de software enfocado a Machine Learning, desarrollado en la Universidad de Berkeley en California, Jia et al \cite{caffe} explican su desarrollo.\par 
+\textit{Convolutional Architecture for Fast Feature Embedding} (Caffe) en inglés, o Arquitectura convolucional para incrustación rápida de características, es un framework para desarrollo de software enfocado a Machine Learning, desarrollado en la Universidad de Berkeley en California, Jia et al. (2014) \cite{caffe} explican su desarrollo.\par 
 
 Se trata de un conjunto de librerías C++ para generar modelos, entrenar algoritmos e inferir, utilizando diferentes elementos propios de Machine Learning; también cuenta con una API para Python, según se puede leer en su página web oficial \url{caffe.berkeleyvision.org}.\par 
 
 Existen diferentes modelos de redes neuronales generadas utilizando Caffe en Internet, es así que uno de estos modelos fue creado para la estimación de poses humanas en imágenes. \par
 
-Un modelo de red neuronal consiste en un conjunto de configuraciones para una red previamente entrenada por un desarrollador, con sus pesos, capas intermedias y las funciones de entrada, activación y salida correspondientes.\par 
+Un modelo de red neuronal consiste en un conjunto de configuraciones para una red previamente entrenada, con sus pesos, capas intermedias y las funciones de entrada, activación y salida correspondientes.\par 
 
 En el sitio web oficial de entrenamiento de OpenCV \url{www.learnopencv.com}, se puede encontrar un modelo Caffe de CNNs utilizado para la estimación de poses humanas, mediante el uso de una red neuronal incluida en las herramientas OpenCV.\par
 

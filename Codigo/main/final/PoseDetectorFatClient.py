@@ -296,6 +296,8 @@ def worker(job_q, result_q):
 print("Client program started")
 number_of_threads = 3
 net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)
+net.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
+net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
 manager = make_client_manager(IP, PORTNUM, AUTHKEY)
 job_q = manager.get_job_q()

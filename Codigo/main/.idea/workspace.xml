@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de1e1734-5595-47d8-b788-d94778d6cfdd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/final/NeuralNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/NeuralNetwork.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/FICHA REUNION TUTOR ALUMNO TESIS.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/FICHA REUNION TUTOR ALUMNO TESIS.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/Informe1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/Informe1.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/Informe2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/Informe2.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/Informe3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/Informe3.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/Informe4.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/Informe4.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Informes mensuales/Informe5.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Informes mensuales/Informe5.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.lof" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.lof" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tesis.out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.synctex.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tesis.toc" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.toc" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="225">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-290">
+            <state relative-caret-position="588">
               <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
@@ -43,9 +36,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/final/OpenPose.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final/NeuralNetwork.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
+            <state relative-caret-position="324">
               <caret line="30" column="82" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -54,13 +59,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="12" />
+            <state relative-caret-position="312">
+              <caret line="297" column="54" selection-start-line="297" selection-start-column="54" selection-end-line="297" selection-end-column="54" />
               <folding>
                 <element signature="e#84#121#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="45" column="38" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,7 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hog/test.py" />
         <option value="$PROJECT_DIR$/utils/SVM.py" />
         <option value="$PROJECT_DIR$/utils/SVMClassifier.py" />
         <option value="$PROJECT_DIR$/hog/TrainDetector.py" />
@@ -186,16 +202,17 @@
         <option value="$PROJECT_DIR$/hog/Main.py" />
         <option value="$PROJECT_DIR$/final/WeaponClassifier.py" />
         <option value="$PROJECT_DIR$/final/WeaponsClassifier.py" />
-        <option value="$PROJECT_DIR$/final/PoseDetectorFatClient.py" />
         <option value="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" />
         <option value="$PROJECT_DIR$/final/NeuralNetwork.py" />
+        <option value="$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py" />
+        <option value="$PROJECT_DIR$/final/PoseDetectorFatClient.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="30" />
     <option name="width" value="1364" />
-    <option name="height" value="696" />
+    <option name="height" value="695" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -205,7 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,27 +243,28 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/final" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/final" />
-      <recent name="$PROJECT_DIR$/hog" />
-      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo\python\main\multiplehog" />
-      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo\python\main\utils" />
-      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$/hog" />
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="D:\Google Drive\Tesis\Desarrollo\python\main\tests" />
       <recent name="D:\Google Drive\Tesis\Desarrollo\python\main\utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/final" />
+      <recent name="$PROJECT_DIR$/hog" />
+      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo\python\main\multiplehog" />
+      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo\python\main\utils" />
+      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -434,10 +451,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1364" height="696" extended-state="0" />
+    <frame x="0" y="30" width="1364" height="695" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.17459138" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.17459138" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50284094" side_tool="true" weight="0.17433235" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -458,7 +475,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hog/TrainDetector.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/dlib/__init__.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/cv2/cv2/HOGDescriptor.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/cv2/cv2/__init__.py" />
@@ -596,26 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/OpenPose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="12" />
-          <folding>
-            <element signature="e#84#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/PoseGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
@@ -633,9 +629,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/OpenPose.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/final/NeuralNetwork.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
+        <state relative-caret-position="324">
           <caret line="30" column="82" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
@@ -643,12 +659,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
+    <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-290">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="540">
+          <caret line="45" column="38" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="38" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="297" column="54" selection-start-line="297" selection-start-column="54" selection-end-line="297" selection-end-column="54" />
+          <folding>
+            <element signature="e#84#121#0" expanded="true" />
           </folding>
         </state>
       </provider>
