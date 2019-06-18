@@ -289,15 +289,16 @@ def worker(job_q, result_q):
 
             result_q.put(result)
             print("Processed! " + str(frameId) + " " + str(humansPointsLists))
-        except:
+        except Exception as e:
+            print(str(e))
             frame = None
 
 
 print("Client program started")
-number_of_threads = 3
+number_of_threads = 5
 net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)
-net.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
-net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
+#net.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
+#net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
 manager = make_client_manager(IP, PORTNUM, AUTHKEY)
 job_q = manager.get_job_q()

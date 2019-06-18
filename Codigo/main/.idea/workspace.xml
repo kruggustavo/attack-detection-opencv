@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de1e1734-5595-47d8-b788-d94778d6cfdd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/NeuralNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/NeuralNetwork.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tesis.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tesis.lof" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.lof" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tesis.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tesis.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tesis.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tesis.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="225">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="272">
+              <caret line="157" column="42" selection-start-line="157" selection-start-column="42" selection-end-line="157" selection-end-column="42" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -36,48 +32,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/final/OpenPose.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/final/NeuralNetwork.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="30" column="82" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="297" column="54" selection-start-line="297" selection-start-column="54" selection-end-line="297" selection-end-column="54" />
-              <folding>
-                <element signature="e#84#121#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="45" column="38" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="38" />
+            <state relative-caret-position="216">
+              <caret line="27" column="21" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="21" />
               <folding>
-                <element signature="e#0#12#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,9 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>_structure</find>
-      <find>video_file</find>
-      <find>video_</find>
       <find>}</find>
       <find>'</find>
       <find>op</find>
@@ -124,6 +81,9 @@
       <find>man-isolated</find>
       <find>existWeapon</find>
       <find>inheigh</find>
+      <find>self.</find>
+      <find>opt.</find>
+      <find>infer_fast</find>
     </findStrings>
     <replaceStrings>
       <replace>\\</replace>
@@ -202,15 +162,15 @@
         <option value="$PROJECT_DIR$/hog/Main.py" />
         <option value="$PROJECT_DIR$/final/WeaponClassifier.py" />
         <option value="$PROJECT_DIR$/final/WeaponsClassifier.py" />
-        <option value="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" />
         <option value="$PROJECT_DIR$/final/NeuralNetwork.py" />
-        <option value="$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py" />
         <option value="$PROJECT_DIR$/final/PoseDetectorFatClient.py" />
+        <option value="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" />
+        <option value="$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="30" />
+    <option name="y" value="28" />
     <option name="width" value="1364" />
     <option name="height" value="695" />
   </component>
@@ -222,6 +182,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -243,12 +204,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/final" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -279,7 +239,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.VideoDetectionMultiprocessing">
+  <component name="RunManager" selected="Python.PoseDetectorFatClientCUDA">
     <configuration name="ImageResizer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Desarrollo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -293,27 +253,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/ImageResizer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="LivePoseGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Desarrollo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/LivePoseGenerator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -356,6 +295,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/PoseDetectorFatClient.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PoseDetectorFatClientCUDA" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Desarrollo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -422,18 +382,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.ImageResizer" />
-      <item itemvalue="Python.LivePoseGenerator" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.PoseDetectorFatClient" />
       <item itemvalue="Python.VideoDetectionMultiprocessing" />
+      <item itemvalue="Python.PoseDetectorFatClientCUDA" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.PoseDetectorFatClientCUDA" />
         <item itemvalue="Python.VideoDetectionMultiprocessing" />
         <item itemvalue="Python.PoseDetectorFatClient" />
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.ImageResizer" />
-        <item itemvalue="Python.LivePoseGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -451,21 +411,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1364" height="695" extended-state="0" />
+    <frame x="0" y="28" width="1364" height="695" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.17459138" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.21396731" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50284094" side_tool="true" weight="0.17433235" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.290378" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.33105803" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24479167" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3871528" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.22984563" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.22916667" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -524,7 +484,6 @@
     <entry file="file://$PROJECT_DIR$/final/VideoDetection.py" />
     <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiple.py" />
     <entry file="file://$PROJECT_DIR$/final/VideoDetectionSingle.py" />
-    <entry file="file://$PROJECT_DIR$/final/val.py" />
     <entry file="file://$PROJECT_DIR$/final/OpenPoseLight.py" />
     <entry file="file://$PROJECT_DIR$/final/PoseDetectorClient.py" />
     <entry file="file://$PROJECT_DIR$/hog/Live.py" />
@@ -629,16 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/final/OpenPose.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -651,30 +600,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/final/NeuralNetwork.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="30" column="82" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
+        <state relative-caret-position="219">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py">
+    <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="45" column="38" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="38" />
+        <state relative-caret-position="300">
+          <caret line="229" selection-start-line="229" selection-end-line="230" selection-end-column="40" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#84#121#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
+    <entry file="file://$PROJECT_DIR$/final/val.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="297" column="54" selection-start-line="297" selection-start-column="54" selection-end-line="297" selection-end-column="54" />
+        <state relative-caret-position="120">
+          <caret line="28" selection-start-line="28" selection-end-line="48" selection-end-column="26" />
           <folding>
-            <element signature="e#84#121#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="157" column="42" selection-start-line="157" selection-start-column="42" selection-end-line="157" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

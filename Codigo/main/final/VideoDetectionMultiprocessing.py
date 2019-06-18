@@ -10,15 +10,6 @@ import random
 import threading
 import imutils
 
-#tensorflow
-#torch
-#torchvision
-#imutils
-#pygame
-#numpy
-#keras
-#opencv-python
-#google-api-python-client
 
 # Attack detection
 # Detector de ataques y amenazas humanas en imagenes secuenciales mediante el entrenamiento de redes neuronales
@@ -57,13 +48,16 @@ drawer = Drawer()
 # Red neuronal de angulos
 EPOCHS = 1
 nnet = NeuralNetwork(8)
-nnet.loadTrainingSamples("trainingangles.csv")
-nnet.trainNetwork(EPOCHS)
-#nnet.loadModel("model.json")
+#nnet.loadTrainingSamples("trainingangles.csv")
+#nnet.trainNetwork(EPOCHS)
+nnet.loadModel("model.json")
 #nnet.saveModel("model.json")
 
 netOutput = NO_ATTACK
 Xseconds = 10                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
+Yseconds = 2                                    # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
+
+Xframes = 3                                     # Cantidad mínima de frames en cola para enviar otro frame. Si cantidad es mayor a este valor, no se envian mas frames a la cola
 
 emptyFrame = np.zeros((video_height, video_width, 3), np.uint8)
 skeletonFrame = emptyFrame
@@ -140,7 +134,7 @@ frameId = 0
 
 # Diccionario que contiene frames que estan siendo procesados identificados con un numero de id
 localFramesDict = {}
-
+pointTime = time.time()
 while True:
     #time.sleep(100 / 1000)
     frameId = random.randint(0, 999999)
@@ -156,13 +150,15 @@ while True:
             agressionExpired = False
 
 
-        # Enviar frame e ID a cola de trabajo para clientes solo si cola esta vacia
-        if shared_job_q.qsize() == 0:
-            packetData = {}
-            packetData[frameId] = frame
-            shared_job_q.put(packetData)
+        # Enviar frame e ID a cola de trabajo para clientes cada Y segundos solo si cola tiene no mas de X frames esperando
+        if (time.time() - pointTime) >= Yseconds:
+            pointTime = time.time()
+            if shared_job_q.qsize() <= Xframes:
+                packetData = {}
+                packetData[frameId] = frame
+                shared_job_q.put(packetData)
 
-            localFramesDict[frameId] = frame
+                localFramesDict[frameId] = frame
 
 
         # Se procesa una vez que haya respuesta de hilos (se espera un dict con el id del frame procesado y lista de puntos)
@@ -189,7 +185,6 @@ while True:
                         netOutput = int(nnet.predict(angles))
                     except:
                         pass
-                    print("net output:" + str(netOutput))
                     if netOutput == ATTACK:
                         print("Attack!")
                         frameToProcess = localFramesDict[returnedFrameId]

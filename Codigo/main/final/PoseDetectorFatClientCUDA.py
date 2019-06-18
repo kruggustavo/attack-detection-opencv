@@ -1,116 +1,139 @@
-import torch
-from torch.autograd import Variable
-import torch.nn.functional as F
-import torchvision.transforms as transforms
-import torch.nn as nn
-import torch.utils.data
+import argparse
+
+import cv2
 import numpy as np
-from opt import opt
-from dataloader import ImageLoader, DetectionLoader, DetectionProcessor, DataWriter, Mscoco
-from yolo.util import write_results, dynamic_write_results
-from SPPE.src.main_fast_inference import *
-import os
-import sys
-from tqdm import tqdm
-from fn import getTime
-from pPose_nms import pose_nms, write_json
+import torch
+import math
+from final.models.with_mobilenet import PoseEstimationWithMobileNet
+from final.modules.keypoints import extract_keypoints, group_keypoints
+from final.modules.load_state import load_state
+from final.modules.pose import Pose, propagate_ids
 
-args = opt
-args.dataset = 'coco'
-if not args.sp:
-    torch.multiprocessing.set_start_method('forkserver', force=True)
-    torch.multiprocessing.set_sharing_strategy('file_system')
 
-if __name__ == "__main__":
-    inputpath = args.inputpath
-    inputlist = args.inputlist
-    mode = args.mode
-    if not os.path.exists(args.outputpath):
-        os.mkdir(args.outputpath)
+class VideoReader(object):
+    def __init__(self, file_name):
+        self.file_name = file_name
+        try:  # OpenCV needs int to read from webcam
+            self.file_name = int(file_name)
+        except ValueError:
+            pass
 
-    if len(inputlist):
-        im_names = open(inputlist, 'r').readlines()
-    elif len(inputpath) and inputpath != '/':
-        for root, dirs, files in os.walk(inputpath):
-            im_names = files
-    else:
-        raise IOError('Error: must contain either --indir/--list')
+    def __iter__(self):
+        self.cap = cv2.VideoCapture(self.file_name)
+        if not self.cap.isOpened():
+            raise IOError('Video {} cannot be opened'.format(self.file_name))
+        return self
 
-    # Load input images
-    data_loader = ImageLoader(im_names, batchSize=args.detbatch, format='yolo').start()
+    def __next__(self):
+        was_read, img = self.cap.read()
+        if not was_read:
+            raise StopIteration
+        return img
 
-    # Load detection loader
-    print('Loading YOLO model..')
-    sys.stdout.flush()
-    det_loader = DetectionLoader(data_loader, batchSize=args.detbatch).start()
-    det_processor = DetectionProcessor(det_loader).start()
 
-    # Load pose model
-    pose_dataset = Mscoco()
-    pose_model = InferenNet_fast(4 * 1 + 1, pose_dataset)
+def normalize(img, img_mean, img_scale):
+    img = np.array(img, dtype=np.float32)
+    img = (img - img_mean) * img_scale
+    return img
 
-    pose_model.cpu()
-    pose_model.eval()
 
-    runtime_profile = {
-        'dt': [],
-        'pt': [],
-        'pn': []
-    }
+def pad_width(img, stride, pad_value, min_dims):
+    h, w, _ = img.shape
+    h = min(min_dims[0], h)
+    min_dims[0] = math.ceil(min_dims[0] / float(stride)) * stride
+    min_dims[1] = max(min_dims[1], w)
+    min_dims[1] = math.ceil(min_dims[1] / float(stride)) * stride
+    pad = []
+    pad.append(int(math.floor((min_dims[0] - h) / 2.0)))
+    pad.append(int(math.floor((min_dims[1] - w) / 2.0)))
+    pad.append(int(min_dims[0] - h - pad[0]))
+    pad.append(int(min_dims[1] - w - pad[1]))
+    padded_img = cv2.copyMakeBorder(img, pad[0], pad[2], pad[1], pad[3],
+                                    cv2.BORDER_CONSTANT, value=pad_value)
+    return padded_img, pad
 
-    # Init data writer
-    writer = DataWriter(args.save_video).start()
+def infer_fast(net, img, net_input_height_size, stride, upsample_ratio, cpu,
+               pad_value=(0, 0, 0), img_mean=(128, 128, 128), img_scale=1/256):
+    height, width, _ = img.shape
+    scale = net_input_height_size / height
 
-    data_len = data_loader.length()
-    im_names_desc = tqdm(range(data_len))
+    scaled_img = cv2.resize(img, (0, 0), fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC)
+    scaled_img = normalize(scaled_img, img_mean, img_scale)
+    min_dims = [net_input_height_size, max(scaled_img.shape[1], net_input_height_size)]
+    padded_img, pad = pad_width(scaled_img, stride, pad_value, min_dims)
 
-    batchSize = args.posebatch
-    for i in im_names_desc:
-        start_time = getTime()
-        with torch.no_grad():
-            (inps, orig_img, im_name, boxes, scores, pt1, pt2) = det_processor.read()
-            if boxes is None or boxes.nelement() == 0:
-                writer.save(None, None, None, None, None, orig_img, im_name.split('/')[-1])
+    tensor_img = torch.from_numpy(padded_img).permute(2, 0, 1).unsqueeze(0).float()
+    if not cpu:
+        tensor_img = tensor_img.cuda()
+
+    stages_output = net(tensor_img)
+
+    stage2_heatmaps = stages_output[-2]
+    heatmaps = np.transpose(stage2_heatmaps.squeeze().cpu().data.numpy(), (1, 2, 0))
+    heatmaps = cv2.resize(heatmaps, (0, 0), fx=upsample_ratio, fy=upsample_ratio, interpolation=cv2.INTER_CUBIC)
+
+    stage2_pafs = stages_output[-1]
+    pafs = np.transpose(stage2_pafs.squeeze().cpu().data.numpy(), (1, 2, 0))
+    pafs = cv2.resize(pafs, (0, 0), fx=upsample_ratio, fy=upsample_ratio, interpolation=cv2.INTER_CUBIC)
+
+    return heatmaps, pafs, scale, pad
+
+
+def run_demo(net, image_provider, height_size, cpu, track_ids):
+    net = net.eval()
+    if not cpu:
+        net = net.cuda()
+
+    stride = 8
+    upsample_ratio = 4
+    num_keypoints = Pose.num_kpts
+    previous_poses = []
+    for img in image_provider:
+        orig_img = img.copy()
+        heatmaps, pafs, scale, pad = infer_fast(net, img, height_size, stride, upsample_ratio, cpu)
+
+        total_keypoints_num = 0
+        all_keypoints_by_type = []
+        for kpt_idx in range(num_keypoints):  # 19th for bg
+            total_keypoints_num += extract_keypoints(heatmaps[:, :, kpt_idx], all_keypoints_by_type, total_keypoints_num)
+
+        pose_entries, all_keypoints = group_keypoints(all_keypoints_by_type, pafs, demo=True)
+        for kpt_id in range(all_keypoints.shape[0]):
+            all_keypoints[kpt_id, 0] = (all_keypoints[kpt_id, 0] * stride / upsample_ratio - pad[1]) / scale
+            all_keypoints[kpt_id, 1] = (all_keypoints[kpt_id, 1] * stride / upsample_ratio - pad[0]) / scale
+        current_poses = []
+        for n in range(len(pose_entries)):
+            if len(pose_entries[n]) == 0:
                 continue
+            pose_keypoints = np.ones((num_keypoints, 2), dtype=np.int32) * -1
+            for kpt_id in range(num_keypoints):
+                if pose_entries[n][kpt_id] != -1.0:  # keypoint was found
+                    pose_keypoints[kpt_id, 0] = int(all_keypoints[int(pose_entries[n][kpt_id]), 0])
+                    pose_keypoints[kpt_id, 1] = int(all_keypoints[int(pose_entries[n][kpt_id]), 1])
+            pose = Pose(pose_keypoints, pose_entries[n][18])
+            current_poses.append(pose)
+            pose.draw(img)
 
-            ckpt_time, det_time = getTime(start_time)
-            runtime_profile['dt'].append(det_time)
-            # Pose Estimation
+        img = cv2.addWeighted(orig_img, 0.6, img, 0.4, 0)
+        if track_ids == True:
+            propagate_ids(previous_poses, current_poses)
+            previous_poses = current_poses
+            for pose in current_poses:
+                cv2.rectangle(img, (pose.bbox[0], pose.bbox[1]),
+                              (pose.bbox[0] + pose.bbox[2], pose.bbox[1] + pose.bbox[3]), (0, 255, 0))
+                cv2.putText(img, 'id: {}'.format(pose.id), (pose.bbox[0], pose.bbox[1] - 16),
+                            cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 255))
+        cv2.imshow('Lightweight Human Pose Estimation Python Demo', img)
+        key = cv2.waitKey(33)
+        if key == 27:  # esc
+            return
 
-            datalen = inps.size(0)
-            leftover = 0
-            if (datalen) % batchSize:
-                leftover = 1
-            num_batches = datalen // batchSize + leftover
-            hm = []
-            for j in range(num_batches):
-                inps_j = inps[j * batchSize:min((j + 1) * batchSize, datalen)].cpu()
-                hm_j = pose_model(inps_j)
-                hm.append(hm_j)
-            hm = torch.cat(hm)
-            ckpt_time, pose_time = getTime(ckpt_time)
-            runtime_profile['pt'].append(pose_time)
-            hm = hm.cpu()
-            writer.save(boxes, scores, hm, pt1, pt2, orig_img, im_name.split('/')[-1])
 
-            ckpt_time, post_time = getTime(ckpt_time)
-            runtime_profile['pn'].append(post_time)
+if __name__ == '__main__':
+    net = PoseEstimationWithMobileNet()
+    checkpoint = torch.load("checkpoint_iter_370000.pth", map_location='cpu')
+    load_state(net, checkpoint)
 
-        if args.profile:
-            # TQDM
-            im_names_desc.set_description(
-                'det time: {dt:.3f} | pose time: {pt:.2f} | post processing: {pn:.4f}'.format(
-                    dt=np.mean(runtime_profile['dt']), pt=np.mean(runtime_profile['pt']),
-                    pn=np.mean(runtime_profile['pn']))
-            )
+    frame_provider = VideoReader(0)
 
-    print('===========================> Finish Model Running.')
-    if (args.save_img or args.save_video) and not args.vis_fast:
-        print('===========================> Rendering remaining images in the queue...')
-        print(
-            '===========================> If this step takes too long, you can enable the --vis_fast flag to use fast rendering (real-time).')
-    while (writer.running()):
-        pass
-    writer.stop()
-    final_result = writer.results()
-    write_json(final_result, args.outputpath)
+    run_demo(net, frame_provider, 256, True, False)
