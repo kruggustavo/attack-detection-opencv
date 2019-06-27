@@ -92,7 +92,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -124,7 +124,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -167,7 +167,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 256
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -199,7 +199,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 256
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -231,7 +231,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 256
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -263,7 +263,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 256
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -370,7 +370,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 256
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -402,7 +402,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -434,7 +434,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -466,7 +466,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -498,7 +498,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -530,7 +530,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -562,7 +562,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -594,7 +594,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 1
     kernel_size: 3
     weight_filler {
@@ -753,7 +753,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -785,7 +785,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -817,7 +817,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -849,7 +849,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -881,7 +881,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -913,7 +913,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -945,7 +945,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -977,7 +977,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1009,7 +1009,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1041,7 +1041,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1073,7 +1073,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -1105,7 +1105,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -1200,7 +1200,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1232,7 +1232,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1264,7 +1264,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1296,7 +1296,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1328,7 +1328,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1360,7 +1360,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1392,7 +1392,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1424,7 +1424,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1456,7 +1456,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1488,7 +1488,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1520,7 +1520,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -1552,7 +1552,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -1647,7 +1647,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1679,7 +1679,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1711,7 +1711,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1743,7 +1743,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1775,7 +1775,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1807,7 +1807,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1839,7 +1839,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1871,7 +1871,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1903,7 +1903,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1935,7 +1935,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -1967,7 +1967,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -1999,7 +1999,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -2094,7 +2094,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2126,7 +2126,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2158,7 +2158,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2190,7 +2190,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2222,7 +2222,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2254,7 +2254,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2286,7 +2286,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2318,7 +2318,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2350,7 +2350,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2382,7 +2382,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2414,7 +2414,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -2446,7 +2446,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -2541,7 +2541,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2573,7 +2573,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2605,7 +2605,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2637,7 +2637,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2669,7 +2669,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2701,7 +2701,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2733,7 +2733,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2765,7 +2765,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2797,7 +2797,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2829,7 +2829,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 3
     kernel_size: 7
     weight_filler {
@@ -2861,7 +2861,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -2893,7 +2893,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 64
+    num_output: 128
     pad: 0
     kernel_size: 1
     weight_filler {

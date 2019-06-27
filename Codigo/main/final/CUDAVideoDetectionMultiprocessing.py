@@ -8,6 +8,8 @@ import numpy as np
 import time
 import random
 import threading
+import imutils
+
 
 # Attack detection
 # Detector de ataques y amenazas humanas en imagenes secuenciales mediante el entrenamiento de redes neuronales
@@ -53,9 +55,9 @@ nnet.loadModel("model.json")
 
 netOutput = NO_ATTACK
 Xseconds = 10                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
-Yseconds = 4                                    # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
+Yseconds = 2                                    # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
 
-Xframes = 5                                     # Cantidad mínima de frames en cola para enviar otro frame. Si cantidad es mayor a este valor, no se envian mas frames a la cola
+Xframes = 3                                     # Cantidad mínima de frames en cola para enviar otro frame. Si cantidad es mayor a este valor, no se envian mas frames a la cola
 
 emptyFrame = np.zeros((video_height, video_width, 3), np.uint8)
 skeletonFrame = emptyFrame
@@ -120,7 +122,7 @@ shared_result_q = manager.get_result_q()
 
 # Enviamos un primer frame para activar el mecanismo de envio: solo se envian datos cuando la cola esta vacia
 hasFrame, frame = cap.read()
-frame = cv2.resize(frame, (video_width, video_height))
+#frame = cv2.resize(frame, (video_width, video_height))
 shared_job_q.put(frame)
 print("Sending data to threads. Starting.")
 
@@ -140,7 +142,7 @@ while True:
     #frame = cv2.imread(img_file)
     if hasFrame:
 
-        frame = cv2.resize(frame, (video_width, video_height))
+        #frame = cv2.resize(frame, (video_width, video_height))
 
         if (time.time() - agresionTime) > Xseconds:
             agressionExpired = True
@@ -152,25 +154,26 @@ while True:
         if (time.time() - pointTime) >= Yseconds:
             pointTime = time.time()
             if shared_job_q.qsize() <= Xframes:
-                packetData = {}
-                packetData[frameId] = frame
-                shared_job_q.put(packetData)
+                #packetData = {}
+                #packetData[frameId] = frame
+                shared_job_q.put(frame)
 
                 localFramesDict[frameId] = frame
+
 
         # Se procesa una vez que haya respuesta de hilos (se espera un dict con el id del frame procesado y lista de puntos)
         if shared_result_q.qsize() > 0:
             packetData = shared_result_q.get()
-            returnedFrameId = list(packetData)[0]
+            #returnedFrameId = list(packetData)[0]
 
             # Datos recibidos del cliente
-            pointsFromAllHumans = packetData[returnedFrameId]
+            pointsFromAllHumans = packetData #packetData[returnedFrameId]
 
+            skeletonFrame = emptyFrame.copy()
             netOutput = NO_ATTACK
 
             # Recorremos grupos de puntos de cada humano
             for pointsSingleHuman in pointsFromAllHumans:
-                skeletonFrame = emptyFrame.copy()
                 skeletonFrame = drawer.drawSkeletonPoints(skeletonFrame, pointsSingleHuman)
 
                 angles, lines = drawer.getBodyAngles(pointsSingleHuman)
@@ -184,8 +187,8 @@ while True:
                         pass
                     if netOutput == ATTACK:
                         print("Attack!")
-                        frameToProcess = localFramesDict[returnedFrameId]
-                        attackHandler(frameToProcess, lines)
+                        #frameToProcess = localFramesDict[returnedFrameId]
+                        #attackHandler(frameToProcess, lines)
 
                 # Dibujamos tronco
                 if "trunkPoints" in lines:
@@ -193,14 +196,15 @@ while True:
                     pointB = lines["trunkPoints"][1]
                     cv2.line(skeletonFrame, pointA, pointB, (100, 7, 65), 3, lineType=cv2.LINE_AA)
 
-            cv2.putText(skeletonFrame, ATTACK_STATE[netOutput], (int((video_width / 2) - (len(ATTACK_STATE[netOutput]) * 5)), 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
+            #cv2.putText(skeletonFrame, ATTACK_STATE[netOutput], (int((video_width / 2) - (len(ATTACK_STATE[netOutput]) * 5)), 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
 
-            if weaponInHands == True and netOutput == ATTACK:
-                cv2.circle(skeletonFrame, (video_width - 30, video_height - 30), 25, (0, 0, 255), -1)
+            #if weaponInHands == True:
+            #    cv2.circle(skeletonFrame, (video_width - 30, video_height - 30), 30, (0, 0, 255), -1)
 
-        #skeletonFrame = cv2.addWeighted(frameToProcess, 0.3, skeletonFrame, 0.7, 0)
 
-        frame = np.concatenate((frame, skeletonFrame), axis=1)
+            #skeletonFrame = cv2.addWeighted(frameToProcess, 0.3, skeletonFrame, 0.7, 0)
+
+        #frame = np.concatenate((frame, skeletonFrame), axis=1)
 
         cv2.imshow("Camara", frame)
 

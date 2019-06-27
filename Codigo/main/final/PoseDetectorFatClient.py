@@ -13,7 +13,8 @@ AUTHKEY = b'shufflin'
 frameWidth = frameHeight = 0
 
 weightsFile = "pose/mpi/pose_iter_150000.caffemodel"
-protoFile = "pose/coco/pose_deploy_linevec.prototxt"
+#protoFile = "pose/coco/pose_deploy_linevec.prototxt"
+protoFile = "pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt"
 
 nPoints = 18
 
@@ -232,8 +233,8 @@ def worker(job_q, result_q):
             detected_keypoints = []
             keypoints_list = np.zeros((0, 3))
             # Fix the input Height and get the width according to the Aspect Ratio
-            inHeight = 200
-            inWidth = 320
+            inHeight = 180
+            inWidth = 300
 
             inpBlob = cv2.dnn.blobFromImage(frame, 1.0 / 255, (inWidth, inHeight), (0, 0, 0), swapRB=False, crop=False)
 
@@ -295,7 +296,7 @@ def worker(job_q, result_q):
 
 
 print("Client program started")
-number_of_threads = 5
+number_of_threads = 8
 net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)
 #net.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
 #net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)

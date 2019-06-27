@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-from modules.keypoints import BODY_PARTS_KPT_IDS, BODY_PARTS_PAF_IDS
+from final.modules.keypoints import BODY_PARTS_KPT_IDS, BODY_PARTS_PAF_IDS
 
 
 class Pose(object):
@@ -11,6 +11,9 @@ class Pose(object):
                  'r_hip', 'r_knee', 'r_ank', 'l_hip', 'l_knee', 'l_ank',
                  'r_eye', 'l_eye',
                  'r_ear', 'l_ear']
+
+    POINTS_LABELS = ["c", "n", "hi", "ci", "mi", "hd", "cd", "md", "hpi", "ri", "pi", "hpd", "rd", "pd", "p"]
+
     sigmas = np.array([.26, .79, .79, .72, .62, .79, .72, .62, 1.07, .87, .89, 1.07, .87, .89, .25, .25, .35, .35],
                       dtype=np.float32) / 10.0
     vars = (sigmas * 2) ** 2
@@ -37,21 +40,54 @@ class Pose(object):
             self.id = Pose.last_id + 1
             Pose.last_id += 1
 
+    def getOrderedKeypoints(self):
+        assert self.keypoints.shape == (Pose.num_kpts, 2)
+        finalkeypoints = {}
+        for part_id in range(len(BODY_PARTS_PAF_IDS) - 6):
+            #
+            a = BODY_PARTS_KPT_IDS[part_id][0]
+            pa = self.keypoints[a, 0]
+            if pa != -1:
+                x_a, y_a = self.keypoints[a]
+                finalkeypoints[a] = (x_a, y_a)
+                #cv2.circle(img, (int(x_a), int(y_a)), 3, Pose.color, -1)
+                #cv2.putText(img, str(a), (int(x_a) + 10, int(y_a)), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1,  cv2.LINE_AA)
+
+            #
+            b = BODY_PARTS_KPT_IDS[part_id][1]
+            pb = self.keypoints[b, 0]
+            if pb != -1:
+                x_b, y_b = self.keypoints[b]
+                finalkeypoints[b] = (x_b, y_b)
+                #cv2.circle(img, (int(x_b), int(y_b)), 3, Pose.color, -1)
+                #cv2.putText(img, str(b), (int(x_b) + 10, int(y_b)), cv2.FONT_HERSHEY_SIMPLEX,  0.5, (180, 180, 180), 1, cv2.LINE_AA)
+
+            #if pa != -1 and pb != -1:
+                #cv2.line(img, (int(x_a), int(y_a)), (int(x_b), int(y_b)), Pose.color, 2)
+
+        return finalkeypoints
+
     def draw(self, img):
         assert self.keypoints.shape == (Pose.num_kpts, 2)
 
-        for part_id in range(len(BODY_PARTS_PAF_IDS) - 2):
-            kpt_a_id = BODY_PARTS_KPT_IDS[part_id][0]
-            global_kpt_a_id = self.keypoints[kpt_a_id, 0]
-            if global_kpt_a_id != -1:
-                x_a, y_a = self.keypoints[kpt_a_id]
+        for part_id in range(len(BODY_PARTS_PAF_IDS) - 6):
+            #
+            a = BODY_PARTS_KPT_IDS[part_id][0]
+            pa = self.keypoints[a, 0]
+            if pa != -1:
+                x_a, y_a = self.keypoints[a]
                 cv2.circle(img, (int(x_a), int(y_a)), 3, Pose.color, -1)
-            kpt_b_id = BODY_PARTS_KPT_IDS[part_id][1]
-            global_kpt_b_id = self.keypoints[kpt_b_id, 0]
-            if global_kpt_b_id != -1:
-                x_b, y_b = self.keypoints[kpt_b_id]
+                cv2.putText(img, self.POINTS_LABELS[a], (int(x_a) + 10, int(y_a)), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1,  cv2.LINE_AA)
+
+            #
+            b = BODY_PARTS_KPT_IDS[part_id][1]
+            pb = self.keypoints[b, 0]
+            if pb != -1:
+                x_b, y_b = self.keypoints[b]
                 cv2.circle(img, (int(x_b), int(y_b)), 3, Pose.color, -1)
-            if global_kpt_a_id != -1 and global_kpt_b_id != -1:
+                cv2.putText(img, self.POINTS_LABELS[b], (int(x_b) + 10, int(y_b)), cv2.FONT_HERSHEY_SIMPLEX,  0.5, (180, 180, 180), 1, cv2.LINE_AA)
+
+            if pa != -1 and pb != -1:
                 cv2.line(img, (int(x_a), int(y_a)), (int(x_b), int(y_b)), Pose.color, 2)
 
 

@@ -92,7 +92,7 @@ class Drawer:
 
     def getLabeledPoints(self, points):
         newPoints = {}
-        for idx in range(len(points)):
+        for idx in points:
             if points[idx] != None:
                 newPoints[self.POINTS_LABELS[idx]] = points[idx]
         return newPoints
