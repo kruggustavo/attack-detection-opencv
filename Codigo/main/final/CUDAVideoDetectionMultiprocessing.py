@@ -1,26 +1,32 @@
-import argparse
-
 import cv2
 import numpy as np
 import torch
 import math
 import time
 import queue
+from pygame import mixer
 from threading import Thread
 from final.NeuralNetwork import NeuralNetwork
 from final.Drawer import Drawer
-from pygame import mixer
 from final.models.with_mobilenet import PoseEstimationWithMobileNet
 from final.modules.keypoints import extract_keypoints, group_keypoints
 from final.modules.load_state import load_state
 from final.modules.pose import Pose
 
-# Red neuronal de angulos
-EPOCHS = 1
-nnet = NeuralNetwork(8)
-#nnet.loadTrainingSamples("trainingangles.csv")
-#nnet.trainNetwork(EPOCHS)
-nnet.loadModel("model.json")
+# Utilizar solo cpu, utiliza CUDA cuando es false
+cpu = True
+
+# Inputs de la red neuronal de poses
+net_input_height_size = 92
+
+workpath = "/Volumes/data/Documentos/attack-detection"
+img_file = workpath + "/Imagenes/seniors-walking.jpg"
+videoFile = workpath +"/Videos/10.mp4"
+
+video_width = 460
+video_height = 320
+
+outputVideoSize = (680, 480)
 
 # Estados
 ATTACK = 1
@@ -31,32 +37,32 @@ ATTACK_STATE = {}
 ATTACK_STATE[NO_ATTACK] = "Pose no compatible con ataque"
 ATTACK_STATE[ATTACK] = "Pose compatible con ataque!"
 
-video_width = 320
-video_height = 200
-
 # Dibujador y extractor de angulos
 drawer = Drawer()
 
-# Red neuronal de angulos
-EPOCHS = 1
-anglesNet = NeuralNetwork(8)
-#anglesNet.loadTrainingSamples("trainingangles.csv")
-#anglesNet.trainNetwork(EPOCHS)
-anglesNet.loadModel("model.json")
-#anglesNet.saveModel("model.json")
-
+# Estado
 netOutput = NO_ATTACK
-Xseconds = 10                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
-Yseconds = 0.6                                    # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
 
+Xseconds = 15                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
+Yseconds = 1.6                                   # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
 Xframes = 3                                     # Cantidad mínima de frames en cola para enviar otro frame. Si cantidad es mayor a este valor, no se envian mas frames a la cola
+fontFactor = 46.5                               # Factor de multiplicacion para tamaño de fuente
 
+XsecondsForAgression = 5                        # Si ocurren Y frames de agresiones en X segundos, considerar agresion
+YagressionFrames = 3                            # Deben ocurrir Y frames de agresiones en X segundos
+blockAgressionCounter = 0
+agressionBlockTime = time.time()
+
+# Frames vacios para dibujar esqueletos
 emptyFrame = np.zeros((video_height, video_width, 3), np.uint8)
-skeletonFrame = emptyFrame
-frameToProcess = emptyFrame
+skeletonFrame = emptyFrame.copy()
+frameToProcess = emptyFrame.copy()
 
+# Reproductor de audio
 mixer.init()
 mixer.music.load("47528846.mp3")
+
+# Tiempo transcurrido desde la ultima agresion
 agresionTime = time.time() - Xseconds
 
 hasFrame = True
@@ -69,16 +75,49 @@ weaponBoxMargin = 50
 cascadeGunsClassifier = cv2.CascadeClassifier("guns.xml")
 weaponInHands = False
 
+# Colas de trabajo
 job_q = queue.Queue()
 result_q = queue.Queue()
 
+# Objeto dibujante y extractor de angulos y lineas
 drawer = Drawer()
+
+# Frame vacio para impresion de mensajes al usuario
+board = np.zeros((video_height, video_width * 2, 3), np.uint8)
+currentboard = board.copy()
+boardFontSize = 0.3
+Ytext = (boardFontSize * fontFactor)            # Posicion donde empezar a imprimir texto
+
+# Red neuronal de angulos
+mustTrain = False
+anglesNet = NeuralNetwork(8)
+if mustTrain == True:
+    EPOCHS = 3
+    anglesNet.loadTrainingSamples("trainingangles_cuda.csv")
+    anglesNet.trainNetwork(EPOCHS)
+    anglesNet.saveModel("model_cuda.json")
+    quit(0)
+else:
+    anglesNet.loadModel("model_cuda.json")
+
+# Parametros del detector de poses
+pad_value = (0, 0, 0)
+img_mean = (128, 128, 128)
+img_scale = 1 / 256
+stride = 8
+upsample_ratio = 4
+num_keypoints = Pose.num_kpts
+poseNet = PoseEstimationWithMobileNet()
+checkpoint = torch.load("checkpoint_iter_370000.pth", map_location='cpu')
+load_state(poseNet, checkpoint)
+poseNet = poseNet.eval()
+if not cpu:
+    poseNet = poseNet.cuda()
 
 def normalize(img, img_mean, img_scale):
     img = np.array(img, dtype=np.float32)
     img = (img - img_mean) * img_scale
     return img
-
 
 def pad_width(img, stride, pad_value, min_dims):
     h, w, _ = img.shape
@@ -94,14 +133,84 @@ def pad_width(img, stride, pad_value, min_dims):
     padded_img = cv2.copyMakeBorder(img, pad[0], pad[2], pad[1], pad[3], cv2.BORDER_CONSTANT, value=pad_value)
     return padded_img, pad
 
-def worker(i, job_q, result_q):
-    global poseNet, drawer, anglesNet, NO_ATTACK, ATTACK
-    print(str(i) + " thread started..")
-    while True:
-        netOutput = NO_ATTACK
+def printText(text, color):
+    global Ytext, currentboard
+    Ytext = Ytext + (boardFontSize * fontFactor)
+    height, width, _ = currentboard.shape
+    if Ytext >= height:
+        Ytext = (boardFontSize * fontFactor)
+        currentboard = board.copy()
 
+    cv2.putText(currentboard, text, (5, int(Ytext)), cv2.FONT_HERSHEY_SIMPLEX, boardFontSize, color, lineType=cv2.LINE_AA)
+
+def attackHandler(frame, lines):
+    global agresionTime, weaponInHands, blockAgressionCounter, agressionBlockTime
+    agressionConfirmed = False
+
+    #XsecondsForAgression = 3  # Si ocurren Y frames de agresiones en X segundos, considerar agresion
+    #YagressionFrames = 3  # Deben ocurrir Y frames de agresiones en X segundos
+    #blockAgressionCounter = 0
+    #agressionBlockTime = time.time()
+
+    blockAgressionCounter = blockAgressionCounter + 1
+    # Dentro del tiempo
+    if time.time() <= (agressionBlockTime + XsecondsForAgression):
+        if YagressionFrames - blockAgressionCounter > 0:
+            printText("Quedan " + str(YagressionFrames - blockAgressionCounter) + " para confirmar agresion.", (255,255,255))
+
+        # Tenemos Y agresiones contadas en X segundos: confirmar agresion
+        if blockAgressionCounter == YagressionFrames:
+            blockAgressionCounter = 0
+            agressionConfirmed = True
+
+        # Si falta 1 para confirmar, alargar tiempo
+        #if YagressionFrames - blockAgressionCounter == 1:
+        #    agressionBlockTime = agressionBlockTime + XsecondsForAgression
+
+    # Fuera del tiempo
+    else:
+        blockAgressionCounter = 0
+        agressionBlockTime = time.time()
+        printText("Falso positivo unico.", (255,255,255))
+
+
+    if agressionConfirmed == True:
+        printText(ATTACK_STATE[netOutput], (0, 95, 255))
+
+        arms = ["leftForearmPoints", "rightForearmPoints"]
+        if agressionExpired == True:
+            agresionTime = time.time()
+            mixer.music.play()
+
+        # Verifica armas en frame cercanos a manos
+        results = cascadeGunsClassifier.detectMultiScale(cv2.resize(frame, outputVideoSize), 1.5, 5, minSize=(100, 100))
+        if len(results) > 0:
+            weaponInHands = False
+            # Agregamos margenes a imagenes de armas
+            for (x, y, w, h) in results:
+                cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 1)
+                x -= weaponBoxMargin
+                y -= weaponBoxMargin
+                w += weaponBoxMargin
+                h += weaponBoxMargin
+                for arm in arms:
+                    if arm in lines:
+                        hx, hy = lines[arm][1] # Puntos de la mano
+                        # Si coordenadas de manos estan dentro del area de arma detectada
+                        if hx >= x and hx <= (x + w) and hy >= y and hy <= (y + h):
+                            weaponInHands = True
+
+        if weaponInHands == True:
+            printText("Arma de fuego detectada con pose compatible. Posible agresion en curso.", (66, 66, 255))
+
+
+def worker(job_q, result_q):
+    global poseNet, upsample_ratio, num_keypoints, stride, img_scale, img_mean, pad_value
+    while True:
         # Obtenemos frame del servidor de hilos
-        img = job_q.get() #get_nowait()
+        img = job_q.get()
+        angles = {}
+
         height, width, _ = img.shape
         scale = net_input_height_size / height
 
@@ -135,8 +244,6 @@ def worker(i, job_q, result_q):
             all_keypoints[kpt_id, 0] = (all_keypoints[kpt_id, 0] * stride / upsample_ratio - pad[1]) / scale
             all_keypoints[kpt_id, 1] = (all_keypoints[kpt_id, 1] * stride / upsample_ratio - pad[0]) / scale
 
-        labeledKeypoints = {}
-
         # n = cantidad de points sets (personas distintas)
         for n in range(len(pose_entries)):
             if len(pose_entries[n]) == 0:
@@ -150,85 +257,72 @@ def worker(i, job_q, result_q):
 
             labeledKeypoints = drawer.getLabeledPoints(pose.getOrderedKeypoints())
 
-            img  = drawer.drawSkeletonPoints(img, labeledKeypoints)
-            angles, lines = drawer.getBodyAngles(labeledKeypoints)
-
-            if len(angles) > 0:
-                angles = np.array([list(angles.values())])
-                print(angles)
-                try:
-                    netOutput = int(anglesNet.predict(angles))
-                except Exception as e:
-                    print(str(e))
-                    pass
-
-                if netOutput == ATTACK:
-                    print("Attack!")
+            my_list = []
+            my_list.append(labeledKeypoints)
+            my_list.append(img)
+            result_q.put(my_list)
 
 
-            # Dibujamos tronco
-            if "trunkPoints" in lines:
-                pointA = lines["trunkPoints"][0]
-                pointB = lines["trunkPoints"][1]
-                cv2.line(img, pointA, pointB, (100, 7, 65), 3, lineType=cv2.LINE_AA)
-
-
-
-
-        result_q.put(img)
-
-
-
-
-net_input_height_size = 64
-cpu = True
-track_ids = True
-pad_value = (0, 0, 0)
-img_mean = (128, 128, 128)
-img_scale = 1 / 256
-stride = 8
-upsample_ratio = 4
-num_keypoints = Pose.num_kpts
-previous_poses = []
-
-checkpoint_path = "checkpoint_iter_370000.pth"
-poseNet = PoseEstimationWithMobileNet()
-checkpoint = torch.load(checkpoint_path, map_location='cpu')
-load_state(poseNet, checkpoint)
-poseNet = poseNet.eval()
-if not cpu:
-    net = poseNet.cuda()
-
-num_threads = 18
-
-for i in range(num_threads):
-    t = Thread(target=worker, args=(i, job_q, result_q))
-    t.setDaemon(True)
+for i in range(20):
+    t = Thread(target=worker, args=(job_q, result_q))
     t.start()
 
-minimumStackSize = 5
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(videoFile) # videoFile
+
+empty = np.zeros((video_height, video_width, 3), np.uint8)
+out = empty.copy()
+
+pointTime = time.time() + Yseconds
+agressionBlockTime = time.time()
+
+windowName = "Camara"
+cv2.namedWindow(windowName);
+cv2.moveWindow(windowName, 20,20);
+printText("Inicio...", (255, 255, 255))
 was_read, img = cap.read()
-orig_img = img.copy()
-img = cv2.resize(img, (video_width, video_height))
-out = np.zeros((video_height, video_width, 3), np.uint8)
-
-job_q.put(img)
-pointTime = time.time()
 while True:
-    was_read, img = cap.read()
-    img = cv2.resize(img, (video_width, video_height))
+    netOutput = NO_ATTACK
+    weaponInHands = False
 
-    if time.time() - pointTime >= Yseconds:
-        job_q.put(img)
+    try:
+        was_read, img = cap.read()
+        img = cv2.resize(img, (video_width, video_height))
+    except:
+        pass
+
+    agressionExpired = ((time.time() - agresionTime) > Xseconds)
+
+    if (time.time() - pointTime >= Yseconds and job_q.qsize() <= Xframes) or result_q.qsize() > 0:
         pointTime = time.time()
+        job_q.put(img)
 
-    if result_q.qsize() > 0 :
-        out = result_q.get()
+    if result_q.qsize() > 0:
+        my_list = result_q.get()
+        labeledKeypoints = my_list[0]
+        processedFrame = my_list[1]
 
-    img = np.concatenate((img, out), axis=1)
-    cv2.imshow('Camara', img)
+        angles, lines = drawer.getBodyAngles(labeledKeypoints)
+        out = drawer.drawSkeletonLines(processedFrame, lines)
 
+        if len(angles) > 0:
+            angles = np.array([list(angles.values())])
+            printText(str(angles), (0, 255, 0))
+            try:
+                netOutput = int(anglesNet.predict(angles))
+            except Exception as e:
+                print(str(e))
+                pass
+
+            if netOutput == ATTACK:
+                attackHandler(out, lines)
+
+    try:
+        img = np.concatenate((img, out), axis=1)
+        img = np.concatenate((img, currentboard), axis=0)
+    except:
+        pass
+
+    cv2.imshow(windowName, cv2.resize(img, outputVideoSize))
 
     key = cv2.waitKey(33)
     if key == 27:  # esc

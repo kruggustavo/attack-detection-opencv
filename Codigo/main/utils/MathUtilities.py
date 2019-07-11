@@ -37,7 +37,14 @@ class MathUtilities:
         x1, y1 = pt1
         x2, y2 = pt2
 
-        return (y2 - y1) / (x2 - x1)
+        # Evitar division por cero
+        result = 0
+        if x2 - x1 == 0:
+            result = (y2 - y1) / 1
+        else:
+            result = (y2 - y1) / (x2 - x1)
+
+        return result
 
     # Perpendicular de una recta
     @staticmethod
@@ -47,6 +54,7 @@ class MathUtilities:
 
         # Ecuacion de la recta es: y = mx + b    (m : pendiente)
         m = MathUtilities.getSlope(pt1, pt2) + 0.1
+        m = 1 if m == 0 else m                                      # Evitar division por cero
 
         # Pendiente negativa
         neg_m = (1 / m) * -1
@@ -56,6 +64,7 @@ class MathUtilities:
 
         #Obtenemos X en funcion de targetY utilizando la ecuacion de la recta, la ecuacion despejada para X es: x = (y - b) / m
         try:
+            neg_m = 1 if neg_m == 0 else neg_m                      # Evitar division por cero
             newX = int((targetY - b) / neg_m)
 
             newPoint = (newX, targetY)

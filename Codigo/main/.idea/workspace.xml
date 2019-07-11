@@ -2,19 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de1e1734-5595-47d8-b788-d94778d6cfdd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final/CUDALivePoseGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Desarrollo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Desarrollo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/Drawer.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/Drawer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/modules/pose.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/modules/pose.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/pose/coco/pose_deploy_linevec.prototxt" beforeDir="false" afterPath="$PROJECT_DIR$/final/pose/coco/pose_deploy_linevec.prototxt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/model.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/MathUtilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/MathUtilities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Tesis.lof" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.lof" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Tesis.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tesis.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Tesis.toc" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tesis.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Videos/3.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/../../Videos/3.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Videos/4.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/../../Videos/4.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Videos/5.mp4" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,36 +31,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="225">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="153" column="66" lean-forward="true" selection-start-line="153" selection-start-column="66" selection-end-line="153" selection-end-column="66" />
+            <state relative-caret-position="169">
+              <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/final/NeuralNetwork.py">
+        <entry file="file://$PROJECT_DIR$/final/CUDALivePoseGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="51" column="33" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="33" />
+            <state relative-caret-position="135">
+              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,16 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>op</find>
-      <find>op.</find>
-      <find>framesQueue</find>
-      <find>keypointsMapping</find>
-      <find>val</find>
-      <find>image1</find>
-      <find>humanPartsDict[</find>
-      <find>protoFile</find>
-      <find>legs.default</find>
-      <find>print</find>
       <find>emtpy</find>
       <find>empty</find>
       <find>pointsQueue</find>
@@ -104,6 +85,16 @@
       <find>infer_fast</find>
       <find>POINTS_LABELS</find>
       <find>drawer</find>
+      <find>track_ids</find>
+      <find>agresionTime</find>
+      <find>attackHandler</find>
+      <find>weaponInHands</find>
+      <find>orig_img</find>
+      <find>creating</find>
+      <find>combinations</find>
+      <find>min_variation</find>
+      <find>nnet</find>
+      <find>Xframes</find>
     </findStrings>
     <replaceStrings>
       <replace>\\</replace>
@@ -135,8 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hog/TrainDetector.py" />
-        <option value="$PROJECT_DIR$/multiplehog/multiclassdetector.py" />
         <option value="$PROJECT_DIR$/multiplehog/svm_pipeline.py" />
         <option value="$PROJECT_DIR$/multiplehog/main.py" />
         <option value="$PROJECT_DIR$/tests/test.py" />
@@ -170,7 +159,6 @@
         <option value="$PROJECT_DIR$/final/OpenPoseMutiple.py" />
         <option value="$PROJECT_DIR$/final/OpenPoseLight.py" />
         <option value="$PROJECT_DIR$/final/OpenPose.py" />
-        <option value="$PROJECT_DIR$/utils/MathUtilities.py" />
         <option value="$PROJECT_DIR$/final/LivePoseGenerator.py" />
         <option value="$PROJECT_DIR$/hog/WeaponsDetection.py" />
         <option value="$PROJECT_DIR$/utils/FramesFromVideo.py" />
@@ -185,12 +173,15 @@
         <option value="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" />
         <option value="$PROJECT_DIR$/final/modules/pose.py" />
         <option value="$PROJECT_DIR$/final/Drawer.py" />
+        <option value="$PROJECT_DIR$/final/CUDALivePoseGenerator.py" />
+        <option value="$PROJECT_DIR$/utils/MathUtilities.py" />
+        <option value="$PROJECT_DIR$/final/MotionDetector.py" />
         <option value="$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="y" value="30" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="22" />
     <option name="width" value="1364" />
     <option name="height" value="694" />
   </component>
@@ -225,22 +216,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/final" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/final" />
-      <recent name="$PROJECT_DIR$/hog" />
-      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo\python\main\multiplehog" />
-      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo\python\main\utils" />
-      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$/hog" />
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="D:\Google Drive\Tesis\Desarrollo\python\main\tests" />
       <recent name="D:\Google Drive\Tesis\Desarrollo\python\main\utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/final" />
+      <recent name="$PROJECT_DIR$/hog" />
+      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo\python\main\multiplehog" />
+      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo\python\main\utils" />
+      <recent name="C:\Users\Gustavo Krug\Desktop\Tesis\Desarrollo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -256,6 +247,27 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.CUDAVideoDetectionMultiprocessing">
+    <configuration name="CUDALivePoseGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Desarrollo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/CUDALivePoseGenerator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="CUDAVideoDetectionMultiprocessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Desarrollo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -269,27 +281,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Desarrollo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hog" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hog/Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -397,19 +388,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Main" />
       <item itemvalue="Python.PoseDetectorFatClientCUDA" />
       <item itemvalue="Python.PoseDetectorFatClient" />
       <item itemvalue="Python.VideoDetectionMultiprocessing" />
       <item itemvalue="Python.CUDAVideoDetectionMultiprocessing" />
+      <item itemvalue="Python.CUDALivePoseGenerator" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.CUDAVideoDetectionMultiprocessing" />
+        <item itemvalue="Python.CUDALivePoseGenerator" />
         <item itemvalue="Python.VideoDetectionMultiprocessing" />
         <item itemvalue="Python.PoseDetectorFatClient" />
         <item itemvalue="Python.PoseDetectorFatClientCUDA" />
-        <item itemvalue="Python.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -427,16 +418,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1364" height="694" extended-state="1" />
+    <frame x="0" y="22" width="1364" height="694" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.21396731" />
-      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4971591" visible="true" weight="0.26209977" />
+      <window_info id="Structure" order="1" weight="0.24944155" />
       <window_info id="Favorites" order="2" sideWeight="0.50284094" side_tool="true" weight="0.17433235" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2512909" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.28915662" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29568106" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5182724" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -449,22 +440,28 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
     </layout>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/final/Drawer.py</url>
-          <line>93</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4971591" weight="0.26209977" />
+      <window_info id="Structure" order="1" weight="0.24944155" />
+      <window_info id="Favorites" order="2" sideWeight="0.50284094" side_tool="true" weight="0.17433235" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6063123" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5182724" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.22916667" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="3" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1760500034/dlib/simple_object_detector_training_options.py" />
-    <entry file="file://$PROJECT_DIR$/utils/MyImageUtils.py" />
-    <entry file="file://$PROJECT_DIR$/utils/Common.py" />
     <entry file="file://$PROJECT_DIR$/tests/cornersdetection.py" />
     <entry file="file://$PROJECT_DIR$/tests/cascade_detection.py" />
     <entry file="file://$PROJECT_DIR$/tests/tracker.py" />
@@ -511,13 +508,6 @@
     <entry file="file://$PROJECT_DIR$/final/OpenPoseLight.py" />
     <entry file="file://$PROJECT_DIR$/final/PoseDetectorClient.py" />
     <entry file="file://$PROJECT_DIR$/hog/Live.py" />
-    <entry file="file://$PROJECT_DIR$/utils/MathUtilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="69" column="74" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hog/Drawer.py" />
     <entry file="file://$PROJECT_DIR$/final/OpenPoseMutiple.py" />
     <entry file="file://$PROJECT_DIR$/utils/FramesFromVideo.py">
@@ -585,16 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/LivePoseGenerator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="278" selection-start-line="278" selection-end-line="279" selection-end-column="18" />
-          <folding>
-            <element signature="e#84#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/final/OpenPose.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -606,9 +586,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/final/val.py" />
-    <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClientCUDA.py" />
     <entry file="file://$PROJECT_DIR$/final/modules/keypoints.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1197">
@@ -626,36 +604,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="204" column="37" selection-start-line="204" selection-start-column="35" selection-end-line="204" selection-end-column="37" />
-          <folding>
-            <element signature="e#84#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.6/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="863" selection-start-line="863" selection-end-line="863" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final/Drawer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-697">
-          <caret line="119" column="54" lean-forward="true" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/lib/python3.6/threading.py" />
     <entry file="file://$PROJECT_DIR$/final/NeuralNetwork.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="465">
           <caret line="51" column="33" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="33" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
@@ -663,22 +615,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py">
+    <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="153" column="66" lean-forward="true" selection-start-line="153" selection-start-column="66" selection-end-line="153" selection-end-column="66" />
+        <state relative-caret-position="-1113">
+          <caret line="204" column="37" selection-start-line="204" selection-start-column="35" selection-end-line="204" selection-end-column="37" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#84#121#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        <state relative-caret-position="2444">
+          <caret line="197" selection-start-line="197" selection-end-line="198" selection-end-column="101" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/Drawer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="59" column="25" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/LivePoseGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/trainingangles_output_cuda.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="19" column="32" selection-start-line="19" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/MathUtilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/MotionDetector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding>
+            <element signature="e#90#106#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/CUDALivePoseGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
