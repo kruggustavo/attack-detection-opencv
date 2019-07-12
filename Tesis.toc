@@ -32,55 +32,55 @@
 \contentsline {section}{\numberline {6.2}M\IeC {\'e}todos de clasificaci\IeC {\'o}n}{26}{section.6.2}% 
 \contentsline {subsection}{\numberline {6.2.1}Regresi\IeC {\'o}n Lineal}{26}{subsection.6.2.1}% 
 \contentsline {subsection}{\numberline {6.2.2}Regresi\IeC {\'o}n Log\IeC {\'\i }stica}{27}{subsection.6.2.2}% 
-\contentsline {subsection}{\numberline {6.2.3}M\IeC {\'a}quinas de Vectores Soporte}{27}{subsection.6.2.3}% 
-\contentsline {subsubsection}{SVM Multiclase}{29}{figure.caption.9}% 
-\contentsline {subsection}{\numberline {6.2.4}Conceptos de Redes Neuronales Artificiales}{29}{subsection.6.2.4}% 
+\contentsline {subsection}{\numberline {6.2.3}M\IeC {\'a}quinas de Vectores Soporte}{28}{subsection.6.2.3}% 
+\contentsline {subsubsection}{SVM Multiclase}{28}{figure.caption.8}% 
+\contentsline {subsection}{\numberline {6.2.4}Redes Neuronales Artificiales}{30}{subsection.6.2.4}% 
 \contentsline {subsection}{\numberline {6.2.5}Arquitectura de una red neuronal artificial}{30}{subsection.6.2.5}% 
 \contentsline {subsection}{\numberline {6.2.6}Redes neuronales multicapas}{31}{subsection.6.2.6}% 
-\contentsline {subsubsection}{Perceptr\IeC {\'o}n}{32}{figure.caption.12}% 
-\contentsline {subsubsection}{Backpropagation}{32}{figure.caption.12}% 
-\contentsline {subsubsection}{Tasa de aprendizaje}{33}{figure.caption.12}% 
-\contentsline {subsubsection}{Funci\IeC {\'o}n de p\IeC {\'e}rdida}{33}{figure.caption.12}% 
-\contentsline {subsubsection}{Optimizadores de redes neuronales artificiales}{33}{figure.caption.12}% 
+\contentsline {subsubsection}{Perceptr\IeC {\'o}n}{32}{figure.caption.11}% 
+\contentsline {subsubsection}{Backpropagation}{32}{figure.caption.11}% 
+\contentsline {subsubsection}{Tasa de aprendizaje}{33}{figure.caption.11}% 
+\contentsline {subsubsection}{Funci\IeC {\'o}n de p\IeC {\'e}rdida}{33}{figure.caption.11}% 
+\contentsline {subsubsection}{Optimizadores de redes neuronales artificiales}{33}{figure.caption.11}% 
 \contentsline {subsection}{\numberline {6.2.7}Funciones de capas de redes neuronales artificiales}{34}{subsection.6.2.7}% 
 \contentsline {subsubsection}{Funciones de entrada}{34}{subsection.6.2.7}% 
 \contentsline {subsubsection}{Funciones de activaci\IeC {\'o}n}{35}{Item.24}% 
-\contentsline {subsubsection}{Funciones de salida}{36}{Item.27}% 
-\contentsline {chapter}{\numberline {7}Procesamiento gr\IeC {\'a}fico}{37}{chapter.7}% 
-\contentsline {section}{\numberline {7.1}Visi\IeC {\'o}n por computadora}{37}{section.7.1}% 
-\contentsline {subsection}{\numberline {7.1.1}Detecci\IeC {\'o}n y reconocimiento de objetos en im\IeC {\'a}genes}{37}{subsection.7.1.1}% 
-\contentsline {subsection}{\numberline {7.1.2}Histograma de Gradientes Orientados}{40}{subsection.7.1.2}% 
-\contentsline {section}{\numberline {7.2}Herramientas de visi\IeC {\'o}n por computadora}{42}{section.7.2}% 
-\contentsline {subsection}{\numberline {7.2.1}OpenCV}{42}{subsection.7.2.1}% 
-\contentsline {subsubsection}{Clasificadores en Cascada}{43}{subsection.7.2.1}% 
-\contentsline {subsubsection}{Redes Neuronales Profundas}{44}{figure.caption.14}% 
-\contentsline {subsubsection}{Redes Neuronales Convolucionales}{44}{figure.caption.14}% 
-\contentsline {chapter}{\numberline {8}Desarrollo de software}{45}{chapter.8}% 
-\contentsline {section}{\numberline {8.1}Pruebas de estimaci\IeC {\'o}n de poses humanas}{45}{section.8.1}% 
-\contentsline {subsection}{\numberline {8.1.1}Prueba 1: Clasificador SVM-HOG}{45}{subsection.8.1.1}% 
-\contentsline {subsubsection}{Justificaci\IeC {\'o}n}{45}{subsection.8.1.1}% 
-\contentsline {subsubsection}{Descripci\IeC {\'o}n}{47}{Item.38}% 
-\contentsline {subsubsection}{Resultados}{50}{figure.caption.17}% 
-\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{51}{figure.caption.18}% 
-\contentsline {subsection}{\numberline {8.1.2}Prueba 2: AlphaPose}{52}{subsection.8.1.2}% 
-\contentsline {subsubsection}{Descripci\IeC {\'o}n}{52}{subsection.8.1.2}% 
-\contentsline {subsubsection}{Resultados}{53}{figure.caption.19}% 
-\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{53}{figure.caption.19}% 
-\contentsline {subsection}{\numberline {8.1.3}Prueba 3: Modelo DNN Caffe en OpenCV}{54}{subsection.8.1.3}% 
-\contentsline {subsubsection}{Descripci\IeC {\'o}n}{54}{subsection.8.1.3}% 
-\contentsline {subsubsection}{Resultados}{55}{subsection.8.1.3}% 
-\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{55}{subsection.8.1.3}% 
-\contentsline {section}{\numberline {8.2}Extracci\IeC {\'o}n de poses humanas}{56}{section.8.2}% 
-\contentsline {section}{\numberline {8.3}C\IeC {\'a}lculo angular de extremidades}{57}{section.8.3}% 
-\contentsline {subsection}{\numberline {8.3.1}Estimaci\IeC {\'o}n de tronco}{57}{subsection.8.3.1}% 
-\contentsline {subsection}{\numberline {8.3.2}Representaci\IeC {\'o}n interna de partes del cuerpo}{59}{subsection.8.3.2}% 
-\contentsline {subsection}{\numberline {8.3.3}Generaci\IeC {\'o}n de datos de entrenamiento}{59}{subsection.8.3.3}% 
-\contentsline {section}{\numberline {8.4}Entrenamiento de una red neuronal artificial}{60}{section.8.4}% 
-\contentsline {subsection}{\numberline {8.4.1}B\IeC {\'u}squeda de un modelo \IeC {\'o}ptimo}{61}{subsection.8.4.1}% 
-\contentsline {subsubsection}{Pruebas con modelos de red}{61}{subsection.8.4.1}% 
-\contentsline {section}{\numberline {8.5}Predicci\IeC {\'o}n de poses compatibles con amenazas o agresiones}{62}{section.8.5}% 
-\contentsline {section}{\numberline {8.6}Detecci\IeC {\'o}n de armas utilizando detectores en cascada}{63}{section.8.6}% 
-\contentsline {chapter}{\numberline {9}Conclusiones}{65}{chapter.9}% 
-\contentsline {chapter}{\numberline {10}Trabajos a futuro}{66}{chapter.10}% 
-\contentsline {chapter}{\numberline {11}Glosario de T\IeC {\'e}rminos}{67}{chapter.11}% 
-\contentsline {chapter}{Bibliograf\'{\i }a}{71}{chapter*.27}% 
+\contentsline {subsubsection}{Funciones de salida}{37}{Item.27}% 
+\contentsline {chapter}{\numberline {7}Procesamiento gr\IeC {\'a}fico}{38}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}Visi\IeC {\'o}n por computadora}{38}{section.7.1}% 
+\contentsline {subsection}{\numberline {7.1.1}Detecci\IeC {\'o}n y reconocimiento de objetos en im\IeC {\'a}genes}{38}{subsection.7.1.1}% 
+\contentsline {subsection}{\numberline {7.1.2}Histograma de Gradientes Orientados}{41}{subsection.7.1.2}% 
+\contentsline {section}{\numberline {7.2}Herramientas de visi\IeC {\'o}n por computadora}{43}{section.7.2}% 
+\contentsline {subsection}{\numberline {7.2.1}OpenCV}{43}{subsection.7.2.1}% 
+\contentsline {subsubsection}{Clasificadores en Cascada}{44}{subsection.7.2.1}% 
+\contentsline {subsubsection}{Redes Neuronales Profundas}{45}{figure.caption.13}% 
+\contentsline {subsubsection}{Redes Neuronales Convolucionales}{45}{figure.caption.13}% 
+\contentsline {chapter}{\numberline {8}Desarrollo de software}{46}{chapter.8}% 
+\contentsline {section}{\numberline {8.1}Pruebas de estimaci\IeC {\'o}n de poses humanas}{46}{section.8.1}% 
+\contentsline {subsection}{\numberline {8.1.1}Prueba 1: Clasificador SVM-HOG}{46}{subsection.8.1.1}% 
+\contentsline {subsubsection}{Justificaci\IeC {\'o}n}{46}{subsection.8.1.1}% 
+\contentsline {subsubsection}{Descripci\IeC {\'o}n}{48}{Item.38}% 
+\contentsline {subsubsection}{Resultados}{51}{figure.caption.16}% 
+\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{52}{figure.caption.17}% 
+\contentsline {subsection}{\numberline {8.1.2}Prueba 2: AlphaPose}{53}{subsection.8.1.2}% 
+\contentsline {subsubsection}{Descripci\IeC {\'o}n}{53}{subsection.8.1.2}% 
+\contentsline {subsubsection}{Resultados}{54}{figure.caption.18}% 
+\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{54}{figure.caption.18}% 
+\contentsline {subsection}{\numberline {8.1.3}Prueba 3: Modelo DNN Caffe en OpenCV}{55}{subsection.8.1.3}% 
+\contentsline {subsubsection}{Descripci\IeC {\'o}n}{55}{subsection.8.1.3}% 
+\contentsline {subsubsection}{Resultados}{56}{subsection.8.1.3}% 
+\contentsline {subsubsection}{Conclusi\IeC {\'o}n}{56}{subsection.8.1.3}% 
+\contentsline {section}{\numberline {8.2}Extracci\IeC {\'o}n de poses humanas}{57}{section.8.2}% 
+\contentsline {section}{\numberline {8.3}C\IeC {\'a}lculo angular de extremidades}{58}{section.8.3}% 
+\contentsline {subsection}{\numberline {8.3.1}Estimaci\IeC {\'o}n de tronco}{58}{subsection.8.3.1}% 
+\contentsline {subsection}{\numberline {8.3.2}Representaci\IeC {\'o}n interna de partes del cuerpo}{60}{subsection.8.3.2}% 
+\contentsline {subsection}{\numberline {8.3.3}Generaci\IeC {\'o}n de datos de entrenamiento}{60}{subsection.8.3.3}% 
+\contentsline {section}{\numberline {8.4}Entrenamiento de una red neuronal artificial}{61}{section.8.4}% 
+\contentsline {subsection}{\numberline {8.4.1}B\IeC {\'u}squeda de un modelo \IeC {\'o}ptimo}{62}{subsection.8.4.1}% 
+\contentsline {subsubsection}{Pruebas con modelos de red}{62}{subsection.8.4.1}% 
+\contentsline {section}{\numberline {8.5}Predicci\IeC {\'o}n de poses compatibles con amenazas o agresiones}{63}{section.8.5}% 
+\contentsline {section}{\numberline {8.6}Detecci\IeC {\'o}n de armas utilizando detectores en cascada}{64}{section.8.6}% 
+\contentsline {chapter}{\numberline {9}Conclusiones}{66}{chapter.9}% 
+\contentsline {chapter}{\numberline {10}Trabajos a futuro}{67}{chapter.10}% 
+\contentsline {chapter}{\numberline {11}Glosario de T\IeC {\'e}rminos}{68}{chapter.11}% 
+\contentsline {chapter}{Bibliograf\'{\i }a}{72}{chapter*.26}% 

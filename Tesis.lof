@@ -5,30 +5,29 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Ejemplo de representaci\IeC {\'o}n de una pose en un ni\IeC {\~n}o donde se dibujan las l\IeC {\'\i }neas sobre los elementos m\IeC {\'a}s importantes que la conforman. Fuente: \url {pixabay.com}\relax }}{21}{figure.caption.4}% 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Pose humana compatible con amenaza (uso de armas). Fuente: \url {pixabay.com}\relax }}{22}{figure.caption.5}% 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Pictorial Structures Model. Fuente: Dom\IeC {\'e}nech.\relax }}{23}{figure.caption.6}% 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Pictorial Structures Model. Fuente: Dom\IeC {\'e}nech.\relax }}{23}{figure.caption.5}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Regresi\IeC {\'o}n lineal, datos de salida en un plano cartesiano con el l\IeC {\'\i }mite de decisi\IeC {\'o}n\relax }}{27}{figure.caption.7}% 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Regresi\IeC {\'o}n log\IeC {\'\i }stica, datos de salida en un plano cartesiano con el l\IeC {\'\i }mite de decisi\IeC {\'o}n\relax }}{28}{figure.caption.8}% 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces SVM con hiperplano \IeC {\'o}ptimo. Fuente: Tutorial sobre M\IeC {\'a}quinas de Vectores Soporte (SVM) \cite {svm1}\relax }}{28}{figure.caption.9}% 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Estructura superficial de una neurona natural.\relax }}{30}{figure.caption.10}% 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Estructura de una red neuronal simple.\relax }}{31}{figure.caption.11}% 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Estructura de una red neuronal con m\IeC {\'u}ltiples capas.\relax }}{31}{figure.caption.12}% 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Regresi\IeC {\'o}n lineal, datos de salida en un plano cartesiano con el l\IeC {\'\i }mite de decisi\IeC {\'o}n. Fuente propia.\relax }}{27}{figure.caption.6}% 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Regresi\IeC {\'o}n log\IeC {\'\i }stica, datos de salida en un plano cartesiano con el l\IeC {\'\i }mite de decisi\IeC {\'o}n. Fuente propia.\relax }}{28}{figure.caption.7}% 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces SVM con hiperplano \IeC {\'o}ptimo. Fuente: Suarez (2014) \relax }}{29}{figure.caption.8}% 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Estructura superficial de una neurona natural. Fuente propia.\relax }}{30}{figure.caption.9}% 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Estructura de una red neuronal simple. Fuente propia.\relax }}{31}{figure.caption.10}% 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Estructura de una red neuronal con m\IeC {\'u}ltiples capas. Fuente propia.\relax }}{32}{figure.caption.11}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces imagen de un hombre, y los gradientes obtenidos de la misma. Fuente Dalal y Trigg (2005) \cite {hog1} \relax }}{41}{figure.caption.13}% 
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Entradas (Features) para los distintos clasificadores en cascada Fuente: OpenCV Reference Manual.\relax }}{43}{figure.caption.14}% 
+\contentsline {figure}{\numberline {7.1}{\ignorespaces imagen de un hombre, y los gradientes obtenidos de la misma. Fuente Dalal y Trigg (2005) \relax }}{42}{figure.caption.12}% 
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Entradas (Features) para los distintos clasificadores en cascada Fuente: OpenCV Reference Manual.\relax }}{44}{figure.caption.13}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Una de las im\IeC {\'a}genes del video de pruebas donde se observa una persona posiblemente en pose de amenaza con arma de fuego corta.\relax }}{47}{figure.caption.15}% 
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Herramienta que permite ubicar los puntos relevantes y asociarlos a una etiqueta descriptiva.\relax }}{48}{figure.caption.16}% 
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Ejemplo de secuencias de im\IeC {\'a}genes utilizadas para el entrenamiento del detector de objetos dlib\relax }}{50}{figure.caption.17}% 
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Se visualiza la pose descripta con los puntos de las anotaciones asociadas a la clase de pose (objeto persona) detectada, junto con la imagen original del video en proceso.\relax }}{51}{figure.caption.18}% 
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Estructura visual del modelo de red neuronal artificial Caffe para estimaci\IeC {\'o}n de poses humanas, Fuente \url {learnopencv.com}.\relax }}{56}{figure.caption.20}% 
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Ejemplo de medici\IeC {\'o}n del lado izquierdo del cuerpo: los miembros superiores, con la flecha que indica el sentido de medici\IeC {\'o}n angular, y los inferiores, en sentido contrario. Del lado derecho se invierten los sentidos.\relax }}{58}{figure.caption.21}% 
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Ejemplo de un conjunto de valores de entrenamiento generados.\relax }}{60}{figure.caption.22}% 
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Valores generados en el entrenamiento con poses.\relax }}{62}{figure.caption.23}% 
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Aplicaci\IeC {\'o}n ejecut\IeC {\'a}ndose, en la que se puede observar un caso positivo para pose compatible con agresi\IeC {\'o}n.\relax }}{63}{figure.caption.24}% 
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Detecci\IeC {\'o}n de armas de fuego cortas en la mano de una persona cuya pose es compatible con una agresi\IeC {\'o}n.\relax }}{63}{figure.caption.25}% 
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Parte del c\IeC {\'o}digo en lenguaje Python que detecta armas cerca de las manos de una persona cuya pose es positiva para agresi\IeC {\'o}n.\relax }}{64}{figure.caption.26}% 
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Una de las im\IeC {\'a}genes del video de pruebas donde se observa una persona posiblemente en pose de amenaza con arma de fuego corta.\relax }}{48}{figure.caption.14}% 
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Herramienta que permite ubicar los puntos relevantes y asociarlos a una etiqueta descriptiva.\relax }}{49}{figure.caption.15}% 
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Ejemplo de secuencias de im\IeC {\'a}genes utilizadas para el entrenamiento del detector de objetos dlib\relax }}{51}{figure.caption.16}% 
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Se visualiza la pose descripta con los puntos de las anotaciones asociadas a la clase de pose (objeto persona) detectada, junto con la imagen original del video en proceso.\relax }}{52}{figure.caption.17}% 
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Estructura visual del modelo de red neuronal artificial Caffe para estimaci\IeC {\'o}n de poses humanas, Fuente \url {learnopencv.com}.\relax }}{57}{figure.caption.19}% 
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Ejemplo de medici\IeC {\'o}n del lado izquierdo del cuerpo: los miembros superiores, con la flecha que indica el sentido de medici\IeC {\'o}n angular, y los inferiores, en sentido contrario. Del lado derecho se invierten los sentidos. Fuente propia.\relax }}{59}{figure.caption.20}% 
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Ejemplo de un conjunto de valores de entrenamiento generados.\relax }}{61}{figure.caption.21}% 
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Valores generados en el entrenamiento con poses.\relax }}{63}{figure.caption.22}% 
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Aplicaci\IeC {\'o}n ejecut\IeC {\'a}ndose, en la que se puede observar un caso positivo para pose compatible con agresi\IeC {\'o}n.\relax }}{64}{figure.caption.23}% 
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Detecci\IeC {\'o}n de armas de fuego cortas en la mano de una persona cuya pose es compatible con una amenaza..\relax }}{64}{figure.caption.24}% 
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Parte del c\IeC {\'o}digo en lenguaje Python que detecta armas cerca de las manos de una persona cuya pose es positiva para agresi\IeC {\'o}n.\relax }}{65}{figure.caption.25}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
