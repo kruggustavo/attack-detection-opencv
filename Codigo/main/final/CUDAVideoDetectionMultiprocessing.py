@@ -90,7 +90,7 @@ boardFontSize = 0.3
 Ytext = (boardFontSize * fontFactor)            # Posicion donde empezar a imprimir texto
 
 # Red neuronal de angulos
-mustTrain = True
+mustTrain = False
 anglesNet = NeuralNetwork(8)
 if mustTrain == True:
     EPOCHS = 3
