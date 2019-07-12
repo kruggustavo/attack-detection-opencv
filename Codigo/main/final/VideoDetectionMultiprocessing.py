@@ -53,7 +53,7 @@ nnet.loadModel("model.json")
 
 netOutput = NO_ATTACK
 Xseconds = 10                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
-Yseconds = 4                                    # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
+Yseconds = 0.5                                  # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
 
 Xframes = 5                                     # Cantidad mínima de frames en cola para enviar otro frame. Si cantidad es mayor a este valor, no se envian mas frames a la cola
 
@@ -171,10 +171,9 @@ while True:
             # Recorremos grupos de puntos de cada humano
             for pointsSingleHuman in pointsFromAllHumans:
                 skeletonFrame = emptyFrame.copy()
-                skeletonFrame = drawer.drawSkeletonPoints(skeletonFrame, pointsSingleHuman)
 
                 angles, lines = drawer.getBodyAngles(pointsSingleHuman)
-
+                skeletonFrame = drawer.drawSkeletonLines(skeletonFrame, lines)
                 if len(angles) > 0:
                     print(angles)
                     angles = np.array([list(angles.values())])
@@ -187,18 +186,12 @@ while True:
                         frameToProcess = localFramesDict[returnedFrameId]
                         attackHandler(frameToProcess, lines)
 
-                # Dibujamos tronco
-                if "trunkPoints" in lines:
-                    pointA = lines["trunkPoints"][0]
-                    pointB = lines["trunkPoints"][1]
-                    cv2.line(skeletonFrame, pointA, pointB, (100, 7, 65), 3, lineType=cv2.LINE_AA)
-
             cv2.putText(skeletonFrame, ATTACK_STATE[netOutput], (int((video_width / 2) - (len(ATTACK_STATE[netOutput]) * 5)), 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (180, 180, 180), 1, cv2.LINE_AA)
 
             if weaponInHands == True and netOutput == ATTACK:
                 cv2.circle(skeletonFrame, (video_width - 30, video_height - 30), 25, (0, 0, 255), -1)
 
-        #skeletonFrame = cv2.addWeighted(frameToProcess, 0.3, skeletonFrame, 0.7, 0)
+            skeletonFrame = cv2.addWeighted(frame, 0.3, skeletonFrame, 0.7, 0)
 
         frame = np.concatenate((frame, skeletonFrame), axis=1)
 

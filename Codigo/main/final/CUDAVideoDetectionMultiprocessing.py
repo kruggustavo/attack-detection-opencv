@@ -15,16 +15,17 @@ from final.modules.pose import Pose
 
 # Utilizar solo cpu, utiliza CUDA cuando es false
 cpu = True
+num_threads = 15
 
 # Inputs de la red neuronal de poses
-net_input_height_size = 92
+net_input_height_size = 112
 
-workpath = "/Volumes/data/Documentos/attack-detection"
+workpath = "/home/usuario/Documentos/attack-detection-opencv"
 img_file = workpath + "/Imagenes/seniors-walking.jpg"
-videoFile = workpath +"/Videos/10.mp4"
+videoFile = workpath +"/Videos/12.MP4"
 
-video_width = 460
-video_height = 320
+video_width = 360
+video_height = 240
 
 outputVideoSize = (680, 480)
 
@@ -44,12 +45,12 @@ drawer = Drawer()
 netOutput = NO_ATTACK
 
 Xseconds = 15                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
-Yseconds = 1.6                                   # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
+Yseconds =  1                                 # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
 Xframes = 3                                     # Cantidad mínima de frames en cola para enviar otro frame. Si cantidad es mayor a este valor, no se envian mas frames a la cola
 fontFactor = 46.5                               # Factor de multiplicacion para tamaño de fuente
 
 XsecondsForAgression = 5                        # Si ocurren Y frames de agresiones en X segundos, considerar agresion
-YagressionFrames = 3                            # Deben ocurrir Y frames de agresiones en X segundos
+YagressionFrames = 4                            # Deben ocurrir Y frames de agresiones en X segundos
 blockAgressionCounter = 0
 agressionBlockTime = time.time()
 
@@ -89,7 +90,7 @@ boardFontSize = 0.3
 Ytext = (boardFontSize * fontFactor)            # Posicion donde empezar a imprimir texto
 
 # Red neuronal de angulos
-mustTrain = False
+mustTrain = True
 anglesNet = NeuralNetwork(8)
 if mustTrain == True:
     EPOCHS = 3
@@ -263,11 +264,12 @@ def worker(job_q, result_q):
             result_q.put(my_list)
 
 
-for i in range(20):
+for i in range(num_threads):
     t = Thread(target=worker, args=(job_q, result_q))
+    t.setDaemon(True)
     t.start()
 
-cap = cv2.VideoCapture(videoFile) # videoFile
+cap = cv2.VideoCapture(videoFile)   # videoFile
 
 empty = np.zeros((video_height, video_width, 3), np.uint8)
 out = empty.copy()
@@ -322,7 +324,7 @@ while True:
     except:
         pass
 
-    cv2.imshow(windowName, cv2.resize(img, outputVideoSize))
+    cv2.imshow(windowName, cv2.resize(img, ((int) (video_width * 1.7), (int) (video_height * 1.7) )))
 
     key = cv2.waitKey(33)
     if key == 27:  # esc

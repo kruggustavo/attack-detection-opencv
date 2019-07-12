@@ -20,9 +20,9 @@ cpu = True
 # Inputs de la red neuronal de poses
 net_input_height_size = 96
 
-workpath = "/Volumes/data/Documentos/attack-detection"
+workpath = "/home/usuario/Documentos/attack-detection-opencv"
 img_file = workpath + "/Imagenes/seniors-walking.jpg"
-videoFile = workpath + "/Videos/5.mp4"
+videoFile = workpath +"/Videos/12.MP4"
 
 video_width = 360
 video_height = 240
@@ -35,7 +35,7 @@ combinations = 5000  # Combinaciones distintas generadas
 ATTACK = 1
 NO_ATTACK = 0
 
-POSE = ATTACK
+POSE = NO_ATTACK
 
 # Mensajes en pantalla
 ATTACK_STATE = {}
@@ -188,7 +188,7 @@ for i in range(12):
     t.setDaemon(True)
     t.start()
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(videoFile)
 
 empty = np.zeros((video_height, video_width, 3), np.uint8)
 out = empty.copy()
