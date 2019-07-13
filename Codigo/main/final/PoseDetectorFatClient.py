@@ -6,7 +6,7 @@ import multiprocessing
 import cv2
 import numpy as np
 
-IP = 'localhost'
+IP = '192.168.0.117' #''localhost'
 PORTNUM = 55141
 AUTHKEY = b'shufflin'
 

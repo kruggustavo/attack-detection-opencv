@@ -35,7 +35,7 @@ ATTACK_STATE[ATTACK] = "Pose compatible con ataque!"
 
 workpath = "/home/usuario/Documentos/attack-detection-opencv"
 img_file = workpath + "/Imagenes/seniors-walking.jpg"
-videoFile = workpath +"/Videos/13.mp4"
+videoFile = workpath +"/Videos/12.MP4"
 cap = cv2.VideoCapture(videoFile)
 video_width = 320
 video_height = 200
@@ -53,7 +53,7 @@ nnet.loadModel("model_cuda.json")
 
 netOutput = NO_ATTACK
 Xseconds = 10                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
-Yseconds = 0.6                                  # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
+Yseconds = 0.3                                 # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
 
 Xframes = 5                                     # Cantidad mínima de frames en cola para enviar otro frame. Si cantidad es mayor a este valor, no se envian mas frames a la cola
 
