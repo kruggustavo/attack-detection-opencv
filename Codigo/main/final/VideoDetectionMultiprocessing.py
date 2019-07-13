@@ -1,5 +1,5 @@
-from final.NeuralNetwork import NeuralNetwork
-from final.Drawer import Drawer
+from NeuralNetwork import NeuralNetwork
+from Drawer import Drawer
 from pygame import mixer
 from multiprocessing.managers import SyncManager
 import queue
@@ -33,10 +33,10 @@ ATTACK_STATE = {}
 ATTACK_STATE[NO_ATTACK] = "Pose no compatible con ataque"
 ATTACK_STATE[ATTACK] = "Pose compatible con ataque!"
 
-#workpath = "/home/usuario/Documentos/attack-detection-opencv"
-#img_file = workpath + "/Imagenes/seniors-walking.jpg"
-#videoFile = workpath +"/Videos/5.mp4"
-cap = cv2.VideoCapture(0)
+workpath = "/home/usuario/Documentos/attack-detection-opencv"
+img_file = workpath + "/Imagenes/seniors-walking.jpg"
+videoFile = workpath +"/Videos/13.mp4"
+cap = cv2.VideoCapture(videoFile)
 video_width = 320
 video_height = 200
 
@@ -48,12 +48,12 @@ EPOCHS = 1
 nnet = NeuralNetwork(8)
 #nnet.loadTrainingSamples("trainingangles.csv")
 #nnet.trainNetwork(EPOCHS)
-nnet.loadModel("model.json")
+nnet.loadModel("model_cuda.json")
 #nnet.saveModel("model.json")
 
 netOutput = NO_ATTACK
 Xseconds = 10                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
-Yseconds = 0.5                                  # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
+Yseconds = 0.6                                  # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
 
 Xframes = 5                                     # Cantidad mínima de frames en cola para enviar otro frame. Si cantidad es mayor a este valor, no se envian mas frames a la cola
 
@@ -134,7 +134,7 @@ frameId = 0
 localFramesDict = {}
 pointTime = time.time()
 while True:
-    #time.sleep(100 / 1000)
+    time.sleep(0.035)
     frameId = random.randint(0, 999999)
     hasFrame, frame = cap.read()
     #frame = cv2.imread(img_file)
