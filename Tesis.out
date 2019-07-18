@@ -4,55 +4,58 @@
 \BOOKMARK [1][-]{section.3.1}{Planteamiento General}{chapter.3}% 4
 \BOOKMARK [1][-]{section.3.2}{Planteamiento del problema}{chapter.3}% 5
 \BOOKMARK [1][-]{section.3.3}{Justificaci\363n}{chapter.3}% 6
-\BOOKMARK [1][-]{section.3.4}{Objetivos}{chapter.3}% 7
-\BOOKMARK [2][-]{subsection.3.4.1}{General}{section.3.4}% 8
-\BOOKMARK [2][-]{subsection.3.4.2}{Espec\355ficos}{section.3.4}% 9
-\BOOKMARK [1][-]{section.3.5}{Alcance}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.6}{Metodolog\355a}{chapter.3}% 11
-\BOOKMARK [2][-]{subsection.3.6.1}{Dise\361o y tipo de investigaci\363n}{section.3.6}% 12
-\BOOKMARK [2][-]{subsection.3.6.2}{Procedimiento}{section.3.6}% 13
-\BOOKMARK [0][-]{chapter.4}{Estado del Arte}{}% 14
-\BOOKMARK [1][-]{section.4.1}{Introducci\363n}{chapter.4}% 15
-\BOOKMARK [2][-]{subsection.4.1.1}{Evoluci\363n de los sistemas de vigilancia}{section.4.1}% 16
-\BOOKMARK [2][-]{subsection.4.1.2}{Clasificaci\363n de los sistemas de vigilancia}{section.4.1}% 17
-\BOOKMARK [2][-]{subsection.4.1.3}{Reconocimiento de actividad humana}{section.4.1}% 18
-\BOOKMARK [0][-]{chapter.5}{Pose}{}% 19
-\BOOKMARK [1][-]{section.5.1}{Definici\363n}{chapter.5}% 20
-\BOOKMARK [2][-]{subsection.5.1.1}{Elementos que conforman la pose}{section.5.1}% 21
-\BOOKMARK [2][-]{subsection.5.1.2}{Poses compatibles con amenazas y agresiones}{section.5.1}% 22
-\BOOKMARK [2][-]{subsection.5.1.3}{M\351todos de representaci\363n de poses}{section.5.1}% 23
-\BOOKMARK [0][-]{chapter.6}{Inteligencia Artificial}{}% 24
-\BOOKMARK [1][-]{section.6.1}{Conceptos de Machine Learning}{chapter.6}% 25
-\BOOKMARK [2][-]{subsection.6.1.1}{Aprendizaje y entrenamiento}{section.6.1}% 26
-\BOOKMARK [1][-]{section.6.2}{M\351todos de clasificaci\363n}{chapter.6}% 27
-\BOOKMARK [2][-]{subsection.6.2.1}{Regresi\363n Lineal}{section.6.2}% 28
-\BOOKMARK [2][-]{subsection.6.2.2}{Regresi\363n Log\355stica}{section.6.2}% 29
-\BOOKMARK [2][-]{subsection.6.2.3}{M\341quinas de Vectores Soporte}{section.6.2}% 30
-\BOOKMARK [2][-]{subsection.6.2.4}{Redes Neuronales Artificiales}{section.6.2}% 31
-\BOOKMARK [2][-]{subsection.6.2.5}{Arquitectura de una red neuronal artificial}{section.6.2}% 32
-\BOOKMARK [2][-]{subsection.6.2.6}{Redes neuronales multicapas}{section.6.2}% 33
-\BOOKMARK [2][-]{subsection.6.2.7}{Funciones de capas de redes neuronales artificiales}{section.6.2}% 34
-\BOOKMARK [0][-]{chapter.7}{Procesamiento gr\341fico}{}% 35
-\BOOKMARK [1][-]{section.7.1}{Visi\363n por computadora}{chapter.7}% 36
-\BOOKMARK [2][-]{subsection.7.1.1}{Detecci\363n y reconocimiento de objetos en im\341genes}{section.7.1}% 37
-\BOOKMARK [2][-]{subsection.7.1.2}{Histograma de Gradientes Orientados}{section.7.1}% 38
-\BOOKMARK [1][-]{section.7.2}{Herramientas de visi\363n por computadora}{chapter.7}% 39
-\BOOKMARK [2][-]{subsection.7.2.1}{OpenCV}{section.7.2}% 40
-\BOOKMARK [0][-]{chapter.8}{Desarrollo de software}{}% 41
-\BOOKMARK [1][-]{section.8.1}{Pruebas de estimaci\363n de poses humanas}{chapter.8}% 42
-\BOOKMARK [2][-]{subsection.8.1.1}{Prueba 1: Clasificador SVM-HOG}{section.8.1}% 43
-\BOOKMARK [2][-]{subsection.8.1.2}{Prueba 2: AlphaPose}{section.8.1}% 44
-\BOOKMARK [2][-]{subsection.8.1.3}{Prueba 3: Modelo DNN Caffe en OpenCV}{section.8.1}% 45
-\BOOKMARK [1][-]{section.8.2}{Extracci\363n de poses humanas}{chapter.8}% 46
-\BOOKMARK [1][-]{section.8.3}{C\341lculo angular de extremidades}{chapter.8}% 47
-\BOOKMARK [2][-]{subsection.8.3.1}{Estimaci\363n de tronco}{section.8.3}% 48
-\BOOKMARK [2][-]{subsection.8.3.2}{Representaci\363n interna de partes del cuerpo}{section.8.3}% 49
-\BOOKMARK [2][-]{subsection.8.3.3}{Generaci\363n de datos de entrenamiento}{section.8.3}% 50
-\BOOKMARK [1][-]{section.8.4}{Entrenamiento de una red neuronal artificial}{chapter.8}% 51
-\BOOKMARK [2][-]{subsection.8.4.1}{B\372squeda de un modelo \363ptimo}{section.8.4}% 52
-\BOOKMARK [1][-]{section.8.5}{Predicci\363n de poses compatibles con amenazas o agresiones}{chapter.8}% 53
-\BOOKMARK [1][-]{section.8.6}{Detecci\363n de armas utilizando detectores en cascada}{chapter.8}% 54
-\BOOKMARK [0][-]{chapter.9}{Conclusiones}{}% 55
-\BOOKMARK [0][-]{chapter.10}{Trabajos a futuro}{}% 56
-\BOOKMARK [0][-]{chapter.11}{Glosario de T\351rminos}{}% 57
-\BOOKMARK [0][-]{chapter*.26}{Bibliograf\355a}{}% 58
+\BOOKMARK [1][-]{section.3.4}{Antecedentes de investigaci\363n}{chapter.3}% 7
+\BOOKMARK [2][-]{subsection.3.4.1}{Reconocimiento de actividad humana}{section.3.4}% 8
+\BOOKMARK [2][-]{subsection.3.4.2}{Estado del arte}{section.3.4}% 9
+\BOOKMARK [2][-]{subsection.3.4.3}{Evoluci\363n de los sistemas de vigilancia}{section.3.4}% 10
+\BOOKMARK [2][-]{subsection.3.4.4}{Clasificaci\363n de los sistemas de vigilancia}{section.3.4}% 11
+\BOOKMARK [1][-]{section.3.5}{Objetivos}{chapter.3}% 12
+\BOOKMARK [2][-]{subsection.3.5.1}{General}{section.3.5}% 13
+\BOOKMARK [2][-]{subsection.3.5.2}{Espec\355ficos}{section.3.5}% 14
+\BOOKMARK [1][-]{section.3.6}{Alcance}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.7}{Metodolog\355a}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.7.1}{Dise\361o y tipo de investigaci\363n}{section.3.7}% 17
+\BOOKMARK [2][-]{subsection.3.7.2}{Procedimiento}{section.3.7}% 18
+\BOOKMARK [0][-]{chapter.4}{Marco te\363rico}{}% 19
+\BOOKMARK [1][-]{section.4.1}{Definici\363n de Pose}{chapter.4}% 20
+\BOOKMARK [2][-]{subsection.4.1.1}{Elementos que conforman la pose}{section.4.1}% 21
+\BOOKMARK [2][-]{subsection.4.1.2}{Poses compatibles con amenazas y agresiones}{section.4.1}% 22
+\BOOKMARK [2][-]{subsection.4.1.3}{M\351todos de representaci\363n de poses}{section.4.1}% 23
+\BOOKMARK [1][-]{section.4.2}{Conceptos de Machine Learning}{chapter.4}% 24
+\BOOKMARK [2][-]{subsection.4.2.1}{Aprendizaje y entrenamiento}{section.4.2}% 25
+\BOOKMARK [1][-]{section.4.3}{M\351todos de clasificaci\363n}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.3.1}{Regresi\363n Lineal}{section.4.3}% 27
+\BOOKMARK [2][-]{subsection.4.3.2}{Regresi\363n Log\355stica}{section.4.3}% 28
+\BOOKMARK [2][-]{subsection.4.3.3}{M\341quinas de Vectores Soporte}{section.4.3}% 29
+\BOOKMARK [2][-]{subsection.4.3.4}{Redes Neuronales Artificiales}{section.4.3}% 30
+\BOOKMARK [2][-]{subsection.4.3.5}{Arquitectura de una red neuronal artificial}{section.4.3}% 31
+\BOOKMARK [2][-]{subsection.4.3.6}{Redes neuronales multicapas}{section.4.3}% 32
+\BOOKMARK [2][-]{subsection.4.3.7}{Funciones de capas de redes neuronales artificiales}{section.4.3}% 33
+\BOOKMARK [1][-]{section.4.4}{Visi\363n por computadora}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.4.1}{Detecci\363n y reconocimiento de objetos en im\341genes}{section.4.4}% 35
+\BOOKMARK [2][-]{subsection.4.4.2}{Histograma de Gradientes Orientados}{section.4.4}% 36
+\BOOKMARK [1][-]{section.4.5}{Herramientas de visi\363n por computadora}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.5.1}{OpenCV}{section.4.5}% 38
+\BOOKMARK [0][-]{chapter.5}{Marco metodol\363gico}{}% 39
+\BOOKMARK [1][-]{section.5.1}{Pruebas de estimaci\363n de poses humanas}{chapter.5}% 40
+\BOOKMARK [2][-]{subsection.5.1.1}{Prueba 1: Clasificador SVM-HOG}{section.5.1}% 41
+\BOOKMARK [2][-]{subsection.5.1.2}{Prueba 2: AlphaPose}{section.5.1}% 42
+\BOOKMARK [2][-]{subsection.5.1.3}{Prueba 3: Modelo DNN Caffe en OpenCV}{section.5.1}% 43
+\BOOKMARK [1][-]{section.5.2}{Extracci\363n de poses humanas}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.3}{C\341lculo angular de extremidades}{chapter.5}% 45
+\BOOKMARK [2][-]{subsection.5.3.1}{Estimaci\363n de tronco}{section.5.3}% 46
+\BOOKMARK [2][-]{subsection.5.3.2}{Representaci\363n interna de partes del cuerpo}{section.5.3}% 47
+\BOOKMARK [2][-]{subsection.5.3.3}{Generaci\363n de datos de entrenamiento}{section.5.3}% 48
+\BOOKMARK [1][-]{section.5.4}{Entrenamiento de una red neuronal artificial}{chapter.5}% 49
+\BOOKMARK [2][-]{subsection.5.4.1}{B\372squeda de un modelo \363ptimo}{section.5.4}% 50
+\BOOKMARK [1][-]{section.5.5}{Predicci\363n de poses compatibles con amenazas o agresiones}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.6}{Detecci\363n de armas utilizando clasificadores en cascada}{chapter.5}% 52
+\BOOKMARK [1][-]{section.5.7}{Esquema de proceso}{chapter.5}% 53
+\BOOKMARK [0][-]{chapter.6}{Resultados}{}% 54
+\BOOKMARK [1][-]{section.6.1}{Resumen de resultados de clasificaci\363n}{chapter.6}% 55
+\BOOKMARK [2][-]{subsection.6.1.1}{Muestras utilizadas}{section.6.1}% 56
+\BOOKMARK [2][-]{subsection.6.1.2}{Tablas de resultados}{section.6.1}% 57
+\BOOKMARK [0][-]{chapter.7}{Conclusiones}{}% 58
+\BOOKMARK [0][-]{chapter.8}{Trabajos a futuro}{}% 59
+\BOOKMARK [0][-]{chapter.9}{Glosario de T\351rminos}{}% 60
+\BOOKMARK [0][-]{chapter.10}{Referencias}{}% 61

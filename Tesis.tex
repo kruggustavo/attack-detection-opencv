@@ -1,6 +1,7 @@
 \documentclass[a4paper,12pt,oneside,spanish]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{rotating}
 \usepackage{paralist}
 \usepackage{enumitem}
 \usepackage[spanish]{babel}
@@ -10,11 +11,19 @@
 \usepackage{kantlipsum,setspace}
 \usepackage[center]{caption}
 \usepackage{unicode}
+\usepackage{collcell}
+\usepackage{rotating}
 \usepackage{csquotes}
+\usepackage{multirow,fixltx2e}
+\usepackage{booktabs}
 \usepackage{titlesec}
 \usepackage{color}
+\usepackage[table]{xcolor}
 \usepackage{setspace}
 \usepackage[nottoc,notlot,notlof]{tocbibind}
+\usepackage{stackengine}
+\newcommand\xrowht[2][0]{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
+
 \captionsetup[figure]{font={stretch=0.2}} 
 \captionsetup[figure]{font={footnotesize}}
  
@@ -25,10 +34,10 @@
 	urlcolor=cyan,
 }
 
-\setlength{\paperwidth}{20,7cm}          
-\setlength{\paperheight}{30,7cm}       
-\setlength{\textwidth}{16cm}         
-\setlength{\textheight}{24cm}        
+\setlength{\paperwidth}{21,0cm}          
+\setlength{\paperheight}{29,7cm}       
+\setlength{\textwidth}{16.3cm}         
+\setlength{\textheight}{23.7cm}        
 \setlength{\topmargin}{-0.8cm}     
 
 \usepackage{fancyhdr}
@@ -37,10 +46,11 @@
 
 \fancyhead[L]{\fontsize{10}{12}}
 \pagestyle{fancy}     
+\lhead{\tiny Entrenamiento de redes neuronales para la detección en tiempo\\ real de amenazas y agresiones humanas en imágenes secuenciales}
+\rhead{\tiny Gustavo Enrique Escobar Krug}
 
-
-\setlength{\oddsidemargin}{0.30cm}   
-\setlength{\evensidemargin}{0.30cm} 
+\setlength{\oddsidemargin}{0.25cm}   
+\setlength{\evensidemargin}{0.20cm} 
 \renewcommand{\baselinestretch}{1.2}
 
 \tolerance=1
@@ -50,11 +60,18 @@
 
 \makeatletter
 \def\@makechapterhead#1{%
-	\vspace*{0\p@}% <----------------- Space from top of page to Chapter #
 	{\parindent \z@ \raggedright \normalfont
+		\vskip 1\p@
 		\interlinepenalty\@M
 		\Huge \bfseries #1\par\nobreak
-		\vskip 40\p@
+		\vskip 15\p@
+}}
+\def\@makeschapterhead#1{%
+	{\parindent \z@ \raggedright
+		\normalfont
+		\interlinepenalty\@M
+		\Huge \bfseries  #1\par\nobreak
+		\vskip 15\p@
 }}
 \makeatother
 
@@ -113,14 +130,14 @@
 \pagenumbering{arabic}
 \setlength{\parskip}{1.3em}
 \begin{flushright}
-	\subsubsection{Dedicatoria}
+	\subsection*{Dedicatoria}
 	A mis abuelos, \\
 	donde quiera que estén.
 \end{flushright}
 
 \newpage
 \begin{flushright}
-	\subsubsection{Agradecimientos}
+	\subsection*{Agradecimientos}
 	A toda mi familia, \\
 	que supo ayudarme y apoyarme \\
 	en tiempos difíciles. \\
@@ -185,46 +202,52 @@ Mediante el entrenamiento de redes neuronales de computadoras, se intenta detect
 La tarea de monitoreo de circuitos cerrados de televisión supone la contratación de personal permanente y, en la mayoría de los casos, la cobertura de  turnos completos de trabajo, sin descanso. Esto, como se dijo anteriormente, supone el desembolso de grandes sumas de dinero constante para el pago de estos servicios.\par
 
 Sumado al hecho de que el ser humano tiene falencias naturales, como el cansancio o la distracción, la implementación de un sistema inteligente que permita ayudar al personal de vigilancia a detectar ciertos tipos amenazas o agresiones humanas sería de gran utilidad: se podrían utilizar computadores potentes que sean capaces de monitorear  múltiples escenarios todo el tiempo, sin descanso, sin distracciones.\par 
- 
-\section{Objetivos}
-\subsection{General}
-Desarrollar una solución computacional que permita la detección básica de delitos de agresión o amenazas, mediante el entrenamiento de redes neuronales de computadoras.\par 
 
-\subsection{Específicos}
-\begin{enumerate}
-	\baselineskip 16pt
-	\item Analizar imágenes secuenciales captadas por cámaras para video.\par 
-	\item Obtener patrones de poses humanas ocurrentes en las imágenes.\par 
-	\item Entrenar redes neuronales mediante secuencias de poses humanas establecidas para el fin.\par 
-	\item Verificar coincidencias con los patrones de poses humanas preestablecidos a través del entrenamiento previo.\par 
-\end{enumerate}
-
-\section{Alcance}
-Se intenta establecer una metodología básica a través del desarrollo de software para la detección de posibles delitos de agresión o amenazas humanas.\par
-
-Este trabajo de investigación no contemplará el aviso de actividad delictiva a entes de seguridad, tampoco se prevee una detección completa de toda actividad humana conocida, sino que pretende establecer bases para la detección primaria de  actividades expresadas a través de la pose para la cual la red neuronal haya sido previamente entrenada.\par
-
-El trabajo no contemplará el uso de varios orígenes de imágenes secuenciales de manera simultánea ni tampoco el reconocimiento de características de objetos o personas que participan en las secuencias.\par
-
-\section{Metodología}
-\subsection{Diseño y tipo de investigación}
-Según la finalidad de este trabajo, se pretende llevar a cabo un proceso de investigación experimental para el entrenamiento de redes neuronales y posterior detección de patrones de poses humanas utilizando las mismas redes.
-\par
-
-\subsection{Procedimiento}
-Para que las redes neuronales sean capaces de detectar patrones, es necesario primeramente entrenarlas mediante la extracción de características de poses en seres humanos analizando imágenes secuenciales, una a una. \par
-
-Para llevar a cabo esto:
-\begin{itemize}
-	\setlength\itemsep{0.2em}
-	\item Se obtendrán patrones existentes de poses en imágenes secuenciales que sugieran algún tipo de actividad humana sobre hechos delictivos relacionados a amenazas o agresiones humanas, mediante el tratamiento digital de imágenes. Esta información será utilizada para entrenar la red neuronal.\par
-	\item Se entrenará una red neuronal de computadoras, utilizando técnicas y herramientas de inteligencia artificial, para que la red pueda almacenar los patrones previamente obtenidos de las imágenes secuenciales. Estos patrones establecerán, los parámetros para la identificación de actividad humana en las imágenes secuenciales a través de las poses detectadas.\par	
-	\item Se analizarán nuevos patrones, y se compararán los mismos con los patrones establecidos anteriormente, a fin de que pueda ser, o no, confirmado como un patrón ocurrente de una actividad humana similar a la entrenada.\par	
-\end{itemize}
 
 \newpage
-\chapter{Estado del Arte}
-\section{Introducción}
+\section{Antecedentes de investigación}
+\subsection{Reconocimiento de actividad humana}
+
+La detección de actividad humana, en inglés \textit{Human Activity Recognition} (HAR), consiste en interpretar la postura (pose) y movimientos del ser humano a través de sensores, como cámaras, y determinar la actividad o acción que está realizando el sujeto en cuestión.\par
+
+Está entre los temas de investigación en inteligencia artificial (IA) con más interés en los últimos años, abarcando campos de aplicación  desde seguridad en circuitos cerrados de televisión hasta prevención de accidentes en pacientes en hospitales y centros de rehabilitación.\par
+
+Existen numerosos trabajos realizados a lo largo del mundo que intentan, mediante la pose humana, interpretar el tipo de actividad que realiza una persona en observación. \par
+
+En el artículo de Ann y Theng (2014) se citan algunas estructuras de detección de actividad humana en donde se utilizan:
+\begin{itemize}
+	\setlength\itemsep{-1.2em}
+	\item Cámaras RGB: Cámaras de video que capturan secuencias de imágenes que luego son analizadas para detectar actividad humana.\\	
+	\item Sensores infrarrojos: Se utilizan generalmente en conjunto con las cámaras RGB para obtener datos en profundidad del movimiento que realiza una persona y así establecer qué tipo de actividad realiza.\\	
+	\item Sensores de cuerpo: Se adhieren al cuerpo humano, generalmente como partes de una vestimenta. Pueden ser acelerómetros, magnetómetros y giroscopios. Mediante los datos provistos por éstos se puede establecer la actividad que realiza la persona en cuyo cuerpo se fijan los sensores.\\
+\end{itemize}
+ 
+Existen además, diferentes enfoques utilizados para reconocer la actividad humana en secuencias de imágenes, Aggarwal y Ryoo (2011) citan por ejemplo:
+
+\begin{enumerate}
+	\setlength\itemsep{-1.9em}
+	\item Enfoques de capa simple: reconoce actividad directamente de secuencias de video considerando una actividad como una clase en particular de imágenes en secuencia. Se categorizan en:
+	\begin{itemize}
+		\setlength\itemsep{-2.2em}
+		\item Enfoques espacio-tiempo.\\	
+		\item Enfoques secuenciales.\\
+	\end{itemize}		
+	\item Enfoque jerárquico: basa su concepto en reconocer actividad humana con una abstracción mayor a partir del reconocimiento de actividades mas simples, de esa manera se establece una jerarquía de actividades menores que conllevan al reconocimiento de una actividad de mas alto nivel, que representa a las actividades menores. Tambien tiene categorías: 
+	\begin{itemize}
+		\setlength\itemsep{-2.2em}
+		\item Enfoque de tipo estadístico.\\	
+		\item Enfoque sintáctico.\\
+		\item Enfoque basado en descripción.\\
+	\end{itemize}		
+\end{enumerate}
+ 
+Los estudios publicados por Subetha y Chitrakala (2016) ofrecen también una serie de conceptos relacionados al estudio de la actividad humana. Se explica el modo en qué un marco de trabajo común puede aportar estrategias para el estudio, como también distintas metodologías utilizadas en el reconocimiento de actividad humana.\par
+
+Estos últimos trabajos citados difieren en los enfoques utilizados, Subetha y Chitrakala (2016) por ejemplo, ofrecen una lista mas reducida: Enfoque basado en características, y Enfoque basado en modelos. Sin embargo, desarrollan el estudio de actividades con más abstracción, como por ejemplo la detección de actividades donde existe interacción entre personas. \par
+
+
+\newpage
+\subsection{Estado del arte}
 En la actualidad, la seguridad personal se está volviendo cada vez más importante; los atracos, asaltos y robos se producen a plena luz del día, muchas veces a la vista de todos y de una manera cada vez más violenta. La violencia utilizada durante estos actos es cada vez mayor, esto debido a múltiples factores tales como evitar la resistencia de la víctima, el tiempo en cometer el delito, etc. Las condiciones de seguridad existentes no parecen frenar esto y hasta resulta inevitable en muchos casos. \par
 
 Con el transcurrir de los últimos años, muchas personas y empresas dedicadas a la tecnología han centrado sus esfuerzos en ofrecer soluciones que puedan brindar ayuda incluso a los organismos de seguridad. Las cámaras de circuito cerrado de televisión (CCTV) han tomado un protagonismo más evidente en los sistemas de vigilancia dada la ventaja que ofrecen. \par
@@ -262,28 +285,47 @@ Dentro de la clasificación de sistemas de visión para vigilancia, Dautov et al
 	\item Basados en red: compuestas de múltiples cámaras interconectadas. Ejemplo: sistemas de vigilancia CCTV remotos accesibles mediante IP).\\	
 	\item Híbrida: cámaras inteligentes que pueden depender de la participación humana para proporcionar datos de alta precisión.\\	
 \end{itemize}
+ 
+\section{Objetivos}
+\subsection{General}
+Desarrollar una solución computacional que permita la detección básica de delitos de agresión o amenazas, mediante el entrenamiento de redes neuronales de computadoras.\par 
 
-\subsection{Reconocimiento de actividad humana}
+\subsection{Específicos}
+\begin{enumerate}
+	\baselineskip 16pt
+	\item Analizar imágenes secuenciales captadas por cámaras para video.\par 
+	\item Obtener patrones de poses humanas ocurrentes en las imágenes.\par 
+	\item Entrenar redes neuronales mediante secuencias de poses humanas establecidas para el fin.\par 
+	\item Verificar coincidencias con los patrones de poses humanas preestablecidos a través del entrenamiento previo.\par 
+\end{enumerate}
 
-La detección de actividad humana, en inglés \textit{Human Activity Recognition} (HAR), consiste en interpretar la postura (pose) y movimientos del ser humano a través de sensores, como cámaras, y determinar la actividad o acción que está realizando el sujeto en cuestión.\par
+\section{Alcance}
+Se intenta establecer una metodología básica a través del desarrollo de software para la detección de posibles delitos de agresión o amenazas humanas.\par
 
-Está entre los temas de investigación en inteligencia artificial (IA) con más interés en los últimos años, abarcando campos de aplicación  desde seguridad en circuitos cerrados de televisión hasta prevención de accidentes en pacientes en hospitales y centros de rehabilitación.\par
+Este trabajo de investigación no contemplará el aviso de actividad delictiva a entes de seguridad, tampoco se prevee una detección completa de toda actividad humana conocida, sino que pretende establecer bases para la detección primaria de  actividades expresadas a través de la pose para la cual la red neuronal haya sido previamente entrenada.\par
 
-Existen numerosos trabajos realizados a lo largo del mundo que intentan, mediante la pose humana, interpretar el tipo de actividad que realiza una persona en observación. \par
+El trabajo no contemplará el uso de varios orígenes de imágenes secuenciales de manera simultánea ni tampoco el reconocimiento de características de objetos o personas que participan en las secuencias.\par
 
-En el artículo de Ann y Theng (2014) se citan algunas estructuras de detección de actividad humana en donde se utilizan:
+\section{Metodología}
+\subsection{Diseño y tipo de investigación}
+Según la finalidad de este trabajo, se pretende llevar a cabo un proceso de investigación experimental para el entrenamiento de redes neuronales y posterior detección de patrones de poses humanas utilizando las mismas redes.
+\par
+
+\subsection{Procedimiento}
+Para que las redes neuronales sean capaces de detectar patrones, es necesario primeramente entrenarlas mediante la extracción de características de poses en seres humanos analizando imágenes secuenciales, una a una. \par
+
+Para llevar a cabo esto:
 \begin{itemize}
-	\setlength\itemsep{-1.2em}
-	\item Cámaras RGB: Cámaras de video que capturan secuencias de imágenes que luego son analizadas para detectar actividad humana.\\	
-	\item Sensores infrarrojos: Se utilizan generalmente en conjunto con las cámaras RGB para obtener datos en profundidad del movimiento que realiza una persona y así establecer qué tipo de actividad realiza.\\	
-	\item Sensores de cuerpo: Se adhieren al cuerpo humano, generalmente como partes de una vestimenta. Pueden ser acelerómetros, magnetómetros y giroscopios. Mediante los datos provistos por éstos se puede establecer la actividad que realiza la persona en cuyo cuerpo se fijan los sensores.\\
+	\setlength\itemsep{0.2em}
+	\item Se obtendrán patrones existentes de poses en imágenes secuenciales que sugieran algún tipo de actividad humana sobre hechos delictivos relacionados a amenazas o agresiones humanas, mediante el tratamiento digital de imágenes. Esta información será utilizada para entrenar la red neuronal.\par
+	\item Se entrenará una red neuronal de computadoras, utilizando técnicas y herramientas de inteligencia artificial, para que la red pueda almacenar los patrones previamente obtenidos de las imágenes secuenciales. Estos patrones establecerán, los parámetros para la identificación de actividad humana en las imágenes secuenciales a través de las poses detectadas.\par	
+	\item Se analizarán nuevos patrones, y se compararán los mismos con los patrones establecidos anteriormente, a fin de que pueda ser, o no, confirmado como un patrón ocurrente de una actividad humana similar a la entrenada.\par	
 \end{itemize}
 
 
-
 \newpage
-\chapter{Pose}
-\section{Definición} \label{posturaypose}
+\chapter{Marco teórico}
+\section{Definición  de Pose} \label{posturaypose}
 
 Según la Real Academia Española (RAE), la postura es la forma natural que se establece con la disposición de las extremidades y el tronco del cuerpo humano. La pose, es la postura que sugiere la misma forma pero se dice que no es natural, es la postura de disposición artificial, buscada para cierto fin. \par
 
@@ -351,7 +393,6 @@ Estos cilindros representan partes de las extremidades, y los puntos son las art
 \end{figure}
 
 \newpage	
-\chapter{Inteligencia Artificial}
 \section{Conceptos de Machine Learning}\label{machinelearning}
 
 Se conoce como \textit{Machine Learning} (ML) en inglés, a la ciencia relacionada con Inteligencia Artificial en la cual se pueden configurar modelos matemáticos y probabilísticos para responder a situaciones de la vida real. Básicamente, se trata de entrenar algoritmos para ofrecer respuestas, bajo ciertas condiciones de campo. Su traducción literal se refiere al proceso de 'enseñar' a una máquina a responder a situaciones de manera inteligente, sin el uso de condicionales.\par
@@ -617,8 +658,6 @@ La capa de salida también implementa ciertas funciones, citando:\par
 	\item Función sigmoidea: ya detallada anteriormente. 
 \end{enumerate}
 
-\newpage
-\chapter{Procesamiento gráfico}
 \section{Visión por computadora}\label{visionporcomputadora}
 
 En los últimos años, los problemas de visión por computadora, junto con con los de reconocimiento de actividad humana, han acaparado los trabajos e investigaciones en inteligencia artificial, dada la cantidad de situaciones en las cuales es necesario utilizar ayuda no humana para resolver problemas. Los sistemas computacionales han evolucionado y la inteligencia artificial ha surgido como una ciencia de estudio capaz de proveer la ayuda necesaria. \par
@@ -658,7 +697,7 @@ Normalmente, el proceso de identificación de objetos en imágenes se da en dife
 		\begin{itemize}
 			\setlength\itemsep{-1.2em}
 			\item Clasificación basada en formas: es la técnica más sencilla y consiste en, una vez identificado un objeto en una imágen, compararlo con formas de objetos existentes. Se asocia un valor numérico para identificar el grado de similitud entre las imágenes comparadas. El valor más alto asociado definirá la clase de objeto.\\
-			\item Clasificación basada en movimiento: estudia el movimiento hecho por un objeto en particular, con respecto a su forma o silueta. Se sabe por ejemplo, que el cuerpo humano va cambiando su forma -esto es, existe movimiento- a través de las imágenes. Todo lo contrario a lo que ocurre con los automóviles, que no suelen cambiar su forma.
+			\item Clasificación basada en movimiento: estudia el movimiento hecho por un objeto en particular, con respecto a su forma o silueta. Se sabe por ejemplo, que el cuerpo humano va cambiando su forma -esto es, existe movimiento- a través de las imágenes. 
 		\end{itemize}
 		
 		\textbf{Métodos de clasificación}\\
@@ -744,14 +783,14 @@ En las redes convolucionales, se aplican ciertos filtros a las imágenes mediant
 La idea detrás de las redes convolucionales, según LeCun et al. (1998) es simular el comportamiento de los receptores de la corteza visual en los cerebros biológicos mediante modelos de neuronas artificiales. \par
 
 \newpage
-\chapter{Desarrollo de software}
+\chapter{Marco metodológico}
 \section{Pruebas de estimación de poses humanas}\label{pruebaspose}
 
 Dentro de los objetivos específicos de este trabajo se cita el de obtener patrones de poses humanas captadas en imágenes secuenciales.\par
 
 La estimación de pose es, en términos simples, la extracción de datos  de los puntos que conforman ciertas partes del cuerpo humano, con los cuales se puede diagramar la ubicación de las mismos, y la dependencia entre ellas, logrando así graficar la estructura de una pose humana.\par
 
-Otros trabajos lo denominan 'esqueletización' u 'obtener el esqueleto', pero la idea es siempre la misma, obtener un mapa de la disposición de las extremidades del cuerpo humano como si se tratase del mismo esqueleto.\par
+Otros trabajos lo denominan esqueletización u obtener el esqueleto, pero la idea es siempre la misma, obtener un mapa de la disposición de las extremidades del cuerpo humano como si se tratase del mismo esqueleto.\par
 
 \subsection{Prueba 1: Clasificador SVM-HOG}
 
@@ -942,13 +981,13 @@ Tomando en cuenta que la velocidad de procesamiento utilizando el modelo Caffe e
 
 Aunque es mucho el tiempo necesario para procesar una imagen no lográndose suficiente fluidez para catalogarla como 'en tiempo real', el resultado es bastante acertado, tomando en cuenta las limitaciones del hardware utilizado. Se podría obtener un mejor desempeño usando máquinas más potentes, o simplemente haciendo uso de librerías de paralelismo de Python, que permiten distribuir trabajos no solamente a través de hilos de ejecución, sino también a través de múltiples computadores conectados entre sí por medio de una red de área local.\par
 
-
+\newpage
 \section{Extracción de poses humanas}\label{extraccionpose}
 Luego de las pruebas, se decidió utilizar el modelo Caffe mediante la implementación de las funciones DNN de OpenCV. En este apartado se dará una breve explicación de los detalles del mismo.\par
 
 La configuración del modelo de red previamente entrenada se grafica en la siguiente figura:
 \begin{figure}[h!]
-	\includegraphics[width=450pt]{Imagenes/network_pose1.jpg}
+	\includegraphics[width=460pt]{Imagenes/network_pose1.jpg}
 	\centering	
 	\caption{Estructura visual del modelo de red neuronal artificial Caffe para estimación de poses humanas, Fuente \url{learnopencv.com}.}
 	\label{fig:network_pose1}
@@ -972,7 +1011,7 @@ Para el cálculo angular, se utilizaron ecuaciones trigonométricas simples como
 Cada extremidad cuenta con dos partes, teniendo cuatro extremidades, se proceden a calcular ocho ángulos: antebrazos izquierdo y derecho, brazos izquierdo y derecho (sección del músculo biceps), muslos izquierdo y derecho, y pantorrillas izquierda y derecha. Todos estos suman ocho partes a considerar.\par
 
 \begin{figure}[h!]
-	\includegraphics[width=150pt]{Imagenes/pose6.jpg}
+	\includegraphics[width=200pt]{Imagenes/pose6.jpg}
 	\centering	
 	\caption{Ejemplo de medición del lado izquierdo del cuerpo: los miembros superiores, con la flecha que indica el sentido de medición angular, y los inferiores, en sentido contrario. Del lado derecho se invierten los sentidos. Fuente propia.}
 	\label{fig:pose5}
@@ -1018,6 +1057,27 @@ El método de entrenamiento es: se deben generar primero grupos de poses compati
 
 Para el efecto, se procedió a la captura mediante la cámara incorporada del cuerpo humano de una persona en una acción cuya pose sugiera 1. algún tipo de amenaza con arma o 2. agresión con brazos (se podría entrenar con poses de más tipos de agresiones en un trabajo futuro). No se contabilizó el número de casos positivos, ya que simplemente eran almacenados en un archivo. Luego se procedió a la captura de un cuerpo humano cuya pose esté fuera del margen considerado como amenaza o agresión. \par
 
+\begin{table}[htbp]
+	\centering
+	\footnotesize
+	\begin{tabular}{rrcc}
+		\raisebox{-\totalheight}{\includegraphics[width=0.25\textwidth]{Imagenes/1.png}} &
+		\raisebox{-\totalheight}{\includegraphics[width=0.25\textwidth]{Imagenes/2.png}} \\ 
+		\multicolumn{2}{c}{Negativo para Amenaza/Agresión} \\
+		
+		\raisebox{-\totalheight}{\includegraphics[width=0.25\textwidth]{Imagenes/3.png}} &
+		\raisebox{-\totalheight}{\includegraphics[width=0.25\textwidth]{Imagenes/4.png}} \\
+		\multicolumn{2}{c}{Negativo para Amenaza/Agresión} \\
+		
+		\raisebox{-\totalheight}{\includegraphics[width=0.25\textwidth]{Imagenes/5.png}} &
+		\raisebox{-\totalheight}{\includegraphics[width=0.25\textwidth]{Imagenes/6.png}} \\ 
+		\multicolumn{2}{c}{Positivo para Amenaza/Agresión} \\
+	\end{tabular}%
+	\label{tab:addlabel}%
+	\caption{Tabla de clases de poses utilizadas para entrenamiento.}
+\end{table}%
+
+
 \begin{figure}[h!]
 	\includegraphics[width=180pt]{Imagenes/dataset2.jpg}
 	\centering	
@@ -1025,7 +1085,8 @@ Para el efecto, se procedió a la captura mediante la cámara incorporada del cu
 	\label{fig:dataset2}
 \end{figure}
 
-Se generaron en total 716.310 combinaciones de poses positivas y negativas para poses que se utilizarán para entrenar la red neuronal.
+Se generaron en total 3.246.747 combinaciones de poses positivas y negativas para poses que se utilizarán para entrenar la red neuronal.\par
+
 
 \section{Entrenamiento de una red neuronal artificial}\label{entrenamiento}
 Para la implementación de redes neuronales artificiales en el presente trabajo, se utilizó la librería Keras de Python, que ofrecen una capa de abstracción sobre otra librería llamada TensorFlow.\par
@@ -1080,28 +1141,127 @@ En este punto, la red entrenada ya está lista para inferir. Al efecto, se escri
 
 En la ejecución esto va acompañado de una alerta sonora avisando de la detección de una pose compatible, una alerta visual con un mensaje, y se agregó otra alerta visual donde se muestra un círculo rojo en caso de presencia de armas de fuego cortas.\par
 
-\section{Detección de armas utilizando detectores en cascada}\label{deteccionarmas}
+\section{Detección de armas utilizando clasificadores en cascada}\label{deteccionarmas}
 Si bien la aplicación puede determinar mediante redes neuronales la ocurrencia de una pose compatible con una agresión, también se agregó una característica que permite detectar armas de fuego en la mano de la persona cuya pose resultó positiva para la clasificación.\par
 
 \begin{figure}[h!]
-	\includegraphics[width=170pt]{Imagenes/output2.jpg}
+	\includegraphics[width=190pt]{Imagenes/output2.jpg}
 	\centering	
 	\caption{Detección de armas de fuego cortas en la mano de una persona cuya pose es compatible con una amenaza..}
 	\label{fig:output2}
 \end{figure}
 
-Para el efecto, se descargó un conjunto de datos pre entrenados de \url{https://github.com/JYang25/opencv_demo} que contiene características de features Haar-like que describen armas de fuego.\par
+Para el trabajo, se descargó un conjunto de datos pre entrenados de \url{https://github.com/JYang25/opencv_demo} que contiene características de features Haar-like que describen armas de fuego.\par
 
-La detección se efectúa mediante clasificadores en cascada que por defecto se implementan en OpenCV. Este se activa luego de que una pose compatible con agresión es detectada, y solamente se genera una alerta extra en caso de que el arma esté ubicada cerca de los puntos de la mano de aquella pose positiva para agresión.\par
+Para determinar si una agresión con arma de fuego está ocurriendo, además de una pose compatible, es necesario determinar la existencia del objeto arma en la escena, y ésta debe estar situada en una posición que sugiera que una persona la esté utilizando. \par
 
-No se incluyeron datos de todas las armas disponibles para efectuar agresiones humanas (cuchillos, hachas, arcos y flechas, etc), solamente fueron utilizados descriptores de armas de fuego cortas.\par
+Un arma en la escena no es determinante para establecer que existe una amenaza, debemos descartar, por ejemplo, armas tiradas en el suelo, colgadas en la pared, o incluso un arma visible en el bolsillo de una persona. Entonces, dos condiciones son necesarias para establecer una amenaza con arma de fuego: una pose compatible con amenaza, y un arma en la mano de la persona.\par
+
+La detección se efectúa mediante Clasificadores en Cascada, cuyo funcionamiento ya se explicó en la sección \ref{herramientasdevisionporcomputadora} que por defecto se implementan en OpenCV. El proceso de detección de armas se activa luego de que una pose compatible con agresión es detectada, y solamente se genera una alerta extra en caso de que el arma esté ubicada cerca de los puntos de la mano de aquella pose positiva para agresión.\par
+
+No se incluyeron datos de características de todas las armas disponibles para efectuar agresiones humanas (cuchillos, hachas, arcos y flechas, etc), solamente fueron utilizados descriptores de armas de fuego cortas.\par
+
+\vspace*{1cm}
 
 \begin{figure}[h!]
-	\includegraphics[width=350pt]{Imagenes/code1.jpg}
+	\includegraphics[width=450pt]{Imagenes/positiveresult.jpg}
 	\centering	
-	\caption{Parte del código en lenguaje Python que detecta armas cerca de las manos de una persona cuya pose es positiva para agresión.}
+	\caption{Captura, clasificación y detección de arma positivas para una pose compatible con agresión. Nótese el recuadro de color azul rodendo el área donde se detecta el arma de fuego.}
 	\label{fig:code1}
 \end{figure}
+
+\section{Esquema de proceso}\label{processschema}
+La aplicación desarrollada procesa la información siguiendo la estructura de procesamiento distribuído tipo cliente-servidor que posibilita la modularización. Una estructura cliente-servidor es un modelo de trabajo flexible donde el cliente puede ejecutarse en una computadora dedicada, conectada al servidor a través de una red de área local. Además, esto posibilita que el cliente, al ejecutarse independientemente del servidor, pueda utilizar cualquier herramienta de extracción de poses existente que se quiera implementar. \par
+
+De esta manera, el servidor solamente envía al cliente datos de imágenes, el cliente (o clientes) procesa la información y devuelve al servidor una lista de ángulos de poses, si existiesen. El servidor, al recibir esto, utiliza los datos para entradas en la red neuronal, que determina si el conjunto de ángulos es o no compatible con una pose de agresión.\par
+
+\vspace*{0.7cm}
+
+\begin{figure}[h!]
+	\includegraphics[width=460pt]{Imagenes/process1.jpg}
+	\centering	
+	\caption{Esquema gráfico del proceso completo. Fuente propia.}
+	\label{fig:code1}
+\end{figure}
+
+Entonces, citando detalladamente los pasos del proceso, tenemos que:
+\begin{enumerate}
+	\item La cámara captura imágenes y las envía al servidor.
+	\item El servidor recibe las imágenes y las coloca en una cola de procesamiento para las aplicaciones clientes.
+	\item Una aplicación cliente lee la imágen existente en la cola y la procesa con el detector de poses implementado.
+	\item El detector de poses del cliente obtiene los puntos pertenecientes a las articulaciones del cuerpo humano, si existiese en la imágen, y calcula los ángulos entre rectas de las extremidades con la recta trazada a través del tronco del cuerpo.
+	\item El cliente envía a una cola de resultados la lista de ángulos obtenidos de la pose.
+	\item El servidor lee datos de la cola de resultados, y utiliza estos como datos de entrada para una red neuronal que clasificará al conjunto de ángulos como compatibles con amenaza, o no compatibles.
+	\item Si el resultado de la inferencia de la red neuronal resulta en positiva para pose compatible con amenaza, se procesa la imágen para determinar si existe un objeto arma presente en cercanías a los puntos pertenecientes a las manos de la persona cuya pose se procesó previamente.
+	\item Se informa al usuario acerca del resultado de los procesos. Si la pose es compatible o no, y si existe o no un arma de fuego presente en caso de pose positiva.
+	\item Se repite el proceso con cada imágen recibida de la cámara.
+	\item Se utiliza un algoritmo para descartar falsos positivos: deben existir al menos \textit{x} poses sucesivas compatibles con agresión en \textit{y} segundos. Estos parámetros son ajustables de acuerdo a la velocidad de procesamiento de los clientes. Generalmente los falsos positivos son únicos, no consecutivos en un determinado período de tiempo.
+\end{enumerate}\par
+
+\newpage
+\chapter{Resultados}
+\section{Resumen de resultados de clasificación}\label{results1}
+Se utilizó un modelo de red neuronal entrenada con combinaciones de medidas angulares para obtener la clasificación de dos clases: Ataque o no ataque. 
+
+\subsection{Muestras utilizadas}
+En esta sección, se considera positiva la pose que sugiera efectivamente que una persona está profiriendo una amenaza o agresión, de lo contrario, se considera negativa.
+\begin{itemize}
+	\item Amenaza o agresión positiva.
+	Para los casos donde la clasificación de la red neuronal sea positiva para Ataque, se utilizaron dos tipos de combinaciones de poses:
+	\begin{enumerate}
+		\item Ataque o agresión con brazos por sobre la cabeza.
+		\item Ataque o agresión con brazos extendidos formando ángulos con el cuerpo cercanos a los 90 grados (amenaza con arma de fuego).
+	\end{enumerate}\par
+	\item Amenaza o agresión negativa.
+	Para casos donde la pose no es considerada como compatible con agresión, se utilizaron combinaciones de ángulos de poses de:
+	\begin{enumerate}
+		\item Persona caminando.
+		\item Persona sentada con brazos en distintas combinaciones angulares cercanas a cero grados (brazos caídos).
+		\item Persona de pie con brazos cruzados o a la cintura.
+	\end{enumerate}\par	
+\end{itemize}\par
+
+\subsection{Tablas de resultados}
+Para la siguiente tabla, se utilizó un video en cuyas imágenes el actor efectúa poses negativas y positivas para agresiones/amenazas, obteniendo:
+
+\vspace*{0.8cm}
+% Table generated by Excel2LaTeX from sheet 'Resultados'
+\begin{table}[htbp]
+	\tiny
+	\centering
+	\resizebox{\textwidth}{!}{% 
+		\begin{tabular}{lcccccc}
+			\textcolor[rgb]{ .255,  .243,  .212}{} & \multicolumn{1}{p{4.355em}}{\cellcolor[rgb]{ .784,  .941,  .984}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Tiempo de video en segs}}} & \multicolumn{1}{p{3em}}{\cellcolor[rgb]{ .784,  .941,  .984}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Total poses}}} & \multicolumn{1}{p{3.285em}}{\cellcolor[rgb]{ .784,  .941,  .984}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Falsos positivos}}} & \multicolumn{1}{p{3.57em}}{\cellcolor[rgb]{ .784,  .941,  .984}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Verdaderos positivos}}} & \multicolumn{1}{p{4.215em}}{\cellcolor[rgb]{ .784,  .941,  .984}\textcolor[rgb]{ .255,  .243,  .212}{\centering \textbf{Porcent. de aciertos}}} & \multicolumn{1}{p{3.715em}}{\cellcolor[rgb]{ .784,  .941,  .984}\textcolor[rgb]{ .255,  .243,  .212}{\centering \textbf{Porcent. de errores}}} \\[6ex]
+			\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Poses negativas}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{64}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{1611}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{95}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{1516}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{94.10}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{5.90}} \\[1ex]
+			\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Poses positivas}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{31}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{795}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{81}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{714}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{89.81}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{10.19}} \\[1ex]
+			\rowcolor[rgb]{ .827,  .953,  .988} \textcolor[rgb]{ .255,  .243,  .212}{\textbf{Total}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{96}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{2406}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{176}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{2230}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{92.68}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{7.32}} \\
+		\end{tabular}%
+	}
+	\label{tab:addlabel}%
+	\caption{Tabla de resultados de pruebas finales obtenidas con la red neuronal. }
+\end{table}%
+\vspace*{0.1cm}
+
+Del análisis de los datos expuestos en la tabla de resultados, se comprueba que de un total de 2406 imágenes de poses tomadas de un video de prueba, se obtuvieron 2230 casos de clasificación exitosos donde la pose se considera positiva o negativa para agresiones, y 176 casos no exitosos, donde la clase obtenida por la red neuronal no coincidía con las poses de agresión o no agresión. Esto da un valor de precisión de 0,92.\par
+
+De los datos obtenidos, se puede construir una matriz de confusión como sigue:\par
+\vspace*{1cm}
+% Table generated by Excel2LaTeX from sheet 'Confusion'
+\begin{table}[htbp]
+	\centering
+	\footnotesize
+	\begin{tabular}{rrcc}
+		\rowcolor[rgb]{ .827,  .953,  .988} \textcolor[rgb]{ .729,  .71,  .671}{} & \multicolumn{3}{c}{\cellcolor[rgb]{ .886,  .984,  .984}\textcolor[rgb]{ .729,  .71,  .671}{\textbf{Prediccion}}} \\[1ex]
+		\rowcolor[rgb]{ .827,  .953,  .988} \textcolor[rgb]{ .729,  .71,  .671}{} & \textcolor[rgb]{ .255,  .243,  .212}{} & \multicolumn{1}{p{5.355em}}{\cellcolor[rgb]{ .784,  .941,  .984}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Poses Positivas}}} & \multicolumn{1}{p{5.355em}}{\cellcolor[rgb]{ .784,  .941,  .984}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Poses Negativas}}} \\[2ex]
+		\rowcolor[rgb]{ .827,  .953,  .988} \multicolumn{1}{c}{\multirow{2}[0]{*}{\textcolor[rgb]{ .729,  .71,  .671}{\rotatebox{90}{\textbf{Real}}}}} & \multicolumn{1}{l}{\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Poses Positivas}}} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{714}} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{81}} \\[2ex]
+		\rowcolor[rgb]{ .827,  .953,  .988}       & \multicolumn{1}{l}{\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Poses Negativas}}} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{95}} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{1516}} \\[2ex]
+		\rowcolor[rgb]{ .827,  .953,  .988}       & \textcolor[rgb]{ .255,  .243,  .212}{} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{Exactitud}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{Presición}} \\[1ex]
+		\rowcolor[rgb]{ .827,  .953,  .988}  	  & \textcolor[rgb]{ .729,  .71,  .671}{} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .729,  .71,  .671}{\textbf{0.94}} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .729,  .71,  .671}{\textbf{0.93}} \\[1ex]
+	\end{tabular}%
+	\caption{Matriz de confusión generada con los datos de las pruebas finales.}
+	\label{tab:addlabel}%
+\end{table}%
+
 
 \newpage
 \chapter{Conclusiones}
@@ -1207,80 +1367,57 @@ Se logró desarrollar una aplicación que aporta una solución para la detecció
 \textbf{VCR} En inglés, siglas de Video Camera Recorder. Es un dispositivo analógico que permite capturar las imágenes a través de cámaras de vigilancia. \\
 
 
-
-
-
-
-
 \newpage	
-\begin{thebibliography}{9}
-	\bibitem{valera} 
-	M. Valera, S.A. Velastin. \textit{Intelligent distributed surveillance system: a review. IEE Proc. Vis. Image Signal Process.} 152(3):192–204, 2005.
+\chapter{Referencias}
+\setlength{\parskip}{-1.0em}
+\setlength{\parindent}{0em}
+\begin{enumerate}
+	\item M. Valera, S.A. Velastin. \textit{Intelligent distributed surveillance system: a review. IEE Proc. Vis. Image Signal Process.} 152(3):192–204, 2005.
 	
-	\bibitem{dautov} 
-	1.R. Dautov, S. Distefano, D. Bruneo, F. Longo, G. Merlino, A. Puliafito, R. Buyya. \textit{Metropolitan intelligent surveillance systems for urban areas by harnessing IoT and edge computing paradigms.} 48(2):1475–1492, 2018.
+	\item R. Dautov, S. Distefano, D. Bruneo, F. Longo, G. Merlino, A. Puliafito, R. Buyya. \textit{Metropolitan intelligent surveillance systems for urban areas by harnessing IoT and edge computing paradigms.} 48(2):1475–1492, 2018.
 
-	\bibitem{lozano} 
-	M. D. Ruiz Lozano. \textit{Un modelo para el desarrollo de sistemas de detección de situaciones de riesgo capaces de integrar información de fuentes heterogéneas. Aplicaciones.} Granada, 2010.
+	\item M. D. Ruiz Lozano. \textit{Un modelo para el desarrollo de sistemas de detección de situaciones de riesgo capaces de integrar información de fuentes heterogéneas. Aplicaciones.} Granada, 2010.
 
-	\bibitem{zhang1} 
-	Zhang, G.D., Jiang, P.L., Matsumoto, K., Yoshida, M. and Kita, K. \textit{An Improvement of Pedestrian Detection Method with Multiple Resolutions.} Journal of Computer and Communications. 5(1) 102-116, 2017
+	\item Zhang, G.D., Jiang, P.L., Matsumoto, K., Yoshida, M. and Kita, K. \textit{An Improvement of Pedestrian Detection Method with Multiple Resolutions.} Journal of Computer and Communications. 5(1) 102-116, 2017.
 
-	\bibitem{nidhi} 
-	Nidhi. Dept. of Computer Applications, NIT Kurukshetra, Haryana, India. \textit{Image Processing and Object Detection.} International Journal of Applied Research 2015; 1(9): 396-399, 2015.
+	\item Nidhi. Dept. of Computer Applications, NIT Kurukshetra, Haryana, India. \textit{Image Processing and Object Detection.} International Journal of Applied Research 2015; 1(9): 396-399, 2015.
 	
-	\bibitem{barron} 
-	J.L. Barron, D.J. Fleet, S.S. Beauchemin \textit{Performance of Optical Flow Techniques.} IJCV 12:1 pp43-77, 2015.
+	\item J.L. Barron, D.J. Fleet, S.S. Beauchemin \textit{Performance of Optical Flow Techniques.} IJCV 12:1 pp43-77, 2015.
 	
-	\bibitem{kamarudin} 
-	N. S. Kamarudin, M. Makhtar, S. A. Fadzli, M. Mohamad, F. S. Mohamad, M. F. A. 
-	Kadir \textit{Comparison of Image Classification Techniques using Caltech 101 Dataset.} Journal of Theoretical and Applied Information Technology, 71(2):1992-8645, 2015.
+	\item N. S. Kamarudin, M. Makhtar, S. A. Fadzli, M. Mohamad, F. S. Mohamad, M. F. A. Kadir \textit{Comparison of Image Classification Techniques using Caltech 101 Dataset.} Journal of Theoretical and Applied Information Technology, 71(2):1992-8645, 2015.
 	
-	\bibitem{bailey} 
-	S. Bailey, C. Aragon, R. Romano, R. C. Thomas, B. A. Weaver, D. Wong \textit{How to find more Supernovae with less work: Object Classification Techniques for Difference Imaging.} Journal of Theoretical and Applied Information Technology, 665(2):1246-1253, 2007.	
+	\item S. Bailey, C. Aragon, R. Romano, R. C. Thomas, B. A. Weaver, D. Wong \textit{How to find more Supernovae with less work: Object Classification Techniques for Difference Imaging.} Journal of Theoretical and Applied Information Technology, 665(2):1246-1253, 2007.
 	
-	\bibitem{opencv1} 
-	Intel Corp. \textit{The OpenCV Reference Manual, Release 3.0.0-dev} 2014.	
+	\item Intel Corp. \textit{The OpenCV Reference Manual, Release 3.0.0-dev} 2014. 
 			
-	\bibitem{machinelearningcoursera} 
-	Andrew Ng\textit{Machine Learning Course}, Coursera, www.coursera.org.	
+	\item Andrew Ng\textit{Machine Learning Course}, Coursera, www.coursera.org. 
 	
-	\bibitem{matich} 
-	Damián Jorge Matich \textit{Redes Neuronales: Conceptos Básicos y Aplicaciones}, Universidad Tecnológica Nacional, 2001.	
+	\item Damián Jorge Matich \textit{Redes Neuronales: Conceptos Básicos y Aplicaciones}, Universidad Tecnológica Nacional, 2001. 
 	
-	\bibitem{enyinna} 
-	C.Enyinna Nwankpa, W. Ijomah, A. Gachagan, and S. Marshall \textit{Activation Functions: Comparison of Trends in	Practice and Research for Deep Learning}, 2018.	
+	\item C.Enyinna Nwankpa, W. Ijomah, A. Gachagan, and S. Marshall \textit{Activation Functions: Comparison of Trends in Practice and Research for Deep Learning}, 2018.
 	
-	\bibitem{svm1} 
-	Enrique J. Carmona Suárez \textit{Tutorial sobre Máquinas de Vectores Soporte (SVM)}, Universidad Nacional de Educación a Distancia (UNED), 28040-Madrid España, 2014.	
+	\item Enrique J. Carmona Suárez \textit{Tutorial sobre Máquinas de Vectores Soporte (SVM)}, Universidad Nacional de Educación a Distancia (UNED), 28040-Madrid España, 2014.
 	
-	\bibitem{hog1} 
-	N. Dalal, B. Trigg \textit{Histograms of Oriented Gradients for Human Detection}, EEE Computer Society Conference on Computer Vision and Pattern Recognition, (1):886–893, 2005.	
+	\item N. Dalal, B. Trigg \textit{Histograms of Oriented Gradients for Human Detection}, EEE Computer Society Conference on Computer Vision and Pattern Recognition, (1):886–893, 2005.
 	
-	\bibitem{activity1} 
-	Ong Chin Ann, Lau Bee Theng \textit{Human Activity Recognition: A Review}, 2014 IEEE International Conference on Control System, Computing and Engineering, 2014.
+	\item Ong Chin Ann, Lau Bee Theng \textit{Human Activity Recognition: A Review}, 2014 IEEE International Conference on Control System, Computing and Engineering, 2014.
 	
-	\bibitem{human1} 
-	Joan Reig Doménech \textit{Estudio del estado del arte de los métodos de estimación de la pose humana en 3D}, Universidad de Alicante, España, 2018.
+	\item Joan Reig Doménech \textit{Estudio del estado del arte de los métodos de estimación de la pose humana en 3D}, Universidad de Alicante, España, 2018.
 	
-	\bibitem{alphapose1} 
-	H.Fang, S.Xie, Y.Tai, C.Lu \textit{RMPE: Regional Multi-Person Pose Estimation}, Shanghai Jiao Tong University, China, 2018.
+	\item H.Fang, S.Xie, Y.Tai, C.Lu \textit{RMPE: Regional Multi-Person Pose Estimation}, Shanghai Jiao Tong University, China, 2018.
 	
-	\bibitem{convolutional1} 
-	Y.LeCun, L.Bottou, Y.Bengio, P.Haffner \textit{Gradient-Based Learning Applied to Document Recognition}, IEEE, 1998.
+	\item Y.LeCun, L.Bottou, Y.Bengio, P.Haffner \textit{Gradient-Based Learning Applied to Document Recognition}, IEEE, 1998.
 	
-	\bibitem{cnnpose1} 
-	Z.Cao, T.Simon, S.Wei, Y.Sheikh \textit{Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields}, The Robotics Institute, Carnegie Mellon University, 2017.
+	\item Z.Cao, T.Simon, S.Wei, Y.Sheikh \textit{Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields}, The Robotics Institute, Carnegie Mellon University, 2017.
 
-	\bibitem{caffe} 
-	Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor \textit{Caffe: Convolutional Architecture for Fast Feature Embedding}, arXiv preprint arXiv:1408.5093, 2014.
+	\item Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor \textit{Caffe: Convolutional Architecture for Fast Feature Embedding}, arXiv preprint arXiv:1408.5093, 2014.
 	
-	\bibitem{ml} 
-	Stephen Marsland \textit{Chapman \& Hall/CRC Machine Learning An Algorithmic Perspective Second Edition}, CRC Press, 2014.
+	\item Stephen Marsland \textit{Chapman \& Hall/CRC Machine Learning An Algorithmic Perspective Second Edition}, CRC Press, 2014.
 	
-	\bibitem{rae} 
-	Diccionario en línea de la Real Academia Española. \textit{Real Academia Española}. https://dle.rae.es/.	
+	\item Diccionario en línea de la Real Academia Española. \textit{Real Academia Española}. https://dle.rae.es/.
 	
-\end{thebibliography}
-
+	\item J. K. Aggarwal, M. S. Ryoo \textit{Human Activity Analysis: A Review}, ACM Comput. Surv. 43, 3, Article 16. 2011.
+	
+	\item T.Subetha, S.Chitrakala \textit{A Survey on Human Activity Recognition from Videos}, International Conference On Information Communication And Embedded System (ICICES), 2016.
+\end{enumerate}
 \end{document}
