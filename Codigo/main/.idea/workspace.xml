@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d2c45a3-03aa-47a0-a440-c5c7d9eed72c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/PoseDetectorFatClient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py" afterDir="false" />
-    </list>
+    <list default="true" id="6d2c45a3-03aa-47a0-a440-c5c7d9eed72c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +13,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
+            <state relative-caret-position="690">
               <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
             </state>
           </provider>
@@ -27,7 +22,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3410">
+            <state relative-caret-position="830">
               <caret line="300" column="61" selection-start-line="300" selection-start-column="33" selection-end-line="300" selection-end-column="61" />
               <folding>
                 <element signature="e#84#121#0" expanded="true" />
@@ -62,6 +57,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -83,7 +79,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -205,14 +200,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/final/VideoDetectionMultiprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="690">
           <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/final/PoseDetectorFatClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3410">
+        <state relative-caret-position="830">
           <caret line="300" column="61" selection-start-line="300" selection-start-column="33" selection-end-line="300" selection-end-column="61" />
           <folding>
             <element signature="e#84#121#0" expanded="true" />
