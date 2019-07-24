@@ -1,5 +1,5 @@
-from NeuralNetwork import NeuralNetwork
-from Drawer import Drawer
+from final.NeuralNetwork import NeuralNetwork
+from final.Drawer import Drawer
 from pygame import mixer
 from multiprocessing.managers import SyncManager
 import queue

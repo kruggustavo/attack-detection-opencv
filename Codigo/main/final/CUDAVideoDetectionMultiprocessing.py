@@ -90,16 +90,16 @@ boardFontSize = 0.3
 Ytext = (boardFontSize * fontFactor)            # Posicion donde empezar a imprimir texto
 
 # Red neuronal de angulos
-mustTrain = False
+mustTrain = True
 anglesNet = NeuralNetwork(8)
 if mustTrain == True:
-    EPOCHS = 3
-    anglesNet.loadTrainingSamples("trainingangles_cuda.csv")
+    EPOCHS = 5
+    anglesNet.loadTrainingSamples("trainingangles_all.csv")
     anglesNet.trainNetwork(EPOCHS)
-    anglesNet.saveModel("model_cuda.json")
+    anglesNet.saveModel("model_all.json")
     quit(0)
 else:
-    anglesNet.loadModel("model_cuda.json")
+    anglesNet.loadModel("model_all.json")
 
 # Parametros del detector de poses
 pad_value = (0, 0, 0)
