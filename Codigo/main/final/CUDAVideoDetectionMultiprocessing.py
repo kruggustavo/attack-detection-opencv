@@ -15,14 +15,14 @@ from final.modules.pose import Pose
 
 # Utilizar solo cpu, utiliza CUDA cuando es false
 cpu = False
-num_threads = 10
+num_threads = 16
 
 # Inputs de la red neuronal de poses
-net_input_height_size = 256
+net_input_height_size = 128
 
 workpath = "/home/usuario/Documents/attack-detection-opencv"
 img_file = workpath + "/Imagenes/seniors-walking.jpg"
-videoFile = workpath +"/Videos/10.MP4"
+videoFile = workpath +"/Videos/12.MP4"
 
 video_width = 640
 video_height = 480
@@ -45,11 +45,11 @@ drawer = Drawer()
 netOutput = NO_ATTACK
 
 Xseconds = 15                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
-Yseconds =  0.1                                 # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
+Yseconds =  0.001                                 # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
 Xframes = 3                                     # Cantidad mínima de frames en cola para enviar otro frame. Si cantidad es mayor a este valor, no se envian mas frames a la cola
 fontFactor = 46.5                               # Factor de multiplicacion para tamaño de fuente
 
-XsecondsForAgression = 5                        # Si ocurren Y frames de agresiones en X segundos, considerar agresion
+XsecondsForAgression = 4                        # Si ocurren Y frames de agresiones en X segundos, considerar agresion
 YagressionFrames = 5                            # Deben ocurrir Y frames de agresiones en X segundos
 blockAgressionCounter = 0
 agressionBlockTime = time.time()
