@@ -14,20 +14,20 @@ from final.modules.load_state import load_state
 from final.modules.pose import Pose
 
 # Utilizar solo cpu, utiliza CUDA cuando es false
-cpu = True
-num_threads = 15
+cpu = False
+num_threads = 10
 
 # Inputs de la red neuronal de poses
-net_input_height_size = 112
+net_input_height_size = 256
 
-workpath = "/home/usuario/Documentos/attack-detection-opencv"
+workpath = "/home/usuario/Documents/attack-detection-opencv"
 img_file = workpath + "/Imagenes/seniors-walking.jpg"
-videoFile = workpath +"/Videos/12.MP4"
+videoFile = workpath +"/Videos/10.MP4"
 
-video_width = 360
-video_height = 240
+video_width = 640
+video_height = 480
 
-outputVideoSize = (680, 480)
+outputVideoSize = (800, 600)
 
 # Estados
 ATTACK = 1
@@ -90,7 +90,7 @@ boardFontSize = 0.3
 Ytext = (boardFontSize * fontFactor)            # Posicion donde empezar a imprimir texto
 
 # Red neuronal de angulos
-mustTrain = True
+mustTrain = False
 anglesNet = NeuralNetwork(8)
 if mustTrain == True:
     EPOCHS = 5
@@ -324,7 +324,7 @@ while True:
     except:
         pass
 
-    cv2.imshow(windowName, cv2.resize(img, ((int) (video_width * 1.7), (int) (video_height * 1.7) )))
+    cv2.imshow(windowName, cv2.resize(img, ((int) (video_width * 2), (int) (video_height * 2) )))
 
     key = cv2.waitKey(33)
     if key == 27:  # esc
