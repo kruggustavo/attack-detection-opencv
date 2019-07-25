@@ -45,12 +45,12 @@ drawer = Drawer()
 netOutput = NO_ATTACK
 
 Xseconds = 15                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
-Yseconds =  1                                 # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
+Yseconds =  0.1                                 # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
 Xframes = 3                                     # Cantidad mínima de frames en cola para enviar otro frame. Si cantidad es mayor a este valor, no se envian mas frames a la cola
 fontFactor = 46.5                               # Factor de multiplicacion para tamaño de fuente
 
 XsecondsForAgression = 5                        # Si ocurren Y frames de agresiones en X segundos, considerar agresion
-YagressionFrames = 4                            # Deben ocurrir Y frames de agresiones en X segundos
+YagressionFrames = 5                            # Deben ocurrir Y frames de agresiones en X segundos
 blockAgressionCounter = 0
 agressionBlockTime = time.time()
 
@@ -90,16 +90,16 @@ boardFontSize = 0.3
 Ytext = (boardFontSize * fontFactor)            # Posicion donde empezar a imprimir texto
 
 # Red neuronal de angulos
-mustTrain = False
+mustTrain = True
 anglesNet = NeuralNetwork(8)
 if mustTrain == True:
     EPOCHS = 5
-    anglesNet.loadTrainingSamples("trainingangles_all.csv")
+    anglesNet.loadTrainingSamples("trainingangles_all_cuda_25.csv")
     anglesNet.trainNetwork(EPOCHS)
-    anglesNet.saveModel("model_all.json")
+    anglesNet.saveModel("model_all_25.json")
     quit(0)
 else:
-    anglesNet.loadModel("model_all.json")
+    anglesNet.loadModel("model_all_25.json")
 
 # Parametros del detector de poses
 pad_value = (0, 0, 0)

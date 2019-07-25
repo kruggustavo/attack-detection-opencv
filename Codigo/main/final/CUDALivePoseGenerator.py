@@ -15,14 +15,14 @@ from final.modules.load_state import load_state
 from final.modules.pose import Pose
 
 # Utilizar solo cpu, utiliza CUDA cuando es false
-cpu = True
+cpu = False
 
 # Inputs de la red neuronal de poses
-net_input_height_size = 96
+net_input_height_size = 256
 
-workpath = "/home/usuario/Documentos/attack-detection-opencv"
+workpath = "/home/usuario/Documents/attack-detection-opencv"
 img_file = workpath + "/Imagenes/seniors-walking.jpg"
-videoFile = workpath +"/Videos/12.MP4"
+videoFile = workpath +"/Videos/11.MP4"
 
 video_width = 360
 video_height = 240
