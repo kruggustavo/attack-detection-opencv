@@ -4,14 +4,14 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Ejemplo de representaci\IeC {\'o}n de una pose en un ni\IeC {\~n}o donde se dibujan las l\IeC {\'\i }neas sobre los elementos m\IeC {\'a}s importantes que la conforman. Fuente: \url {pixabay.com}\relax }}{21}{figure.caption.4}% 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Pictorial Structures Model. Fuente: Dom\IeC {\'e}nech.\relax }}{23}{figure.caption.5}% 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Regresi\IeC {\'o}n lineal, datos de salida en un plano cartesiano con el l\IeC {\'\i }mite de decisi\IeC {\'o}n. Fuente propia.\relax }}{26}{figure.caption.6}% 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Regresi\IeC {\'o}n log\IeC {\'\i }stica, datos de salida en un plano cartesiano con el l\IeC {\'\i }mite de decisi\IeC {\'o}n. Fuente propia.\relax }}{27}{figure.caption.7}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Pictorial Structures Model. Fuente: Dom\IeC {\'e}nech (2018).\relax }}{23}{figure.caption.5}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Regresi\IeC {\'o}n lineal, datos de salida en un plano cartesiano con el l\IeC {\'\i }mite de decisi\IeC {\'o}n. Fuente: Andrew Ng, Machine Learning Course, www.coursera.org.\relax }}{26}{figure.caption.6}% 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Regresi\IeC {\'o}n log\IeC {\'\i }stica, datos de salida en un plano cartesiano con el l\IeC {\'\i }mite de decisi\IeC {\'o}n. Fuente: Andrew Ng, Machine Learning Course, www.coursera.org.\relax }}{27}{figure.caption.7}% 
 \contentsline {figure}{\numberline {4.5}{\ignorespaces SVM con hiperplano \IeC {\'o}ptimo. Fuente: Suarez (2014) \relax }}{28}{figure.caption.8}% 
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Estructura superficial de una neurona natural. Fuente propia.\relax }}{29}{figure.caption.9}% 
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Estructura de una red neuronal simple. Fuente propia.\relax }}{30}{figure.caption.10}% 
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Estructura de una red neuronal con m\IeC {\'u}ltiples capas. Fuente propia.\relax }}{31}{figure.caption.11}% 
-\contentsline {figure}{\numberline {4.9}{\ignorespaces imagen de un hombre, y los gradientes obtenidos de la misma. Fuente Dalal y Trigg (2005) \relax }}{41}{figure.caption.12}% 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Estructura superficial de una neurona natural. Fuente: Matich (2001).\relax }}{29}{figure.caption.9}% 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Estructura de una red neuronal simple. Fuente: Matich (2001).\relax }}{30}{figure.caption.10}% 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Estructura de una red neuronal con m\IeC {\'u}ltiples capas. Fuente: Matich (2001).\relax }}{31}{figure.caption.11}% 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces imagen de un hombre, y los gradientes obtenidos de la misma. Fuente Dalal y Trigg (2005).\relax }}{41}{figure.caption.12}% 
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Entradas (Features) para los distintos clasificadores en cascada Fuente: OpenCV Reference Manual.\relax }}{43}{figure.caption.13}% 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Una de las im\IeC {\'a}genes del video de pruebas donde se observa una persona posiblemente en pose de amenaza con arma de fuego corta.\relax }}{47}{figure.caption.14}% 

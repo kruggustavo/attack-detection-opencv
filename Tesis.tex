@@ -388,7 +388,7 @@ Estos cilindros representan partes de las extremidades, y los puntos son las art
 \begin{figure}[h!]
 	\includegraphics[width=150pt]{Imagenes/domenech1.jpg}
 	\centering
-	\caption{Pictorial Structures Model. Fuente: Doménech.}
+	\caption{Pictorial Structures Model. Fuente: Doménech (2018).}
 	\label{fig:domenech2}
 \end{figure}
 
@@ -444,7 +444,7 @@ Una unidad de datos de entrenamiento puede identificarse como \textit{(x, y)} do
 \begin{figure}[h!]
 	\includegraphics[width=180pt]{Imagenes/regresion1.jpg}
 	\centering
-	\caption{Regresión lineal, datos de salida en un plano cartesiano con el límite de decisión. Fuente propia.}
+	\caption{Regresión lineal, datos de salida en un plano cartesiano con el límite de decisión. Fuente: Andrew Ng, Machine Learning Course, www.coursera.org.}
 	\label{fig:regresion1}
 \end{figure}
 
@@ -469,7 +469,7 @@ Ejemplo: \textit{z = O + $O_1$$x^2_1$ + $O_2$$x^2_2$}  es la ecuación de la cir
 \begin{figure}[h!]
 	\includegraphics[width=180pt]{Imagenes/regresion2.jpg}
 	\centering
-	\caption{Regresión logística, datos de salida en un plano cartesiano con el límite de decisión. Fuente propia.}
+	\caption{Regresión logística, datos de salida en un plano cartesiano con el límite de decisión. Fuente: Andrew Ng, Machine Learning Course, www.coursera.org.}
 	\label{fig:regresion2}
 \end{figure}
 
@@ -522,7 +522,7 @@ La estructura básica de una neurona consiste en (Matich, 2001):
 \begin{figure}[h!]
 	\includegraphics[width=220pt]{Imagenes/neurona.jpg}
 	\centering
-	\caption{Estructura superficial de una neurona natural. Fuente propia.}
+	\caption{Estructura superficial de una neurona natural. Fuente: Matich (2001).}
 	\label{fig:haarlike1}
 \end{figure}
 
@@ -536,7 +536,7 @@ Entre cada conexión de neuronas existe un parámetro denominado \textit{peso} d
 \begin{figure}[h!]
 	\includegraphics[width=340pt]{Imagenes/network1.jpg}
 	\centering
-	\caption{Estructura de una red neuronal simple. Fuente propia.}
+	\caption{Estructura de una red neuronal simple. Fuente: Matich (2001).}
 	\label{fig:network1}
 \end{figure}
 
@@ -549,7 +549,7 @@ Otros modelos de redes neuronales pueden agregar más capas de neuronas entre la
 \begin{figure}[h!]
 	\includegraphics[width=380pt]{Imagenes/network2.jpg}
 	\centering
-	\caption{Estructura de una red neuronal con múltiples capas. Fuente propia.}
+	\caption{Estructura de una red neuronal con múltiples capas. Fuente: Matich (2001).}
 	\label{fig:network2}
 \end{figure}
 
@@ -724,7 +724,7 @@ Además, una ventana puede contener diferentes cantidades de gradientes, de acue
 \begin{figure}[h!]
 	\includegraphics[width=340pt]{Imagenes/hog1.jpg}
 	\centering
-	\caption{imagen de un hombre, y los gradientes obtenidos de la misma. Fuente Dalal y Trigg (2005) }
+	\caption{imagen de un hombre, y los gradientes obtenidos de la misma. Fuente Dalal y Trigg (2005).}
 	\label{fig:hog1}
 \end{figure}
  
@@ -1157,7 +1157,7 @@ Para determinar si una agresión con arma de fuego está ocurriendo, además de 
 
 Un arma en la escena no es determinante para establecer que existe una amenaza, debemos descartar, por ejemplo, armas tiradas en el suelo, colgadas en la pared, o incluso un arma visible en el bolsillo de una persona. Entonces, dos condiciones son necesarias para establecer una amenaza con arma de fuego: una pose compatible con amenaza, y un arma en la mano de la persona.\par
 
-La detección se efectúa mediante Clasificadores en Cascada, cuyo funcionamiento ya se explicó en la sección \ref{herramientasdevisionporcomputadora} que por defecto se implementan en OpenCV. El proceso de detección de armas se activa luego de que una pose compatible con agresión es detectada, y solamente se genera una alerta extra en caso de que el arma esté ubicada cerca de los puntos de la mano de aquella pose positiva para agresión.\par
+La detección se efectúa mediante Clasificadores en Cascada, cuyo funcionamiento ya se explicó en la sección \ref{herramientasdevisionporcomputadora}, que por defecto se implementan en OpenCV. El proceso de detección de armas se activa luego de que una pose compatible con agresión es detectada, y solamente se genera una alerta extra en caso de que el arma esté ubicada cerca de los puntos de la mano de aquella pose positiva para agresión.\par
 
 No se incluyeron datos de características de todas las armas disponibles para efectuar agresiones humanas (cuchillos, hachas, arcos y flechas, etc), solamente fueron utilizados descriptores de armas de fuego cortas.\par
 
@@ -1256,7 +1256,7 @@ De los datos obtenidos, se puede construir una matriz de confusión como sigue:\
 		\rowcolor[rgb]{ .827,  .953,  .988} \multicolumn{1}{c}{\multirow{2}[0]{*}{\textcolor[rgb]{ .729,  .71,  .671}{\rotatebox{90}{\textbf{Real}}}}} & \multicolumn{1}{l}{\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Poses Positivas}}} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{714}} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{81}} \\[2ex]
 		\rowcolor[rgb]{ .827,  .953,  .988}       & \multicolumn{1}{l}{\textcolor[rgb]{ .255,  .243,  .212}{\textbf{Poses Negativas}}} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{95}} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .255,  .243,  .212}{\textbf{1516}} \\[2ex]
 		\rowcolor[rgb]{ .827,  .953,  .988}       & \textcolor[rgb]{ .255,  .243,  .212}{} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{Exactitud}} & \textcolor[rgb]{ .255,  .243,  .212}{\textbf{Presición}} \\[1ex]
-		\rowcolor[rgb]{ .827,  .953,  .988}  	  & \textcolor[rgb]{ .729,  .71,  .671}{} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .729,  .71,  .671}{\textbf{0.94}} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{ .729,  .71,  .671}{\textbf{0.93}} \\[1ex]
+		\rowcolor[rgb]{ .827,  .953,  .988}  	  & \textcolor[rgb]{ .729,  .71,  .671}{} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{.255,  .243,  .212}{\textbf{0.94}} & \cellcolor[rgb]{ 1,  1,  1}\textcolor[rgb]{.255,  .243,  .212}{\textbf{0.93}} \\[1ex]
 	\end{tabular}%
 	\caption{Matriz de confusión generada con los datos de las pruebas finales.}
 	\label{tab:addlabel}%
@@ -1369,7 +1369,7 @@ Se logró desarrollar una aplicación que aporta una solución para la detecció
 
 \newpage	
 \chapter{Referencias}
-\setlength{\parskip}{-1.0em}
+\setlength{\parskip}{3em}
 \setlength{\parindent}{0em}
 \begin{enumerate}
 	\item M. Valera, S.A. Velastin. \textit{Intelligent distributed surveillance system: a review. IEE Proc. Vis. Image Signal Process.} 152(3):192–204, 2005.
@@ -1382,42 +1382,42 @@ Se logró desarrollar una aplicación que aporta una solución para la detecció
 
 	\item Nidhi. Dept. of Computer Applications, NIT Kurukshetra, Haryana, India. \textit{Image Processing and Object Detection.} International Journal of Applied Research 2015; 1(9): 396-399, 2015.
 	
-	\item J.L. Barron, D.J. Fleet, S.S. Beauchemin \textit{Performance of Optical Flow Techniques.} IJCV 12:1 pp43-77, 2015.
+	\item J.L. Barron, D.J. Fleet, S.S. Beauchemin. \textit{Performance of Optical Flow Techniques.} IJCV 12:1 pp43-77, 2015.
 	
-	\item N. S. Kamarudin, M. Makhtar, S. A. Fadzli, M. Mohamad, F. S. Mohamad, M. F. A. Kadir \textit{Comparison of Image Classification Techniques using Caltech 101 Dataset.} Journal of Theoretical and Applied Information Technology, 71(2):1992-8645, 2015.
+	\item N. S. Kamarudin, M. Makhtar, S. A. Fadzli, M. Mohamad, F. S. Mohamad, M. F. A. Kadir. \textit{Comparison of Image Classification Techniques using Caltech 101 Dataset.} Journal of Theoretical and Applied Information Technology, 71(2):1992-8645, 2015.
 	
-	\item S. Bailey, C. Aragon, R. Romano, R. C. Thomas, B. A. Weaver, D. Wong \textit{How to find more Supernovae with less work: Object Classification Techniques for Difference Imaging.} Journal of Theoretical and Applied Information Technology, 665(2):1246-1253, 2007.
+	\item S. Bailey, C. Aragon, R. Romano, R. C. Thomas, B. A. Weaver, D. Wong. \textit{How to find more Supernovae with less work: Object Classification Techniques for Difference Imaging.} Journal of Theoretical and Applied Information Technology, 665(2):1246-1253, 2007.
 	
 	\item Intel Corp. \textit{The OpenCV Reference Manual, Release 3.0.0-dev} 2014. 
 			
-	\item Andrew Ng\textit{Machine Learning Course}, Coursera, www.coursera.org. 
+	\item Andrew Ng. \textit{Machine Learning Course}, Coursera, www.coursera.org. 
 	
-	\item Damián Jorge Matich \textit{Redes Neuronales: Conceptos Básicos y Aplicaciones}, Universidad Tecnológica Nacional, 2001. 
+	\item Damián Jorge Matich. \textit{Redes Neuronales: Conceptos Básicos y Aplicaciones}, Universidad Tecnológica Nacional, 2001. 
 	
-	\item C.Enyinna Nwankpa, W. Ijomah, A. Gachagan, and S. Marshall \textit{Activation Functions: Comparison of Trends in Practice and Research for Deep Learning}, 2018.
+	\item C.Enyinna Nwankpa, W. Ijomah, A. Gachagan, and S. Marshall. \textit{Activation Functions: Comparison of Trends in Practice and Research for Deep Learning}, 2018.
 	
-	\item Enrique J. Carmona Suárez \textit{Tutorial sobre Máquinas de Vectores Soporte (SVM)}, Universidad Nacional de Educación a Distancia (UNED), 28040-Madrid España, 2014.
+	\item Enrique J. Carmona Suárez. \textit{Tutorial sobre Máquinas de Vectores Soporte (SVM)}, Universidad Nacional de Educación a Distancia (UNED), 28040-Madrid España, 2014.
 	
-	\item N. Dalal, B. Trigg \textit{Histograms of Oriented Gradients for Human Detection}, EEE Computer Society Conference on Computer Vision and Pattern Recognition, (1):886–893, 2005.
+	\item N. Dalal, B. Trigg. \textit{Histograms of Oriented Gradients for Human Detection}, EEE Computer Society Conference on Computer Vision and Pattern Recognition, (1):886–893, 2005.
 	
-	\item Ong Chin Ann, Lau Bee Theng \textit{Human Activity Recognition: A Review}, 2014 IEEE International Conference on Control System, Computing and Engineering, 2014.
+	\item Ong Chin Ann, Lau Bee Theng. \textit{Human Activity Recognition: A Review}, 2014 IEEE International Conference on Control System, Computing and Engineering, 2014.
 	
-	\item Joan Reig Doménech \textit{Estudio del estado del arte de los métodos de estimación de la pose humana en 3D}, Universidad de Alicante, España, 2018.
+	\item Joan Reig Doménech. \textit{Estudio del estado del arte de los métodos de estimación de la pose humana en 3D}, Universidad de Alicante, España, 2018.
 	
-	\item H.Fang, S.Xie, Y.Tai, C.Lu \textit{RMPE: Regional Multi-Person Pose Estimation}, Shanghai Jiao Tong University, China, 2018.
+	\item H.Fang, S.Xie, Y.Tai, C.Lu. \textit{RMPE: Regional Multi-Person Pose Estimation}, Shanghai Jiao Tong University, China, 2018.
 	
-	\item Y.LeCun, L.Bottou, Y.Bengio, P.Haffner \textit{Gradient-Based Learning Applied to Document Recognition}, IEEE, 1998.
+	\item Y.LeCun, L.Bottou, Y.Bengio, P.Haffner. \textit{Gradient-Based Learning Applied to Document Recognition}, IEEE, 1998.
 	
-	\item Z.Cao, T.Simon, S.Wei, Y.Sheikh \textit{Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields}, The Robotics Institute, Carnegie Mellon University, 2017.
+	\item Z.Cao, T.Simon, S.Wei, Y.Sheikh. \textit{Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields}, The Robotics Institute, Carnegie Mellon University, 2017.
 
-	\item Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor \textit{Caffe: Convolutional Architecture for Fast Feature Embedding}, arXiv preprint arXiv:1408.5093, 2014.
+	\item Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor. \textit{Caffe: Convolutional Architecture for Fast Feature Embedding}, arXiv preprint arXiv:1408.5093, 2014.
 	
-	\item Stephen Marsland \textit{Chapman \& Hall/CRC Machine Learning An Algorithmic Perspective Second Edition}, CRC Press, 2014.
+	\item Stephen Marsland. \textit{Chapman \& Hall/CRC Machine Learning An Algorithmic Perspective Second Edition}, CRC Press, 2014.
 	
 	\item Diccionario en línea de la Real Academia Española. \textit{Real Academia Española}. https://dle.rae.es/.
 	
-	\item J. K. Aggarwal, M. S. Ryoo \textit{Human Activity Analysis: A Review}, ACM Comput. Surv. 43, 3, Article 16. 2011.
+	\item J. K. Aggarwal, M. S. Ryoo. \textit{Human Activity Analysis: A Review}, ACM Comput. Surv. 43, 3, Article 16. 2011.
 	
-	\item T.Subetha, S.Chitrakala \textit{A Survey on Human Activity Recognition from Videos}, International Conference On Information Communication And Embedded System (ICICES), 2016.
+	\item T.Subetha, S.Chitrakala. \textit{A Survey on Human Activity Recognition from Videos}, International Conference On Information Communication And Embedded System (ICICES), 2016.
 \end{enumerate}
 \end{document}
