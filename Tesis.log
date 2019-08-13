@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.26)  12 AUG 2019 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.26)  13 AUG 2019 08:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1335,19 +1335,24 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Imagenes/regresion1.jpg, id=527, 321.2pt x 240.9pt>
 File: Imagenes/regresion1.jpg Graphic file (type jpg)
 <use Imagenes/regresion1.jpg>
-Package pdftex.def Info: Imagenes/regresion1.jpg  used on input line 446.
+Package pdftex.def Info: Imagenes/regresion1.jpg  used on input line 442.
 (pdftex.def)             Requested size: 180.0pt x 135.00232pt.
- [26 <./Imagenes/regresion1.jpg>]
-<Imagenes/regresion2.jpg, id=534, 321.2pt x 240.9pt>
+<Imagenes/regresion2.jpg, id=528, 321.2pt x 240.9pt>
 File: Imagenes/regresion2.jpg Graphic file (type jpg)
 <use Imagenes/regresion2.jpg>
-Package pdftex.def Info: Imagenes/regresion2.jpg  used on input line 471.
+Package pdftex.def Info: Imagenes/regresion2.jpg  used on input line 467.
 (pdftex.def)             Requested size: 180.0pt x 135.00232pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[26 <./Imagenes/regresion1.jpg>]
 <Imagenes/svm1.jpg, id=535, 508.90125pt x 422.57875pt>
 File: Imagenes/svm1.jpg Graphic file (type jpg)
 <use Imagenes/svm1.jpg>
-Package pdftex.def Info: Imagenes/svm1.jpg  used on input line 490.
+Package pdftex.def Info: Imagenes/svm1.jpg  used on input line 486.
 (pdftex.def)             Requested size: 200.0pt x 166.0753pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1355,18 +1360,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Imagenes/neurona.jpg, id=548, 321.2pt x 204.765pt>
 File: Imagenes/neurona.jpg Graphic file (type jpg)
 <use Imagenes/neurona.jpg>
-Package pdftex.def Info: Imagenes/neurona.jpg  used on input line 524.
+Package pdftex.def Info: Imagenes/neurona.jpg  used on input line 519.
 (pdftex.def)             Requested size: 220.0pt x 140.25378pt.
  [29 <./Imagenes/neurona.jpg>]
 <Imagenes/network1.jpg, id=553, 667.49374pt x 504.88625pt>
 File: Imagenes/network1.jpg Graphic file (type jpg)
 <use Imagenes/network1.jpg>
-Package pdftex.def Info: Imagenes/network1.jpg  used on input line 538.
+Package pdftex.def Info: Imagenes/network1.jpg  used on input line 533.
 (pdftex.def)             Requested size: 340.0pt x 257.1804pt.
 <Imagenes/network2.jpg, id=556, 605.26125pt x 273.02pt>
 File: Imagenes/network2.jpg Graphic file (type jpg)
 <use Imagenes/network2.jpg>
-Package pdftex.def Info: Imagenes/network2.jpg  used on input line 551.
+Package pdftex.def Info: Imagenes/network2.jpg  used on input line 546.
 (pdftex.def)             Requested size: 380.0pt x 171.41194pt.
 
 
@@ -1377,7 +1382,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Imagenes/hog1.jpg, id=617, 550.055pt x 264.99pt>
 File: Imagenes/hog1.jpg Graphic file (type jpg)
 <use Imagenes/hog1.jpg>
-Package pdftex.def Info: Imagenes/hog1.jpg  used on input line 726.
+Package pdftex.def Info: Imagenes/hog1.jpg  used on input line 723.
 (pdftex.def)             Requested size: 340.0pt x 163.7988pt.
 
 
@@ -1387,7 +1392,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Imagenes/haarlike.jpg, id=627, 355.3275pt x 213.79875pt>
 File: Imagenes/haarlike.jpg Graphic file (type jpg)
 <use Imagenes/haarlike.jpg>
-Package pdftex.def Info: Imagenes/haarlike.jpg  used on input line 764.
+Package pdftex.def Info: Imagenes/haarlike.jpg  used on input line 761.
 (pdftex.def)             Requested size: 240.0pt x 144.41231pt.
 
 
@@ -1401,12 +1406,12 @@ Cap\'{\i }tulo 5.
 <Imagenes/video1.jpg, id=654, 489.83pt x 416.55624pt>
 File: Imagenes/video1.jpg Graphic file (type jpg)
 <use Imagenes/video1.jpg>
-Package pdftex.def Info: Imagenes/video1.jpg  used on input line 832.
+Package pdftex.def Info: Imagenes/video1.jpg  used on input line 827.
 (pdftex.def)             Requested size: 174.9933pt x 130.00188pt.
 <Imagenes/pose5.jpg, id=655, 755.82375pt x 508.90125pt>
 File: Imagenes/pose5.jpg Graphic file (type jpg)
 <use Imagenes/pose5.jpg>
-Package pdftex.def Info: Imagenes/pose5.jpg  used on input line 855.
+Package pdftex.def Info: Imagenes/pose5.jpg  used on input line 850.
 (pdftex.def)             Requested size: 309.99353pt x 150.00032pt.
 
 
@@ -1416,7 +1421,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Imagenes/dataset1.jpg, id=672, 365.365pt x 372.39125pt>
 File: Imagenes/dataset1.jpg Graphic file (type jpg)
 <use Imagenes/dataset1.jpg>
-Package pdftex.def Info: Imagenes/dataset1.jpg  used on input line 892.
+Package pdftex.def Info: Imagenes/dataset1.jpg  used on input line 887.
 (pdftex.def)             Requested size: 190.0pt x 193.65593pt.
 
 
@@ -1426,25 +1431,25 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Imagenes/results1.jpg, id=677, 1008.76875pt x 496.85625pt>
 File: Imagenes/results1.jpg Graphic file (type jpg)
 <use Imagenes/results1.jpg>
-Package pdftex.def Info: Imagenes/results1.jpg  used on input line 907.
+Package pdftex.def Info: Imagenes/results1.jpg  used on input line 902.
 (pdftex.def)             Requested size: 330.0pt x 162.53775pt.
  [50 <./Imagenes/dataset1.jpg> <./Imagenes/results1.jpg>] [51]
 <Imagenes/alphapose.jpg, id=690, 835.12pt x 565.11125pt>
 File: Imagenes/alphapose.jpg Graphic file (type jpg)
 <use Imagenes/alphapose.jpg>
-Package pdftex.def Info: Imagenes/alphapose.jpg  used on input line 936.
+Package pdftex.def Info: Imagenes/alphapose.jpg  used on input line 931.
 (pdftex.def)             Requested size: 250.0pt x 169.1639pt.
  [52 <./Imagenes/alphapose.jpg>] [53] [54] [55]
 <Imagenes/network_pose1.jpg, id=714, 1027.84pt x 292.09125pt>
 File: Imagenes/network_pose1.jpg Graphic file (type jpg)
 <use Imagenes/network_pose1.jpg>
-Package pdftex.def Info: Imagenes/network_pose1.jpg  used on input line 991.
+Package pdftex.def Info: Imagenes/network_pose1.jpg  used on input line 986.
 (pdftex.def)             Requested size: 460.0pt x 130.72226pt.
  [56 <./Imagenes/network_pose1.jpg>]
 <Imagenes/pose6.jpg, id=724, 359.3425pt x 362.35374pt>
 File: Imagenes/pose6.jpg Graphic file (type jpg)
 <use Imagenes/pose6.jpg>
-Package pdftex.def Info: Imagenes/pose6.jpg  used on input line 1015.
+Package pdftex.def Info: Imagenes/pose6.jpg  used on input line 1010.
 (pdftex.def)             Requested size: 200.0pt x 201.67819pt.
 
 
@@ -1454,37 +1459,37 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Imagenes/1.png, id=738, 461.725pt x 321.2pt>
 File: Imagenes/1.png Graphic file (type png)
 <use Imagenes/1.png>
-Package pdftex.def Info: Imagenes/1.png  used on input line 1065.
+Package pdftex.def Info: Imagenes/1.png  used on input line 1060.
 (pdftex.def)             Requested size: 115.94499pt x 80.65758pt.
 <Imagenes/2.png, id=739, 461.725pt x 321.2pt>
 File: Imagenes/2.png Graphic file (type png)
 <use Imagenes/2.png>
-Package pdftex.def Info: Imagenes/2.png  used on input line 1066.
+Package pdftex.def Info: Imagenes/2.png  used on input line 1061.
 (pdftex.def)             Requested size: 115.94499pt x 80.65758pt.
 <Imagenes/3.png, id=740, 461.725pt x 321.2pt>
 File: Imagenes/3.png Graphic file (type png)
 <use Imagenes/3.png>
-Package pdftex.def Info: Imagenes/3.png  used on input line 1069.
+Package pdftex.def Info: Imagenes/3.png  used on input line 1064.
 (pdftex.def)             Requested size: 115.94499pt x 80.65758pt.
 <Imagenes/4.png, id=741, 461.725pt x 321.2pt>
 File: Imagenes/4.png Graphic file (type png)
 <use Imagenes/4.png>
-Package pdftex.def Info: Imagenes/4.png  used on input line 1070.
+Package pdftex.def Info: Imagenes/4.png  used on input line 1065.
 (pdftex.def)             Requested size: 115.94499pt x 80.65758pt.
 <Imagenes/5.png, id=742, 461.725pt x 321.2pt>
 File: Imagenes/5.png Graphic file (type png)
 <use Imagenes/5.png>
-Package pdftex.def Info: Imagenes/5.png  used on input line 1073.
+Package pdftex.def Info: Imagenes/5.png  used on input line 1068.
 (pdftex.def)             Requested size: 115.94499pt x 80.65758pt.
 <Imagenes/6.png, id=743, 461.725pt x 321.2pt>
 File: Imagenes/6.png Graphic file (type png)
 <use Imagenes/6.png>
-Package pdftex.def Info: Imagenes/6.png  used on input line 1074.
+Package pdftex.def Info: Imagenes/6.png  used on input line 1069.
 (pdftex.def)             Requested size: 115.94499pt x 80.65758pt.
 <Imagenes/dataset2.jpg, id=744, 497.86pt x 404.51125pt>
 File: Imagenes/dataset2.jpg Graphic file (type jpg)
 <use Imagenes/dataset2.jpg>
-Package pdftex.def Info: Imagenes/dataset2.jpg  used on input line 1083.
+Package pdftex.def Info: Imagenes/dataset2.jpg  used on input line 1078.
 (pdftex.def)             Requested size: 180.0pt x 146.25351pt.
 
 
@@ -1496,7 +1501,7 @@ magenes/6.png (PNG copy)>] [61 <./Imagenes/dataset2.jpg>]
 <Imagenes/results2.jpg, id=756, 617.30624pt x 252.945pt>
 File: Imagenes/results2.jpg Graphic file (type jpg)
 <use Imagenes/results2.jpg>
-Package pdftex.def Info: Imagenes/results2.jpg  used on input line 1124.
+Package pdftex.def Info: Imagenes/results2.jpg  used on input line 1119.
 (pdftex.def)             Requested size: 340.0pt x 139.32088pt.
 
 
@@ -1506,52 +1511,52 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Imagenes/output1.jpg, id=761, 881.2925pt x 378.41376pt>
 File: Imagenes/output1.jpg Graphic file (type jpg)
 <use Imagenes/output1.jpg>
-Package pdftex.def Info: Imagenes/output1.jpg  used on input line 1137.
+Package pdftex.def Info: Imagenes/output1.jpg  used on input line 1132.
 (pdftex.def)             Requested size: 450.0pt x 193.22519pt.
  [63 <./Imagenes/results2.jpg> <./Imagenes/output1.jpg>]
 <Imagenes/output2.jpg, id=766, 820.06375pt x 561.09625pt>
 File: Imagenes/output2.jpg Graphic file (type jpg)
 <use Imagenes/output2.jpg>
-Package pdftex.def Info: Imagenes/output2.jpg  used on input line 1149.
+Package pdftex.def Info: Imagenes/output2.jpg  used on input line 1144.
 (pdftex.def)             Requested size: 190.0pt x 129.99976pt.
  [64 <./Imagenes/output2.jpg>]
 <Imagenes/positiveresult.jpg, id=774, 921.4425pt x 414.54875pt>
 File: Imagenes/positiveresult.jpg Graphic file (type jpg)
 <use Imagenes/positiveresult.jpg>
-Package pdftex.def Info: Imagenes/positiveresult.jpg  used on input line 1168.
+Package pdftex.def Info: Imagenes/positiveresult.jpg  used on input line 1163.
 (pdftex.def)             Requested size: 450.0pt x 202.44751pt.
  [65 <./Imagenes/positiveresult.jpg>]
 <Imagenes/process1.jpg, id=779, 738.76pt x 403.5075pt>
 File: Imagenes/process1.jpg Graphic file (type jpg)
 <use Imagenes/process1.jpg>
-Package pdftex.def Info: Imagenes/process1.jpg  used on input line 1182.
+Package pdftex.def Info: Imagenes/process1.jpg  used on input line 1177.
 (pdftex.def)             Requested size: 460.0pt x 251.24954pt.
  [66 <./Imagenes/process1.jpg>] [67]
 Cap\'{\i }tulo 6.
 
-Overfull \hbox (7.82295pt too wide) in paragraph at lines 1240--1240
+Overfull \hbox (7.82295pt too wide) in paragraph at lines 1235--1235
 \T1/cmr/bx/n/6 po-si-ti-vos[]| 
  []
 
 
-Overfull \hbox (14.51273pt too wide) in paragraph at lines 1240--1240
+Overfull \hbox (14.51273pt too wide) in paragraph at lines 1235--1235
 []|[]\T1/cmr/bx/n/6 Verdaderos
  []
 
 
-Overfull \hbox (5.73343pt too wide) in paragraph at lines 1240--1240
+Overfull \hbox (5.73343pt too wide) in paragraph at lines 1235--1235
 \T1/cmr/bx/n/6 po-si-ti-vos[]| 
  []
 
 
-Overfull \hbox (3.2586pt too wide) in paragraph at lines 1240--1240
+Overfull \hbox (3.2586pt too wide) in paragraph at lines 1235--1235
 []|[]\T1/cmr/bx/n/6 Porcent.
  []
 
 [68
 
 ]
-Overfull \vbox (2.27505pt too high) detected at line 1257
+Overfull \vbox (2.27505pt too high) detected at line 1252
  []
 
 [69]
@@ -1571,15 +1576,15 @@ Cap\'{\i }tulo 10.
 [76
 
 ] [77]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1424.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1419.
  [78]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1424.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1419.
  (./Tesis.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1424.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1424.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1419.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1419.
 
 Package rerunfilecheck Info: File `Tesis.out' has not changed.
 (rerunfilecheck)             Checksum: 037BC0EFB0EEACA7B28295BE18AE989F;4638.
@@ -1587,7 +1592,7 @@ Package rerunfilecheck Info: File `Tesis.out' has not changed.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1424.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1419.
  )
 (\end occurred inside a group at level 1)
 
@@ -1624,7 +1629,7 @@ ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive
 019/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2019/
 texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on Tesis.pdf (79 pages, 4757922 bytes).
+Output written on Tesis.pdf (79 pages, 4757827 bytes).
 PDF statistics:
  1010 PDF objects out of 1200 (max. 8388607)
  867 compressed objects within 9 object streams
