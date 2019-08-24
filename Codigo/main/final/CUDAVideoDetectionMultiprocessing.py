@@ -45,7 +45,7 @@ drawer = Drawer()
 netOutput = NO_ATTACK
 
 Xseconds = 15                                   # Cantidad de segundos que deben transcurrir para repetir el mensaje de agresion
-Yseconds =  0.001                                 # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
+Yseconds =  0.001                               # Cantidad de segundos que deben transcurrir para enviar una imagen a cola de trabajo
 Xframes = 3                                     # Cantidad mínima de frames en cola para enviar otro frame. Si cantidad es mayor a este valor, no se envian mas frames a la cola
 fontFactor = 46.5                               # Factor de multiplicacion para tamaño de fuente
 
@@ -148,11 +148,6 @@ def attackHandler(frame, lines):
     global agresionTime, weaponInHands, blockAgressionCounter, agressionBlockTime
     agressionConfirmed = False
 
-    #XsecondsForAgression = 3  # Si ocurren Y frames de agresiones en X segundos, considerar agresion
-    #YagressionFrames = 3  # Deben ocurrir Y frames de agresiones en X segundos
-    #blockAgressionCounter = 0
-    #agressionBlockTime = time.time()
-
     blockAgressionCounter = blockAgressionCounter + 1
     # Dentro del tiempo
     if time.time() <= (agressionBlockTime + XsecondsForAgression):
@@ -181,7 +176,6 @@ def attackHandler(frame, lines):
         arms = ["leftForearmPoints", "rightForearmPoints"]
         if agressionExpired == True:
             agresionTime = time.time()
-            mixer.music.play()
 
         # Verifica armas en frame cercanos a manos
         results = cascadeGunsClassifier.detectMultiScale(cv2.resize(frame, outputVideoSize), 1.5, 5, minSize=(100, 100))
@@ -203,6 +197,7 @@ def attackHandler(frame, lines):
 
         if weaponInHands == True:
             printText("Arma de fuego detectada con pose compatible. Posible agresion en curso.", (66, 66, 255))
+            mixer.music.play()
 
 
 def worker(job_q, result_q):

@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d2c45a3-03aa-47a0-a440-c5c7d9eed72c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/47528846.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/final/47528846.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PresentacionFinal.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../../PresentacionFinal.pptx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="-198">
+              <caret line="148" column="30" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -28,11 +34,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="10" />
-    <option name="y" value="42" />
-    <option name="width" value="1346" />
-    <option name="height" value="662" />
+    <option name="x" value="7" />
+    <option name="y" value="27" />
+    <option name="width" value="1354" />
+    <option name="height" value="687" />
   </component>
   <component name="ProjectId" id="1OVzaDJaIPFlkJeVOiIaAhzpMYK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -194,10 +207,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="42" width="1346" height="662" extended-state="0" />
+    <frame x="7" y="27" width="1354" height="687" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24981132" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24831207" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -261,7 +274,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/final/CUDAVideoDetectionMultiprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="-198">
+          <caret line="148" column="30" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
